@@ -1,5 +1,5 @@
 {
-  "version": "2026-09-30.3",
+  "version": "2026-09-30.4",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
@@ -782,6 +782,171 @@
         "discapacitat",
         "forca major",
         "meteorologia"
+      ]
+    },
+    {
+      "id": "convocatories-2026",
+      "contentType": "update",
+      "date": "2026-09-29",
+      "category": "convocatories",
+      "source": "ccoo",
+      "title": {
+        "ca": "Convocatòries internes obertes · publicació 28/09/2026",
+        "es": "Convocatorias internas abiertas · publicación 28/09/2026"
+      },
+      "intro": {
+        "ca": "Hem ordenat i revisat la publicació completa perquè puguis trobar ràpidament la teva categoria, el tipus de convocatòria i la caràtula corresponent.",
+        "es": "Hemos ordenado y revisado la publicación completa para que puedas encontrar rápidamente tu categoría, el tipo de convocatoria y la carátula correspondiente."
+      },
+      "deadline": {
+        "ca": "Termini de presentació: fins al 13/10/2026",
+        "es": "Plazo de presentación: hasta el 13/10/2026"
+      },
+      "sections": [
+        {
+          "title": {
+            "ca": "Què s’ha publicat",
+            "es": "Qué se ha publicado"
+          },
+          "bullets": {
+            "ca": [
+              "9 blocs de convocatòria publicats el 28/09/2026.",
+              "69 referències / caràtules úniques.",
+              "174 llocs de treball en total.",
+              "Dues vies: 2a ronda de canvi de torn/servei i augment de jornada/canvi de categoria."
+            ],
+            "es": [
+              "9 bloques de convocatoria publicados el 28/09/2026.",
+              "69 referencias / carátulas únicas.",
+              "174 puestos de trabajo en total.",
+              "Dos vías: 2.ª ronda de cambio de turno/servicio y aumento de jornada/cambio de categoría."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Categories disponibles",
+            "es": "Categorías disponibles"
+          },
+          "bullets": {
+            "ca": [
+              "Infermeria.",
+              "Auxiliar d’infermeria.",
+              "SDI · Diagnòstic per la imatge.",
+              "Portalliteres.",
+              "Terapeuta ocupacional."
+            ],
+            "es": [
+              "Enfermería.",
+              "Auxiliar de enfermería.",
+              "SDI · Diagnóstico por la imagen.",
+              "Camilleros/as.",
+              "Terapeuta ocupacional."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Comprovació CCOO",
+            "es": "Comprobación CCOO"
+          },
+          "bullets": {
+            "ca": [
+              "Hem cotejat les 69 referències anunciades amb les 69 caràtules disponibles: coincidència completa.",
+              "No hem detectat cap referència anunciada sense PDF ni cap PDF únic fora dels resums publicats.",
+              "Fisioterapeutes i Administratius/ves no formen part d’aquesta publicació del 28/09: la informació comunicada indica que s’enviarà més endavant."
+            ],
+            "es": [
+              "Hemos cotejado las 69 referencias anunciadas con las 69 carátulas disponibles: coincidencia completa.",
+              "No hemos detectado ninguna referencia anunciada sin PDF ni ningún PDF único fuera de los resúmenes publicados.",
+              "Fisioterapeutas y Administrativos/as no forman parte de esta publicación del 28/09: la información comunicada indica que se enviará más adelante."
+            ]
+          }
+        }
+      ],
+      "warning": {
+        "ca": "Incidència detectada: la caràtula AUXINF_HSAA_HOSP_TN_28_2026 publicada el 28/09 indica torn de nit 21:30–07:30, mentre que un correu previ del 25/09 indicava 14:30–21:30. La caràtula publicada i el resum d’Intranet coincideixen entre ells; el correu previ és el que discrepa.",
+        "es": "Incidencia detectada: la carátula AUXINF_HSAA_HOSP_TN_28_2026 publicada el 28/09 indica turno de noche 21:30–07:30, mientras que un correo previo del 25/09 indicaba 14:30–21:30. La carátula publicada y el resumen de Intranet coinciden entre sí; el correo previo es el que discrepa."
+      },
+      "actions": [
+        {
+          "label": {
+            "ca": "Obrir totes les convocatòries",
+            "es": "Abrir todas las convocatorias"
+          },
+          "url": "https://drive.google.com/drive/folders/1yVHiaTXm1X-0YL1uGPrURqRRcySK-0Cq",
+          "style": "primary"
+        },
+        {
+          "label": {
+            "ca": "Infermeria",
+            "es": "Enfermería"
+          },
+          "url": "https://drive.google.com/drive/folders/1Ttpa_AKnb3iQfmjbQ1Q7ckeNKPRwiITn",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "Auxiliar d’infermeria",
+            "es": "Auxiliar de enfermería"
+          },
+          "url": "https://drive.google.com/drive/folders/1BS8HHk7io2o8x_B8c-DdqEvY3bPn4HN0",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "SDI · Imatge",
+            "es": "SDI · Imagen"
+          },
+          "url": "https://drive.google.com/drive/folders/1C4k-Oh1L2BnvdnX0TqQsp3uRe1rrubWy",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "Portalliteres",
+            "es": "Camilleros/as"
+          },
+          "url": "https://drive.google.com/drive/folders/1lV4dTynt3zTsiD53ss59pe08kUpMU02T",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "Terapeuta ocupacional",
+            "es": "Terapeuta ocupacional"
+          },
+          "url": "https://drive.google.com/drive/folders/1QsPw6lstQT2yHTJhzZDCsgTh7n7xLdWa",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "Calculadora de puntuació",
+            "es": "Calculadora de puntuación"
+          },
+          "url": "https://ccoocsapg.github.io/calculadora-csapg/",
+          "style": "outline"
+        }
+      ],
+      "sourceNote": {
+        "ca": "Coteig CCOO sobre la publicació del 28/09/2026. Per participar, comprova sempre la caràtula concreta i el Procediment ID 6455. Termini indicat a la publicació: 13/10/2026.",
+        "es": "Cotejo CCOO sobre la publicación del 28/09/2026. Para participar, comprueba siempre la carátula concreta y el Procedimiento ID 6455. Plazo indicado en la publicación: 13/10/2026."
+      },
+      "tags": [
+        "convocatories",
+        "convocatorias",
+        "28/09/2026",
+        "13/10/2026",
+        "69 caratules",
+        "174 llocs",
+        "2a ronda",
+        "canvi de torn",
+        "canvi de servei",
+        "augment de jornada",
+        "canvi de categoria",
+        "infermeria",
+        "auxiliar infermeria",
+        "sdi",
+        "portalliteres",
+        "terapeuta ocupacional"
       ]
     }
   ]
