@@ -14,7 +14,7 @@
   <link rel="apple-touch-icon" href="https://www.ccoo.cat/imatges/logos/descarrega/3.Federacions/federacio_sanitat/sanitat.jpg">
   <script>
   (() => {
-    const SHELL_VERSION = '0.6.0';
+    const SHELL_VERSION = '0.7.0';
     let reloading = false;
 
     async function forceFreshVersion() {
@@ -62,8 +62,8 @@
     });
   })();
   </script>
-  <link rel="stylesheet" href="./styles.css?v=0.6.0">
-  <link rel="stylesheet" href="./search.css?v=0.6.0">
+  <link rel="stylesheet" href="./styles.css?v=0.7.0">
+  <link rel="stylesheet" href="./search.css?v=0.7.0">
 </head>
 <body>
   <a class="skip-link" href="#appMain">Saltar al contingut</a>
@@ -75,6 +75,9 @@
         <span class="brand-text"><strong>CSAPG</strong><small data-i18n="brandSub">Espai d'informació sindical</small></span>
       </a>
       <div class="header-actions">
+        <button class="icon-button" id="notificationButton" type="button" aria-label="Notificacions" title="Notificacions">
+          <span aria-hidden="true">♢</span>
+        </button>
         <button class="icon-button" id="installButton" type="button" aria-label="Instal·lar app" title="Instal·lar app">
           <span aria-hidden="true">↓</span>
         </button>
@@ -142,18 +145,35 @@
     <div id="installContent" class="install-content"></div>
   </dialog>
 
+  <dialog id="notificationDialog" class="dialog">
+    <div class="dialog-head">
+      <div>
+        <span class="eyebrow" data-i18n="notificationsEyebrow">AVISOS</span>
+        <h2 data-i18n="notificationsTitle">Notificacions de novetats</h2>
+      </div>
+      <button class="dialog-close" type="button" data-close-dialog aria-label="Tancar">×</button>
+    </div>
+    <div id="notificationContent" class="install-content"></div>
+  </dialog>
+
   <footer class="app-footer">
     <div>
       <strong>CCOO Sanitat · CSAPG</strong>
       <p data-i18n="footerNote">Informació sindical pràctica, clara i traçable.</p>
     </div>
     <div class="footer-links">
+      <a href="#/cookies" data-i18n="cookiesPolicy">Política de cookies</a>
+      <span>·</span>
+      <a href="#/privacitat" data-i18n="privacyPolicy">Protecció de dades</a>
+      <span>·</span>
+      <a href="#/avisos" data-i18n="notificationsLink">Notificacions</a>
+      <span>·</span>
       <a href="https://www.ccoo.cat/sanitat/" target="_blank" rel="noopener">CCOO Sanitat Catalunya</a>
       <span>·</span>
-      <span id="appVersion">v0.1</span>
+      <span id="appVersion">v0.7.0</span>
     </div>
   </footer>
 
-  <script src="./app.js?v=0.6.0" defer></script>
+  <script src="./app.js?v=0.7.0" defer></script>
 </body>
 </html>
