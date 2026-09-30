@@ -898,7 +898,7 @@
         legalSection(tr('cookiesOwnTitle'),tr('cookiesOwnText'))+
         legalSection(tr('cookiesThirdTitle'),tr('cookiesThirdText'))+
         legalSection(tr('cookiesConsentTitle'),tr('cookiesConsentText'))+
-      '</div><p class="legal-updated">'+esc(tr('legalUpdated'))+'</p></div>';
+      '</div><div class="legal-links"><a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy</a></div><p class="legal-updated">'+esc(tr('legalUpdated'))+'</p></div>';
   }
 
   function privacyView(){
@@ -908,7 +908,7 @@
         legalSection(tr('privacyHostingTitle'),tr('privacyHostingText'))+
         legalSection(tr('privacyPushTitle'),tr('privacyPushText'))+
         legalSection(tr('privacyContactTitle'),tr('privacyContactText'))+
-      '</div><p class="legal-updated">'+esc(tr('legalUpdated'))+'</p></div>';
+      '</div><div class="legal-links"><a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy</a></div><p class="legal-updated">'+esc(tr('legalUpdated'))+'</p></div>';
   }
 
   function notificationsView(){
