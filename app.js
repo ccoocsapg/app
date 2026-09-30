@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.8.0',
+    version: '0.9.0',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/',
@@ -461,7 +461,8 @@
 
   const DOCUMENT_INDEX_FILES = [
     './search/conveni.json',
-    './search/procediment-6455.json'
+    './search/procediment-6455.json',
+    './search/siscat-updates.json'
   ];
   let documentIndexPromise = null;
   let documentSearchSeq = 0;
