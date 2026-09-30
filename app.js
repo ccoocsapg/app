@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.9.0',
+    version: '0.10.0',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/',
@@ -849,6 +849,20 @@
 
   function meetingExtraHtml(item){
     let html='';
+    if(item.deadline){
+      html+='<div class="deadline-banner"><span>⏱</span><strong>'+esc(tx(item.deadline))+'</strong></div>';
+    }
+    if(Array.isArray(item.sections) && item.sections.length){
+      html+='<div class="update-sections">'+item.sections.map(section=>{
+        const bullets=section.bullets?.[state.lang] || section.bullets?.ca || section.bullets?.es || [];
+        return '<section class="update-section"><h4>'+esc(tx(section.title))+'</h4>'+
+          (bullets.length?'<ul>'+bullets.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'')+
+          '</section>';
+      }).join('')+'</div>';
+    }
+    if(item.warning){
+      html+='<div class="notice notice--warning"><span>!</span><div><strong>'+esc(state.lang==='ca'?'A tenir en compte':'A tener en cuenta')+'</strong><p>'+esc(tx(item.warning))+'</p></div></div>';
+    }
     if(Array.isArray(item.offers) && item.offers.length){
       html+='<div class="training-offers">'+item.offers.map(offer=>
         '<div class="training-offer"><span>'+esc(tx(offer.label))+'</span><strong>'+esc(offer.value||'')+'</strong></div>'
@@ -860,7 +874,7 @@
       ).join('')+'</div>';
     }
     if(Array.isArray(item.actions) && item.actions.length){
-      html+='<div class="card-actions">'+item.actions.map(action=>
+      html+='<div class="card-actions update-actions">'+item.actions.map(action=>
         '<a class="btn '+(action.style==='primary'?'btn-primary':'btn-outline')+' btn-small" href="'+esc(action.url||'#')+'" target="'+((action.url||'').startsWith('mailto:')?'_self':'_blank')+'" rel="noopener">'+esc(tx(action.label))+'</a>'
       ).join('')+'</div>';
     }
@@ -871,11 +885,12 @@
   }
 
   function meetingCard(item){
+    const bullets=item.bullets?.[state.lang] || item.bullets?.ca || item.bullets?.es || [];
     return '<details class="meeting-card"><summary><div class="meeting-top">'+
       '<div class="date-box"><strong>'+day(item.date)+'</strong><span>'+esc(monthShort(item.date))+'</span></div>'+
       '<div class="meeting-title"><div class="meta">'+sourceBadge(item.source)+'<span class="badge badge-neutral">'+esc(categoryLabel(item.category))+'</span></div><h3>'+esc(tx(item.title))+'</h3><p>'+esc(tx(item.intro))+'</p></div>'+
       '<span class="chev">›</span></div></summary>'+
-      '<div class="meeting-body"><ul>'+item.bullets[state.lang].map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>'+
+      '<div class="meeting-body">'+(bullets.length?'<ul>'+bullets.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'')+
       meetingExtraHtml(item)+
       '<div class="source-box"><strong>'+esc(tr('sourceLabel'))+':</strong> '+esc(tx(item.sourceNote))+'</div></div></details>';
   }
