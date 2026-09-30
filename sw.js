@@ -1,4 +1,4 @@
-const VERSION = '0.6.0';
+const VERSION = '0.7.0';
 const CACHE = 'ccoo-csapg-app-' + VERSION;
 const CACHE_PREFIX = 'ccoo-csapg-app-';
 
@@ -89,6 +89,7 @@ self.addEventListener('fetch', event => {
     path.endsWith('/search.css') ||
     path.endsWith('/manifest.webmanifest') ||
     path.endsWith('/version.json') ||
+    path.endsWith('/push-config.json') ||
     path.includes('/data/') ||
     path.includes('/search/');
 
@@ -98,4 +99,46 @@ self.addEventListener('fetch', event => {
   }
 
   event.respondWith(cacheFirst(request));
+});
+
+
+self.addEventListener('push', event => {
+  let payload = {};
+  try {
+    payload = event.data ? event.data.json() : {};
+  } catch (e) {
+    payload = { body: event.data ? event.data.text() : '' };
+  }
+
+  const title = payload.title || 'CCOO CSAPG';
+  const options = {
+    body: payload.body || 'Hi ha una nova informació publicada.',
+    icon: './icon.svg',
+    badge: './icon.svg',
+    tag: payload.tag || 'ccoo-csapg-update',
+    renotify: !!payload.renotify,
+    data: {
+      url: payload.url || './#/inicio'
+    }
+  };
+
+  event.waitUntil(self.registration.showNotification(title, options));
+});
+
+self.addEventListener('notificationclick', event => {
+  event.notification.close();
+  const target = new URL(event.notification?.data?.url || './#/inicio', self.location.origin).href;
+
+  event.waitUntil((async () => {
+    const windows = await clients.matchAll({ type: 'window', includeUncontrolled: true });
+    for (const client of windows) {
+      if ('focus' in client) {
+        try {
+          if ('navigate' in client) await client.navigate(target);
+        } catch (e) {}
+        return client.focus();
+      }
+    }
+    if (clients.openWindow) return clients.openWindow(target);
+  })());
 });
