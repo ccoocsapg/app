@@ -20,9 +20,11 @@
   --max:1440px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;max-width:100%;overflow-x:hidden}
 body{
   margin:0;
+  max-width:100%;
+  overflow-x:hidden;
   background:var(--bg);
   color:var(--ink);
   font-family:Arial,"Helvetica Neue",Helvetica,sans-serif;
@@ -618,8 +620,13 @@ button{cursor:pointer}
   .bottom-nav{
     position:fixed;z-index:90;
     display:grid;
-    grid-template-columns:repeat(5,1fr);
+    grid-template-columns:repeat(5,minmax(0,1fr));
     left:0;right:0;bottom:0;
+    width:100%;
+    max-width:100vw;
+    min-width:0;
+    overflow:hidden;
+    box-sizing:border-box;
     background:#fff;
     border-top:4px solid var(--ccoo-black);
     padding:4px max(4px,env(safe-area-inset-right)) calc(4px + env(safe-area-inset-bottom)) max(4px,env(safe-area-inset-left))
@@ -628,14 +635,17 @@ button{cursor:pointer}
     display:flex;
     flex-direction:column;
     align-items:center;
+    justify-content:center;
     gap:2px;
-    padding:5px 2px 4px;
+    padding:5px 1px 4px;
+    min-width:0;
+    overflow:hidden;
     color:#555;
     border-top:4px solid transparent;
     margin-top:-4px
   }
   .bottom-nav a span{font-size:1.08rem;line-height:1}
-  .bottom-nav a b{font-size:.6rem;text-transform:uppercase}
+  .bottom-nav a b{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.56rem;text-transform:uppercase}
   .bottom-nav a.is-active{color:var(--ccoo-red);border-top-color:var(--ccoo-red)}
   .hero-card{grid-template-columns:1fr;padding:24px 21px;border-top-width:7px;border-bottom-width:7px}
   .hero-card h1{font-size:2.05rem}
@@ -837,4 +847,12 @@ button{cursor:pointer}
     flex:1 1 100%;
     justify-content:flex-start
   }
+}
+
+.view-wrap,.view,.meeting-card,.doc-card,.card,.tool-card,.meeting-title,.doc-main{min-width:0;max-width:100%}
+.meeting-title h3,.meeting-title p,.doc-main h3,.doc-main p,.source-box,.update-section,.legal-card{overflow-wrap:anywhere;word-break:normal}
+.meeting-body .card-actions,.meeting-body .update-actions{display:flex!important;visibility:visible!important;opacity:1!important}
+@media(max-width:800px){
+  .meeting-body .card-actions .btn,.meeting-body .update-actions .btn{flex:1 1 100%;width:100%}
+  .meeting-body--always{display:block!important;border-top:1px solid var(--line);margin-top:14px;padding-top:14px}
 }
