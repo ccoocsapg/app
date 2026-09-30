@@ -275,6 +275,7 @@
     docFilter: 'all',
     meetingFilter: 'all',
     search: '',
+    topicKey: '',
     installPrompt: null,
     pushConfig: {enabled:false,apiBase:'',vapidPublicKey:''}
   };
@@ -829,22 +830,26 @@
 
   function consultationTopics(){
     return [
-      {icon:'✚',label:{ca:'Permisos i conciliació',es:'Permisos y conciliación'},query:'permisos conciliació hospitalització visita mèdica força major'},
-      {icon:'€',label:{ca:'Nòmina i salari',es:'Nómina y salario'},query:'salari nòmina retribucions taules salarials'},
-      {icon:'↔',label:{ca:'Convocatòries',es:'Convocatorias'},query:'convocatòries canvi torn canvi servei augment jornada barem'},
-      {icon:'◷',label:{ca:'Jornada i vacances',es:'Jornada y vacaciones'},query:'jornada vacances lliure disposició calendari compensatoris'},
-      {icon:'◎',label:{ca:'DPO i objectius',es:'DPO y objetivos'},query:'dpo objectius reducció jornada'},
-      {icon:'↑',label:{ca:'Carrera professional',es:'Carrera profesional'},query:'sipdp carrera professional nivell'},
-      {icon:'§',label:{ca:'Conveni i pactes',es:'Convenio y pactos'},query:'conveni pactes acords comissió paritària'},
-      {icon:'!',label:{ca:'Salut laboral i alertes',es:'Salud laboral y alertas'},query:'salut laboral ventcat inuncat risc emergències'},
-      {icon:'●',label:{ca:'Comunicats HRSC',es:'Comunicados HRSC'},query:'comunicat hrsc secció sindical'},
-      {icon:'✦',label:{ca:'Formació',es:'Formación'},query:'formació cursos bac cfc ucav'}
+      {key:'permisos',icon:'✚',label:{ca:'Permisos i conciliació',es:'Permisos y conciliación'},query:'permisos hospitalització visita mèdica força major conciliació',meetingCats:['conciliacio','negociadora','comunicatshrsc'],docCats:['conveni','negociadora','acordscentre','comunicatshrsc']},
+      {key:'salari',icon:'€',label:{ca:'Nòmina i salari',es:'Nómina y salario'},query:'salari nòmina retribucions taules salarials dpo complements',meetingCats:['negociadora','paritaria','comunicatshrsc'],docCats:['salaris','negociadora','paritaria','conveni']},
+      {key:'convocatories',icon:'↔',label:{ca:'Convocatòries',es:'Convocatorias'},query:'convocatòries canvi torn canvi servei augment jornada barem caràtules',meetingCats:['convocatories','comunicatshrsc'],docCats:['convocatories','comunicatshrsc','escritsrlt']},
+      {key:'jornada',icon:'◷',label:{ca:'Jornada i vacances',es:'Jornada y vacaciones'},query:'jornada vacances lliure disposició calendari compensatoris desconnexió digital',meetingCats:['organitzacio','comunicatshrsc'],docCats:['pactes','acordscentre','politiques','conveni']},
+      {key:'dpo',icon:'◎',label:{ca:'DPO i objectius',es:'DPO y objetivos'},query:'dpo objectius reducció jornada retribució variable',meetingCats:['conciliacio','paritaria','negociadora'],docCats:['paritaria','salaris','conveni']},
+      {key:'carrera',icon:'↑',label:{ca:'Carrera professional',es:'Carrera profesional'},query:'sipdp carrera professional nivell consolidació',meetingCats:['paritaria'],docCats:['paritaria','convocatories']},
+      {key:'conveni',icon:'§',label:{ca:'Conveni i pactes',es:'Convenio y pactos'},query:'conveni pactes acords comissió paritària negociadora siscat',meetingCats:['conveni','negociadora','paritaria'],docCats:['conveni','pactes','paritaria','negociadora','acordscentre']},
+      {key:'salut',icon:'!',label:{ca:'Salut laboral i alertes',es:'Salud laboral y alertas'},query:'salut laboral ventcat inuncat risc emergències meteorologia',meetingCats:[],docCats:['emergencies','politiques','conveni','escritsrlt']},
+      {key:'comunicats',icon:'●',label:{ca:'Comunicats HRSC',es:'Comunicados HRSC'},query:'comunicat hrsc secció sindical',meetingCats:['comunicatshrsc'],docCats:['comunicatshrsc']},
+      {key:'formacio',icon:'✦',label:{ca:'Formació',es:'Formación'},query:'formació cursos bac cfc ucav',meetingCats:['formacio'],docCats:['campanyes']}
     ];
+  }
+
+  function currentConsultTopic(){
+    return consultationTopics().find(x=>x.key===state.topicKey)||null;
   }
 
   function topicButtonsHtml(){
     return '<div class="topic-grid">'+consultationTopics().map(topic=>
-      '<button type="button" class="topic-card" data-topic-query="'+esc(topic.query)+'" data-topic-label="'+esc(tx(topic.label))+'">'+
+      '<button type="button" class="topic-card" data-topic-key="'+esc(topic.key)+'" data-topic-query="'+esc(topic.query)+'" data-topic-label="'+esc(tx(topic.label))+'">'+
         '<span class="topic-card__icon">'+esc(topic.icon)+'</span><strong>'+esc(tx(topic.label))+'</strong>'+
       '</button>'
     ).join('')+'</div>';
@@ -853,7 +858,13 @@
   function renderConsultInfo(query){
     const q=(query||'').trim();
     if(!q) return '';
-    const items=smartRank(MEETINGS,q).slice(0,6);
+    const topic=currentConsultTopic();
+    let source=MEETINGS.slice();
+    if(topic){
+      if(!topic.meetingCats.length) return '<div class="empty-state compact-empty">'+esc(tr('noExplained'))+'</div>';
+      source=source.filter(x=>topic.meetingCats.includes(x.category));
+    }
+    const items=smartRank(source,q).slice(0,6);
     if(!items.length) return '<div class="empty-state compact-empty">'+esc(tr('noExplained'))+'</div>';
     return items.map(meetingCard).join('');
   }
@@ -861,7 +872,10 @@
   function renderConsultDocs(query){
     const q=(query||'').trim();
     if(!q) return '';
-    const items=smartRank(DOCS,q).slice(0,10);
+    const topic=currentConsultTopic();
+    let source=DOCS.slice();
+    if(topic && topic.docCats.length) source=source.filter(x=>topic.docCats.includes(x.category));
+    const items=smartRank(source,q).slice(0,10);
     if(!items.length) return '<div class="empty-state compact-empty">'+esc(tr('noResults'))+'</div>';
     return items.map(docCard).join('');
   }
@@ -1196,6 +1210,7 @@
     const docSearch=$('#docSearch');
     if(docSearch) docSearch.addEventListener('input',e=>{
       state.search=e.target.value;
+      state.topicKey='';
       state.docFilter='all';
       $$('[data-topic-query]').forEach(btn=>btn.classList.remove('is-active'));
       renderConsultaResults();
@@ -1203,6 +1218,7 @@
 
     $$('[data-topic-query]').forEach(btn=>btn.addEventListener('click',()=>{
       state.search=btn.dataset.topicQuery||'';
+      state.topicKey=btn.dataset.topicKey||'';
       state.docFilter='all';
       $$('[data-topic-query]').forEach(x=>x.classList.toggle('is-active',x===btn));
 
@@ -1362,7 +1378,7 @@
     $('#notificationButton')?.addEventListener('click',()=>openNotificationDialog());
     $$('[data-close-dialog]').forEach(btn=>btn.addEventListener('click',()=>btn.closest('dialog').close()));
     $('#previewDialog').addEventListener('close',()=>{$('#previewFrame').src='about:blank';});
-    window.addEventListener('hashchange',()=>{state.search='';render();});
+    window.addEventListener('hashchange',()=>{state.search='';state.topicKey='';render();});
     document.addEventListener('focusin',e=>{
       if(e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) document.body.classList.add('is-typing');
     });
