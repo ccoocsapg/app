@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.10.1',
+    version: '0.10.2',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/',
@@ -991,13 +991,19 @@
 
   function openPreview(id){
     const doc=DOCS.find(x=>x.id===id); if(!doc) return;
-    $('#previewTitle').textContent=tx(doc.title);
 
-    // Google Drive puede devolver error 400 al usar /preview dentro de una PWA iOS.
-    // En iPhone/iPad o modo standalone usamos el enlace directo "export=view",
-    // que permite al visor PDF nativo del navegador mostrar el archivo.
-    const frameUrl=(isIOS() || isStandalone()) ? driveInline(doc.driveId) : drivePreview(doc.driveId);
-    $('#previewFrame').src=frameUrl;
+    // En iOS/iPadOS y en la PWA instalada, Google Drive falla de forma intermitente
+    // cuando /preview se carga dentro de un iframe (errores 400 / vista previa no disponible).
+    // En esos casos abrimos el visor público de Drive como página completa.
+    if(isIOS() || isStandalone()){
+      const url=driveView(doc.driveId);
+      const opened=window.open(url,'_blank','noopener');
+      if(!opened) location.href=url;
+      return;
+    }
+
+    $('#previewTitle').textContent=tx(doc.title);
+    $('#previewFrame').src=drivePreview(doc.driveId);
     $('#previewOpen').href=driveView(doc.driveId);
     $('#previewDownload').href=driveDownload(doc.driveId);
     $('#previewDialog').showModal();
