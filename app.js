@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.7.0',
+    version: '0.8.0',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/',
@@ -211,7 +211,7 @@
       installIos1:'Obre aquesta web a Safari.', installIos2:'Prem el botó Compartir.', installIos3:'Tria “Afegir a la pantalla d’inici”.',
       installOther:'Si el navegador és compatible, utilitza el botó “Instal·lar” per obrir-la com una app independent.',
       footerNote:'Informació sindical pràctica, clara i traçable.', meeting:'Reunió', communication:'Comunicació', updated:'Actualitzat',
-      catConveni:'Conveni', catPactes:'Pactes', catConvocatories:'Convocatòries', catConciliacio:'Conciliació', catOrganitzacio:'Organització', catSalaris:'Retribucions', catPermisos:'Permisos',
+      catConveni:'Conveni', catPactes:'Pactes', catConvocatories:'Convocatòries', catConciliacio:'Conciliació', catOrganitzacio:'Organització', catSalaris:'Retribucions', catPermisos:'Permisos', catFormacio:'Formació', trainingValid:'Vigent', trainingCodes:'Codis de descompte', trainingHow:'Com inscriure’s',
       mailSubject:'Consulta / suggeriment CCOO CSAPG', copied:'Missatge copiat al porta-retalls.', copyFail:'No s’ha pogut copiar. Selecciona el text manualment.',
       cookiesPolicy:'Política de cookies', privacyPolicy:'Protecció de dades', notificationsLink:'Notificacions',
       legalUpdated:'Darrera actualització: 30/09/2026', cookiesTitle:'Política de cookies i emmagatzematge local', cookiesIntro:'Aquesta web no utilitza cookies pròpies amb finalitats publicitàries, analítiques o de seguiment.', cookiesOwnTitle:'Què guarda aquesta web?', cookiesOwnText:'Fem servir emmagatzematge local del navegador per recordar l’idioma, els documents desats, preferències bàsiques i l’estat tècnic de l’aplicació. Aquest emmagatzematge no s’utilitza per perfilar persones ni per publicitat.', cookiesThirdTitle:'Serveis de tercers', cookiesThirdText:'La web està allotjada a GitHub Pages. GitHub pot tractar dades tècniques de connexió, inclosa l’adreça IP, per motius de seguretat. Quan obres una previsualització de Google Drive o un enllaç extern, aquests serveis poden aplicar les seves pròpies cookies o tecnologies d’emmagatzematge segons les seves polítiques.', cookiesConsentTitle:'Consentiment', cookiesConsentText:'Com que no instal·lem cookies pròpies de publicitat, analítica o seguiment, no mostrem un banner de consentiment propi. Si en el futur s’incorpora analítica o qualsevol tecnologia no necessària, aquesta política i el sistema de consentiment s’actualitzaran abans d’activar-la.',
@@ -244,7 +244,7 @@
       installIos1:'Abre esta web en Safari.', installIos2:'Pulsa el botón Compartir.', installIos3:'Elige “Añadir a pantalla de inicio”.',
       installOther:'Si el navegador es compatible, utiliza el botón “Instalar” para abrirla como una app independiente.',
       footerNote:'Información sindical práctica, clara y trazable.', meeting:'Reunión', communication:'Comunicación', updated:'Actualizado',
-      catConveni:'Convenio', catPactes:'Pactos', catConvocatories:'Convocatorias', catConciliacio:'Conciliación', catOrganitzacio:'Organización', catSalaris:'Retribuciones', catPermisos:'Permisos',
+      catConveni:'Convenio', catPactes:'Pactos', catConvocatories:'Convocatorias', catConciliacio:'Conciliación', catOrganitzacio:'Organización', catSalaris:'Retribuciones', catPermisos:'Permisos', catFormacio:'Formación', trainingValid:'Vigente', trainingCodes:'Códigos de descuento', trainingHow:'Cómo inscribirse',
       mailSubject:'Consulta / sugerencia CCOO CSAPG', copied:'Mensaje copiado al portapapeles.', copyFail:'No se ha podido copiar. Selecciona el texto manualmente.',
       cookiesPolicy:'Política de cookies', privacyPolicy:'Protección de datos', notificationsLink:'Notificaciones',
       legalUpdated:'Última actualización: 30/09/2026', cookiesTitle:'Política de cookies y almacenamiento local', cookiesIntro:'Esta web no utiliza cookies propias con fines publicitarios, analíticos o de seguimiento.', cookiesOwnTitle:'¿Qué guarda esta web?', cookiesOwnText:'Utilizamos almacenamiento local del navegador para recordar el idioma, los documentos guardados, preferencias básicas y el estado técnico de la aplicación. Este almacenamiento no se utiliza para perfilar personas ni para publicidad.', cookiesThirdTitle:'Servicios de terceros', cookiesThirdText:'La web está alojada en GitHub Pages. GitHub puede tratar datos técnicos de conexión, incluida la dirección IP, por motivos de seguridad. Cuando abres una previsualización de Google Drive o un enlace externo, esos servicios pueden aplicar sus propias cookies o tecnologías de almacenamiento según sus políticas.', cookiesConsentTitle:'Consentimiento', cookiesConsentText:'Como no instalamos cookies propias de publicidad, analítica o seguimiento, no mostramos un banner de consentimiento propio. Si en el futuro se incorpora analítica o cualquier tecnología no necesaria, esta política y el sistema de consentimiento se actualizarán antes de activarla.',
@@ -260,7 +260,11 @@
       if(!response.ok) return;
       const data=await response.json();
       if(Array.isArray(data.documents)) DOCS=data.documents;
-      if(Array.isArray(data.meetings) && data.meetings.length) MEETINGS=data.meetings;
+      if(Array.isArray(data.meetings) && data.meetings.length){
+        const byId=new Map(MEETINGS.map(item=>[item.id,item]));
+        data.meetings.forEach(item=>byId.set(item.id,item));
+        MEETINGS=[...byId.values()];
+      }
     }catch(e){
       DOCS=[];
     }
@@ -543,7 +547,7 @@
     dpo:['dpo','objectius','objetivos','conciliacio','conciliacion'],
     organizacion:['organitzacio','organizacion','canvi torn','cambio turno','servei','servicio'],
     saludLaboral:['prevencio','prevencion','salut laboral','salud laboral'],
-    formacion:['formacio','formacion','curs','curso','master','postgrau','postgrado']
+    formacion:['formacio','formacion','curs','curso','master','postgrau','postgrado','cfc','ucav','bac formacio','afiliacio','afiliados']
   };
 
   function normalizeSearch(value){
@@ -719,7 +723,7 @@
   }
 
   function categoryLabel(cat){
-    const map={conveni:'catConveni',pactes:'catPactes',convocatories:'catConvocatories',conciliacio:'catConciliacio',organitzacio:'catOrganitzacio',salaris:'catSalaris',permisos:'catPermisos'};
+    const map={conveni:'catConveni',pactes:'catPactes',convocatories:'catConvocatories',conciliacio:'catConciliacio',organitzacio:'catOrganitzacio',salaris:'catSalaris',permisos:'catPermisos',formacio:'catFormacio'};
     return tr(map[cat]||cat);
   }
 
@@ -819,7 +823,7 @@
   }
 
   function meetingsView(){
-    const cats=['all','conveni','convocatories','conciliacio','organitzacio'];
+    const cats=['all','conveni','convocatories','conciliacio','organitzacio','formacio'];
     return '<div class="view">'+pageHeading(tr('meetingsTitle'),tr('meetingsSub'))+
       '<div class="toolbar"><div style="flex:1 1 320px"><div class="search-box"><input id="meetingSearch" type="search" placeholder="'+esc(tr('searchPlaceholder'))+'" value="'+esc(state.search)+'"><span class="search-icon">⌕</span></div><div class="search-hint">✦ '+esc(tr('smartSearchHint'))+'</div></div></div>'+
       '<div class="filter-row">'+cats.map(meetingChip).join('')+'</div>'+
@@ -840,12 +844,36 @@
     return items.map(meetingCard).join('');
   }
 
+  function meetingExtraHtml(item){
+    let html='';
+    if(Array.isArray(item.offers) && item.offers.length){
+      html+='<div class="training-offers">'+item.offers.map(offer=>
+        '<div class="training-offer"><span>'+esc(tx(offer.label))+'</span><strong>'+esc(offer.value||'')+'</strong></div>'
+      ).join('')+'</div>';
+    }
+    if(Array.isArray(item.codes) && item.codes.length){
+      html+='<div class="training-codes"><h4>'+esc(tr('trainingCodes'))+'</h4>'+item.codes.map(row=>
+        '<div class="training-code-row"><span>'+esc(tx(row.label))+'</span><code>'+esc(row.code||'')+'</code></div>'
+      ).join('')+'</div>';
+    }
+    if(Array.isArray(item.actions) && item.actions.length){
+      html+='<div class="card-actions">'+item.actions.map(action=>
+        '<a class="btn '+(action.style==='primary'?'btn-primary':'btn-outline')+' btn-small" href="'+esc(action.url||'#')+'" target="'+((action.url||'').startsWith('mailto:')?'_self':'_blank')+'" rel="noopener">'+esc(tx(action.label))+'</a>'
+      ).join('')+'</div>';
+    }
+    if(item.contact){
+      html+='<div class="source-box"><strong>'+esc(tr('email'))+':</strong> <a href="mailto:'+esc(item.contact)+'">'+esc(item.contact)+'</a></div>';
+    }
+    return html;
+  }
+
   function meetingCard(item){
     return '<details class="meeting-card"><summary><div class="meeting-top">'+
       '<div class="date-box"><strong>'+day(item.date)+'</strong><span>'+esc(monthShort(item.date))+'</span></div>'+
       '<div class="meeting-title"><div class="meta">'+sourceBadge(item.source)+'<span class="badge badge-neutral">'+esc(categoryLabel(item.category))+'</span></div><h3>'+esc(tx(item.title))+'</h3><p>'+esc(tx(item.intro))+'</p></div>'+
       '<span class="chev">›</span></div></summary>'+
       '<div class="meeting-body"><ul>'+item.bullets[state.lang].map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>'+
+      meetingExtraHtml(item)+
       '<div class="source-box"><strong>'+esc(tr('sourceLabel'))+':</strong> '+esc(tx(item.sourceNote))+'</div></div></details>';
   }
 
