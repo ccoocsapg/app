@@ -287,6 +287,174 @@
   const drivePreview = id => 'https://drive.google.com/file/d/'+id+'/preview';
   const driveDownload = id => 'https://drive.google.com/uc?export=download&id='+encodeURIComponent(id);
 
+  async function loadPushConfig(){
+    try{
+      const response=await fetch(CONFIG.pushConfigUrl+'?_='+Date.now(),{cache:'no-store'});
+      if(!response.ok) return;
+      const data=await response.json();
+      state.pushConfig={
+        enabled:!!data.enabled,
+        apiBase:String(data.apiBase||'').replace(/\/$/,''),
+        vapidPublicKey:String(data.vapidPublicKey||'')
+      };
+    }catch(e){}
+  }
+
+  function isStandalone(){
+    return window.matchMedia?.('(display-mode: standalone)')?.matches || window.navigator.standalone===true;
+  }
+
+  function isIOS(){
+    return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1);
+  }
+
+  function supportsWebPush(){
+    return 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
+  }
+
+  function urlBase64ToUint8Array(base64String){
+    const padding='='.repeat((4-base64String.length%4)%4);
+    const base64=(base64String+padding).replace(/-/g,'+').replace(/_/g,'/');
+    const raw=atob(base64);
+    return Uint8Array.from([...raw].map(ch=>ch.charCodeAt(0)));
+  }
+
+  async function currentPushSubscription(){
+    if(!supportsWebPush()) return null;
+    try{
+      const registration=await navigator.serviceWorker.ready;
+      return await registration.pushManager.getSubscription();
+    }catch(e){
+      return null;
+    }
+  }
+
+  async function sendSubscriptionToServer(subscription){
+    const cfg=state.pushConfig;
+    if(!cfg.enabled || !cfg.apiBase) throw new Error('push backend unavailable');
+    const response=await fetch(cfg.apiBase+'/v1/subscribe',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({subscription:subscription.toJSON(),source:'ccoo-csapg-web'})
+    });
+    if(!response.ok) throw new Error('push subscribe failed');
+  }
+
+  async function requestPushNotifications(){
+    const cfg=state.pushConfig;
+    if(!cfg.enabled || !cfg.apiBase || !cfg.vapidPublicKey){
+      await openNotificationDialog('pending');
+      return;
+    }
+    if(isIOS() && !isStandalone()){
+      await openNotificationDialog('ios-install');
+      return;
+    }
+    if(!supportsWebPush()){
+      await openNotificationDialog('unsupported');
+      return;
+    }
+    if(Notification.permission==='denied'){
+      await openNotificationDialog('denied');
+      return;
+    }
+
+    let permission=Notification.permission;
+    if(permission==='default') permission=await Notification.requestPermission();
+    if(permission!=='granted'){
+      await openNotificationDialog(permission==='denied'?'denied':'default');
+      return;
+    }
+
+    try{
+      const registration=await navigator.serviceWorker.ready;
+      let subscription=await registration.pushManager.getSubscription();
+      if(!subscription){
+        subscription=await registration.pushManager.subscribe({
+          userVisibleOnly:true,
+          applicationServerKey:urlBase64ToUint8Array(cfg.vapidPublicKey)
+        });
+      }
+      await sendSubscriptionToServer(subscription);
+      localStorage.setItem('ccoo-csapg-push-enabled','1');
+      localStorage.removeItem('ccoo-csapg-push-dismissed');
+      await openNotificationDialog('enabled');
+    }catch(e){
+      await openNotificationDialog('pending');
+    }
+  }
+
+  async function disablePushNotifications(){
+    try{
+      const subscription=await currentPushSubscription();
+      if(subscription){
+        const cfg=state.pushConfig;
+        if(cfg.enabled && cfg.apiBase){
+          fetch(cfg.apiBase+'/v1/unsubscribe',{
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({endpoint:subscription.endpoint})
+          }).catch(()=>{});
+        }
+        await subscription.unsubscribe();
+      }
+    }catch(e){}
+    localStorage.removeItem('ccoo-csapg-push-enabled');
+    await openNotificationDialog('default');
+  }
+
+  async function pushStatus(){
+    if(!state.pushConfig.enabled) return 'pending';
+    if(isIOS() && !isStandalone()) return 'ios-install';
+    if(!supportsWebPush()) return 'unsupported';
+    if(Notification.permission==='denied') return 'denied';
+    const sub=await currentPushSubscription();
+    if(sub) return 'enabled';
+    return 'default';
+  }
+
+  function notificationStatusHtml(status){
+    const note='<p class="privacy-copy">'+esc(tr('notificationsPrivacy'))+'</p>';
+    if(status==='enabled'){
+      return '<div class="info-banner"><span>✓</span><div><strong>'+esc(tr('notificationsEnabled'))+'</strong><p>'+esc(tr('notificationsPrivacy'))+'</p></div></div>'+
+        '<div class="form-actions"><button class="btn btn-outline" type="button" id="disableNotifications">'+esc(tr('notificationsDeactivate'))+'</button></div>';
+    }
+    if(status==='ios-install'){
+      return '<div class="info-banner warn-banner"><span>!</span><div><strong>'+esc(tr('notificationsTitle'))+'</strong><p>'+esc(tr('notificationsIosInstall'))+'</p></div></div>'+note;
+    }
+    if(status==='unsupported'){
+      return '<div class="info-banner warn-banner"><span>!</span><div><strong>'+esc(tr('notificationsUnsupported'))+'</strong><p>'+esc(tr('notificationsWebNote'))+'</p></div></div>'+note;
+    }
+    if(status==='denied'){
+      return '<div class="info-banner warn-banner"><span>!</span><div><strong>'+esc(tr('notificationsDenied'))+'</strong><p>'+esc(tr('notificationsPrivacy'))+'</p></div></div>';
+    }
+    if(status==='pending'){
+      return '<div class="info-banner warn-banner"><span>!</span><div><strong>'+esc(tr('notificationsTitle'))+'</strong><p>'+esc(tr('notificationsPending'))+'</p></div></div>'+note;
+    }
+    return '<p>'+esc(tr('notificationsIntro'))+'</p><p class="privacy-copy">'+esc(tr('notificationsWebNote'))+'</p>'+
+      '<div class="form-actions"><button class="btn btn-primary" type="button" id="enableNotifications">'+esc(tr('notificationsActivate'))+'</button></div>'+note;
+  }
+
+  async function openNotificationDialog(forcedStatus){
+    const dialog=$('#notificationDialog');
+    const box=$('#notificationContent');
+    if(!dialog||!box) return;
+    const status=forcedStatus||await pushStatus();
+    box.innerHTML=notificationStatusHtml(status);
+    if(!dialog.open) dialog.showModal();
+    $('#enableNotifications')?.addEventListener('click',requestPushNotifications);
+    $('#disableNotifications')?.addEventListener('click',disablePushNotifications);
+  }
+
+  function notificationNudgeHtml(){
+    if(!state.pushConfig.enabled) return '';
+    if(localStorage.getItem('ccoo-csapg-push-dismissed')==='1') return '';
+    if(!supportsWebPush() && !isIOS()) return '';
+    if('Notification' in window && Notification.permission==='denied') return '';
+    return '<section class="section notification-nudge"><div><span class="eyebrow">'+esc(tr('notificationsEyebrow'))+'</span><h2>'+esc(tr('notificationsPromptTitle'))+'</h2><p>'+esc(tr('notificationsPromptText'))+'</p></div>'+
+      '<div class="notification-nudge__actions"><button class="btn btn-primary" type="button" data-notification-manage>'+esc(tr('notificationsManage'))+'</button><button class="btn btn-outline" type="button" data-notification-dismiss>'+esc(tr('notificationsDismiss'))+'</button></div></section>';
+  }
+
   const DOCUMENT_INDEX_FILES = [
     './search/conveni.json',
     './search/procediment-6455.json'
