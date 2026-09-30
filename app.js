@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.1.0',
+    version: '0.2.0',
     contactEmail: 'fsanitat1@ccoo.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/'
@@ -189,7 +189,7 @@
       sourceFirst:'Primer, la font.', sourceFirstText:'Els resums mai substitueixen el document oficial.',
       homeEyebrow:'CCOO SANITAT · CSAPG', homeTitle:'La informació laboral que necessites, sense haver de buscar-la per tot arreu.',
       homeLead:'Documents oficials, resums de reunions, eines pràctiques i contacte sindical en un espai pensat per consultar-se des del mòbil.',
-      install:'Instal·lar com a app', browseDocs:'Consultar documents', searchPlaceholder:'Què necessites trobar? Ex. permisos, DPO, convocatòries…',
+      install:'Instal·lar com a app', browseDocs:'Consultar documents', searchPlaceholder:'Què necessites trobar? Ex. permisos, DPO, convocatòries…', smartSearchHint:'Cerca intel·ligent: també relaciona sinònims, conceptes i temes similars.', relatedResult:'Resultat relacionat',
       quickDocs:'Documents oficials', quickDocsSub:'Conveni, pactes i procediments', quickMeetings:'Reunions i comunicats', quickMeetingsSub:'Resums clars per temes',
       quickTools:'Eines', quickToolsSub:'Calculadores i guies pràctiques', quickContact:'Contacta amb CCOO', quickContactSub:'Consulta o envia un suggeriment',
       latest:'Últimes informacions', latestSub:'Resums identificats com a tals i separats de la documentació oficial.', viewAll:'Veure-ho tot',
@@ -218,7 +218,7 @@
       sourceFirst:'Primero, la fuente.', sourceFirstText:'Los resúmenes nunca sustituyen al documento oficial.',
       homeEyebrow:'CCOO SANITAT · CSAPG', homeTitle:'La información laboral que necesitas, sin tener que buscarla por todas partes.',
       homeLead:'Documentos oficiales, resúmenes de reuniones, herramientas prácticas y contacto sindical en un espacio pensado para consultarse desde el móvil.',
-      install:'Instalar como app', browseDocs:'Consultar documentos', searchPlaceholder:'¿Qué necesitas encontrar? Ej. permisos, DPO, convocatorias…',
+      install:'Instalar como app', browseDocs:'Consultar documentos', searchPlaceholder:'¿Qué necesitas encontrar? Ej. permisos, DPO, convocatorias…', smartSearchHint:'Búsqueda inteligente: también relaciona sinónimos, conceptos y temas similares.', relatedResult:'Resultado relacionado',
       quickDocs:'Documentos oficiales', quickDocsSub:'Convenio, pactos y procedimientos', quickMeetings:'Reuniones y comunicados', quickMeetingsSub:'Resúmenes claros por temas',
       quickTools:'Herramientas', quickToolsSub:'Calculadoras y guías prácticas', quickContact:'Contacta con CCOO', quickContactSub:'Consulta o envía una sugerencia',
       latest:'Últimas informaciones', latestSub:'Resúmenes identificados como tales y separados de la documentación oficial.', viewAll:'Ver todo',
@@ -263,6 +263,175 @@
   const driveView = id => 'https://drive.google.com/file/d/'+id+'/view';
   const drivePreview = id => 'https://drive.google.com/file/d/'+id+'/preview';
   const driveDownload = id => 'https://drive.google.com/uc?export=download&id='+encodeURIComponent(id);
+
+
+  // Índice semántico local. No envía la consulta a ningún servicio externo.
+  // Combina coincidencia literal, sinónimos ES/CAT, conceptos laborales y tolerancia a pequeñas variaciones.
+  const SEARCH_CONCEPTS = {
+    permisos: [
+      'permiso','permisos','permis','permis retribuit','permiso retribuido','llicencia','licencia',
+      'ingreso','ingresado','ingressat','hospital','hospitalizacion','hospitalitzacio','familiar','familia',
+      'defuncion','fallecimiento','mort','mudanza','traslado domicilio','trasllat domicili',
+      'fuerza mayor','forca major','deber inexcusable','deure inexcusable','visita medica','visita metge'
+    ],
+    conciliacion: [
+      'conciliacion','conciliacio','reduccion jornada','reduccio jornada','cuidado','cura','hijo','hija','fills','fill','filla',
+      'maternidad','maternitat','paternidad','paternitat','guarda legal','dependiente','dependent','dpo'
+    ],
+    convocatorias: [
+      'convocatoria','convocatorias','convocatories','promocion interna','promocio interna','baremo','barem',
+      'puntuacion','puntuacio','experiencia','experiencia profesional','antiguedad','antiguitat',
+      'cambio turno','canvi torn','cambio servicio','canvi servei','cambio categoria','canvi categoria',
+      'incremento jornada','increment jornada','lista provisional','llista provisional','alegaciones','allegacions','vacante','vacant'
+    ],
+    salario: [
+      'salario','sou','sueldo','nomina','nomina','retribucion','retribucio','retribuciones','retribucions',
+      'tablas salariales','taules salarials','atrasos','endarreriments','ipc','incremento salarial','increment retributiu','paga'
+    ],
+    convenio: [
+      'convenio','conveni','siscat','articulo','article','derechos','drets','condiciones laborales','condicions laborals',
+      'jornada anual','hores anuals'
+    ],
+    pactos: [
+      'pacto','pacte','acuerdo','acord','homogeneizacion','homogeneitzacio','csapg','condiciones csapg','condicions csapg'
+    ],
+    carrera: [
+      'carrera profesional','carrera professional','sipdp','nivel a','nivel b','nivel c','nivel d',
+      'nivell a','nivell b','nivell c','nivell d','meritos','merits','acreditacion','acreditacio','consolidar nivel','consolidar nivell'
+    ],
+    vacaciones: [
+      'vacaciones','vacances','compensatorio','compensatoris','festivo','festius','calendario','calendari',
+      'dias libres','dies lliures','libre disposicion','lliure disposicio'
+    ],
+    jornada: [
+      'jornada','horario','horari','turno','torn','guardia','guardia','nocturnidad','nocturnitat',
+      'tiempo parcial','temps parcial','100%','reduccion jornada','reduccio jornada'
+    ],
+    dpo: [
+      'dpo','objetivos','objectius','productividad','productivitat','incentivos','incentius','consecucion','assoliment'
+    ],
+    organizacion: [
+      'cambio centro','canvi centre','movilidad','mobilitat','servicio','servei','centro trabajo','centre treball',
+      'plantilla base','plantilla complementaria','plantilla complementaria','pb','pc'
+    ],
+    saludLaboral: [
+      'salud laboral','salut laboral','prevencion','prevencio','riesgos laborales','riscos laborals','aptitud','adaptacion puesto','adaptacio lloc'
+    ],
+    formacion: [
+      'formacion','formacio','curso','curs','master','master','postgrado','postgrau','doctorado','doctorat','actic','idiomas','idiomes','ects','cfc'
+    ]
+  };
+
+  const CONCEPT_TARGETS = {
+    permisos:['permisos','conveni','derechos','drets','licencia','llicencia'],
+    conciliacion:['conciliacio','conciliacion','dpo','reduccio jornada','reduccion jornada'],
+    convocatorias:['convocatories','convocatorias','promocio interna','promocion interna','barem','baremo','6455'],
+    salario:['salari','salario','retribucions','retribuciones','nomina','taules salarials','tablas salariales','siscat'],
+    convenio:['conveni','convenio','siscat'],
+    pactos:['pacte','pacto','homogeneitzacio','homogeneizacion','csapg'],
+    carrera:['carrera professional','carrera profesional','sipdp'],
+    vacaciones:['vacances','vacaciones','compensatoris','festivos','festius'],
+    jornada:['jornada','torn','turno','horari','horario'],
+    dpo:['dpo','objectius','objetivos','conciliacio','conciliacion'],
+    organizacion:['organitzacio','organizacion','canvi torn','cambio turno','servei','servicio'],
+    saludLaboral:['prevencio','prevencion','salut laboral','salud laboral'],
+    formacion:['formacio','formacion','curs','curso','master','postgrau','postgrado']
+  };
+
+  function normalizeSearch(value){
+    return String(value || '')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g,'')
+      .replace(/[^a-z0-9%]+/g,' ')
+      .replace(/\s+/g,' ')
+      .trim();
+  }
+
+  function searchTokens(value){
+    return normalizeSearch(value).split(' ').filter(x=>x.length>1);
+  }
+
+  function tokenNear(a,b){
+    if(a===b) return true;
+    if(a.length>=4 && b.length>=4 && (a.startsWith(b) || b.startsWith(a))) return true;
+    if(Math.min(a.length,b.length)<5 || Math.abs(a.length-b.length)>2) return false;
+    let prev=Array.from({length:b.length+1},(_,i)=>i);
+    for(let i=1;i<=a.length;i++){
+      const cur=[i];
+      let rowMin=i;
+      for(let j=1;j<=b.length;j++){
+        cur[j]=Math.min(cur[j-1]+1,prev[j]+1,prev[j-1]+(a[i-1]===b[j-1]?0:1));
+        rowMin=Math.min(rowMin,cur[j]);
+      }
+      if(rowMin>2) return false;
+      prev=cur;
+    }
+    return prev[b.length] <= (Math.max(a.length,b.length)>=8?2:1);
+  }
+
+  function conceptsForQuery(query){
+    const q=normalizeSearch(query), qt=searchTokens(query), found=[];
+    Object.entries(SEARCH_CONCEPTS).forEach(([concept,aliases])=>{
+      const hit=aliases.some(alias=>{
+        const n=normalizeSearch(alias);
+        if(n && q.includes(n)) return true;
+        const at=searchTokens(n);
+        return qt.some(t=>at.some(a=>tokenNear(t,a)));
+      });
+      if(hit) found.push(concept);
+    });
+    return found;
+  }
+
+  function itemSearchText(item){
+    const parts=[];
+    if(item.title){parts.push(item.title.ca,item.title.es);}
+    if(item.desc){parts.push(item.desc.ca,item.desc.es);}
+    if(item.intro){parts.push(item.intro.ca,item.intro.es);}
+    if(item.sourceNote){parts.push(item.sourceNote.ca,item.sourceNote.es);}
+    if(item.bullets){parts.push(...(item.bullets.ca||[]),...(item.bullets.es||[]));}
+    if(item.tags) parts.push(...item.tags);
+    if(item.category) parts.push(item.category,categoryLabel(item.category));
+    return normalizeSearch(parts.filter(Boolean).join(' '));
+  }
+
+  function smartSearchScore(item,query){
+    const q=normalizeSearch(query);
+    if(!q) return 1;
+    const text=itemSearchText(item), qt=searchTokens(q), tt=searchTokens(text);
+    let score=0;
+    if(text.includes(q)) score+=120;
+    qt.forEach(token=>{
+      if(tt.includes(token)) score+=20;
+      else if(tt.some(t=>tokenNear(token,t))) score+=7;
+    });
+
+    const concepts=conceptsForQuery(q);
+    concepts.forEach(concept=>{
+      const targets=(CONCEPT_TARGETS[concept]||[]).map(normalizeSearch);
+      if(targets.some(t=>t && text.includes(t))) score+=34;
+      const aliases=(SEARCH_CONCEPTS[concept]||[]).map(normalizeSearch);
+      if(aliases.some(t=>t && text.includes(t))) score+=18;
+    });
+
+    // Bonus por coincidencia de varios conceptos, para que un texto muy relacionado suba posiciones.
+    if(concepts.length>1) score += concepts.filter(concept=>
+      (CONCEPT_TARGETS[concept]||[]).some(t=>text.includes(normalizeSearch(t)))
+    ).length*8;
+
+    return score;
+  }
+
+  function smartRank(items,query){
+    const q=normalizeSearch(query);
+    if(!q) return items.slice();
+    return items
+      .map(item=>({item,score:smartSearchScore(item,q)}))
+      .filter(x=>x.score>0)
+      .sort((a,b)=>b.score-a.score || String(b.item.date||'').localeCompare(String(a.item.date||'')))
+      .map(x=>x.item);
+  }
 
   function savedIds(){
     try{return JSON.parse(localStorage.getItem('ccoo-csapg-favorites') || '[]');}catch(e){return [];}
@@ -314,7 +483,7 @@
         '<div class="hero-side"><div class="trust-chip"><strong>'+esc(tr('responsibleTitle'))+'</strong><span>'+esc(tr('responsibleText'))+'</span></div>'+
         '<div class="trust-chip"><strong>CCOO Sanitat · CSAPG</strong><span>'+esc(tr('sourceFirstText'))+'</span></div></div>'+
       '</section>'+
-      '<section class="section"><div class="search-box"><input id="globalSearch" type="search" autocomplete="off" placeholder="'+esc(tr('searchPlaceholder'))+'"><span class="search-icon">⌕</span></div><div id="homeSearchResults"></div></section>'+
+      '<section class="section"><div class="search-box"><input id="globalSearch" type="search" autocomplete="off" placeholder="'+esc(tr('searchPlaceholder'))+'"><span class="search-icon">⌕</span></div><div class="search-hint">✦ '+esc(tr('smartSearchHint'))+'</div><div id="homeSearchResults"></div></section>'+
       '<section class="section"><div class="quick-grid">'+
         quickCard('#/documents','▤','quickDocs','quickDocsSub')+
         quickCard('#/reunions','◫','quickMeetings','quickMeetingsSub')+
@@ -340,7 +509,7 @@
     return '<div class="view">'+
       pageHeading(tr('docsTitle'),tr('docsSub'))+
       '<div class="info-banner warn-banner"><span>!</span><div><strong>Google Drive</strong><p>'+esc(tr('publicDriveNote'))+'</p></div></div>'+
-      '<div class="toolbar section"><div class="search-box"><input id="docSearch" type="search" placeholder="'+esc(tr('searchPlaceholder'))+'" value="'+esc(state.search)+'"><span class="search-icon">⌕</span></div><span class="toolbar-note">'+DOCS.length+' '+esc(tr('navDocs').toLowerCase())+'</span></div>'+
+      '<div class="toolbar section"><div style="flex:1 1 320px"><div class="search-box"><input id="docSearch" type="search" placeholder="'+esc(tr('searchPlaceholder'))+'" value="'+esc(state.search)+'"><span class="search-icon">⌕</span></div><div class="search-hint">✦ '+esc(tr('smartSearchHint'))+'</div></div><span class="toolbar-note">'+DOCS.length+' '+esc(tr('navDocs').toLowerCase())+'</span></div>'+
       '<div class="filter-row">'+cats.map(docChip).join('')+'<button class="filter-chip'+(state.docFilter==='favorites'?' is-active':'')+'" data-doc-filter="favorites">★ '+esc(tr('favorites'))+'</button></div>'+
       '<div id="docList" class="doc-list">'+renderDocs()+'</div>'+
     '</div>';
@@ -356,7 +525,7 @@
     const q=(state.search||'').trim().toLowerCase();
     if(state.docFilter==='favorites') items=items.filter(x=>isSaved(x.id));
     else if(state.docFilter!=='all') items=items.filter(x=>x.category===state.docFilter);
-    if(q) items=items.filter(x=>(tx(x.title)+' '+tx(x.desc)+' '+x.tags.join(' ')).toLowerCase().includes(q));
+    if(q) items=smartRank(items,q);
     if(!items.length) return '<div class="empty-state">'+esc(tr('noResults'))+'</div>';
     return items.map(docCard).join('');
   }
@@ -377,7 +546,7 @@
   function meetingsView(){
     const cats=['all','conveni','convocatories','conciliacio','organitzacio'];
     return '<div class="view">'+pageHeading(tr('meetingsTitle'),tr('meetingsSub'))+
-      '<div class="toolbar"><div class="search-box"><input id="meetingSearch" type="search" placeholder="'+esc(tr('searchPlaceholder'))+'" value="'+esc(state.search)+'"><span class="search-icon">⌕</span></div></div>'+
+      '<div class="toolbar"><div style="flex:1 1 320px"><div class="search-box"><input id="meetingSearch" type="search" placeholder="'+esc(tr('searchPlaceholder'))+'" value="'+esc(state.search)+'"><span class="search-icon">⌕</span></div><div class="search-hint">✦ '+esc(tr('smartSearchHint'))+'</div></div></div>'+
       '<div class="filter-row">'+cats.map(meetingChip).join('')+'</div>'+
       '<div id="meetingList" class="meeting-list">'+renderMeetings()+'</div></div>';
   }
@@ -391,7 +560,7 @@
     let items=MEETINGS.slice().sort((a,b)=>b.date.localeCompare(a.date));
     const q=(state.search||'').trim().toLowerCase();
     if(state.meetingFilter!=='all') items=items.filter(x=>x.category===state.meetingFilter);
-    if(q) items=items.filter(x=>(tx(x.title)+' '+tx(x.intro)+' '+tx(x.sourceNote)+' '+x.tags.join(' ')).toLowerCase().includes(q));
+    if(q) items=smartRank(items,q);
     if(!items.length) return '<div class="empty-state">'+esc(tr('noResults'))+'</div>';
     return items.map(meetingCard).join('');
   }
@@ -447,8 +616,8 @@
     const box=$('#homeSearchResults'); if(!box) return;
     const q=(query||'').trim().toLowerCase();
     if(!q){box.innerHTML='';return;}
-    const docs=DOCS.filter(x=>(tx(x.title)+' '+tx(x.desc)+' '+x.tags.join(' ')).toLowerCase().includes(q)).slice(0,3);
-    const meets=MEETINGS.filter(x=>(tx(x.title)+' '+tx(x.intro)+' '+x.tags.join(' ')).toLowerCase().includes(q)).slice(0,3);
+    const docs=smartRank(DOCS,q).slice(0,3);
+    const meets=smartRank(MEETINGS,q).slice(0,3);
     const html=[];
     docs.forEach(x=>html.push('<a class="card" href="#/documents"><div class="meta">'+sourceBadge(x.status)+'</div><h3>'+esc(tx(x.title))+'</h3><p>'+esc(tx(x.desc))+'</p></a>'));
     meets.forEach(x=>html.push('<a class="card" href="#/reunions"><div class="meta">'+sourceBadge(x.source)+'</div><h3>'+esc(tx(x.title))+'</h3><p>'+esc(tx(x.intro))+'</p></a>'));
