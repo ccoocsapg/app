@@ -1011,7 +1011,12 @@
     $$('[data-doc-filter]').forEach(btn=>btn.addEventListener('click',()=>{state.docFilter=btn.dataset.docFilter;render();}));
     $$('[data-meeting-filter]').forEach(btn=>btn.addEventListener('click',()=>{state.meetingFilter=btn.dataset.meetingFilter;render();}));
     bindDocActions();
-    $$('[data-install]').forEach(btn=>btn.addEventListener('click',requestInstall));
+    $('[data-install]').forEach(btn=>btn.addEventListener('click',requestInstall));
+    $('[data-notification-manage]').forEach(btn=>btn.addEventListener('click',()=>openNotificationDialog()));
+    $('[data-notification-dismiss]').forEach(btn=>btn.addEventListener('click',()=>{
+      localStorage.setItem('ccoo-csapg-push-dismissed','1');
+      btn.closest('.notification-nudge')?.remove();
+    }));
     if(current==='documents' && state.search) renderDocumentSearchInto('#docTextResults',state.search,10);
     const form=$('#contactForm'); if(form) form.addEventListener('submit',submitContact);
     const copy=$('#copyContact'); if(copy) copy.addEventListener('click',copyContact);
@@ -1121,15 +1126,22 @@
       render();
     }));
     $('#installButton').addEventListener('click',requestInstall);
+    $('#notificationButton')?.addEventListener('click',()=>openNotificationDialog());
     $$('[data-close-dialog]').forEach(btn=>btn.addEventListener('click',()=>btn.closest('dialog').close()));
     $('#previewDialog').addEventListener('close',()=>{$('#previewFrame').src='about:blank';});
     window.addEventListener('hashchange',()=>{state.search='';render();});
     window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();state.installPrompt=e;});
-    window.addEventListener('appinstalled',()=>{state.installPrompt=null;});
+    window.addEventListener('appinstalled',()=>{
+      state.installPrompt=null;
+      if(state.pushConfig.enabled && (!('Notification' in window) || Notification.permission==='default')){
+        window.setTimeout(()=>openNotificationDialog(),700);
+      }
+    });
     installUpdateWatch();
     await setupServiceWorker();
     const updating=await checkLatestVersion();
     if(updating) return;
+    await loadPushConfig();
     await loadPublishedManifest();
     if(!location.hash) location.hash='#/inicio'; else render();
   }
