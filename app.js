@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.12.1',
+    version: '0.12.2',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/',
@@ -866,7 +866,15 @@
     if(q){
       items=smartRank(items,q);
     }else if(state.meetingFilter!=='all'){
-      items=items.filter(x=>x.category===state.meetingFilter);
+      if(state.meetingFilter==='conveni'){
+        items=items.filter(x=>{
+          const tags=(x.tags||[]).map(t=>normalizeSearch(t));
+          return ['conveni','negociadora','paritaria'].includes(x.category)
+            || tags.some(t=>t.includes('conveni') || t.includes('siscat'));
+        });
+      }else{
+        items=items.filter(x=>x.category===state.meetingFilter);
+      }
     }
 
     if(!items.length) return '<div class="empty-state">'+esc(tr('noResults'))+'</div>';
