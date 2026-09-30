@@ -58,6 +58,7 @@ button{cursor:pointer}
 
 .search-box{position:relative}.search-box input{width:100%;border:1px solid var(--line);background:#fff;border-radius:15px;padding:14px 44px 14px 16px;min-height:52px;box-shadow:0 4px 16px rgba(20,24,32,.03)}
 .search-box input:focus{outline:3px solid rgba(215,25,32,.1);border-color:#e5a3a6}.search-icon{position:absolute;right:15px;top:50%;transform:translateY(-50%);color:#8b9199}
+.search-hint{margin:7px 3px 0;color:#7a818b;font-size:.73rem}.search-hint::first-letter{color:var(--ccoo)}
 
 .quick-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .quick-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;min-height:138px;display:flex;flex-direction:column;justify-content:space-between;transition:.16s}
