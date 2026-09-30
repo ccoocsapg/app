@@ -1,0 +1,123 @@
+{
+  "version": "2026-09-30.1",
+  "sourceRoot": {
+    "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
+    "name": "WEB APP · CCOO CSAPG"
+  },
+  "documents": [
+    {
+      "id": "drive-conveni-siscat-iii",
+      "category": "conveni",
+      "date": "2023-03-17",
+      "status": "official",
+      "driveId": "1xcw_PYY7WV10AzB0Wys7O0cICrRFSmD4",
+      "title": {
+        "ca": "III Conveni col·lectiu SISCAT",
+        "es": "III Convenio colectivo SISCAT"
+      },
+      "desc": {
+        "ca": "Text de referència del conveni col·lectiu de la sanitat concertada.",
+        "es": "Texto de referencia del convenio colectivo de la sanidad concertada."
+      },
+      "tags": [
+        "conveni",
+        "siscat",
+        "jornada",
+        "permisos",
+        "retribucions",
+        "drets laborals"
+      ]
+    },
+    {
+      "id": "drive-pacte-homogeneitzacio-ii",
+      "category": "pactes",
+      "date": "2023-12-15",
+      "status": "official",
+      "driveId": "1yj3dOcfI_l7Ud5SS6u9FRtf_qgrrvVxJ",
+      "title": {
+        "ca": "II Pacte d’homogeneïtzació CSAPG",
+        "es": "II Pacto de homogeneización CSAPG"
+      },
+      "desc": {
+        "ca": "Pacte signat del CSAPG.",
+        "es": "Pacto firmado del CSAPG."
+      },
+      "tags": [
+        "pacte",
+        "homogeneitzacio",
+        "csapg",
+        "condicions laborals"
+      ]
+    },
+    {
+      "id": "drive-procediment-6455",
+      "category": "convocatories",
+      "date": "2025-12-10",
+      "status": "official",
+      "driveId": "1ofSXjjhsXWlsNjLjFIOPQpu4R9_k9Eci",
+      "title": {
+        "ca": "Procediment ID 6455 · Convocatòries internes CSAPG",
+        "es": "Procedimiento ID 6455 · Convocatorias internas CSAPG"
+      },
+      "desc": {
+        "ca": "Procediment vigent utilitzat com a font de la calculadora de puntuació.",
+        "es": "Procedimiento vigente utilizado como fuente de la calculadora de puntuación."
+      },
+      "tags": [
+        "convocatories",
+        "promocio interna",
+        "barem",
+        "6455",
+        "antiguitat",
+        "experiencia"
+      ]
+    },
+    {
+      "id": "drive-pacte-calendaris-2025",
+      "category": "pactes",
+      "date": "2024-10-09",
+      "status": "official",
+      "driveId": "10cYSgBiVk1XnBl_JGgEI84fJihBFvOy8",
+      "title": {
+        "ca": "Pacte de calendaris festius 2025",
+        "es": "Pacto de calendarios festivos 2025"
+      },
+      "desc": {
+        "ca": "Acord de centre sobre calendaris i festius de 2025.",
+        "es": "Acuerdo de centro sobre calendarios y festivos de 2025."
+      },
+      "tags": [
+        "pacte",
+        "calendari",
+        "calendaris",
+        "festius",
+        "2025",
+        "jornada"
+      ]
+    },
+    {
+      "id": "drive-pacte-vacances-2024",
+      "category": "pactes",
+      "date": "2024-10-09",
+      "status": "official",
+      "driveId": "1O2HiIj--lCVJsjjTwlA1VL72Wkly833q",
+      "title": {
+        "ca": "Pacte de vacances i compensatoris",
+        "es": "Pacto de vacaciones y compensatorios"
+      },
+      "desc": {
+        "ca": "Acord de centre sobre vacances i dies compensatoris.",
+        "es": "Acuerdo de centro sobre vacaciones y días compensatorios."
+      },
+      "tags": [
+        "pacte",
+        "vacances",
+        "vacaciones",
+        "compensatoris",
+        "jornada",
+        "calendari"
+      ]
+    }
+  ],
+  "meetings": []
+}
