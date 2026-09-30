@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.13.3',
+    version: '0.14.0',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/',
@@ -844,7 +844,7 @@
 
   function topicButtonsHtml(){
     return '<div class="topic-grid">'+consultationTopics().map(topic=>
-      '<button type="button" class="topic-card" data-topic-query="'+esc(topic.query)+'">'+
+      '<button type="button" class="topic-card" data-topic-query="'+esc(topic.query)+'" data-topic-label="'+esc(tx(topic.label))+'">'+
         '<span class="topic-card__icon">'+esc(topic.icon)+'</span><strong>'+esc(tx(topic.label))+'</strong>'+
       '</button>'
     ).join('')+'</div>';
@@ -1189,38 +1189,68 @@
 
   function bindView(){
     const current=route();
-    const global=$('#globalSearch'); if(global) global.addEventListener('input',e=>renderHomeSearch(e.target.value));
-    const docSearch=$('#docSearch'); if(docSearch) docSearch.addEventListener('input',e=>{
+
+    const global=$('#globalSearch');
+    if(global) global.addEventListener('input',e=>renderHomeSearch(e.target.value));
+
+    const docSearch=$('#docSearch');
+    if(docSearch) docSearch.addEventListener('input',e=>{
       state.search=e.target.value;
       state.docFilter='all';
+      $$('[data-topic-query]').forEach(btn=>btn.classList.remove('is-active'));
       renderConsultaResults();
     });
+
     $$('[data-topic-query]').forEach(btn=>btn.addEventListener('click',()=>{
       state.search=btn.dataset.topicQuery||'';
       state.docFilter='all';
-      if(docSearch) docSearch.value=state.search;
+      $$('[data-topic-query]').forEach(x=>x.classList.toggle('is-active',x===btn));
+
+      if(docSearch) docSearch.value=btn.dataset.topicLabel||'';
+
+      if(document.activeElement && typeof document.activeElement.blur==='function'){
+        document.activeElement.blur();
+      }
+
       renderConsultaResults();
-      $('.consulta-search')?.scrollIntoView({behavior:'smooth',block:'start'});
-      docSearch?.focus();
+
+      const target=$('#consultaResults');
+      if(target){
+        window.setTimeout(()=>{
+          try{target.scrollIntoView({behavior:'smooth',block:'start'});}
+          catch(e){window.scrollTo(0,target.offsetTop||0);}
+        },40);
+      }
     }));
-    const meetingSearch=$('#meetingSearch'); if(meetingSearch) meetingSearch.addEventListener('input',e=>{
+
+    const meetingSearch=$('#meetingSearch');
+    if(meetingSearch) meetingSearch.addEventListener('input',e=>{
       state.search=e.target.value;
       if(state.search.trim()){
         state.meetingFilter='all';
         $$('[data-meeting-filter]').forEach(btn=>btn.classList.toggle('is-active',btn.dataset.meetingFilter==='all'));
       }
-      $('#meetingList').innerHTML=renderMeetings();
+      const list=$('#meetingList');
+      if(list) list.innerHTML=renderMeetings();
     });
-    $$('[data-doc-filter]').forEach(btn=>btn.addEventListener('click',()=>{state.docFilter=btn.dataset.docFilter;render();}));
-    $$$('[data-meeting-filter]').forEach(btn=>btn.addEventListener('click',()=>{state.meetingFilter=btn.dataset.meetingFilter;render();}));
+
+    $$('[data-meeting-filter]').forEach(btn=>btn.addEventListener('click',()=>{
+      state.search='';
+      state.meetingFilter=btn.dataset.meetingFilter;
+      render();
+    }));
+
     bindDocActions();
+
     $$('[data-install]').forEach(btn=>btn.addEventListener('click',requestInstall));
     $$('[data-notification-manage]').forEach(btn=>btn.addEventListener('click',()=>openNotificationDialog()));
     $$('[data-notification-dismiss]').forEach(btn=>btn.addEventListener('click',()=>{
       localStorage.setItem('ccoo-csapg-push-dismissed','1');
       btn.closest('.notification-nudge')?.remove();
     }));
+
     if(current==='documents' && state.search) renderConsultaResults();
+
     const form=$('#contactForm'); if(form) form.addEventListener('submit',submitContact);
     const copy=$('#copyContact'); if(copy) copy.addEventListener('click',copyContact);
   }
@@ -1333,6 +1363,12 @@
     $$('[data-close-dialog]').forEach(btn=>btn.addEventListener('click',()=>btn.closest('dialog').close()));
     $('#previewDialog').addEventListener('close',()=>{$('#previewFrame').src='about:blank';});
     window.addEventListener('hashchange',()=>{state.search='';render();});
+    document.addEventListener('focusin',e=>{
+      if(e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) document.body.classList.add('is-typing');
+    });
+    document.addEventListener('focusout',()=>{
+      window.setTimeout(()=>document.body.classList.remove('is-typing'),120);
+    });
     window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();state.installPrompt=e;});
     window.addEventListener('appinstalled',()=>{
       state.installPrompt=null;
