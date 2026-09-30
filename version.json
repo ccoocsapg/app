@@ -1,5 +1,5 @@
 {
-  "version": "0.15.0",
-  "build": "2026-09-30T23:33:00+02:00",
-  "message": "Durable topic deep links, dynamic search manifest and new-content refresh notifications"
+  "version": "0.15.1",
+  "build": "2026-09-30T23:42:00+02:00",
+  "message": "Fix Eines category links with durable deep routes"
 }
