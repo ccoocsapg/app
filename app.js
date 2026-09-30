@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.12.2',
+    version: '0.12.3',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/',
@@ -211,7 +211,7 @@
       installIos1:'Obre aquesta web a Safari.', installIos2:'Prem el botó Compartir.', installIos3:'Tria “Afegir a la pantalla d’inici”.',
       installOther:'Si el navegador és compatible, utilitza el botó “Instal·lar” per obrir-la com una app independent.',
       footerNote:'Informació sindical pràctica, clara i traçable.', meeting:'Reunió', communication:'Comunicació', updated:'Actualitzat',
-      catConveni:'Conveni', catPactes:'Pactes', catConvocatories:'Convocatòries', catConciliacio:'Conciliació', catOrganitzacio:'Organització', catSalaris:'Retribucions', catPermisos:'Permisos', catFormacio:'Formació', catParitaria:'Comissió Paritària', catNegociadora:'Negociadora SISCAT', catAcordsCentre:'Acords de centre', trainingValid:'Vigent', trainingCodes:'Codis de descompte', trainingHow:'Com inscriure’s',
+      catConveni:'Conveni', catPactes:'Pactes', catConvocatories:'Convocatòries', catConciliacio:'Conciliació', catOrganitzacio:'Organització', catSalaris:'Retribucions', catPermisos:'Permisos', catFormacio:'Formació', catParitaria:'Comissió Paritària', catNegociadora:'Negociadora SISCAT', catAcordsCentre:'Acords de centre', catComunicatsHRSC:'Comunicats HRSC', catEscritsRLT:'Escrits RLT / Comitè', catDireccio:'Comunicacions Direcció', catPolitiques:'Polítiques i protocols', catEmergencies:'Emergències i alertes', catCampanyes:'Campanyes CCOO', rltDoc:'Document RLT / Comitè', trainingValid:'Vigent', trainingCodes:'Codis de descompte', trainingHow:'Com inscriure’s',
       mailSubject:'Consulta / suggeriment CCOO CSAPG', copied:'Missatge copiat al porta-retalls.', copyFail:'No s’ha pogut copiar. Selecciona el text manualment.',
       cookiesPolicy:'Política de cookies', privacyPolicy:'Protecció de dades', notificationsLink:'Notificacions',
       legalUpdated:'Darrera actualització: 30/09/2026', cookiesTitle:'Política de cookies i emmagatzematge local', cookiesIntro:'Aquesta web no utilitza cookies pròpies amb finalitats publicitàries, analítiques o de seguiment.', cookiesOwnTitle:'Què guarda aquesta web?', cookiesOwnText:'Fem servir emmagatzematge local del navegador per recordar l’idioma, els documents desats, preferències bàsiques i l’estat tècnic de l’aplicació. Aquest emmagatzematge no s’utilitza per perfilar persones ni per publicitat.', cookiesThirdTitle:'Serveis de tercers', cookiesThirdText:'La web està allotjada a GitHub Pages. GitHub pot tractar dades tècniques de connexió, inclosa l’adreça IP, per motius de seguretat. Quan obres una previsualització de Google Drive o un enllaç extern, aquests serveis poden aplicar les seves pròpies cookies o tecnologies d’emmagatzematge segons les seves polítiques.', cookiesConsentTitle:'Consentiment', cookiesConsentText:'Com que no instal·lem cookies pròpies de publicitat, analítica o seguiment, no mostrem un banner de consentiment propi. Si en el futur s’incorpora analítica o qualsevol tecnologia no necessària, aquesta política i el sistema de consentiment s’actualitzaran abans d’activar-la.',
@@ -244,7 +244,7 @@
       installIos1:'Abre esta web en Safari.', installIos2:'Pulsa el botón Compartir.', installIos3:'Elige “Añadir a pantalla de inicio”.',
       installOther:'Si el navegador es compatible, utiliza el botón “Instalar” para abrirla como una app independiente.',
       footerNote:'Información sindical práctica, clara y trazable.', meeting:'Reunión', communication:'Comunicación', updated:'Actualizado',
-      catConveni:'Convenio', catPactes:'Pactos', catConvocatories:'Convocatorias', catConciliacio:'Conciliación', catOrganitzacio:'Organización', catSalaris:'Retribuciones', catPermisos:'Permisos', catFormacio:'Formación', catParitaria:'Comisión Paritaria', catNegociadora:'Negociadora SISCAT', catAcordsCentre:'Acuerdos de centro', trainingValid:'Vigente', trainingCodes:'Códigos de descuento', trainingHow:'Cómo inscribirse',
+      catConveni:'Convenio', catPactes:'Pactos', catConvocatories:'Convocatorias', catConciliacio:'Conciliación', catOrganitzacio:'Organización', catSalaris:'Retribuciones', catPermisos:'Permisos', catFormacio:'Formación', catParitaria:'Comisión Paritaria', catNegociadora:'Negociadora SISCAT', catAcordsCentre:'Acuerdos de centro', catComunicatsHRSC:'Comunicados HRSC', catEscritsRLT:'Escritos RLT / Comité', catDireccio:'Comunicaciones Dirección', catPolitiques:'Políticas y protocolos', catEmergencies:'Emergencias y alertas', catCampanyes:'Campañas CCOO', rltDoc:'Documento RLT / Comité', trainingValid:'Vigente', trainingCodes:'Códigos de descuento', trainingHow:'Cómo inscribirse',
       mailSubject:'Consulta / sugerencia CCOO CSAPG', copied:'Mensaje copiado al portapapeles.', copyFail:'No se ha podido copiar. Selecciona el texto manualmente.',
       cookiesPolicy:'Política de cookies', privacyPolicy:'Protección de datos', notificationsLink:'Notificaciones',
       legalUpdated:'Última actualización: 30/09/2026', cookiesTitle:'Política de cookies y almacenamiento local', cookiesIntro:'Esta web no utiliza cookies propias con fines publicitarios, analíticos o de seguimiento.', cookiesOwnTitle:'¿Qué guarda esta web?', cookiesOwnText:'Utilizamos almacenamiento local del navegador para recordar el idioma, los documentos guardados, preferencias básicas y el estado técnico de la aplicación. Este almacenamiento no se utiliza para perfilar personas ni para publicidad.', cookiesThirdTitle:'Servicios de terceros', cookiesThirdText:'La web está alojada en GitHub Pages. GitHub puede tratar datos técnicos de conexión, incluida la dirección IP, por motivos de seguridad. Cuando abres una previsualización de Google Drive o un enlace externo, esos servicios pueden aplicar sus propias cookies o tecnologías de almacenamiento según sus políticas.', cookiesConsentTitle:'Consentimiento', cookiesConsentText:'Como no instalamos cookies propias de publicidad, analítica o seguimiento, no mostramos un banner de consentimiento propio. Si en el futuro se incorpora analítica o cualquier tecnología no necesaria, esta política y el sistema de consentimiento se actualizarán antes de activarla.',
@@ -556,6 +556,8 @@
     dpo:['dpo','objectius','objetivos','conciliacio','conciliacion'],
     organizacion:['organitzacio','organizacion','canvi torn','cambio turno','servei','servicio'],
     saludLaboral:['prevencio','prevencion','salut laboral','salud laboral'],
+    comunicats:['comunicat','comunicats','comunicado','comunicados','nota informativa','seccio sindical','seccion sindical','carta','escrit','escrito'],
+    comunicats:['comunicat','comunicado','seccio sindical','seccion sindical','hrsc','escrit','escrito'],
     formacion:['formacio','formacion','curs','curso','master','postgrau','postgrado','cfc','ucav','bac formacio','afiliacio','afiliados'],
     paritaria:['comissio paritaria','comision paritaria','acta','interpretacio conveni','interpretacion convenio','dpo','sipdp'],
     negociadora:['negociadora','mesa negociadora','iv conveni','iv convenio','siscat al dia']
@@ -745,13 +747,14 @@
   }
 
   function categoryLabel(cat){
-    const map={conveni:'catConveni',pactes:'catPactes',convocatories:'catConvocatories',conciliacio:'catConciliacio',organitzacio:'catOrganitzacio',salaris:'catSalaris',permisos:'catPermisos',formacio:'catFormacio',paritaria:'catParitaria',negociadora:'catNegociadora',acordscentre:'catAcordsCentre'};
+    const map={conveni:'catConveni',pactes:'catPactes',convocatories:'catConvocatories',conciliacio:'catConciliacio',organitzacio:'catOrganitzacio',salaris:'catSalaris',permisos:'catPermisos',formacio:'catFormacio',paritaria:'catParitaria',negociadora:'catNegociadora',acordscentre:'catAcordsCentre',comunicatshrsc:'catComunicatsHRSC',escritsrlt:'catEscritsRLT',direccio:'catDireccio',politiques:'catPolitiques',emergencies:'catEmergencies',campanyes:'catCampanyes'};
     return tr(map[cat]||cat);
   }
 
   function sourceBadge(source){
     if(source==='official') return '<span class="badge badge-official">'+esc(tr('official'))+'</span>';
     if(source==='ccoo') return '<span class="badge badge-ccoo">'+esc(tr('ccooNote'))+'</span>';
+    if(source==='rlt') return '<span class="badge badge-summary">'+esc(tr('rltDoc'))+'</span>';
     return '<span class="badge badge-summary">'+esc(tr('summary'))+'</span>';
   }
 
@@ -806,7 +809,7 @@
   }
 
   function docsView(){
-    const cats=['all','conveni','pactes','salaris','paritaria','negociadora','acordscentre','convocatories'];
+    const cats=['all','comunicatshrsc','conveni','pactes','salaris','paritaria','negociadora','acordscentre','convocatories','escritsrlt','politiques','emergencies','campanyes','direccio'];
     return '<div class="view">'+
       pageHeading(tr('docsTitle'),tr('docsSub'))+
       '<div class="info-banner warn-banner"><span>!</span><div><strong>Google Drive</strong><p>'+esc(tr('publicDriveNote'))+'</p></div></div>'+
@@ -824,9 +827,16 @@
   function renderDocs(){
     let items=DOCS.slice();
     const q=(state.search||'').trim().toLowerCase();
-    if(state.docFilter==='favorites') items=items.filter(x=>isSaved(x.id));
-    else if(state.docFilter!=='all') items=items.filter(x=>x.category===state.docFilter);
-    if(q) items=smartRank(items,q);
+
+    // Si l'usuari escriu al cercador, la consulta preval sobre el filtre anterior.
+    if(q){
+      items=smartRank(items,q);
+    }else if(state.docFilter==='favorites'){
+      items=items.filter(x=>isSaved(x.id));
+    }else if(state.docFilter!=='all'){
+      items=items.filter(x=>x.category===state.docFilter);
+    }
+
     if(!items.length) return '<div class="empty-state">'+esc(tr('noResults'))+'</div>';
     return items.map(docCard).join('');
   }
@@ -845,7 +855,7 @@
   }
 
   function meetingsView(){
-    const cats=['all','negociadora','paritaria','conveni','convocatories','conciliacio','organitzacio','formacio'];
+    const cats=['all','comunicatshrsc','negociadora','paritaria','conveni','convocatories','conciliacio','organitzacio','formacio'];
     return '<div class="view">'+pageHeading(tr('meetingsTitle'),tr('meetingsSub'))+
       '<div class="toolbar"><div style="flex:1 1 320px"><div class="search-box"><input id="meetingSearch" type="search" placeholder="'+esc(tr('searchPlaceholder'))+'" value="'+esc(state.search)+'"><span class="search-icon">⌕</span></div><div class="search-hint">✦ '+esc(tr('smartSearchHint'))+'</div></div></div>'+
       '<div class="filter-row">'+cats.map(meetingChip).join('')+'</div>'+
@@ -1099,7 +1109,16 @@
   function bindView(){
     const current=route();
     const global=$('#globalSearch'); if(global) global.addEventListener('input',e=>renderHomeSearch(e.target.value));
-    const docSearch=$('#docSearch'); if(docSearch) docSearch.addEventListener('input',e=>{state.search=e.target.value;$('#docList').innerHTML=renderDocs();bindDocActions();renderDocumentSearchInto('#docTextResults',state.search,10);});
+    const docSearch=$('#docSearch'); if(docSearch) docSearch.addEventListener('input',e=>{
+      state.search=e.target.value;
+      if(state.search.trim()){
+        state.docFilter='all';
+        $('[data-doc-filter]').forEach(btn=>btn.classList.toggle('is-active',btn.dataset.docFilter==='all'));
+      }
+      $('#docList').innerHTML=renderDocs();
+      bindDocActions();
+      renderDocumentSearchInto('#docTextResults',state.search,10);
+    });
     const meetingSearch=$('#meetingSearch'); if(meetingSearch) meetingSearch.addEventListener('input',e=>{
       state.search=e.target.value;
       if(state.search.trim()){
