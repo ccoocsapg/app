@@ -707,3 +707,68 @@ button{cursor:pointer}
 }
 
 .legal-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}.legal-links a{color:var(--ccoo-red);font-size:.75rem;font-weight:900;text-transform:uppercase}.legal-links a:hover{text-decoration:underline}
+
+
+/* FORMACIÓ / PROMOCIONS */
+.training-offers{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin:16px 0
+}
+.training-offer{
+  background:#fff;
+  border:1px solid var(--line);
+  border-top:5px solid var(--ccoo-red);
+  padding:13px
+}
+.training-offer span{
+  display:block;
+  font-size:.72rem;
+  font-weight:900;
+  text-transform:uppercase;
+  color:#555
+}
+.training-offer strong{
+  display:block;
+  margin-top:5px;
+  font-size:1.55rem;
+  line-height:1;
+  color:#000
+}
+.training-codes{
+  margin-top:14px;
+  border:1px solid var(--line);
+  background:#f7f7f7
+}
+.training-codes h4{
+  margin:0;
+  padding:10px 12px;
+  background:#000;
+  color:#fff;
+  font-size:.75rem;
+  text-transform:uppercase
+}
+.training-code-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px 12px;
+  border-top:1px solid var(--line);
+  font-size:.8rem
+}
+.training-code-row:first-of-type{border-top:0}
+.training-code-row span{font-weight:800}
+.training-code-row code{
+  background:#fff;
+  border:1px solid #bbb;
+  padding:4px 7px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-weight:800;
+  font-size:.76rem
+}
+@media(max-width:560px){
+  .training-offers{grid-template-columns:1fr}
+  .training-code-row{align-items:flex-start;flex-direction:column}
+}
