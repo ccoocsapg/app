@@ -1,0 +1,43 @@
+name: Validate published content
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "app.js"
+      - "data/**"
+      - "search/**"
+      - "scripts/validate_content.py"
+      - ".github/workflows/validate-content.yml"
+  pull_request:
+    paths:
+      - "app.js"
+      - "data/**"
+      - "search/**"
+      - "scripts/validate_content.py"
+      - ".github/workflows/validate-content.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate publication graph
+        run: python scripts/validate_content.py
+      - name: Reject hardcoded search indexes in app.js
+        run: |
+          if grep -q "DOCUMENT_INDEX_FILES = \[" app.js; then
+            echo "Hardcoded search index list detected in app.js"
+            exit 1
+          fi
+      - name: Verify durable Eines routes
+        run: |
+          grep -q "#/documents?topic=permisos" app.js
+          grep -q "#/documents?topic=carrera" app.js
