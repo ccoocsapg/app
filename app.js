@@ -2,13 +2,13 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.4.0',
+    version: '0.5.0',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/'
   };
 
-  const DOCS = [
+  let DOCS = [
     {
       id: 'conveni-siscat-iii',
       category: 'conveni',
@@ -50,7 +50,7 @@
     }
   ];
 
-  const MEETINGS = [
+  let MEETINGS = [
     {
       id: 'siscat-2026-01-13',
       date: '2026-01-13',
@@ -243,6 +243,18 @@
       mailSubject:'Consulta / sugerencia CCOO CSAPG', copied:'Mensaje copiado al portapapeles.', copyFail:'No se ha podido copiar. Selecciona el texto manualmente.'
     }
   };
+
+  async function loadPublishedManifest(){
+    try{
+      const response=await fetch('./data/published.json',{cache:'no-store'});
+      if(!response.ok) return;
+      const data=await response.json();
+      if(Array.isArray(data.documents) && data.documents.length) DOCS=data.documents;
+      if(Array.isArray(data.meetings) && data.meetings.length) MEETINGS=data.meetings;
+    }catch(e){
+      // La app conserva el contenido base si el manifiesto no está disponible.
+    }
+  }
 
   const state = {
     lang: localStorage.getItem('ccoo-csapg-lang') || 'ca',
@@ -805,7 +817,7 @@
     window.scrollTo({top:0,behavior:'auto'});
   }
 
-  function init(){
+  async function init(){
     $$('.lang-btn').forEach(btn=>btn.addEventListener('click',()=>{
       state.lang=btn.dataset.lang;
       localStorage.setItem('ccoo-csapg-lang',state.lang);
@@ -818,6 +830,7 @@
     window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();state.installPrompt=e;});
     window.addEventListener('appinstalled',()=>{state.installPrompt=null;});
     if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
+    await loadPublishedManifest();
     if(!location.hash) location.hash='#/inicio'; else render();
   }
 
