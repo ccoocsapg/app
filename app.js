@@ -481,7 +481,7 @@
     const message=$('#contactMessage').value.trim();
     if(!subject||!message) return;
     const mailSubject=tr('mailSubject')+' · '+subject;
-    location.href='mailto:'+encodeURIComponent(CONFIG.contactEmail)+'?subject='+encodeURIComponent(mailSubject)+'&body='+encodeURIComponent(contactBody());
+    location.href='mailto:'+CONFIG.contactEmail+'?subject='+encodeURIComponent(mailSubject)+'&body='+encodeURIComponent(contactBody());
   }
 
   async function copyContact(){
@@ -546,7 +546,7 @@
     else html=homeView();
     $('#view').innerHTML=html;
     bindView();
-    window.scrollTo({top:0,behavior:'instant'});
+    window.scrollTo({top:0,behavior:'auto'});
   }
 
   function init(){
