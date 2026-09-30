@@ -298,12 +298,13 @@
         data.meetings.forEach(item=>byId.set(item.id,item));
         MEETINGS=[...byId.values()];
       }
+      const didChange=!!publishedVersion && !!nextVersion && nextVersion!==publishedVersion;
       if(nextVersion && nextVersion!==publishedVersion){
         documentIndexPromise=null;
         publishedVersion=nextVersion;
       }
       await notifyNewPublishedContent(data);
-      return true;
+      return didChange;
     }catch(e){
       return false;
     }
@@ -957,7 +958,7 @@
     return '<div class="view">'+
       pageHeading(tr('docsTitle'),tr('docsSub'))+
       '<div class="consulta-search">'+
-        '<div class="search-box search-box--hero"><input id="docSearch" type="search" autocomplete="off" placeholder="'+esc(tr('searchPlaceholder'))+'" value="'+esc(state.search)+'"><span class="search-icon">⌕</span></div>'+
+        '<div class="search-box search-box--hero"><input id="docSearch" type="search" autocomplete="off" placeholder="'+esc(tr('searchPlaceholder'))+'" value="'+esc(state.topicKey ? tx((currentConsultTopic()||{}).label) : state.search)+'"><span class="search-icon">⌕</span></div>'+
         '<div class="search-hint">✦ '+esc(tr('smartSearchHint'))+'</div>'+
       '</div>'+
       '<section class="section consulta-topics"><div class="section-head section-head--simple"><div><h2>'+esc(tr('consultTopics'))+'</h2></div></div>'+topicButtonsHtml()+'</section>'+
@@ -1420,14 +1421,18 @@
     }catch(e){}
   }
 
+  function refreshPublishedContent(){
+    loadPublishedManifest().then(changed=>{if(changed) render();}).catch(()=>{});
+  }
+
   function installUpdateWatch(){
-    window.addEventListener('pageshow',()=>checkLatestVersion());
-    window.addEventListener('focus',()=>checkLatestVersion());
+    window.addEventListener('pageshow',()=>{checkLatestVersion();refreshPublishedContent();});
+    window.addEventListener('focus',()=>{checkLatestVersion();refreshPublishedContent();});
     document.addEventListener('visibilitychange',()=>{
-      if(!document.hidden) checkLatestVersion();
+      if(!document.hidden){checkLatestVersion();refreshPublishedContent();}
     });
     window.setInterval(()=>checkLatestVersion(),5*60*1000);
-    window.setInterval(()=>loadPublishedManifest().then(changed=>{if(changed) render();}),5*60*1000);
+    window.setInterval(refreshPublishedContent,5*60*1000);
   }
 
   async function init(){
