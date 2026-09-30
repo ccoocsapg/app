@@ -393,6 +393,22 @@
     }
   }
 
+  async function testLocalNotification(){
+    try{
+      if(!supportsWebPush() || Notification.permission!=='granted') throw new Error('permission');
+      const registration=await navigator.serviceWorker.ready;
+      await registration.showNotification('CCOO CSAPG · Prova',{
+        body:tr('notificationsTestBody'),
+        icon:'./icon.svg',
+        badge:'./icon.svg',
+        tag:'ccoo-csapg-test',
+        data:{url:'./#/inicio'}
+      });
+    }catch(e){
+      alert(tr('notificationsTestError'));
+    }
+  }
+
   async function disablePushNotifications(){
     try{
       const subscription=await currentPushSubscription();
@@ -438,7 +454,8 @@
       return '<div class="info-banner warn-banner"><span>!</span><div><strong>'+esc(tr('notificationsDenied'))+'</strong><p>'+esc(tr('notificationsPrivacy'))+'</p></div></div>';
     }
     if(status==='permission-only'){
-      return '<div class="info-banner"><span>✓</span><div><strong>'+esc(tr('notificationsTitle'))+'</strong><p>'+esc(tr('notificationsPermissionGranted'))+'</p></div></div>'+note;
+      return '<div class="info-banner warn-banner"><span>✓</span><div><strong>'+esc(tr('notificationsTitle'))+'</strong><p>'+esc(tr('notificationsPermissionGranted'))+'</p></div></div>'+
+        '<div class="form-actions"><button class="btn btn-primary" type="button" id="testNotification">'+esc(tr('notificationsTest'))+'</button></div>'+note;
     }
     if(status==='pending'){
       return '<div class="info-banner warn-banner"><span>!</span><div><strong>'+esc(tr('notificationsTitle'))+'</strong><p>'+esc(tr('notificationsPending'))+'</p></div></div>'+note;
@@ -456,6 +473,8 @@
     if(!dialog.open) dialog.showModal();
     $('#enableNotifications')?.addEventListener('click',requestPushNotifications);
     $('#disableNotifications')?.addEventListener('click',disablePushNotifications);
+    $('#testNotification')?.addEventListener('click',testLocalNotification);
+    $('#testNotification')?.addEventListener('click',testLocalNotification);
   }
 
   function notificationNudgeHtml(){
@@ -1091,6 +1110,7 @@
     box.innerHTML=notificationStatusHtml(status);
     $('#enableNotifications')?.addEventListener('click',requestPushNotifications);
     $('#disableNotifications')?.addEventListener('click',disablePushNotifications);
+    $('#testNotification')?.addEventListener('click',testLocalNotification);
   }
 
   async function renderHomeSearch(query){
