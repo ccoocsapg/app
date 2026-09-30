@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.13.2',
+    version: '0.13.3',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/',
@@ -1207,16 +1207,16 @@
       state.search=e.target.value;
       if(state.search.trim()){
         state.meetingFilter='all';
-        $('[data-meeting-filter]').forEach(btn=>btn.classList.toggle('is-active',btn.dataset.meetingFilter==='all'));
+        $$('[data-meeting-filter]').forEach(btn=>btn.classList.toggle('is-active',btn.dataset.meetingFilter==='all'));
       }
       $('#meetingList').innerHTML=renderMeetings();
     });
     $$('[data-doc-filter]').forEach(btn=>btn.addEventListener('click',()=>{state.docFilter=btn.dataset.docFilter;render();}));
-    $$('[data-meeting-filter]').forEach(btn=>btn.addEventListener('click',()=>{state.meetingFilter=btn.dataset.meetingFilter;render();}));
+    $$$('[data-meeting-filter]').forEach(btn=>btn.addEventListener('click',()=>{state.meetingFilter=btn.dataset.meetingFilter;render();}));
     bindDocActions();
-    $('[data-install]').forEach(btn=>btn.addEventListener('click',requestInstall));
-    $('[data-notification-manage]').forEach(btn=>btn.addEventListener('click',()=>openNotificationDialog()));
-    $('[data-notification-dismiss]').forEach(btn=>btn.addEventListener('click',()=>{
+    $$('[data-install]').forEach(btn=>btn.addEventListener('click',requestInstall));
+    $$('[data-notification-manage]').forEach(btn=>btn.addEventListener('click',()=>openNotificationDialog()));
+    $$('[data-notification-dismiss]').forEach(btn=>btn.addEventListener('click',()=>{
       localStorage.setItem('ccoo-csapg-push-dismissed','1');
       btn.closest('.notification-nudge')?.remove();
     }));
