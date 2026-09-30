@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#d71920">
+  <meta name="description" content="CCOO Sanitat CSAPG: documents, resums, eines i contacte per a les persones treballadores.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="CCOO CSAPG">
+  <title>CCOO Sanitat · CSAPG</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="https://www.ccoo.cat/imatges/logos/descarrega/3.Federacions/federacio_sanitat/sanitat.jpg">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#appMain">Saltar al contingut</a>
+
+  <header class="app-header">
+    <div class="header-inner">
+      <a class="brand" href="#/inicio" aria-label="CCOO Sanitat CSAPG">
+        <img class="brand-logo" src="https://www.ccoo.cat/imatges/logos/descarrega/3.Federacions/federacio_sanitat/sanitat.jpg" alt="CCOO Sanitat Catalunya">
+        <span class="brand-text"><strong>CSAPG</strong><small data-i18n="brandSub">Espai d'informació sindical</small></span>
+      </a>
+      <div class="header-actions">
+        <button class="icon-button" id="installButton" type="button" aria-label="Instal·lar app" title="Instal·lar app">
+          <span aria-hidden="true">↓</span>
+        </button>
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button class="lang-btn is-active" type="button" data-lang="ca" aria-pressed="true">CAT</button>
+          <button class="lang-btn" type="button" data-lang="es" aria-pressed="false">ES</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="appMain" class="app-shell">
+    <aside class="side-nav" aria-label="Navegació principal">
+      <nav>
+        <a href="#/inicio" data-route="inicio"><span>⌂</span><b data-i18n="navHome">Inici</b></a>
+        <a href="#/documents" data-route="documents"><span>▤</span><b data-i18n="navDocs">Documents</b></a>
+        <a href="#/reunions" data-route="reunions"><span>◫</span><b data-i18n="navMeetings">Reunions</b></a>
+        <a href="#/eines" data-route="eines"><span>✦</span><b data-i18n="navTools">Eines</b></a>
+        <a href="#/contacte" data-route="contacte"><span>✉</span><b data-i18n="navContact">Contacte</b></a>
+      </nav>
+      <div class="side-note">
+        <span class="status-dot"></span>
+        <p><strong data-i18n="sourceFirst">Primer, la font.</strong><br><span data-i18n="sourceFirstText">Els resums mai substitueixen el document oficial.</span></p>
+      </div>
+    </aside>
+
+    <section class="view-wrap">
+      <div id="view"></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegació principal mòbil">
+    <a href="#/inicio" data-route="inicio"><span>⌂</span><b data-i18n="navHome">Inici</b></a>
+    <a href="#/documents" data-route="documents"><span>▤</span><b data-i18n="navDocs">Documents</b></a>
+    <a href="#/reunions" data-route="reunions"><span>◫</span><b data-i18n="navMeetings">Reunions</b></a>
+    <a href="#/eines" data-route="eines"><span>✦</span><b data-i18n="navTools">Eines</b></a>
+    <a href="#/contacte" data-route="contacte"><span>✉</span><b data-i18n="navContact">Contacte</b></a>
+  </nav>
+
+  <dialog id="previewDialog" class="dialog dialog-preview">
+    <div class="dialog-head">
+      <div>
+        <span class="eyebrow" data-i18n="preview">PREVISUALITZACIÓ</span>
+        <h2 id="previewTitle"></h2>
+      </div>
+      <button class="dialog-close" type="button" data-close-dialog aria-label="Tancar">×</button>
+    </div>
+    <div class="preview-frame-wrap">
+      <iframe id="previewFrame" title="Previsualització del document" loading="lazy"></iframe>
+    </div>
+    <div class="dialog-actions">
+      <a id="previewOpen" class="btn btn-outline" target="_blank" rel="noopener" data-i18n="openDrive">Obrir a Drive</a>
+      <a id="previewDownload" class="btn btn-primary" target="_blank" rel="noopener" data-i18n="download">Descarregar</a>
+    </div>
+  </dialog>
+
+  <dialog id="installDialog" class="dialog">
+    <div class="dialog-head">
+      <div>
+        <span class="eyebrow" data-i18n="installApp">INSTAL·LAR APP</span>
+        <h2 data-i18n="installTitle">Afegeix CCOO CSAPG a la pantalla d'inici</h2>
+      </div>
+      <button class="dialog-close" type="button" data-close-dialog aria-label="Tancar">×</button>
+    </div>
+    <div id="installContent" class="install-content"></div>
+  </dialog>
+
+  <footer class="app-footer">
+    <div>
+      <strong>CCOO Sanitat · CSAPG</strong>
+      <p data-i18n="footerNote">Informació sindical pràctica, clara i traçable.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.ccoo.cat/sanitat/" target="_blank" rel="noopener">CCOO Sanitat Catalunya</a>
+      <span>·</span>
+      <span id="appVersion">v0.1</span>
+    </div>
+  </footer>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
