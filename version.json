@@ -1,5 +1,5 @@
 {
-  "version": "0.10.2",
-  "build": "2026-09-30T20:45:00+02:00",
-  "message": "Fix document preview on iOS installed app"
+  "version": "0.12.0",
+  "build": "2026-09-30T21:25:00+02:00",
+  "message": "Mobile navigation, smart search, notification onboarding and fresh content fixes"
 }
