@@ -1,5 +1,5 @@
 {
-  "version": "0.14.0",
-  "build": "2026-09-30T22:48:00+02:00",
-  "message": "Filter fixes, keyboard-safe Consulta, responsive hardening and iOS icon update"
+  "version": "0.15.0",
+  "build": "2026-09-30T23:33:00+02:00",
+  "message": "Durable topic deep links, dynamic search manifest and new-content refresh notifications"
 }
