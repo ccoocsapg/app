@@ -12,8 +12,58 @@
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="https://www.ccoo.cat/imatges/logos/descarrega/3.Federacions/federacio_sanitat/sanitat.jpg">
-  <link rel="stylesheet" href="./styles.css?v=0.5.0">
-  <link rel="stylesheet" href="./search.css?v=0.5.0">
+  <script>
+  (() => {
+    const SHELL_VERSION = '0.6.0';
+    let reloading = false;
+
+    async function forceFreshVersion() {
+      if (reloading) return;
+      try {
+        const response = await fetch('./version.json?_=' + Date.now(), { cache: 'no-store' });
+        if (!response.ok) return;
+        const data = await response.json();
+        const latest = String(data.version || '').trim();
+        if (!latest || latest === SHELL_VERSION) return;
+
+        reloading = true;
+
+        if ('serviceWorker' in navigator) {
+          try {
+            const registration = await navigator.serviceWorker.getRegistration('./');
+            if (registration) {
+              try { await registration.update(); } catch (e) {}
+              if (registration.waiting) registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+            }
+          } catch (e) {}
+        }
+
+        if ('caches' in window) {
+          try {
+            const keys = await caches.keys();
+            await Promise.all(
+              keys
+                .filter(key => key.startsWith('ccoo-csapg-app-'))
+                .map(key => caches.delete(key))
+            );
+          } catch (e) {}
+        }
+
+        const url = new URL(location.href);
+        url.searchParams.set('_appv', latest);
+        location.replace(url.toString());
+      } catch (e) {}
+    }
+
+    window.addEventListener('pageshow', forceFreshVersion);
+    window.addEventListener('focus', forceFreshVersion);
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) forceFreshVersion();
+    });
+  })();
+  </script>
+  <link rel="stylesheet" href="./styles.css?v=0.6.0">
+  <link rel="stylesheet" href="./search.css?v=0.6.0">
 </head>
 <body>
   <a class="skip-link" href="#appMain">Saltar al contingut</a>
@@ -104,6 +154,6 @@
     </div>
   </footer>
 
-  <script src="./app.js?v=0.5.0" defer></script>
+  <script src="./app.js?v=0.6.0" defer></script>
 </body>
 </html>
