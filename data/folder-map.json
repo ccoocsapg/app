@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "sourceRoot": {
+    "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
+    "name": "WEB APP · CCOO CSAPG"
+  },
+  "inbox": {
+    "id": "1I9mJZJWI6CB0BZzbwBTA4PTgwjBKATV5"
+  },
+  "review": {
+    "id": "1sl-9W7aGkuTWQH5nCI4LyWNmQEdvmMb2"
+  },
+  "private": {
+    "id": "1Xr6xJxDUlco_lu0-1uKi2j-c6iSxkFrI"
+  },
+  "folders": [
+    {
+      "id": "1WKxx87Imgxj459GzZ_nKe58gJMaavXio",
+      "name": "Conveni SISCAT",
+      "category": "conveni",
+      "contentType": "documents",
+      "source": "official"
+    },
+    {
+      "id": "1FRVav5nVl7YoV6EcuXB1OX7Wdv4-E0Fm",
+      "name": "Pactes CSAPG",
+      "category": "pactes",
+      "contentType": "documents",
+      "source": "official"
+    },
+    {
+      "id": "1AAPAwYywksiQM7Jga44-ot0wJUmY24jl",
+      "name": "Paritàries i acords",
+      "category": "paritaria",
+      "contentType": "documents",
+      "source": "official"
+    },
+    {
+      "id": "1WzHsf4WByFhuv7uQ_9IUyV72plLr_4CL",
+      "name": "Acords de centre CSAPG",
+      "category": "acordscentre",
+      "contentType": "documents",
+      "source": "official"
+    },
+    {
+      "id": "1A9iISNMKQEmUYlntQ3F4I751BoSGXkaB",
+      "name": "Polítiques i protocols CSAPG",
+      "category": "politiques",
+      "contentType": "documents",
+      "source": "official"
+    },
+    {
+      "id": "1F-xyxdL-l7a7G5zfJWS6F3ylP7g_fMnv",
+      "name": "Convocatòries internes",
+      "category": "convocatories",
+      "contentType": "documents",
+      "source": "official"
+    },
+    {
+      "id": "1fPYmnjTgSMqFlXEpw5Ca1hvRLyjqzlRj",
+      "name": "Carrera professional SIPDP",
+      "category": "carrera",
+      "contentType": "documents",
+      "source": "official"
+    },
+    {
+      "id": "1YiVjmAX0wOWTm3Ka6PB6XiBHWrswtXiF",
+      "name": "Altres procediments",
+      "category": "procediments",
+      "contentType": "documents",
+      "source": "official"
+    },
+    {
+      "id": "1DiqI-LroC1sjokOMAjFJ-P5u7-ZreAX4",
+      "name": "Taules salarials",
+      "category": "salaris",
+      "contentType": "documents",
+      "source": "official"
+    },
+    {
+      "id": "1-JPZ7CwI7w7cFdNUt-hASi3xjM68IJU2",
+      "name": "DPO i complements",
+      "category": "dpo",
+      "contentType": "documents",
+      "source": "official"
+    },
+    {
+      "id": "13Mv8wgO-LFNWcZGEQaqpARF_oWDZduOO",
+      "name": "Secció sindical CSAPG",
+      "category": "comunicatshrsc",
+      "contentType": "meetings",
+      "source": "ccoo"
+    },
+    {
+      "id": "15i4jY0oeH6B09stzRtnqz7M9h9DuAuco",
+      "name": "Comunicats HRSC",
+      "category": "comunicatshrsc",
+      "contentType": "meetings",
+      "source": "ccoo"
+    },
+    {
+      "id": "1cxVbdm2VeQk5VKl8wFQJvs7Q2qk1Y68Y",
+      "name": "CCOO Sanitat Catalunya",
+      "category": "ccoo",
+      "contentType": "meetings",
+      "source": "ccoo"
+    },
+    {
+      "id": "1_pnjQMj7mZV268Js3-TULsMz90_EQ33z",
+      "name": "Campanyes i manifestos Federació",
+      "category": "campanyes",
+      "contentType": "meetings",
+      "source": "ccoo"
+    },
+    {
+      "id": "1ZI8pThGvu2gP_hD9yDn2kjIU7WI7HuUL",
+      "name": "Comitè d’Empresa",
+      "category": "comite",
+      "contentType": "meetings",
+      "source": "rlt"
+    },
+    {
+      "id": "17JEHaaABsH9pQAp8PrivTOGT7E0YinMb",
+      "name": "Reunions amb l’empresa",
+      "category": "reunions",
+      "contentType": "meetings",
+      "source": "summary"
+    },
+    {
+      "id": "1X0w_BePq6-3cI-0CGOGctsCKUp2J5xzA",
+      "name": "Negociadora SISCAT",
+      "category": "negociadora",
+      "contentType": "meetings",
+      "source": "ccoo"
+    },
+    {
+      "id": "1rRDWCrktD44MTT7CEBGAab_4r1jrdcIg",
+      "name": "Permisos i conciliació",
+      "category": "permisos",
+      "contentType": "documents",
+      "source": "official"
+    },
+    {
+      "id": "1JsVp0zhyaKLCo45aaclyUnxNmFpF-bl5",
+      "name": "Jornada, vacances i calendaris",
+      "category": "jornada",
+      "contentType": "documents",
+      "source": "official"
+    },
+    {
+      "id": "1SGgQ2mApUchCwmjc4wXaBwsm65u7GpgA",
+      "name": "PRL i salut laboral",
+      "category": "salutlaboral",
+      "contentType": "documents",
+      "source": "official"
+    },
+    {
+      "id": "1pokE9bb-oiNgFkHL9EOA8UCwKNrraDgV",
+      "name": "Emergències i alertes oficials",
+      "category": "emergencies",
+      "contentType": "meetings",
+      "source": "official"
+    },
+    {
+      "id": "1nde7_fOnFZJv-iJDndBjGALYnNMKjKP9",
+      "name": "Escrits RLT i Comitè difosos",
+      "category": "escritsrlt",
+      "contentType": "meetings",
+      "source": "rlt"
+    },
+    {
+      "id": "10p5HbbQbdkW-dT8KHHH9SJf3gP_5mGRz",
+      "name": "Comunicacions Direcció CSAPG",
+      "category": "direccio",
+      "contentType": "meetings",
+      "source": "official"
+    }
+  ]
+}
