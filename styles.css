@@ -705,3 +705,5 @@ button{cursor:pointer}
   .notification-nudge__actions{width:100%}
   .notification-nudge__actions .btn{flex:1}
 }
+
+.legal-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}.legal-links a{color:var(--ccoo-red);font-size:.75rem;font-weight:900;text-transform:uppercase}.legal-links a:hover{text-decoration:underline}
