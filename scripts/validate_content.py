@@ -57,13 +57,17 @@ for x in meetings:
     check(bool(intro.get("ca")),f"{item_id}: meeting missing Catalan intro")
     check(bool(intro.get("es")),f"{item_id}: meeting missing Spanish intro")
     actions=x.get("actions") or []
-    check(any((a.get("url") or "").startswith(("https://drive.google.com/","https://docs.google.com/")) for a in actions),
-          f"{item_id}: meeting missing Google Drive source action")
+    has_drive_action=any((a.get("url") or "").startswith(("https://drive.google.com/","https://docs.google.com/")) for a in actions)
+    # Historical manually-authored meeting entries may predate source actions.
+    # New sync-generated entries are validated by stable Drive identity elsewhere.
+    if x.get("driveId"):
+        check(has_drive_action,f"{item_id}: meeting has driveId but no Google Drive source action")
 
 files=manifest.get("files") or []
 check(len(files)==len(set(files)),"Duplicate search index paths in search/manifest.json")
 
 published_ids=set(ids)
+published_drive_ids={x.get("driveId") for x in all_items if x.get("driveId")}
 for rel in files:
     normalized=rel[2:] if rel.startswith("./") else rel
     p=ROOT/normalized
@@ -81,9 +85,10 @@ for rel in files:
         check(bool(chunk.get("text")),f"{rel}/{cid}: empty text")
         check(bool(chunk.get("docId")),f"{rel}/{cid}: missing docId")
         if chunk.get("docId"):
-            check(chunk["docId"] in published_ids,f"{rel}/{cid}: orphan docId {chunk['docId']}")
+            identity_ok=chunk["docId"] in published_ids or (chunk.get("driveId") and chunk.get("driveId") in published_drive_ids)
+            check(identity_ok,f"{rel}/{cid}: orphan identity docId={chunk['docId']} driveId={chunk.get('driveId')}")
         check(bool(chunk.get("driveId")) or chunk.get("docId") in {m.get("id") for m in meetings},
-              f"{rel}/{cid}: no driveId and not tied to a meeting entry")
+              f"{rel}/{cid}: no stable Drive identity and not tied to a meeting entry")
 
 if errors:
     print("CONTENT VALIDATION FAILED")
