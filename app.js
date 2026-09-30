@@ -2,8 +2,8 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.2.0',
-    contactEmail: 'fsanitat1@ccoo.cat',
+    version: '0.3.0',
+    contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/'
   };
@@ -205,7 +205,7 @@
       contactTitle:'Parla amb nosaltres', contactSub:'Explica’ns el dubte, proposta o incidència. La web no desa el contingut del formulari.',
       subject:'Tema', choose:'Selecciona…', name:'Nom (opcional)', reply:'Correu de resposta (opcional)', message:'Missatge', sendEmail:'Preparar correu', copy:'Copiar missatge',
       privacy:'Aquest formulari no envia dades a cap servidor de la web. En prémer “Preparar correu” s’obrirà el teu gestor de correu amb el missatge preparat perquè el revisis i l’enviïs.',
-      contactOfficial:'Contacte CCOO Sanitat Catalunya', website:'Web oficial', email:'Correu', urgentNote:'Si es tracta d’un termini, sanció, acomiadament o una incidència amb data límit, indica la data al missatge.',
+      contactOfficial:'Secció sindical CCOO · HRSC / CSAPG', website:'Web oficial', email:'Correu', urgentNote:'Si es tracta d’un termini, sanció, acomiadament o una incidència amb data límit, indica la data al missatge.',
       noResults:'No hem trobat contingut amb aquests filtres.', installApp:'INSTAL·LAR APP', installTitle:'Afegeix CCOO CSAPG a la pantalla d’inici',
       installIos1:'Obre aquesta web a Safari.', installIos2:'Prem el botó Compartir.', installIos3:'Tria “Afegir a la pantalla d’inici”.',
       installOther:'Si el navegador és compatible, utilitza el botó “Instal·lar” per obrir-la com una app independent.',
@@ -234,7 +234,7 @@
       contactTitle:'Habla con nosotros', contactSub:'Explícanos la duda, propuesta o incidencia. La web no guarda el contenido del formulario.',
       subject:'Tema', choose:'Selecciona…', name:'Nombre (opcional)', reply:'Correo de respuesta (opcional)', message:'Mensaje', sendEmail:'Preparar correo', copy:'Copiar mensaje',
       privacy:'Este formulario no envía datos a ningún servidor de la web. Al pulsar “Preparar correo” se abrirá tu gestor de correo con el mensaje preparado para que lo revises y lo envíes.',
-      contactOfficial:'Contacto CCOO Sanitat Catalunya', website:'Web oficial', email:'Correo', urgentNote:'Si se trata de un plazo, sanción, despido o una incidencia con fecha límite, indica la fecha en el mensaje.',
+      contactOfficial:'Sección sindical CCOO · HRSC / CSAPG', website:'Web oficial', email:'Correo', urgentNote:'Si se trata de un plazo, sanción, despido o una incidencia con fecha límite, indica la fecha en el mensaje.',
       noResults:'No hemos encontrado contenido con esos filtros.', installApp:'INSTALAR APP', installTitle:'Añade CCOO CSAPG a la pantalla de inicio',
       installIos1:'Abre esta web en Safari.', installIos2:'Pulsa el botón Compartir.', installIos3:'Elige “Añadir a pantalla de inicio”.',
       installOther:'Si el navegador es compatible, utiliza el botón “Instalar” para abrirla como una app independiente.',
@@ -603,8 +603,8 @@
       '</form></section>'+
       '<aside class="contact-card"><h3>'+esc(tr('contactOfficial'))+'</h3>'+
         '<div class="contact-row"><strong>'+esc(tr('email'))+'</strong><a href="mailto:'+CONFIG.contactEmail+'">'+esc(CONFIG.contactEmail)+'</a></div>'+
-        '<div class="contact-row"><strong>'+esc(tr('website'))+'</strong><a href="'+CONFIG.ccooSanitatUrl+'" target="_blank" rel="noopener">ccoo.cat/sanitat</a></div>'+
-        '<div class="contact-row"><strong>CCOO Sanitat Catalunya</strong><span>Via Laietana, 16 · Barcelona</span></div>'+
+        '<div class="contact-row"><strong>'+esc(tr('website'))+' · CCOO Sanitat Catalunya</strong><a href="'+CONFIG.ccooSanitatUrl+'" target="_blank" rel="noopener">ccoo.cat/sanitat</a></div>'+
+        '<div class="contact-row"><strong>Àmbit / Ámbito</strong><span>HRSC · Consorci Sanitari Alt Penedès-Garraf (CSAPG)</span></div>'+
       '</aside></div></div>';
   }
 
