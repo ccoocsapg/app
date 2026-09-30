@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.10.2',
+    version: '0.10.3',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/',
@@ -888,6 +888,21 @@
 
   function meetingCard(item){
     const bullets=item.bullets?.[state.lang] || item.bullets?.ca || item.bullets?.es || [];
+
+    if(item.category==='convocatories' && Array.isArray(item.actions) && item.actions.length){
+      return '<article class="meeting-card meeting-card--featured">'+
+        '<div class="meeting-top">'+
+          '<div class="date-box"><strong>'+day(item.date)+'</strong><span>'+esc(monthShort(item.date))+'</span></div>'+
+          '<div class="meeting-title"><div class="meta">'+sourceBadge(item.source)+'<span class="badge badge-neutral">'+esc(categoryLabel(item.category))+'</span></div><h3>'+esc(tx(item.title))+'</h3><p>'+esc(tx(item.intro))+'</p></div>'+
+        '</div>'+
+        '<div class="meeting-body meeting-body--always">'+
+          (bullets.length?'<ul>'+bullets.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'')+
+          meetingExtraHtml(item)+
+          '<div class="source-box"><strong>'+esc(tr('sourceLabel'))+':</strong> '+esc(tx(item.sourceNote))+'</div>'+
+        '</div>'+
+      '</article>';
+    }
+
     return '<details class="meeting-card"><summary><div class="meeting-top">'+
       '<div class="date-box"><strong>'+day(item.date)+'</strong><span>'+esc(monthShort(item.date))+'</span></div>'+
       '<div class="meeting-title"><div class="meta">'+sourceBadge(item.source)+'<span class="badge badge-neutral">'+esc(categoryLabel(item.category))+'</span></div><h3>'+esc(tx(item.title))+'</h3><p>'+esc(tx(item.intro))+'</p></div>'+
