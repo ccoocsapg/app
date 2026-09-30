@@ -1,5 +1,5 @@
 {
-  "version": "2026-09-30.2",
+  "version": "2026-09-30.3",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
@@ -116,6 +116,302 @@
         "compensatoris",
         "jornada",
         "calendari"
+      ]
+    },
+    {
+      "id": "taules-siscat-2026",
+      "category": "salaris",
+      "date": "2026-01-01",
+      "status": "ccoo",
+      "driveId": "1BdRk_YBOiyv95o26z_Qf0rYwPk9Cbcwi",
+      "title": {
+        "ca": "Taules salarials SISCAT 2026 (1,5%)",
+        "es": "Tablas salariales SISCAT 2026 (1,5%)"
+      },
+      "desc": {
+        "ca": "Taules 2026 amb salari base, nocturnitat, vinculació, responsabilitat, DPO, SIPDP/SIP, plusos, dietes i atenció continuada.",
+        "es": "Tablas 2026 con salario base, nocturnidad, vinculación, responsabilidad, DPO, SIPDP/SIP, pluses, dietas y atención continuada."
+      },
+      "tags": [
+        "taules salarials",
+        "tablas salariales",
+        "2026",
+        "1,5%",
+        "salari",
+        "nomina",
+        "nocturnitat",
+        "dpo",
+        "sipdp",
+        "festiu",
+        "guardies"
+      ]
+    },
+    {
+      "id": "taules-siscat-2025",
+      "category": "salaris",
+      "date": "2025-01-01",
+      "status": "ccoo",
+      "driveId": "1uZJ7df90sLFYmjreDcKAYcDNnNa2n5Yh",
+      "title": {
+        "ca": "Taules salarials SISCAT 2025 (2,5%)",
+        "es": "Tablas salariales SISCAT 2025 (2,5%)"
+      },
+      "desc": {
+        "ca": "Taules 2025 amb salari base i la resta de conceptes retributius del conveni SISCAT.",
+        "es": "Tablas 2025 con salario base y el resto de conceptos retributivos del convenio SISCAT."
+      },
+      "tags": [
+        "taules salarials",
+        "tablas salariales",
+        "2025",
+        "2,5%",
+        "salari",
+        "nomina",
+        "nocturnitat",
+        "dpo",
+        "sipdp",
+        "festiu",
+        "guardies"
+      ]
+    },
+    {
+      "id": "taules-siscat-2023-3",
+      "category": "salaris",
+      "date": "2023-11-21",
+      "status": "ccoo",
+      "driveId": "1JPjq3bIGykVVp6qN_SqCXrg8krUr-pT-",
+      "title": {
+        "ca": "Taules salarials SISCAT 2023 (3%) · annex Acta 9",
+        "es": "Tablas salariales SISCAT 2023 (3%) · anexo Acta 9"
+      },
+      "desc": {
+        "ca": "Actualització de les taules salarials 2023 al 3%, vinculada a l’acord de la Comissió Paritària.",
+        "es": "Actualización de las tablas salariales 2023 al 3%, vinculada al acuerdo de la Comisión Paritaria."
+      },
+      "tags": [
+        "2023",
+        "3%",
+        "taules salarials",
+        "tablas salariales",
+        "acta 9",
+        "comissio paritaria",
+        "retribucions"
+      ]
+    },
+    {
+      "id": "acta-paritaria-9-2023",
+      "category": "paritaria",
+      "date": "2023-11-21",
+      "status": "official",
+      "driveId": "13mqdrCxiDjXqcTmdf2Dzxj_Z_eLoARbf",
+      "title": {
+        "ca": "Acta 9 · Comissió Paritària III Conveni SISCAT",
+        "es": "Acta 9 · Comisión Paritaria III Convenio SISCAT"
+      },
+      "desc": {
+        "ca": "Acta de 21/11/2023 amb aprovació de l’actualització de les taules salarials 2023.",
+        "es": "Acta de 21/11/2023 con aprobación de la actualización de las tablas salariales 2023."
+      },
+      "tags": [
+        "acta 9",
+        "comissio paritaria",
+        "comision paritaria",
+        "taules salarials",
+        "2023"
+      ]
+    },
+    {
+      "id": "acta-paritaria-10-2023",
+      "category": "paritaria",
+      "date": "2023-11-21",
+      "status": "official",
+      "driveId": "1kwQEGVArwy1ogtHMsmFD5CX70JnUMjNl",
+      "title": {
+        "ca": "Acta 10 · Comissió Paritària III Conveni SISCAT",
+        "es": "Acta 10 · Comisión Paritaria III Convenio SISCAT"
+      },
+      "desc": {
+        "ca": "Resolucions sobre dies de lliure disposició, DPO i criteris vinculats al SIPDP, entre altres consultes.",
+        "es": "Resoluciones sobre días de libre disposición, DPO y criterios vinculados al SIPDP, entre otras consultas."
+      },
+      "tags": [
+        "acta 10",
+        "comissio paritaria",
+        "lliure disposicio",
+        "libre disposicion",
+        "dpo",
+        "sipdp"
+      ]
+    },
+    {
+      "id": "acta-paritaria-12-2024",
+      "category": "paritaria",
+      "date": "2024-01-18",
+      "status": "official",
+      "driveId": "1sVAV17sofkZ-UgTka4XCDMpctN1XpWRE",
+      "title": {
+        "ca": "Acta 12 · Comissió Paritària III Conveni SISCAT",
+        "es": "Acta 12 · Comisión Paritaria III Convenio SISCAT"
+      },
+      "desc": {
+        "ca": "Acta amb criteris sobre DPO dels grups 3 a 7 i aclariments sobre l’accés al nivell D del SIPDP.",
+        "es": "Acta con criterios sobre DPO de los grupos 3 a 7 y aclaraciones sobre el acceso al nivel D del SIPDP."
+      },
+      "tags": [
+        "acta 12",
+        "comissio paritaria",
+        "dpo",
+        "sipdp",
+        "nivell d",
+        "carrera professional"
+      ]
+    },
+    {
+      "id": "acta-paritaria-41-2026",
+      "category": "paritaria",
+      "date": "2026-06-04",
+      "status": "official",
+      "driveId": "1vO6xDUtsDltbBcX18ppOooFIPD9V6Ntp",
+      "title": {
+        "ca": "Acta 41 · Comissió Paritària III Conveni SISCAT",
+        "es": "Acta 41 · Comisión Paritaria III Convenio SISCAT"
+      },
+      "desc": {
+        "ca": "Acta del 04/06/2026 amb consultes sobre DPO, naturalesa salarial de la retribució variable i representació sindical.",
+        "es": "Acta del 04/06/2026 con consultas sobre DPO, naturaleza salarial de la retribución variable y representación sindical."
+      },
+      "tags": [
+        "acta 41",
+        "comissio paritaria",
+        "dpo",
+        "objectius",
+        "representacio sindical",
+        "retribucio variable"
+      ]
+    },
+    {
+      "id": "acta-paritaria-42-2026",
+      "category": "paritaria",
+      "date": "2026-07-07",
+      "status": "official",
+      "driveId": "185czHIU8wZ0D3MhsxqY07CoItneJPuBR",
+      "title": {
+        "ca": "Acta 42 · Comissió Paritària III Conveni SISCAT",
+        "es": "Acta 42 · Comisión Paritaria III Convenio SISCAT"
+      },
+      "desc": {
+        "ca": "Acta del 07/07/2026 amb resposta sobre objectius DPO i consulta sobre efectes econòmics del SIP/SIPDP.",
+        "es": "Acta del 07/07/2026 con respuesta sobre objetivos DPO y consulta sobre efectos económicos del SIP/SIPDP."
+      },
+      "tags": [
+        "acta 42",
+        "comissio paritaria",
+        "dpo",
+        "objectius",
+        "sip",
+        "sipdp",
+        "carrera professional"
+      ]
+    },
+    {
+      "id": "negociadora-2026-01-13-doc",
+      "category": "negociadora",
+      "date": "2026-01-13",
+      "status": "ccoo",
+      "driveId": "1-dSGGpUtO9Ddv4ieA__MkG7QCgt75YuO",
+      "title": {
+        "ca": "SISCAT al dia · Negociadora IV Conveni · 13/01/2026",
+        "es": "SISCAT al día · Negociadora IV Convenio · 13/01/2026"
+      },
+      "desc": {
+        "ca": "Informatiu CCOO sobre l’acord parcial d’increments retributius 2025 i 2026.",
+        "es": "Informativo CCOO sobre el acuerdo parcial de incrementos retributivos 2025 y 2026."
+      },
+      "tags": [
+        "negociadora",
+        "iv conveni",
+        "2025",
+        "2026",
+        "2,5%",
+        "1,5%",
+        "endarreriments",
+        "ipc"
+      ]
+    },
+    {
+      "id": "negociadora-2026-09-15-doc",
+      "category": "negociadora",
+      "date": "2026-09-15",
+      "status": "ccoo",
+      "driveId": "1piPSR-zpTEXb_ohFju6NSfq79EWoZWCK",
+      "title": {
+        "ca": "SISCAT al dia · Negociadora IV Conveni · 15/09/2026",
+        "es": "SISCAT al día · Negociadora IV Convenio · 15/09/2026"
+      },
+      "desc": {
+        "ca": "Informatiu CCOO sobre la negociació de l’article 42 i diversos permisos retribuïts.",
+        "es": "Informativo CCOO sobre la negociación del artículo 42 y varios permisos retribuidos."
+      },
+      "tags": [
+        "negociadora",
+        "article 42",
+        "permisos",
+        "hospitalitzacio",
+        "urgencies",
+        "visita medica",
+        "14 hores",
+        "cma"
+      ]
+    },
+    {
+      "id": "negociadora-2026-09-22-doc",
+      "category": "negociadora",
+      "date": "2026-09-22",
+      "status": "ccoo",
+      "driveId": "1f5vWO5VV9KjR6rpt2_WBtN6mS7bbbkxr",
+      "title": {
+        "ca": "SISCAT al dia · Negociadora IV Conveni · 22/09/2026",
+        "es": "SISCAT al día · Negociadora IV Convenio · 22/09/2026"
+      },
+      "desc": {
+        "ca": "Informatiu CCOO sobre complement de productivitat, permisos, discapacitat, força major i fenòmens meteorològics.",
+        "es": "Informativo CCOO sobre complemento de productividad, permisos, discapacidad, fuerza mayor y fenómenos meteorológicos."
+      },
+      "tags": [
+        "negociadora",
+        "productivitat",
+        "permisos",
+        "discapacitat",
+        "forca major",
+        "meteorologia",
+        "article 36.4",
+        "article 42"
+      ]
+    },
+    {
+      "id": "acords-csapg-ld-visita-2022",
+      "category": "acordscentre",
+      "date": "2022-12-14",
+      "status": "official",
+      "driveId": "1gRqI4Lss0vb1IwL936b3B6kB-d0nHhPK",
+      "title": {
+        "ca": "Acords CSAPG · Dies de lliure disposició i 14 h de visita mèdica",
+        "es": "Acuerdos CSAPG · Días de libre disposición y 14 h de visita médica"
+      },
+      "desc": {
+        "ca": "Acords d’interpretació sobre resposta als LD, coincidència amb IT i ús de les 14 hores de visita mèdica.",
+        "es": "Acuerdos de interpretación sobre respuesta a los LD, coincidencia con IT y uso de las 14 horas de visita médica."
+      },
+      "tags": [
+        "csapg",
+        "acord centre",
+        "lliure disposicio",
+        "libre disposicion",
+        "ld",
+        "it",
+        "baixa",
+        "14 hores",
+        "visita medica"
       ]
     }
   ],
@@ -237,6 +533,255 @@
         "oferta verano",
         "descompte",
         "descuento"
+      ]
+    },
+    {
+      "id": "siscat-2026-01-13",
+      "contentType": "meeting",
+      "date": "2026-01-13",
+      "category": "negociadora",
+      "source": "ccoo",
+      "title": {
+        "ca": "Negociadora IV Conveni SISCAT · acord retributiu",
+        "es": "Negociadora IV Convenio SISCAT · acuerdo retributivo"
+      },
+      "intro": {
+        "ca": "Acord parcial sobre els increments retributius dels anys 2025 i 2026.",
+        "es": "Acuerdo parcial sobre los incrementos retributivos de los años 2025 y 2026."
+      },
+      "bullets": {
+        "ca": [
+          "Increment del 2,5% per a 2025.",
+          "Increment de l’1,5% per a 2026.",
+          "Aplicació acumulada a la nòmina de gener de 2026.",
+          "Endarreriments de 2025 com a màxim el 28/02/2026.",
+          "Si l’IPC 2026 és igual o superior a l’1,5%, es preveu un 0,5% addicional consolidable."
+        ],
+        "es": [
+          "Incremento del 2,5% para 2025.",
+          "Incremento del 1,5% para 2026.",
+          "Aplicación acumulada en la nómina de enero de 2026.",
+          "Atrasos de 2025 como máximo el 28/02/2026.",
+          "Si el IPC 2026 es igual o superior al 1,5%, se prevé un 0,5% adicional consolidable."
+        ]
+      },
+      "sourceNote": {
+        "ca": "Informatiu CCOO Sanitat de 13/01/2026.",
+        "es": "Informativo CCOO Sanitat de 13/01/2026."
+      },
+      "actions": [
+        {
+          "label": {
+            "ca": "Veure informatiu",
+            "es": "Ver informativo"
+          },
+          "url": "https://drive.google.com/file/d/1-dSGGpUtO9Ddv4ieA__MkG7QCgt75YuO/view",
+          "style": "outline"
+        }
+      ],
+      "tags": [
+        "negociadora",
+        "siscat",
+        "salari",
+        "retribucions",
+        "2025",
+        "2026"
+      ]
+    },
+    {
+      "id": "paritaria-41-2026-06-04",
+      "contentType": "meeting",
+      "date": "2026-06-04",
+      "category": "paritaria",
+      "source": "official",
+      "title": {
+        "ca": "Comissió Paritària · Acta 41 · 04/06/2026",
+        "es": "Comisión Paritaria · Acta 41 · 04/06/2026"
+      },
+      "intro": {
+        "ca": "Consultes rellevants sobre DPO i representació sindical.",
+        "es": "Consultas relevantes sobre DPO y representación sindical."
+      },
+      "bullets": {
+        "ca": [
+          "La CP 115 queda sense acord en quatre qüestions sobre fixació tardana i càlcul proporcional de les DPO.",
+          "La CP 118 estableix que la DPO té naturalesa salarial i s’integra en l’estructura retributiva quan es genera el dret.",
+          "Per al personal amb funcions de representació sindical s’apliquen els mateixos criteris; si no poden assolir-se per l’exercici del càrrec, es garanteix la mitjana d’assoliment del lloc de treball."
+        ],
+        "es": [
+          "La CP 115 queda sin acuerdo en cuatro cuestiones sobre fijación tardía y cálculo proporcional de las DPO.",
+          "La CP 118 establece que la DPO tiene naturaleza salarial y se integra en la estructura retributiva cuando se genera el derecho.",
+          "Al personal con funciones de representación sindical se le aplican los mismos criterios; si no pueden alcanzarse por el ejercicio del cargo, se garantiza la media de consecución del puesto de trabajo."
+        ]
+      },
+      "sourceNote": {
+        "ca": "Acta oficial 41 de la Comissió Paritària del III Conveni SISCAT.",
+        "es": "Acta oficial 41 de la Comisión Paritaria del III Convenio SISCAT."
+      },
+      "actions": [
+        {
+          "label": {
+            "ca": "Veure acta",
+            "es": "Ver acta"
+          },
+          "url": "https://drive.google.com/file/d/1vO6xDUtsDltbBcX18ppOooFIPD9V6Ntp/view",
+          "style": "outline"
+        }
+      ],
+      "tags": [
+        "paritaria",
+        "acta 41",
+        "dpo",
+        "representacio sindical",
+        "retribucio variable"
+      ]
+    },
+    {
+      "id": "paritaria-42-2026-07-07",
+      "contentType": "meeting",
+      "date": "2026-07-07",
+      "category": "paritaria",
+      "source": "official",
+      "title": {
+        "ca": "Comissió Paritària · Acta 42 · 07/07/2026",
+        "es": "Comisión Paritaria · Acta 42 · 07/07/2026"
+      },
+      "intro": {
+        "ca": "Resposta sobre objectius DPO i consulta sobre SIP/SIPDP.",
+        "es": "Respuesta sobre objetivos DPO y consulta sobre SIP/SIPDP."
+      },
+      "bullets": {
+        "ca": [
+          "La CP 119 indica que l’objectiu individual ha de ser assolible i mesurable mitjançant indicadors determinats prèviament.",
+          "La consulta CP 120 sobre l’abonament del SIP/SIPDP des de la data de sol·licitud queda ajornada."
+        ],
+        "es": [
+          "La CP 119 indica que el objetivo individual debe ser alcanzable y medible mediante indicadores determinados previamente.",
+          "La consulta CP 120 sobre el abono del SIP/SIPDP desde la fecha de solicitud queda aplazada."
+        ]
+      },
+      "sourceNote": {
+        "ca": "Acta oficial 42 de la Comissió Paritària del III Conveni SISCAT.",
+        "es": "Acta oficial 42 de la Comisión Paritaria del III Convenio SISCAT."
+      },
+      "actions": [
+        {
+          "label": {
+            "ca": "Veure acta",
+            "es": "Ver acta"
+          },
+          "url": "https://drive.google.com/file/d/185czHIU8wZ0D3MhsxqY07CoItneJPuBR/view",
+          "style": "outline"
+        }
+      ],
+      "tags": [
+        "paritaria",
+        "acta 42",
+        "dpo",
+        "objectius",
+        "sip",
+        "sipdp"
+      ]
+    },
+    {
+      "id": "negociadora-2026-09-15",
+      "contentType": "meeting",
+      "date": "2026-09-15",
+      "category": "negociadora",
+      "source": "ccoo",
+      "title": {
+        "ca": "Negociadora IV Conveni SISCAT · permisos",
+        "es": "Negociadora IV Convenio SISCAT · permisos"
+      },
+      "intro": {
+        "ca": "Sessió centrada en l’article 42 i la revisió dels permisos retribuïts.",
+        "es": "Sesión centrada en el artículo 42 y la revisión de los permisos retribuidos."
+      },
+      "bullets": {
+        "ca": [
+          "S’acorda que el personal de nit pugui iniciar la nit anterior determinats permisos per hospitalització o intervenció.",
+          "S’incorporen les visites d’infermeria de consultes externes al permís de 14 hores anuals.",
+          "CCOO demana adaptar el gaudiment del permís d’hospitalització a la doctrina sobre alta mèdica i ampliar l’abast de les 14 hores.",
+          "Les patronals proposen ampliar de 2 a 5 dies el supòsit d’estada a urgències superior a 24 hores d’un familiar de primer grau."
+        ],
+        "es": [
+          "Se acuerda que el personal de noche pueda iniciar la noche anterior determinados permisos por hospitalización o intervención.",
+          "Se incorporan las visitas de enfermería de consultas externas al permiso de 14 horas anuales.",
+          "CCOO pide adaptar el disfrute del permiso de hospitalización a la doctrina sobre alta médica y ampliar el alcance de las 14 horas.",
+          "Las patronales proponen ampliar de 2 a 5 días el supuesto de estancia en urgencias superior a 24 horas de un familiar de primer grado."
+        ]
+      },
+      "sourceNote": {
+        "ca": "Informatiu CCOO de la reunió del 15/09/2026. Les propostes en negociació no s’han de confondre amb el text definitiu del conveni.",
+        "es": "Informativo CCOO de la reunión del 15/09/2026. Las propuestas en negociación no deben confundirse con el texto definitivo del convenio."
+      },
+      "actions": [
+        {
+          "label": {
+            "ca": "Veure informatiu",
+            "es": "Ver informativo"
+          },
+          "url": "https://drive.google.com/file/d/1piPSR-zpTEXb_ohFju6NSfq79EWoZWCK/view",
+          "style": "outline"
+        }
+      ],
+      "tags": [
+        "negociadora",
+        "permisos",
+        "hospitalitzacio",
+        "urgencies",
+        "14 hores",
+        "visita medica"
+      ]
+    },
+    {
+      "id": "negociadora-2026-09-22",
+      "contentType": "meeting",
+      "date": "2026-09-22",
+      "category": "negociadora",
+      "source": "ccoo",
+      "title": {
+        "ca": "Negociadora IV Conveni SISCAT · productivitat i permisos",
+        "es": "Negociadora IV Convenio SISCAT · productividad y permisos"
+      },
+      "intro": {
+        "ca": "Sessió sobre el complement de productivitat, permisos i altres mesures de conciliació i protecció.",
+        "es": "Sesión sobre el complemento de productividad, permisos y otras medidas de conciliación y protección."
+      },
+      "bullets": {
+        "ca": [
+          "Les patronals manifesten disposició a obrir el complement de productivitat de l’article 36.4 a altres grups professionals de manera voluntària segons necessitats de l’entitat.",
+          "Es tracten permisos vinculats a fills/es amb discapacitat i una proposta de 10 hores anuals per a determinats familiars dependents.",
+          "CCOO demana incorporar garanties sobre força major, fenòmens meteorològics adversos i personal del torn de nit."
+        ],
+        "es": [
+          "Las patronales manifiestan disposición a abrir el complemento de productividad del artículo 36.4 a otros grupos profesionales de forma voluntaria según necesidades de la entidad.",
+          "Se tratan permisos vinculados a hijos/as con discapacidad y una propuesta de 10 horas anuales para determinados familiares dependientes.",
+          "CCOO pide incorporar garantías sobre fuerza mayor, fenómenos meteorológicos adversos y personal del turno de noche."
+        ]
+      },
+      "sourceNote": {
+        "ca": "Informatiu CCOO de la reunió del 22/09/2026. Inclou propostes encara en negociació.",
+        "es": "Informativo CCOO de la reunión del 22/09/2026. Incluye propuestas todavía en negociación."
+      },
+      "actions": [
+        {
+          "label": {
+            "ca": "Veure informatiu",
+            "es": "Ver informativo"
+          },
+          "url": "https://drive.google.com/file/d/1f5vWO5VV9KjR6rpt2_WBtN6mS7bbbkxr/view",
+          "style": "outline"
+        }
+      ],
+      "tags": [
+        "negociadora",
+        "productivitat",
+        "article 36.4",
+        "permisos",
+        "discapacitat",
+        "forca major",
+        "meteorologia"
       ]
     }
   ]
