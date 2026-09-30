@@ -1,5 +1,5 @@
 {
-  "version": "0.13.3",
-  "build": "2026-09-30T22:30:00+02:00",
-  "message": "Consulta/Novetats UX and final event selector fix"
+  "version": "0.14.0",
+  "build": "2026-09-30T22:48:00+02:00",
+  "message": "Filter fixes, keyboard-safe Consulta, responsive hardening and iOS icon update"
 }
