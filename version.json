@@ -1,5 +1,5 @@
 {
-  "version": "0.12.0",
-  "build": "2026-09-30T21:25:00+02:00",
-  "message": "Mobile navigation, smart search, notification onboarding and fresh content fixes"
+  "version": "0.12.1",
+  "build": "2026-09-30T21:32:00+02:00",
+  "message": "Event binding fix after v0.12 rollout"
 }
