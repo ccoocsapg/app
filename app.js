@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.5.1',
+    version: '0.6.0',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/'
@@ -817,6 +817,80 @@
     window.scrollTo({top:0,behavior:'auto'});
   }
 
+  let updateReloading=false;
+
+  async function purgeOldAppCaches(){
+    if(!('caches' in window)) return;
+    try{
+      const keys=await caches.keys();
+      await Promise.all(keys.filter(key=>key.startsWith('ccoo-csapg-app-')).map(key=>caches.delete(key)));
+    }catch(e){}
+  }
+
+  async function checkLatestVersion(){
+    try{
+      const response=await fetch('./version.json?_='+Date.now(),{cache:'no-store'});
+      if(!response.ok) return false;
+      const remote=await response.json();
+      const latest=String(remote.version||'').trim();
+      if(!latest || latest===CONFIG.version) return false;
+
+      if('serviceWorker' in navigator){
+        try{
+          const reg=await navigator.serviceWorker.getRegistration('./');
+          if(reg) await reg.update();
+        }catch(e){}
+      }
+      await purgeOldAppCaches();
+
+      const url=new URL(location.href);
+      url.searchParams.set('_appv',latest);
+      updateReloading=true;
+      location.replace(url.toString());
+      return true;
+    }catch(e){
+      return false;
+    }
+  }
+
+  async function setupServiceWorker(){
+    if(!('serviceWorker' in navigator)) return;
+    try{
+      const reg=await navigator.serviceWorker.register('./sw.js?v='+encodeURIComponent(CONFIG.version),{updateViaCache:'none'});
+      try{await reg.update();}catch(e){}
+
+      const activateWorker=worker=>{
+        if(!worker) return;
+        const tryActivate=()=>{
+          if(worker.state==='installed' && navigator.serviceWorker.controller){
+            worker.postMessage({type:'SKIP_WAITING'});
+          }
+        };
+        worker.addEventListener('statechange',tryActivate);
+        tryActivate();
+      };
+
+      if(reg.waiting) reg.waiting.postMessage({type:'SKIP_WAITING'});
+      if(reg.installing) activateWorker(reg.installing);
+      reg.addEventListener('updatefound',()=>activateWorker(reg.installing));
+
+      navigator.serviceWorker.addEventListener('controllerchange',()=>{
+        if(updateReloading) return;
+        updateReloading=true;
+        location.reload();
+      });
+    }catch(e){}
+  }
+
+  function installUpdateWatch(){
+    window.addEventListener('pageshow',()=>checkLatestVersion());
+    window.addEventListener('focus',()=>checkLatestVersion());
+    document.addEventListener('visibilitychange',()=>{
+      if(!document.hidden) checkLatestVersion();
+    });
+    window.setInterval(()=>checkLatestVersion(),5*60*1000);
+  }
+
   async function init(){
     $$('.lang-btn').forEach(btn=>btn.addEventListener('click',()=>{
       state.lang=btn.dataset.lang;
@@ -829,7 +903,10 @@
     window.addEventListener('hashchange',()=>{state.search='';render();});
     window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();state.installPrompt=e;});
     window.addEventListener('appinstalled',()=>{state.installPrompt=null;});
-    if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
+    installUpdateWatch();
+    await setupServiceWorker();
+    const updating=await checkLatestVersion();
+    if(updating) return;
     await loadPublishedManifest();
     if(!location.hash) location.hash='#/inicio'; else render();
   }
