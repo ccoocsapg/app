@@ -462,7 +462,8 @@
   const DOCUMENT_INDEX_FILES = [
     './search/conveni.json',
     './search/procediment-6455.json',
-    './search/siscat-updates.json'
+    './search/siscat-updates.json',
+    './search/convocatories-2026.json'
   ];
   let documentIndexPromise = null;
   let documentSearchSeq = 0;
