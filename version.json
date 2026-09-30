@@ -1,5 +1,5 @@
 {
-  "version": "0.12.3",
-  "build": "2026-09-30T21:58:00+02:00",
-  "message": "Publish HRSC communications and fix document search filtering"
+  "version": "0.13.0",
+  "build": "2026-09-30T22:05:00+02:00",
+  "message": "Simplified Consulta/Novetats UX and notification test"
 }
