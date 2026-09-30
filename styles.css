@@ -668,3 +668,40 @@ button{cursor:pointer}
   .app-shell{display:block;padding:0}
   .card,.doc-card,.meeting-card{break-inside:avoid}
 }
+
+/* AVISOS I POLÍTIQUES */
+.notification-nudge{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-left:7px solid var(--ccoo-red);
+  padding:18px
+}
+.notification-nudge h2{
+  margin:3px 0 5px;
+  font-size:1.18rem;
+  text-transform:uppercase
+}
+.notification-nudge p{margin:0;color:var(--muted);font-size:.84rem}
+.notification-nudge__actions{display:flex;gap:8px;flex-wrap:wrap;flex:none}
+.legal-stack{display:grid;gap:12px}
+.legal-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-left:6px solid var(--ccoo-red);
+  padding:18px
+}
+.legal-card:nth-child(even){border-left-color:#000}
+.legal-card h3{margin:0 0 8px;font-size:.9rem;text-transform:uppercase}
+.legal-card p{margin:0;color:var(--muted);font-size:.86rem;max-width:980px}
+.legal-updated{color:#777;font-size:.72rem;margin-top:14px}
+.footer-links a[href^="#/"]{color:#333}
+.footer-links a[href^="#/"]:hover{color:var(--ccoo-red);text-decoration:underline}
+@media(max-width:680px){
+  .notification-nudge{align-items:flex-start;flex-direction:column}
+  .notification-nudge__actions{width:100%}
+  .notification-nudge__actions .btn{flex:1}
+}
