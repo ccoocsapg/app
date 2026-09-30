@@ -245,7 +245,7 @@
   };
 
   const state = {
-    lang: localStorage.getItem('ccoo-csapg-lang') || (navigator.language && navigator.language.toLowerCase().startsWith('es') ? 'es' : 'ca'),
+    lang: localStorage.getItem('ccoo-csapg-lang') || 'ca',
     docFilter: 'all',
     meetingFilter: 'all',
     search: '',
