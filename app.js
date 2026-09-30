@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.14.0',
+    version: '0.15.0',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/',
@@ -253,20 +253,59 @@
     }
   };
 
-  async function loadPublishedManifest(){
-    DOCS=[];
+  let publishedVersion='';
+
+  async function notifyNewPublishedContent(data){
+    const docs=Array.isArray(data.documents)?data.documents:[];
+    const meetings=Array.isArray(data.meetings)?data.meetings:[];
+    const items=[...docs.map(x=>({id:x.id,type:'documents',title:tx(x.title)||x.id})),...meetings.map(x=>({id:x.id,type:'reunions',title:tx(x.title)||x.id}))].filter(x=>x.id);
+    const storageKey='ccoo-csapg-published-ids';
+    let previous=[];
+    try{previous=JSON.parse(localStorage.getItem(storageKey)||'[]');}catch(e){}
+    const previousSet=new Set(Array.isArray(previous)?previous:[]);
+    const fresh=items.filter(x=>!previousSet.has(x.id));
+    localStorage.setItem(storageKey,JSON.stringify(items.map(x=>x.id)));
+    if(!previousSet.size || !fresh.length) return;
+    if(!supportsWebPush() || Notification.permission!=='granted') return;
     try{
-      const response=await fetch('./data/published.json?v='+encodeURIComponent(CONFIG.version)+'&_='+Date.now(),{cache:'no-store'});
-      if(!response.ok) return;
+      const registration=await navigator.serviceWorker.ready;
+      const first=fresh[0];
+      const body=fresh.length===1
+        ? first.title
+        : (state.lang==='ca'
+          ? fresh.length+' continguts nous publicats'
+          : fresh.length+' contenidos nuevos publicados');
+      await registration.showNotification('CCOO CSAPG · '+(state.lang==='ca'?'Nou contingut':'Nuevo contenido'),{
+        body,
+        icon:'./icon.svg',
+        badge:'./icon.svg',
+        tag:'ccoo-csapg-new-content',
+        renotify:true,
+        data:{url:first.type==='reunions'?'./#/reunions':'./#/documents'}
+      });
+    }catch(e){}
+  }
+
+  async function loadPublishedManifest(){
+    try{
+      const response=await fetch('./data/published.json?_='+Date.now(),{cache:'no-store'});
+      if(!response.ok) return false;
       const data=await response.json();
+      const nextVersion=String(data.version||'');
       if(Array.isArray(data.documents)) DOCS=data.documents;
-      if(Array.isArray(data.meetings) && data.meetings.length){
+      if(Array.isArray(data.meetings)){
         const byId=new Map(MEETINGS.map(item=>[item.id,item]));
         data.meetings.forEach(item=>byId.set(item.id,item));
         MEETINGS=[...byId.values()];
       }
+      if(nextVersion && nextVersion!==publishedVersion){
+        documentIndexPromise=null;
+        publishedVersion=nextVersion;
+      }
+      await notifyNewPublishedContent(data);
+      return true;
     }catch(e){
-      DOCS=[];
+      return false;
     }
   }
 
@@ -486,7 +525,8 @@
       '<div class="notification-nudge__actions"><button class="btn btn-primary" type="button" data-notification-manage>'+esc(tr('notificationsManage'))+'</button><button class="btn btn-outline" type="button" data-notification-dismiss>'+esc(tr('notificationsDismiss'))+'</button></div></section>';
   }
 
-  const DOCUMENT_INDEX_FILES = [
+  const DOCUMENT_INDEX_MANIFEST = './search/manifest.json';
+  const LEGACY_DOCUMENT_INDEX_FILES = [
     './search/conveni.json',
     './search/procediment-6455.json',
     './search/siscat-updates.json',
@@ -497,11 +537,24 @@
 
   async function loadDocumentIndex(){
     if(documentIndexPromise) return documentIndexPromise;
-    documentIndexPromise = Promise.all(
-      DOCUMENT_INDEX_FILES.map(url=>fetch(url+'?v='+encodeURIComponent(CONFIG.version),{cache:'no-store'})
-        .then(r=>r.ok?r.json():{chunks:[]})
-        .catch(()=>({chunks:[]})))
-    ).then(parts=>parts.flatMap(p=>Array.isArray(p.chunks)?p.chunks:[]));
+    documentIndexPromise=(async()=>{
+      let files=LEGACY_DOCUMENT_INDEX_FILES.slice();
+      try{
+        const manifestResponse=await fetch(DOCUMENT_INDEX_MANIFEST+'?_='+Date.now(),{cache:'no-store'});
+        if(manifestResponse.ok){
+          const manifest=await manifestResponse.json();
+          if(Array.isArray(manifest.files) && manifest.files.length){
+            files=[...new Set(manifest.files.map(x=>String(x||'').trim()).filter(Boolean))];
+          }
+        }
+      }catch(e){}
+      const parts=await Promise.all(
+        files.map(url=>fetch(url+(url.includes('?')?'&':'?')+'_='+Date.now(),{cache:'no-store'})
+          .then(r=>r.ok?r.json():{chunks:[]})
+          .catch(()=>({chunks:[]})))
+      );
+      return parts.flatMap(p=>Array.isArray(p.chunks)?p.chunks:[]);
+    })();
     return documentIndexPromise;
   }
 
@@ -849,10 +902,29 @@
 
   function topicButtonsHtml(){
     return '<div class="topic-grid">'+consultationTopics().map(topic=>
-      '<button type="button" class="topic-card" data-topic-key="'+esc(topic.key)+'" data-topic-query="'+esc(topic.query)+'" data-topic-label="'+esc(tx(topic.label))+'">'+
+      '<a href="#/documents?topic='+encodeURIComponent(topic.key)+'" class="topic-card'+(state.topicKey===topic.key?' is-active':'')+'" data-topic-key="'+esc(topic.key)+'" data-topic-query="'+esc(topic.query)+'" data-topic-label="'+esc(tx(topic.label))+'">'+
         '<span class="topic-card__icon">'+esc(topic.icon)+'</span><strong>'+esc(tx(topic.label))+'</strong>'+
-      '</button>'
+      '</a>'
     ).join('')+'</div>';
+  }
+
+  function routeParams(){
+    const hash=location.hash||'#/inicio';
+    const q=hash.indexOf('?');
+    return new URLSearchParams(q>=0?hash.slice(q+1):'');
+  }
+
+  function syncStateFromRoute(){
+    if(route()!=='documents') return;
+    const key=routeParams().get('topic')||'';
+    const topic=consultationTopics().find(x=>x.key===key);
+    if(topic){
+      state.topicKey=topic.key;
+      state.search=topic.query;
+      state.docFilter='all';
+    }else if(key){
+      state.topicKey='';
+    }
   }
 
   function renderConsultInfo(query){
@@ -1218,26 +1290,13 @@
       renderConsultaResults();
     });
 
-    $$('[data-topic-query]').forEach(btn=>btn.addEventListener('click',()=>{
-      state.search=btn.dataset.topicQuery||'';
-      state.topicKey=btn.dataset.topicKey||'';
-      state.docFilter='all';
-      $$('[data-topic-query]').forEach(x=>x.classList.toggle('is-active',x===btn));
-
-      if(docSearch) docSearch.value=btn.dataset.topicLabel||'';
-
-      if(document.activeElement && typeof document.activeElement.blur==='function'){
-        document.activeElement.blur();
-      }
-
-      renderConsultaResults();
-
-      const target=$('#consultaResults');
-      if(target){
-        window.setTimeout(()=>{
-          try{target.scrollIntoView({behavior:'smooth',block:'start'});}
-          catch(e){window.scrollTo(0,target.offsetTop||0);}
-        },40);
+    $('[data-topic-query]').forEach(btn=>btn.addEventListener('click',e=>{
+      const key=btn.dataset.topicKey||'';
+      const targetHash='#/documents?topic='+encodeURIComponent(key);
+      if(location.hash===targetHash){
+        e.preventDefault();
+        syncStateFromRoute();
+        render();
       }
     }));
 
@@ -1368,6 +1427,7 @@
       if(!document.hidden) checkLatestVersion();
     });
     window.setInterval(()=>checkLatestVersion(),5*60*1000);
+    window.setInterval(()=>loadPublishedManifest().then(changed=>{if(changed) render();}),5*60*1000);
   }
 
   async function init(){
@@ -1380,7 +1440,7 @@
     const notificationButton=$('#notificationButton'); if(notificationButton) notificationButton.addEventListener('click',()=>openNotificationDialog());
     $$('[data-close-dialog]').forEach(btn=>btn.addEventListener('click',()=>btn.closest('dialog').close()));
     $('#previewDialog').addEventListener('close',()=>{$('#previewFrame').src='about:blank';});
-    window.addEventListener('hashchange',()=>{state.search='';state.topicKey='';render();});
+    window.addEventListener('hashchange',()=>{state.search='';state.topicKey='';syncStateFromRoute();render();});
     document.addEventListener('focusin',e=>{
       if(e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) document.body.classList.add('is-typing');
     });
@@ -1401,7 +1461,7 @@
     if(updating) return;
     await loadPushConfig();
     await loadPublishedManifest();
-    if(!location.hash) location.hash='#/inicio'; else render();
+    if(!location.hash) location.hash='#/inicio'; else {syncStateFromRoute();render();}
 
     if(
       isStandalone() &&
