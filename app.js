@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.13.0',
+    version: '0.13.1',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/',
