@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.10.0',
+    version: '0.10.1',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/',
@@ -287,8 +287,9 @@
   const formatDate = value => new Intl.DateTimeFormat(state.lang === 'ca' ? 'ca-ES' : 'es-ES',{day:'2-digit',month:'short',year:'numeric'}).format(new Date(value+'T12:00:00'));
   const monthShort = value => new Intl.DateTimeFormat(state.lang === 'ca' ? 'ca-ES' : 'es-ES',{month:'short'}).format(new Date(value+'T12:00:00')).replace('.','');
   const day = value => new Date(value+'T12:00:00').getDate();
-  const driveView = id => 'https://drive.google.com/file/d/'+id+'/view';
+  const driveView = id => 'https://drive.google.com/file/d/'+id+'/view?usp=drivesdk';
   const drivePreview = id => 'https://drive.google.com/file/d/'+id+'/preview';
+  const driveInline = id => 'https://drive.google.com/uc?export=view&id='+encodeURIComponent(id);
   const driveDownload = id => 'https://drive.google.com/uc?export=download&id='+encodeURIComponent(id);
 
   async function loadPushConfig(){
@@ -991,7 +992,12 @@
   function openPreview(id){
     const doc=DOCS.find(x=>x.id===id); if(!doc) return;
     $('#previewTitle').textContent=tx(doc.title);
-    $('#previewFrame').src=drivePreview(doc.driveId);
+
+    // Google Drive puede devolver error 400 al usar /preview dentro de una PWA iOS.
+    // En iPhone/iPad o modo standalone usamos el enlace directo "export=view",
+    // que permite al visor PDF nativo del navegador mostrar el archivo.
+    const frameUrl=(isIOS() || isStandalone()) ? driveInline(doc.driveId) : drivePreview(doc.driveId);
+    $('#previewFrame').src=frameUrl;
     $('#previewOpen').href=driveView(doc.driveId);
     $('#previewDownload').href=driveDownload(doc.driveId);
     $('#previewDialog').showModal();
