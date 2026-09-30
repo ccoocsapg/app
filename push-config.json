@@ -1,0 +1,6 @@
+{
+  "enabled": false,
+  "apiBase": "",
+  "vapidPublicKey": "",
+  "note": "Activar cuando el servidor Web Push HTTPS esté desplegado. No guardar claves privadas en este repositorio público."
+}
