@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.3.0',
+    version: '0.4.0',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/'
@@ -189,7 +189,7 @@
       sourceFirst:'Primer, la font.', sourceFirstText:'Els resums mai substitueixen el document oficial.',
       homeEyebrow:'CCOO SANITAT · CSAPG', homeTitle:'La informació laboral que necessites, sense haver de buscar-la per tot arreu.',
       homeLead:'Documents oficials, resums de reunions, eines pràctiques i contacte sindical en un espai pensat per consultar-se des del mòbil.',
-      install:'Instal·lar com a app', browseDocs:'Consultar documents', searchPlaceholder:'Què necessites trobar? Ex. permisos, DPO, convocatòries…', smartSearchHint:'Cerca intel·ligent: també relaciona sinònims, conceptes i temes similars.', relatedResult:'Resultat relacionat',
+      install:'Instal·lar com a app', browseDocs:'Consultar documents', searchPlaceholder:'Què necessites trobar? Ex. permisos, DPO, convocatòries…', smartSearchHint:'Cerca intel·ligent: primer busca a la web i després dins dels documents indexats.', relatedResult:'Resultat relacionat', webResults:'Resultats de la web', documentResults:'Dins dels documents', searchingDocs:'Buscant dins dels documents…', openSource:'Obrir document font', docFragment:'Fragment del document', noDocResults:'No s’han trobat fragments relacionats dins dels documents indexats.',
       quickDocs:'Documents oficials', quickDocsSub:'Conveni, pactes i procediments', quickMeetings:'Reunions i comunicats', quickMeetingsSub:'Resums clars per temes',
       quickTools:'Eines', quickToolsSub:'Calculadores i guies pràctiques', quickContact:'Contacta amb CCOO', quickContactSub:'Consulta o envia un suggeriment',
       latest:'Últimes informacions', latestSub:'Resums identificats com a tals i separats de la documentació oficial.', viewAll:'Veure-ho tot',
@@ -218,7 +218,7 @@
       sourceFirst:'Primero, la fuente.', sourceFirstText:'Los resúmenes nunca sustituyen al documento oficial.',
       homeEyebrow:'CCOO SANITAT · CSAPG', homeTitle:'La información laboral que necesitas, sin tener que buscarla por todas partes.',
       homeLead:'Documentos oficiales, resúmenes de reuniones, herramientas prácticas y contacto sindical en un espacio pensado para consultarse desde el móvil.',
-      install:'Instalar como app', browseDocs:'Consultar documentos', searchPlaceholder:'¿Qué necesitas encontrar? Ej. permisos, DPO, convocatorias…', smartSearchHint:'Búsqueda inteligente: también relaciona sinónimos, conceptos y temas similares.', relatedResult:'Resultado relacionado',
+      install:'Instalar como app', browseDocs:'Consultar documentos', searchPlaceholder:'¿Qué necesitas encontrar? Ej. permisos, DPO, convocatorias…', smartSearchHint:'Búsqueda inteligente: primero busca en la web y después dentro de los documentos indexados.', relatedResult:'Resultado relacionado', webResults:'Resultados de la web', documentResults:'Dentro de los documentos', searchingDocs:'Buscando dentro de los documentos…', openSource:'Abrir documento fuente', docFragment:'Fragmento del documento', noDocResults:'No se han encontrado fragmentos relacionados dentro de los documentos indexados.',
       quickDocs:'Documentos oficiales', quickDocsSub:'Convenio, pactos y procedimientos', quickMeetings:'Reuniones y comunicados', quickMeetingsSub:'Resúmenes claros por temas',
       quickTools:'Herramientas', quickToolsSub:'Calculadoras y guías prácticas', quickContact:'Contacta con CCOO', quickContactSub:'Consulta o envía una sugerencia',
       latest:'Últimas informaciones', latestSub:'Resúmenes identificados como tales y separados de la documentación oficial.', viewAll:'Ver todo',
@@ -263,6 +263,24 @@
   const driveView = id => 'https://drive.google.com/file/d/'+id+'/view';
   const drivePreview = id => 'https://drive.google.com/file/d/'+id+'/preview';
   const driveDownload = id => 'https://drive.google.com/uc?export=download&id='+encodeURIComponent(id);
+
+  const DOCUMENT_INDEX_FILES = [
+    './search/conveni.json',
+    './search/procediment-6455.json',
+    './search/permisos.json'
+  ];
+  let documentIndexPromise = null;
+  let documentSearchSeq = 0;
+
+  async function loadDocumentIndex(){
+    if(documentIndexPromise) return documentIndexPromise;
+    documentIndexPromise = Promise.all(
+      DOCUMENT_INDEX_FILES.map(url=>fetch(url,{cache:'force-cache'})
+        .then(r=>r.ok?r.json():{chunks:[]})
+        .catch(()=>({chunks:[]})))
+    ).then(parts=>parts.flatMap(p=>Array.isArray(p.chunks)?p.chunks:[]));
+    return documentIndexPromise;
+  }
 
 
   // Índice semántico local. No envía la consulta a ningún servicio externo.
@@ -392,6 +410,8 @@
     if(item.sourceNote){parts.push(item.sourceNote.ca,item.sourceNote.es);}
     if(item.bullets){parts.push(...(item.bullets.ca||[]),...(item.bullets.es||[]));}
     if(item.tags) parts.push(...item.tags);
+    if(item.heading) parts.push(item.heading);
+    if(item.text) parts.push(item.text);
     if(item.category) parts.push(item.category,categoryLabel(item.category));
     return normalizeSearch(parts.filter(Boolean).join(' '));
   }
@@ -431,6 +451,70 @@
       .filter(x=>x.score>0)
       .sort((a,b)=>b.score-a.score || String(b.item.date||'').localeCompare(String(a.item.date||'')))
       .map(x=>x.item);
+  }
+
+
+  function documentSearchScore(chunk,query){
+    const base=smartSearchScore(chunk,query);
+    const q=normalizeSearch(query), text=normalizeSearch((chunk.heading||'')+' '+(chunk.text||''));
+    let boost=0;
+    if(chunk.heading && normalizeSearch(chunk.heading).includes(q)) boost+=70;
+    const concepts=conceptsForQuery(q);
+    concepts.forEach(concept=>{
+      const aliases=(SEARCH_CONCEPTS[concept]||[]).map(normalizeSearch);
+      if(aliases.some(a=>a&&text.includes(a))) boost+=20;
+    });
+    return base+boost;
+  }
+
+  async function searchInsideDocuments(query,limit=8){
+    const q=normalizeSearch(query);
+    if(q.length<2) return [];
+    const chunks=await loadDocumentIndex();
+    return chunks
+      .map(chunk=>({chunk,score:documentSearchScore(chunk,q)}))
+      .filter(x=>x.score>0)
+      .sort((a,b)=>b.score-a.score || (a.chunk.startLine||0)-(b.chunk.startLine||0))
+      .slice(0,limit)
+      .map(x=>x.chunk);
+  }
+
+  function excerptFor(chunk,query){
+    const text=String(chunk.text||'').replace(/\s+/g,' ').trim();
+    if(text.length<=360) return text;
+    const qt=searchTokens(query);
+    const low=normalizeSearch(text);
+    let pos=-1;
+    for(const token of qt){
+      const p=low.indexOf(normalizeSearch(token));
+      if(p>=0){pos=p;break;}
+    }
+    if(pos<0) pos=0;
+    const start=Math.max(0,pos-110), end=Math.min(text.length,start+360);
+    return (start>0?'…':'')+text.slice(start,end)+(end<text.length?'…':'');
+  }
+
+  function documentResultCard(chunk,query){
+    const heading=chunk.heading?'<span class="badge badge-neutral">'+esc(chunk.heading)+'</span>':'';
+    const sourceAction=chunk.driveId
+      ? '<a class="btn btn-outline btn-small" href="'+driveView(chunk.driveId)+'" target="_blank" rel="noopener">'+esc(tr('openSource'))+' →</a>'
+      : '';
+    return '<article class="card document-hit"><div class="meta"><span class="badge badge-official">'+esc(tr('docFragment'))+'</span>'+heading+'</div>'+
+      '<h3>'+esc(chunk.title||'')+'</h3><p>'+esc(excerptFor(chunk,query))+'</p>'+
+      '<div class="card-actions">'+sourceAction+'</div></article>';
+  }
+
+  async function renderDocumentSearchInto(selector,query,limit=8){
+    const box=$(selector); if(!box) return;
+    const q=(query||'').trim();
+    if(q.length<2){box.innerHTML='';return;}
+    const seq=++documentSearchSeq;
+    box.innerHTML='<div class="search-doc-status">'+esc(tr('searchingDocs'))+'</div>';
+    const hits=await searchInsideDocuments(q,limit);
+    if(seq!==documentSearchSeq || !$(selector)) return;
+    box.innerHTML=hits.length
+      ? '<div class="search-subhead"><strong>'+esc(tr('documentResults'))+'</strong></div><div class="card-grid">'+hits.map(x=>documentResultCard(x,q)).join('')+'</div>'
+      : '<div class="search-doc-status">'+esc(tr('noDocResults'))+'</div>';
   }
 
   function savedIds(){
@@ -511,7 +595,7 @@
       '<div class="info-banner warn-banner"><span>!</span><div><strong>Google Drive</strong><p>'+esc(tr('publicDriveNote'))+'</p></div></div>'+
       '<div class="toolbar section"><div style="flex:1 1 320px"><div class="search-box"><input id="docSearch" type="search" placeholder="'+esc(tr('searchPlaceholder'))+'" value="'+esc(state.search)+'"><span class="search-icon">⌕</span></div><div class="search-hint">✦ '+esc(tr('smartSearchHint'))+'</div></div><span class="toolbar-note">'+DOCS.length+' '+esc(tr('navDocs').toLowerCase())+'</span></div>'+
       '<div class="filter-row">'+cats.map(docChip).join('')+'<button class="filter-chip'+(state.docFilter==='favorites'?' is-active':'')+'" data-doc-filter="favorites">★ '+esc(tr('favorites'))+'</button></div>'+
-      '<div id="docList" class="doc-list">'+renderDocs()+'</div>'+
+      '<div id="docList" class="doc-list">'+renderDocs()+'</div><div id="docTextResults" class="section"></div>'+
     '</div>';
   }
 
@@ -612,16 +696,18 @@
     return '<div class="section-head"><div><span class="eyebrow">CCOO · CSAPG</span><h2>'+esc(title)+'</h2><p>'+esc(sub)+'</p></div></div>';
   }
 
-  function renderHomeSearch(query){
+  async function renderHomeSearch(query){
     const box=$('#homeSearchResults'); if(!box) return;
-    const q=(query||'').trim().toLowerCase();
+    const q=(query||'').trim();
     if(!q){box.innerHTML='';return;}
     const docs=smartRank(DOCS,q).slice(0,3);
     const meets=smartRank(MEETINGS,q).slice(0,3);
     const html=[];
     docs.forEach(x=>html.push('<a class="card" href="#/documents"><div class="meta">'+sourceBadge(x.status)+'</div><h3>'+esc(tx(x.title))+'</h3><p>'+esc(tx(x.desc))+'</p></a>'));
     meets.forEach(x=>html.push('<a class="card" href="#/reunions"><div class="meta">'+sourceBadge(x.source)+'</div><h3>'+esc(tx(x.title))+'</h3><p>'+esc(tx(x.intro))+'</p></a>'));
-    box.innerHTML=html.length?'<div class="card-grid" style="margin-top:12px">'+html.join('')+'</div>':'<div class="empty-state" style="margin-top:12px">'+esc(tr('noResults'))+'</div>';
+    box.innerHTML=(html.length?'<div class="search-subhead"><strong>'+esc(tr('webResults'))+'</strong></div><div class="card-grid">'+html.join('')+'</div>':'<div class="search-doc-status">'+esc(tr('noResults'))+'</div>')+
+      '<div id="homeDocumentResults" class="section"></div>';
+    await renderDocumentSearchInto('#homeDocumentResults',q,6);
   }
 
   function openPreview(id){
@@ -689,12 +775,13 @@
   function bindView(){
     const current=route();
     const global=$('#globalSearch'); if(global) global.addEventListener('input',e=>renderHomeSearch(e.target.value));
-    const docSearch=$('#docSearch'); if(docSearch) docSearch.addEventListener('input',e=>{state.search=e.target.value;$('#docList').innerHTML=renderDocs();bindDocActions();});
+    const docSearch=$('#docSearch'); if(docSearch) docSearch.addEventListener('input',e=>{state.search=e.target.value;$('#docList').innerHTML=renderDocs();bindDocActions();renderDocumentSearchInto('#docTextResults',state.search,10);});
     const meetingSearch=$('#meetingSearch'); if(meetingSearch) meetingSearch.addEventListener('input',e=>{state.search=e.target.value;$('#meetingList').innerHTML=renderMeetings();});
     $$('[data-doc-filter]').forEach(btn=>btn.addEventListener('click',()=>{state.docFilter=btn.dataset.docFilter;render();}));
     $$('[data-meeting-filter]').forEach(btn=>btn.addEventListener('click',()=>{state.meetingFilter=btn.dataset.meetingFilter;render();}));
     bindDocActions();
     $$('[data-install]').forEach(btn=>btn.addEventListener('click',requestInstall));
+    if(current==='documents' && state.search) renderDocumentSearchInto('#docTextResults',state.search,10);
     const form=$('#contactForm'); if(form) form.addEventListener('submit',submitContact);
     const copy=$('#copyContact'); if(copy) copy.addEventListener('click',copyContact);
   }
