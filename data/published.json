@@ -1,5 +1,5 @@
 {
-  "version": "2026-09-30.1",
+  "version": "2026-09-30.2",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
@@ -119,5 +119,125 @@
       ]
     }
   ],
-  "meetings": []
+  "meetings": [
+    {
+      "id": "formacio-bac-estiu-2026",
+      "contentType": "training",
+      "date": "2026-06-17",
+      "category": "formacio",
+      "source": "ccoo",
+      "title": {
+        "ca": "Oferta formativa d’estiu · CCOO + BAC Formació",
+        "es": "Oferta formativa de verano · CCOO + BAC Formación"
+      },
+      "intro": {
+        "ca": "Oferta exclusiva per a l’afiliació de CCOO, vigent de l’1 de juny al 31 d’agost de 2026.",
+        "es": "Oferta exclusiva para la afiliación de CCOO, vigente del 1 de junio al 31 de agosto de 2026."
+      },
+      "bullets": {
+        "ca": [
+          "Cursos CFC: 10 €.",
+          "Packs CFC: 2 cursos per 16 €.",
+          "Cursos UCAV: 18 €.",
+          "Packs UCAV: 2 cursos per 30 €."
+        ],
+        "es": [
+          "Cursos CFC: 10 €.",
+          "Packs CFC: 2 cursos por 16 €.",
+          "Cursos UCAV: 18 €.",
+          "Packs UCAV: 2 cursos por 30 €."
+        ]
+      },
+      "offers": [
+        {
+          "label": {
+            "ca": "Cursos CFC",
+            "es": "Cursos CFC"
+          },
+          "value": "10 €"
+        },
+        {
+          "label": {
+            "ca": "Pack CFC",
+            "es": "Pack CFC"
+          },
+          "value": "2 × 16 €"
+        },
+        {
+          "label": {
+            "ca": "Cursos UCAV",
+            "es": "Cursos UCAV"
+          },
+          "value": "18 €"
+        },
+        {
+          "label": {
+            "ca": "Pack UCAV",
+            "es": "Pack UCAV"
+          },
+          "value": "2 × 30 €"
+        }
+      ],
+      "codes": [
+        {
+          "label": {
+            "ca": "Cursos individuals",
+            "es": "Cursos individuales"
+          },
+          "code": "VERANOCCOOCAT"
+        },
+        {
+          "label": {
+            "ca": "Pack CFC",
+            "es": "Pack CFC"
+          },
+          "code": "CCOOCATPACKCFC"
+        },
+        {
+          "label": {
+            "ca": "Pack UCAV",
+            "es": "Pack UCAV"
+          },
+          "code": "CCOOCATPACKUCAV"
+        }
+      ],
+      "actions": [
+        {
+          "label": {
+            "ca": "Veure cursos",
+            "es": "Ver cursos"
+          },
+          "url": "https://bacformacion.com/cursos",
+          "style": "primary"
+        },
+        {
+          "label": {
+            "ca": "Contacte formació",
+            "es": "Contacto formación"
+          },
+          "url": "mailto:formacio.sanitat@ccoo.cat",
+          "style": "outline"
+        }
+      ],
+      "contact": "formacio.sanitat@ccoo.cat",
+      "sourceNote": {
+        "ca": "Informació de la Federació de Sanitat de CCOO de Catalunya, comunicada el 17/06/2026. Promoció en col·laboració amb BAC Formació.",
+        "es": "Información de la Federación de Sanidad de CCOO de Catalunya, comunicada el 17/06/2026. Promoción en colaboración con BAC Formación."
+      },
+      "tags": [
+        "formacio",
+        "formacion",
+        "cursos",
+        "cfc",
+        "ucav",
+        "bac formacio",
+        "afiliacio",
+        "afiliados",
+        "oferta estiu",
+        "oferta verano",
+        "descompte",
+        "descuento"
+      ]
+    }
+  ]
 }
