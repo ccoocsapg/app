@@ -1,5 +1,5 @@
 {
-  "version": "0.15.1",
-  "build": "2026-09-30T23:42:00+02:00",
-  "message": "Fix Eines category links with durable deep routes"
+  "version": "0.15.2",
+  "build": "2026-09-30T23:47:00+02:00",
+  "message": "Canonical category mapping and robust topic filters"
 }
