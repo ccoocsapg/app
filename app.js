@@ -307,7 +307,8 @@
   }
 
   function isStandalone(){
-    return window.matchMedia?.('(display-mode: standalone)')?.matches || window.navigator.standalone===true;
+    const mq=typeof window.matchMedia==='function' ? window.matchMedia('(display-mode: standalone)') : null;
+    return (mq && mq.matches) || window.navigator.standalone===true;
   }
 
   function isIOS(){
@@ -472,10 +473,9 @@
     const status=forcedStatus||await pushStatus();
     box.innerHTML=notificationStatusHtml(status);
     if(!dialog.open) dialog.showModal();
-    $('#enableNotifications')?.addEventListener('click',requestPushNotifications);
-    $('#disableNotifications')?.addEventListener('click',disablePushNotifications);
-    $('#testNotification')?.addEventListener('click',testLocalNotification);
-    $('#testNotification')?.addEventListener('click',testLocalNotification);
+    const enableNotifications=$('#enableNotifications'); if(enableNotifications) enableNotifications.addEventListener('click',requestPushNotifications);
+    const disableNotifications=$('#disableNotifications'); if(disableNotifications) disableNotifications.addEventListener('click',disablePushNotifications);
+    const testNotification=$('#testNotification'); if(testNotification) testNotification.addEventListener('click',testLocalNotification);
   }
 
   function notificationNudgeHtml(){
@@ -992,7 +992,8 @@
     }
     if(Array.isArray(item.sections) && item.sections.length){
       html+='<div class="update-sections">'+item.sections.map(section=>{
-        const bullets=section.bullets?.[state.lang] || section.bullets?.ca || section.bullets?.es || [];
+        const sectionBullets=section.bullets||{};
+        const bullets=sectionBullets[state.lang] || sectionBullets.ca || sectionBullets.es || [];
         return '<section class="update-section"><h4>'+esc(tx(section.title))+'</h4>'+
           (bullets.length?'<ul>'+bullets.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'')+
           '</section>';
@@ -1023,7 +1024,8 @@
   }
 
   function meetingCard(item){
-    const bullets=item.bullets?.[state.lang] || item.bullets?.ca || item.bullets?.es || [];
+    const itemBullets=item.bullets||{};
+    const bullets=itemBullets[state.lang] || itemBullets.ca || itemBullets.es || [];
 
     if(item.category==='convocatories' && Array.isArray(item.actions) && item.actions.length){
       return '<article class="meeting-card meeting-card--featured">'+
@@ -1122,9 +1124,9 @@
     if(!box) return;
     const status=await pushStatus();
     box.innerHTML=notificationStatusHtml(status);
-    $('#enableNotifications')?.addEventListener('click',requestPushNotifications);
-    $('#disableNotifications')?.addEventListener('click',disablePushNotifications);
-    $('#testNotification')?.addEventListener('click',testLocalNotification);
+    const enableNotifications=$('#enableNotifications'); if(enableNotifications) enableNotifications.addEventListener('click',requestPushNotifications);
+    const disableNotifications=$('#disableNotifications'); if(disableNotifications) disableNotifications.addEventListener('click',disablePushNotifications);
+    const testNotification=$('#testNotification'); if(testNotification) testNotification.addEventListener('click',testLocalNotification);
   }
 
   async function renderHomeSearch(query){
@@ -1262,7 +1264,7 @@
     $$('[data-notification-manage]').forEach(btn=>btn.addEventListener('click',()=>openNotificationDialog()));
     $$('[data-notification-dismiss]').forEach(btn=>btn.addEventListener('click',()=>{
       localStorage.setItem('ccoo-csapg-push-dismissed','1');
-      btn.closest('.notification-nudge')?.remove();
+      const nudge=btn.closest ? btn.closest('.notification-nudge') : null; if(nudge && nudge.parentNode) nudge.parentNode.removeChild(nudge);
     }));
 
     if(current==='documents' && state.search) renderConsultaResults();
@@ -1375,7 +1377,7 @@
       render();
     }));
     $('#installButton').addEventListener('click',requestInstall);
-    $('#notificationButton')?.addEventListener('click',()=>openNotificationDialog());
+    const notificationButton=$('#notificationButton'); if(notificationButton) notificationButton.addEventListener('click',()=>openNotificationDialog());
     $$('[data-close-dialog]').forEach(btn=>btn.addEventListener('click',()=>btn.closest('dialog').close()));
     $('#previewDialog').addEventListener('close',()=>{$('#previewFrame').src='about:blank';});
     window.addEventListener('hashchange',()=>{state.search='';state.topicKey='';render();});
