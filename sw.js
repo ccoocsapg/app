@@ -1,4 +1,4 @@
-const CACHE = 'ccoo-csapg-app-v1';
+const CACHE = 'ccoo-csapg-app-v2';
 const SHELL = [
   './',
   './index.html',
