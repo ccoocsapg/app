@@ -731,7 +731,7 @@
 
   function route(){
     const value=(location.hash||'#/inicio').replace(/^#\//,'').split('?')[0];
-    return ['inicio','documents','reunions','eines','contacte'].includes(value)?value:'inicio';
+    return ['inicio','documents','reunions','eines','contacte','cookies','privacitat','avisos'].includes(value)?value:'inicio';
   }
 
   function updateChrome(){
@@ -766,6 +766,7 @@
       '</div></section>'+
       '<section class="section"><div class="section-head"><div><h2>'+esc(tr('latest'))+'</h2><p>'+esc(tr('latestSub'))+'</p></div><a class="text-link" href="#/reunions">'+esc(tr('viewAll'))+' →</a></div>'+
       '<div class="card-grid">'+latest.map(latestCard).join('')+'</div></section>'+
+      notificationNudgeHtml()+
       '<section class="section"><div class="info-banner"><span>ⓘ</span><div><strong>'+esc(tr('responsibleTitle'))+'</strong><p>'+esc(tr('responsibleText'))+'</p></div></div></section>'+
     '</div>';
   }
@@ -886,6 +887,46 @@
     return '<div class="section-head"><div><span class="eyebrow">CCOO · CSAPG</span><h2>'+esc(title)+'</h2><p>'+esc(sub)+'</p></div></div>';
   }
 
+
+  function legalSection(title,text){
+    return '<section class="legal-card"><h3>'+esc(title)+'</h3><p>'+esc(text)+'</p></section>';
+  }
+
+  function cookiesView(){
+    return '<div class="view">'+pageHeading(tr('cookiesTitle'),tr('cookiesIntro'))+
+      '<div class="legal-stack">'+
+        legalSection(tr('cookiesOwnTitle'),tr('cookiesOwnText'))+
+        legalSection(tr('cookiesThirdTitle'),tr('cookiesThirdText'))+
+        legalSection(tr('cookiesConsentTitle'),tr('cookiesConsentText'))+
+      '</div><p class="legal-updated">'+esc(tr('legalUpdated'))+'</p></div>';
+  }
+
+  function privacyView(){
+    return '<div class="view">'+pageHeading(tr('privacyTitle'),tr('privacyIntro'))+
+      '<div class="legal-stack">'+
+        legalSection(tr('privacyToolsTitle'),tr('privacyToolsText'))+
+        legalSection(tr('privacyHostingTitle'),tr('privacyHostingText'))+
+        legalSection(tr('privacyPushTitle'),tr('privacyPushText'))+
+        legalSection(tr('privacyContactTitle'),tr('privacyContactText'))+
+      '</div><p class="legal-updated">'+esc(tr('legalUpdated'))+'</p></div>';
+  }
+
+  function notificationsView(){
+    return '<div class="view">'+pageHeading(tr('notificationsTitle'),tr('notificationsIntro'))+
+      '<section class="legal-card"><div id="notificationsPageStatus"></div></section>'+
+      '<section class="legal-card"><h3>'+esc(tr('privacyPushTitle'))+'</h3><p>'+esc(tr('privacyPushText'))+'</p></section>'+
+      '<p class="legal-updated">'+esc(tr('legalUpdated'))+'</p></div>';
+  }
+
+  async function renderNotificationsPageStatus(){
+    const box=$('#notificationsPageStatus');
+    if(!box) return;
+    const status=await pushStatus();
+    box.innerHTML=notificationStatusHtml(status);
+    $('#enableNotifications')?.addEventListener('click',requestPushNotifications);
+    $('#disableNotifications')?.addEventListener('click',disablePushNotifications);
+  }
+
   async function renderHomeSearch(query){
     const box=$('#homeSearchResults'); if(!box) return;
     const q=(query||'').trim();
@@ -989,9 +1030,13 @@
     else if(current==='reunions') html=meetingsView();
     else if(current==='eines') html=toolsView();
     else if(current==='contacte') html=contactView();
+    else if(current==='cookies') html=cookiesView();
+    else if(current==='privacitat') html=privacyView();
+    else if(current==='avisos') html=notificationsView();
     else html=homeView();
     $('#view').innerHTML=html;
     bindView();
+    if(current==='avisos') renderNotificationsPageStatus();
     window.scrollTo({top:0,behavior:'auto'});
   }
 
