@@ -808,15 +808,76 @@
     return '<article class="card"><div class="card-head"><div><div class="meta">'+sourceBadge(item.source)+'<span class="badge badge-neutral">'+esc(categoryLabel(item.category))+'</span></div><h3>'+esc(tx(item.title))+'</h3></div><span class="badge badge-neutral">'+esc(formatDate(item.date))+'</span></div><p>'+esc(tx(item.intro))+'</p><div class="card-actions"><a class="btn btn-outline btn-small" href="#/reunions">'+esc(tr('readSummary'))+' →</a></div></article>';
   }
 
+  function consultationTopics(){
+    return [
+      {icon:'✚',label:{ca:'Permisos i conciliació',es:'Permisos y conciliación'},query:'permisos conciliació hospitalització visita mèdica força major'},
+      {icon:'€',label:{ca:'Nòmina i salari',es:'Nómina y salario'},query:'salari nòmina retribucions taules salarials'},
+      {icon:'↔',label:{ca:'Convocatòries',es:'Convocatorias'},query:'convocatòries canvi torn canvi servei augment jornada barem'},
+      {icon:'◷',label:{ca:'Jornada i vacances',es:'Jornada y vacaciones'},query:'jornada vacances lliure disposició calendari compensatoris'},
+      {icon:'◎',label:{ca:'DPO i objectius',es:'DPO y objetivos'},query:'dpo objectius reducció jornada'},
+      {icon:'↑',label:{ca:'Carrera professional',es:'Carrera profesional'},query:'sipdp carrera professional nivell'},
+      {icon:'§',label:{ca:'Conveni i pactes',es:'Convenio y pactos'},query:'conveni pactes acords comissió paritària'},
+      {icon:'!',label:{ca:'Salut laboral i alertes',es:'Salud laboral y alertas'},query:'salut laboral ventcat inuncat risc emergències'},
+      {icon:'●',label:{ca:'Comunicats HRSC',es:'Comunicados HRSC'},query:'comunicat hrsc secció sindical'},
+      {icon:'✦',label:{ca:'Formació',es:'Formación'},query:'formació cursos bac cfc ucav'}
+    ];
+  }
+
+  function topicButtonsHtml(){
+    return '<div class="topic-grid">'+consultationTopics().map(topic=>
+      '<button type="button" class="topic-card" data-topic-query="'+esc(topic.query)+'">'+
+        '<span class="topic-card__icon">'+esc(topic.icon)+'</span><strong>'+esc(tx(topic.label))+'</strong>'+
+      '</button>'
+    ).join('')+'</div>';
+  }
+
+  function renderConsultInfo(query){
+    const q=(query||'').trim();
+    if(!q) return '';
+    const items=smartRank(MEETINGS,q).slice(0,6);
+    if(!items.length) return '<div class="empty-state compact-empty">'+esc(tr('noExplained'))+'</div>';
+    return items.map(meetingCard).join('');
+  }
+
+  function renderConsultDocs(query){
+    const q=(query||'').trim();
+    if(!q) return '';
+    const items=smartRank(DOCS,q).slice(0,10);
+    if(!items.length) return '<div class="empty-state compact-empty">'+esc(tr('noResults'))+'</div>';
+    return items.map(docCard).join('');
+  }
+
   function docsView(){
-    const cats=['all','comunicatshrsc','conveni','pactes','salaris','paritaria','negociadora','acordscentre','convocatories','escritsrlt','politiques','emergencies','campanyes','direccio'];
+    const q=(state.search||'').trim();
     return '<div class="view">'+
       pageHeading(tr('docsTitle'),tr('docsSub'))+
-      '<div class="info-banner warn-banner"><span>!</span><div><strong>Google Drive</strong><p>'+esc(tr('publicDriveNote'))+'</p></div></div>'+
-      '<div class="toolbar section"><div style="flex:1 1 320px"><div class="search-box"><input id="docSearch" type="search" placeholder="'+esc(tr('searchPlaceholder'))+'" value="'+esc(state.search)+'"><span class="search-icon">⌕</span></div><div class="search-hint">✦ '+esc(tr('smartSearchHint'))+'</div></div><span class="toolbar-note">'+DOCS.length+' '+esc(tr('navDocs').toLowerCase())+'</span></div>'+
-      '<div class="filter-row">'+cats.map(docChip).join('')+'<button class="filter-chip'+(state.docFilter==='favorites'?' is-active':'')+'" data-doc-filter="favorites">★ '+esc(tr('favorites'))+'</button></div>'+
-      '<div id="docList" class="doc-list">'+renderDocs()+'</div><div id="docTextResults" class="section"></div>'+
+      '<div class="consulta-search">'+
+        '<div class="search-box search-box--hero"><input id="docSearch" type="search" autocomplete="off" placeholder="'+esc(tr('searchPlaceholder'))+'" value="'+esc(state.search)+'"><span class="search-icon">⌕</span></div>'+
+        '<div class="search-hint">✦ '+esc(tr('smartSearchHint'))+'</div>'+
+      '</div>'+
+      '<section class="section consulta-topics"><div class="section-head section-head--simple"><div><h2>'+esc(tr('consultTopics'))+'</h2></div></div>'+topicButtonsHtml()+'</section>'+
+      '<div id="consultaResults"'+(q?'':' hidden')+'>'+
+        '<section class="section"><div class="section-head section-head--result"><div><h2>'+esc(tr('explainedInfo'))+'</h2></div><span class="result-type-pill">'+esc(tr('summary'))+'</span></div><div id="consultInfoList" class="meeting-list">'+renderConsultInfo(q)+'</div></section>'+
+        '<section class="section"><div class="section-head section-head--result"><div><h2>'+esc(tr('originalDocs'))+'</h2><p>'+esc(tr('originalDocsHelp'))+'</p></div><span class="result-type-pill result-type-pill--doc">PDF / DRIVE</span></div><div id="docList" class="doc-list">'+renderConsultDocs(q)+'</div></section>'+
+        '<div id="docTextResults" class="section"></div>'+
+      '</div>'+
     '</div>';
+  }
+
+  function renderConsultaResults(){
+    const q=(state.search||'').trim();
+    const wrap=$('#consultaResults');
+    if(!wrap) return;
+    wrap.hidden=!q;
+    if(!q){
+      const info=$('#consultInfoList'); if(info) info.innerHTML='';
+      const docs=$('#docList'); if(docs) docs.innerHTML='';
+      const fragments=$('#docTextResults'); if(fragments) fragments.innerHTML='';
+      return;
+    }
+    const info=$('#consultInfoList'); if(info) info.innerHTML=renderConsultInfo(q);
+    const docs=$('#docList'); if(docs){docs.innerHTML=renderConsultDocs(q);bindDocActions();}
+    renderDocumentSearchInto('#docTextResults',q,8);
   }
 
   function docChip(cat){
@@ -1111,14 +1172,17 @@
     const global=$('#globalSearch'); if(global) global.addEventListener('input',e=>renderHomeSearch(e.target.value));
     const docSearch=$('#docSearch'); if(docSearch) docSearch.addEventListener('input',e=>{
       state.search=e.target.value;
-      if(state.search.trim()){
-        state.docFilter='all';
-        $('[data-doc-filter]').forEach(btn=>btn.classList.toggle('is-active',btn.dataset.docFilter==='all'));
-      }
-      $('#docList').innerHTML=renderDocs();
-      bindDocActions();
-      renderDocumentSearchInto('#docTextResults',state.search,10);
+      state.docFilter='all';
+      renderConsultaResults();
     });
+    $$('[data-topic-query]').forEach(btn=>btn.addEventListener('click',()=>{
+      state.search=btn.dataset.topicQuery||'';
+      state.docFilter='all';
+      if(docSearch) docSearch.value=state.search;
+      renderConsultaResults();
+      $('.consulta-search')?.scrollIntoView({behavior:'smooth',block:'start'});
+      docSearch?.focus();
+    }));
     const meetingSearch=$('#meetingSearch'); if(meetingSearch) meetingSearch.addEventListener('input',e=>{
       state.search=e.target.value;
       if(state.search.trim()){
@@ -1136,7 +1200,7 @@
       localStorage.setItem('ccoo-csapg-push-dismissed','1');
       btn.closest('.notification-nudge')?.remove();
     }));
-    if(current==='documents' && state.search) renderDocumentSearchInto('#docTextResults',state.search,10);
+    if(current==='documents' && state.search) renderConsultaResults();
     const form=$('#contactForm'); if(form) form.addEventListener('submit',submitContact);
     const copy=$('#copyContact'); if(copy) copy.addEventListener('click',copyContact);
   }
