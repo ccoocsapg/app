@@ -1,5 +1,5 @@
 {
-  "version": "0.10.0",
-  "build": "2026-09-30T20:20:00+02:00",
-  "message": "Clear Sep 28 internal convocatories update"
+  "version": "0.10.2",
+  "build": "2026-09-30T20:45:00+02:00",
+  "message": "Fix document preview on iOS installed app"
 }
