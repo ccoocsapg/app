@@ -983,3 +983,44 @@ html,body{max-width:100%;overflow-x:hidden}
   .section-head--result{align-items:flex-start}
   .result-type-pill{font-size:.6rem}
 }
+
+
+/* v0.14 · interacció mòbil i compatibilitat */
+.topic-card.is-active{
+  background:var(--ccoo-red)!important;
+  border-color:var(--ccoo-red)!important;
+  color:#fff!important
+}
+.topic-card.is-active .topic-card__icon{
+  background:#000!important;
+  color:#fff!important
+}
+.topic-card:focus-visible,
+.filter-chip:focus-visible,
+.btn:focus-visible,
+.bottom-nav a:focus-visible{
+  outline:3px solid var(--ccoo-yellow);
+  outline-offset:2px
+}
+@media(max-width:800px){
+  body.is-typing .bottom-nav{
+    transform:translateY(120%)!important;
+    -webkit-transform:translateY(120%)!important;
+    pointer-events:none
+  }
+  .bottom-nav{
+    transition:transform .16s ease,-webkit-transform .16s ease
+  }
+}
+@media(max-width:390px){
+  .topic-grid{grid-template-columns:1fr 1fr}
+  .topic-card{min-height:80px;padding:10px}
+  .topic-card strong{font-size:.66rem}
+  .header-inner{gap:8px}
+  .brand-logo{width:108px}
+  .lang-btn{padding:6px 7px}
+  .icon-button{width:37px;height:37px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+}
