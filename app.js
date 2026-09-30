@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.5.0',
+    version: '0.5.1',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/'
@@ -245,14 +245,15 @@
   };
 
   async function loadPublishedManifest(){
+    DOCS=[];
     try{
       const response=await fetch('./data/published.json',{cache:'no-store'});
       if(!response.ok) return;
       const data=await response.json();
-      if(Array.isArray(data.documents) && data.documents.length) DOCS=data.documents;
+      if(Array.isArray(data.documents)) DOCS=data.documents;
       if(Array.isArray(data.meetings) && data.meetings.length) MEETINGS=data.meetings;
     }catch(e){
-      // La app conserva el contenido base si el manifiesto no está disponible.
+      DOCS=[];
     }
   }
 
@@ -278,8 +279,7 @@
 
   const DOCUMENT_INDEX_FILES = [
     './search/conveni.json',
-    './search/procediment-6455.json',
-    './search/permisos.json'
+    './search/procediment-6455.json'
   ];
   let documentIndexPromise = null;
   let documentSearchSeq = 0;
