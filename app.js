@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.15.0',
+    version: '0.15.1',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/',
@@ -1126,15 +1126,18 @@
   function toolsView(){
     return '<div class="view">'+pageHeading(tr('toolsTitle'),tr('toolsSub'))+
       '<div class="tool-list">'+
-        toolCard('▦',tr('calculatorTitle'),tr('calculatorText'),CONFIG.calculatorUrl,false)+
-        toolCard('✚',tr('permitsTool'),tr('permitsToolText'),'#',true)+
-        toolCard('↗',tr('careerTool'),tr('careerToolText'),'#',true)+
+        toolCard('▦',tr('calculatorTitle'),tr('calculatorText'),CONFIG.calculatorUrl,{badge:'ID 6455',external:true})+
+        toolCard('✚',tr('permitsTool'),state.lang==='ca'?'Consulta permisos, hospitalització, força major i conciliació amb els documents relacionats.':'Consulta permisos, hospitalización, fuerza mayor y conciliación con los documentos relacionados.','#/documents?topic=permisos',{badge:categoryLabel('permisos')})+
+        toolCard('↗',tr('careerTool'),state.lang==='ca'?'Consulta SIPDP, nivells, requisits i documentació relacionada amb la carrera professional.':'Consulta SIPDP, niveles, requisitos y documentación relacionada con la carrera profesional.','#/documents?topic=carrera',{badge:'SIPDP'})+
       '</div></div>';
   }
 
-  function toolCard(icon,title,text,url,soon){
-    return '<article class="tool-card'+(soon?' soon':'')+'"><div class="tool-logo">'+icon+'</div><div><div class="meta">'+(soon?'<span class="badge badge-neutral">'+esc(tr('soon'))+'</span>':'<span class="badge badge-official">ID 6455</span>')+'</div><h3>'+esc(title)+'</h3><p>'+esc(text)+'</p></div>'+
-      (soon?'<span></span>':'<a class="btn btn-primary" href="'+url+'" target="_blank" rel="noopener">'+esc(tr('openTool'))+' →</a>')+'</article>';
+  function toolCard(icon,title,text,url,options){
+    const opts=options||{};
+    const target=opts.external?' target="_blank" rel="noopener"':'';
+    const badge=opts.badge||'CCOO';
+    return '<article class="tool-card"><div class="tool-logo">'+icon+'</div><div><div class="meta"><span class="badge badge-official">'+esc(badge)+'</span></div><h3>'+esc(title)+'</h3><p>'+esc(text)+'</p></div>'+
+      '<a class="btn btn-primary" href="'+url+'"'+target+'>'+esc(tr('openTool'))+' →</a></article>';
   }
 
   function contactView(){
