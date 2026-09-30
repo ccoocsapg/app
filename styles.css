@@ -772,3 +772,69 @@ button{cursor:pointer}
   .training-offers{grid-template-columns:1fr}
   .training-code-row{align-items:flex-start;flex-direction:column}
 }
+
+
+/* CONVOCATÒRIES · RESUM CLAR */
+.deadline-banner{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:16px 0;
+  padding:13px 14px;
+  background:var(--ccoo-red);
+  color:#fff;
+  border-left:7px solid #000
+}
+.deadline-banner strong{
+  font-size:.86rem;
+  text-transform:uppercase;
+  letter-spacing:.02em
+}
+.update-sections{
+  display:grid;
+  gap:12px;
+  margin:14px 0
+}
+.update-section{
+  border:1px solid var(--line);
+  border-left:6px solid #000;
+  background:#fff;
+  padding:14px 15px
+}
+.update-section:nth-child(2){border-left-color:var(--ccoo-red)}
+.update-section:nth-child(3){border-left-color:var(--ccoo-yellow)}
+.update-section h4{
+  margin:0 0 8px;
+  font-size:.79rem;
+  text-transform:uppercase;
+  letter-spacing:.035em
+}
+.update-section ul{
+  margin:0 0 0 18px;
+  padding:0
+}
+.update-section li{
+  margin:6px 0;
+  color:#3f3f3f;
+  font-size:.86rem
+}
+.notice.notice--warning p{
+  margin:4px 0 0;
+  color:#4f4a3d;
+  font-size:.82rem
+}
+.update-actions{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+  margin-top:14px
+}
+.update-actions .btn:first-child{
+  flex-basis:100%;
+}
+@media(max-width:560px){
+  .update-actions .btn{
+    flex:1 1 100%;
+    justify-content:flex-start
+  }
+}
