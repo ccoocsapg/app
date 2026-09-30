@@ -1,5 +1,5 @@
 {
-  "version": "2026-09-30.5",
+  "version": "2026-09-30.6",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
@@ -26,27 +26,6 @@
         "permisos",
         "retribucions",
         "drets laborals"
-      ]
-    },
-    {
-      "id": "drive-pacte-homogeneitzacio-ii",
-      "category": "pactes",
-      "date": "2023-12-15",
-      "status": "official",
-      "driveId": "1yj3dOcfI_l7Ud5SS6u9FRtf_qgrrvVxJ",
-      "title": {
-        "ca": "II Pacte d’homogeneïtzació CSAPG",
-        "es": "II Pacto de homogeneización CSAPG"
-      },
-      "desc": {
-        "ca": "Pacte signat del CSAPG.",
-        "es": "Pacto firmado del CSAPG."
-      },
-      "tags": [
-        "pacte",
-        "homogeneitzacio",
-        "csapg",
-        "condicions laborals"
       ]
     },
     {
