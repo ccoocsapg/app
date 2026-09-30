@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.11.0',
+    version: '0.12.0',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/',
@@ -256,7 +256,7 @@
   async function loadPublishedManifest(){
     DOCS=[];
     try{
-      const response=await fetch('./data/published.json',{cache:'no-store'});
+      const response=await fetch('./data/published.json?v='+encodeURIComponent(CONFIG.version)+'&_='+Date.now(),{cache:'no-store'});
       if(!response.ok) return;
       const data=await response.json();
       if(Array.isArray(data.documents)) DOCS=data.documents;
@@ -478,7 +478,7 @@
   async function loadDocumentIndex(){
     if(documentIndexPromise) return documentIndexPromise;
     documentIndexPromise = Promise.all(
-      DOCUMENT_INDEX_FILES.map(url=>fetch(url,{cache:'force-cache'})
+      DOCUMENT_INDEX_FILES.map(url=>fetch(url+'?v='+encodeURIComponent(CONFIG.version),{cache:'no-store'})
         .then(r=>r.ok?r.json():{chunks:[]})
         .catch(()=>({chunks:[]})))
     ).then(parts=>parts.flatMap(p=>Array.isArray(p.chunks)?p.chunks:[]));
@@ -860,8 +860,15 @@
   function renderMeetings(){
     let items=MEETINGS.slice().sort((a,b)=>b.date.localeCompare(a.date));
     const q=(state.search||'').trim().toLowerCase();
-    if(state.meetingFilter!=='all') items=items.filter(x=>x.category===state.meetingFilter);
-    if(q) items=smartRank(items,q);
+
+    // Quan hi ha text de cerca, busquem a tot el contingut i no deixem
+    // que un filtre anterior (p. ex. "Conciliació") amagui resultats rellevants.
+    if(q){
+      items=smartRank(items,q);
+    }else if(state.meetingFilter!=='all'){
+      items=items.filter(x=>x.category===state.meetingFilter);
+    }
+
     if(!items.length) return '<div class="empty-state">'+esc(tr('noResults'))+'</div>';
     return items.map(meetingCard).join('');
   }
@@ -1085,7 +1092,14 @@
     const current=route();
     const global=$('#globalSearch'); if(global) global.addEventListener('input',e=>renderHomeSearch(e.target.value));
     const docSearch=$('#docSearch'); if(docSearch) docSearch.addEventListener('input',e=>{state.search=e.target.value;$('#docList').innerHTML=renderDocs();bindDocActions();renderDocumentSearchInto('#docTextResults',state.search,10);});
-    const meetingSearch=$('#meetingSearch'); if(meetingSearch) meetingSearch.addEventListener('input',e=>{state.search=e.target.value;$('#meetingList').innerHTML=renderMeetings();});
+    const meetingSearch=$('#meetingSearch'); if(meetingSearch) meetingSearch.addEventListener('input',e=>{
+      state.search=e.target.value;
+      if(state.search.trim()){
+        state.meetingFilter='all';
+        $('[data-meeting-filter]').forEach(btn=>btn.classList.toggle('is-active',btn.dataset.meetingFilter==='all'));
+      }
+      $('#meetingList').innerHTML=renderMeetings();
+    });
     $$('[data-doc-filter]').forEach(btn=>btn.addEventListener('click',()=>{state.docFilter=btn.dataset.docFilter;render();}));
     $$('[data-meeting-filter]').forEach(btn=>btn.addEventListener('click',()=>{state.meetingFilter=btn.dataset.meetingFilter;render();}));
     bindDocActions();
