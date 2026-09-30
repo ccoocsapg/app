@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.10.3',
+    version: '0.11.0',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/',
@@ -216,7 +216,7 @@
       cookiesPolicy:'Política de cookies', privacyPolicy:'Protecció de dades', notificationsLink:'Notificacions',
       legalUpdated:'Darrera actualització: 30/09/2026', cookiesTitle:'Política de cookies i emmagatzematge local', cookiesIntro:'Aquesta web no utilitza cookies pròpies amb finalitats publicitàries, analítiques o de seguiment.', cookiesOwnTitle:'Què guarda aquesta web?', cookiesOwnText:'Fem servir emmagatzematge local del navegador per recordar l’idioma, els documents desats, preferències bàsiques i l’estat tècnic de l’aplicació. Aquest emmagatzematge no s’utilitza per perfilar persones ni per publicitat.', cookiesThirdTitle:'Serveis de tercers', cookiesThirdText:'La web està allotjada a GitHub Pages. GitHub pot tractar dades tècniques de connexió, inclosa l’adreça IP, per motius de seguretat. Quan obres una previsualització de Google Drive o un enllaç extern, aquests serveis poden aplicar les seves pròpies cookies o tecnologies d’emmagatzematge segons les seves polítiques.', cookiesConsentTitle:'Consentiment', cookiesConsentText:'Com que no instal·lem cookies pròpies de publicitat, analítica o seguiment, no mostrem un banner de consentiment propi. Si en el futur s’incorpora analítica o qualsevol tecnologia no necessària, aquesta política i el sistema de consentiment s’actualitzaran abans d’activar-la.',
       privacyTitle:'Informació sobre protecció de dades', privacyIntro:'La web està dissenyada perquè les dades que introdueixes a les eines no s’enviïn ni s’emmagatzemin en cap base de dades pròpia.', privacyToolsTitle:'Calculadores, cerques i formularis', privacyToolsText:'Els càlculs i les cerques es processen al teu navegador. El text que escrius al cercador no s’envia al nostre servidor. El formulari de contacte prepara un correu al teu dispositiu: la web no desa el contingut. Si decideixes enviar-lo, el missatge es tractarà a través dels serveis de correu corresponents.', privacyHostingTitle:'Allotjament i documents', privacyHostingText:'GitHub Pages allotja la web i pot registrar dades tècniques de connexió per seguretat. Els documents es poden previsualitzar o obrir mitjançant Google Drive; en fer-ho, Google pot tractar dades tècniques d’acord amb la seva pròpia política de privacitat.', privacyPushTitle:'Notificacions', privacyPushText:'Si actives voluntàriament les notificacions, cal conservar una subscripció tècnica del navegador (endpoint i claus públiques de xifratge) per poder enviar els avisos. No cal nom, correu electrònic ni cap dada introduïda a les eines. Pots revocar el permís o donar-te de baixa en qualsevol moment.', privacyContactTitle:'Contacte de la secció', privacyContactText:'Per a consultes sobre aquesta web o privacitat: ccoohrsc@csapg.cat.',
-      notificationsEyebrow:'AVISOS', notificationsTitle:'Notificacions de novetats', notificationsIntro:'Pots rebre un avís quan publiquem un document, comunicat o informació nova.', notificationsActivate:'Activar notificacions', notificationsDeactivate:'Desactivar notificacions', notificationsEnabled:'Notificacions activades en aquest dispositiu.', notificationsDenied:'Les notificacions estan bloquejades al navegador. Hauràs d’habilitar-les des de la configuració del sistema o del navegador.', notificationsUnsupported:'Aquest navegador o versió del sistema no admet notificacions web push.', notificationsIosInstall:'A iPhone i iPad, les notificacions web requereixen iOS/iPadOS 16.4 o posterior i que la web estigui afegida a la pantalla d’inici. Obre-la des de la icona instal·lada i activa els avisos.', notificationsWebNote:'En Android i ordinadors compatibles es poden activar des del navegador. La compatibilitat depèn de la versió del navegador i del sistema.', notificationsPending:'El sistema d’enviament d’avisos encara no està connectat al servidor. La interfície ja està preparada i s’activarà quan el servei push estigui desplegat.', notificationsPrivacy:'Si actives els avisos només es guarda la subscripció tècnica necessària per enviar-los; no s’associa a nom ni correu electrònic.', notificationsPromptTitle:'Vols rebre avisos quan publiquem novetats?', notificationsPromptText:'Documents, comunicats i informacions noves, sense publicitat.', notificationsManage:'Gestionar avisos', notificationsDismiss:'Ara no'
+      notificationsEyebrow:'AVISOS', notificationsTitle:'Notificacions de novetats', notificationsIntro:'Pots rebre un avís quan publiquem un document, comunicat o informació nova.', notificationsActivate:'Activar notificacions', notificationsDeactivate:'Desactivar notificacions', notificationsEnabled:'Notificacions activades en aquest dispositiu.', notificationsDenied:'Les notificacions estan bloquejades al navegador. Hauràs d’habilitar-les des de la configuració del sistema o del navegador.', notificationsUnsupported:'Aquest navegador o versió del sistema no admet notificacions web push.', notificationsIosInstall:'A iPhone i iPad, les notificacions web requereixen iOS/iPadOS 16.4 o posterior i que la web estigui afegida a la pantalla d’inici. Obre-la des de la icona instal·lada i activa els avisos.', notificationsWebNote:'En Android i ordinadors compatibles es poden activar des del navegador. La compatibilitat depèn de la versió del navegador i del sistema.', notificationsPending:'El permís del dispositiu es pot activar ara. L’enviament real d’avisos quedarà operatiu quan el servei push estigui connectat.', notificationsPermissionGranted:'Permís de notificacions concedit. El dispositiu ja està preparat; falta connectar el servei d’enviament perquè arribin avisos reals.', notificationsPrivacy:'Si actives els avisos només es guarda la subscripció tècnica necessària per enviar-los; no s’associa a nom ni correu electrònic.', notificationsPromptTitle:'Vols rebre avisos quan publiquem novetats?', notificationsPromptText:'Documents, comunicats i informacions noves, sense publicitat.', notificationsManage:'Gestionar avisos', notificationsDismiss:'Ara no'
     },
     es: {
       brandSub:'Espacio de información sindical', navHome:'Inicio', navDocs:'Documentos', navMeetings:'Reuniones', navTools:'Herramientas', navContact:'Contacto',
@@ -249,7 +249,7 @@
       cookiesPolicy:'Política de cookies', privacyPolicy:'Protección de datos', notificationsLink:'Notificaciones',
       legalUpdated:'Última actualización: 30/09/2026', cookiesTitle:'Política de cookies y almacenamiento local', cookiesIntro:'Esta web no utiliza cookies propias con fines publicitarios, analíticos o de seguimiento.', cookiesOwnTitle:'¿Qué guarda esta web?', cookiesOwnText:'Utilizamos almacenamiento local del navegador para recordar el idioma, los documentos guardados, preferencias básicas y el estado técnico de la aplicación. Este almacenamiento no se utiliza para perfilar personas ni para publicidad.', cookiesThirdTitle:'Servicios de terceros', cookiesThirdText:'La web está alojada en GitHub Pages. GitHub puede tratar datos técnicos de conexión, incluida la dirección IP, por motivos de seguridad. Cuando abres una previsualización de Google Drive o un enlace externo, esos servicios pueden aplicar sus propias cookies o tecnologías de almacenamiento según sus políticas.', cookiesConsentTitle:'Consentimiento', cookiesConsentText:'Como no instalamos cookies propias de publicidad, analítica o seguimiento, no mostramos un banner de consentimiento propio. Si en el futuro se incorpora analítica o cualquier tecnología no necesaria, esta política y el sistema de consentimiento se actualizarán antes de activarla.',
       privacyTitle:'Información sobre protección de datos', privacyIntro:'La web está diseñada para que los datos que introduces en las herramientas no se envíen ni se almacenen en ninguna base de datos propia.', privacyToolsTitle:'Calculadoras, búsquedas y formularios', privacyToolsText:'Los cálculos y las búsquedas se procesan en tu navegador. El texto que escribes en el buscador no se envía a nuestro servidor. El formulario de contacto prepara un correo en tu dispositivo: la web no guarda el contenido. Si decides enviarlo, el mensaje se tratará a través de los servicios de correo correspondientes.', privacyHostingTitle:'Alojamiento y documentos', privacyHostingText:'GitHub Pages aloja la web y puede registrar datos técnicos de conexión por seguridad. Los documentos se pueden previsualizar o abrir mediante Google Drive; al hacerlo, Google puede tratar datos técnicos de acuerdo con su propia política de privacidad.', privacyPushTitle:'Notificaciones', privacyPushText:'Si activas voluntariamente las notificaciones, es necesario conservar una suscripción técnica del navegador (endpoint y claves públicas de cifrado) para poder enviar los avisos. No se necesita nombre, correo electrónico ni ningún dato introducido en las herramientas. Puedes revocar el permiso o darte de baja en cualquier momento.', privacyContactTitle:'Contacto de la sección', privacyContactText:'Para consultas sobre esta web o privacidad: ccoohrsc@csapg.cat.',
-      notificationsEyebrow:'AVISOS', notificationsTitle:'Notificaciones de novedades', notificationsIntro:'Puedes recibir un aviso cuando publiquemos un documento, comunicado o información nueva.', notificationsActivate:'Activar notificaciones', notificationsDeactivate:'Desactivar notificaciones', notificationsEnabled:'Notificaciones activadas en este dispositivo.', notificationsDenied:'Las notificaciones están bloqueadas en el navegador. Tendrás que habilitarlas desde la configuración del sistema o del navegador.', notificationsUnsupported:'Este navegador o versión del sistema no admite notificaciones web push.', notificationsIosInstall:'En iPhone y iPad, las notificaciones web requieren iOS/iPadOS 16.4 o posterior y que la web esté añadida a la pantalla de inicio. Ábrela desde el icono instalado y activa los avisos.', notificationsWebNote:'En Android y ordenadores compatibles se pueden activar desde el navegador. La compatibilidad depende de la versión del navegador y del sistema.', notificationsPending:'El sistema de envío de avisos todavía no está conectado al servidor. La interfaz ya está preparada y se activará cuando el servicio push esté desplegado.', notificationsPrivacy:'Si activas los avisos solo se guarda la suscripción técnica necesaria para enviarlos; no se asocia a nombre ni correo electrónico.', notificationsPromptTitle:'¿Quieres recibir avisos cuando publiquemos novedades?', notificationsPromptText:'Documentos, comunicados e informaciones nuevas, sin publicidad.', notificationsManage:'Gestionar avisos', notificationsDismiss:'Ahora no'
+      notificationsEyebrow:'AVISOS', notificationsTitle:'Notificaciones de novedades', notificationsIntro:'Puedes recibir un aviso cuando publiquemos un documento, comunicado o información nueva.', notificationsActivate:'Activar notificaciones', notificationsDeactivate:'Desactivar notificaciones', notificationsEnabled:'Notificaciones activadas en este dispositivo.', notificationsDenied:'Las notificaciones están bloqueadas en el navegador. Tendrás que habilitarlas desde la configuración del sistema o del navegador.', notificationsUnsupported:'Este navegador o versión del sistema no admite notificaciones web push.', notificationsIosInstall:'En iPhone y iPad, las notificaciones web requieren iOS/iPadOS 16.4 o posterior y que la web esté añadida a la pantalla de inicio. Ábrela desde el icono instalado y activa los avisos.', notificationsWebNote:'En Android y ordenadores compatibles se pueden activar desde el navegador. La compatibilidad depende de la versión del navegador y del sistema.', notificationsPending:'El permiso del dispositivo se puede activar ahora. El envío real de avisos quedará operativo cuando el servicio push esté conectado.', notificationsPermissionGranted:'Permiso de notificaciones concedido. El dispositivo ya está preparado; falta conectar el servicio de envío para que lleguen avisos reales.', notificationsPrivacy:'Si activas los avisos solo se guarda la suscripción técnica necesaria para enviarlos; no se asocia a nombre ni correo electrónico.', notificationsPromptTitle:'¿Quieres recibir avisos cuando publiquemos novedades?', notificationsPromptText:'Documentos, comunicados e informaciones nuevas, sin publicidad.', notificationsManage:'Gestionar avisos', notificationsDismiss:'Ahora no'
     }
   };
 
@@ -347,10 +347,7 @@
 
   async function requestPushNotifications(){
     const cfg=state.pushConfig;
-    if(!cfg.enabled || !cfg.apiBase || !cfg.vapidPublicKey){
-      await openNotificationDialog('pending');
-      return;
-    }
+
     if(isIOS() && !isStandalone()){
       await openNotificationDialog('ios-install');
       return;
@@ -371,6 +368,14 @@
       return;
     }
 
+    localStorage.setItem('ccoo-csapg-notification-permission','granted');
+    localStorage.removeItem('ccoo-csapg-push-dismissed');
+
+    if(!cfg.enabled || !cfg.apiBase || !cfg.vapidPublicKey){
+      await openNotificationDialog('permission-only');
+      return;
+    }
+
     try{
       const registration=await navigator.serviceWorker.ready;
       let subscription=await registration.pushManager.getSubscription();
@@ -382,10 +387,9 @@
       }
       await sendSubscriptionToServer(subscription);
       localStorage.setItem('ccoo-csapg-push-enabled','1');
-      localStorage.removeItem('ccoo-csapg-push-dismissed');
       await openNotificationDialog('enabled');
     }catch(e){
-      await openNotificationDialog('pending');
+      await openNotificationDialog('permission-only');
     }
   }
 
@@ -409,12 +413,12 @@
   }
 
   async function pushStatus(){
-    if(!state.pushConfig.enabled) return 'pending';
     if(isIOS() && !isStandalone()) return 'ios-install';
     if(!supportsWebPush()) return 'unsupported';
     if(Notification.permission==='denied') return 'denied';
     const sub=await currentPushSubscription();
-    if(sub) return 'enabled';
+    if(sub && state.pushConfig.enabled) return 'enabled';
+    if(Notification.permission==='granted') return state.pushConfig.enabled ? 'default' : 'permission-only';
     return 'default';
   }
 
@@ -432,6 +436,9 @@
     }
     if(status==='denied'){
       return '<div class="info-banner warn-banner"><span>!</span><div><strong>'+esc(tr('notificationsDenied'))+'</strong><p>'+esc(tr('notificationsPrivacy'))+'</p></div></div>';
+    }
+    if(status==='permission-only'){
+      return '<div class="info-banner"><span>✓</span><div><strong>'+esc(tr('notificationsTitle'))+'</strong><p>'+esc(tr('notificationsPermissionGranted'))+'</p></div></div>'+note;
     }
     if(status==='pending'){
       return '<div class="info-banner warn-banner"><span>!</span><div><strong>'+esc(tr('notificationsTitle'))+'</strong><p>'+esc(tr('notificationsPending'))+'</p></div></div>'+note;
@@ -452,7 +459,6 @@
   }
 
   function notificationNudgeHtml(){
-    if(!state.pushConfig.enabled) return '';
     if(localStorage.getItem('ccoo-csapg-push-dismissed')==='1') return '';
     if(!supportsWebPush() && !isIOS()) return '';
     if('Notification' in window && Notification.permission==='denied') return '';
@@ -533,7 +539,7 @@
       'salud laboral','salut laboral','prevencion','prevencio','riesgos laborales','riscos laborals','aptitud','adaptacion puesto','adaptacio lloc'
     ],
     formacion: [
-      'formacion','formacio','curso','curs','master','master','postgrado','postgrau','doctorado','doctorat','actic','idiomas','idiomes','ects','cfc'
+      'formacion','formacio','fomacion','curso','curs','master','master','postgrado','postgrau','doctorado','doctorat','actic','idiomas','idiomes','ects','cfc','ucav','bac','bac formacion','bac formacio','bar formacion'
     ]
   };
 
@@ -603,11 +609,22 @@
 
   function itemSearchText(item){
     const parts=[];
-    if(item.title){parts.push(item.title.ca,item.title.es);}
-    if(item.desc){parts.push(item.desc.ca,item.desc.es);}
-    if(item.intro){parts.push(item.intro.ca,item.intro.es);}
-    if(item.sourceNote){parts.push(item.sourceNote.ca,item.sourceNote.es);}
-    if(item.bullets){parts.push(...(item.bullets.ca||[]),...(item.bullets.es||[]));}
+    const addTx=value=>{
+      if(!value) return;
+      if(typeof value==='string') parts.push(value);
+      else parts.push(value.ca,value.es);
+    };
+    addTx(item.title); addTx(item.desc); addTx(item.intro); addTx(item.sourceNote);
+    addTx(item.deadline); addTx(item.warning);
+    if(item.bullets) parts.push(...(item.bullets.ca||[]),...(item.bullets.es||[]));
+    if(Array.isArray(item.sections)) item.sections.forEach(section=>{
+      addTx(section.title);
+      if(section.bullets) parts.push(...(section.bullets.ca||[]),...(section.bullets.es||[]));
+    });
+    if(Array.isArray(item.offers)) item.offers.forEach(offer=>{addTx(offer.label);parts.push(offer.value);});
+    if(Array.isArray(item.codes)) item.codes.forEach(row=>{addTx(row.label);parts.push(row.code);});
+    if(Array.isArray(item.actions)) item.actions.forEach(action=>addTx(action.label));
+    if(item.contact) parts.push(item.contact);
     if(item.tags) parts.push(...item.tags);
     if(item.heading) parts.push(item.heading);
     if(item.text) parts.push(item.text);
@@ -1006,22 +1023,9 @@
 
   function openPreview(id){
     const doc=DOCS.find(x=>x.id===id); if(!doc) return;
-
-    // En iOS/iPadOS y en la PWA instalada, Google Drive falla de forma intermitente
-    // cuando /preview se carga dentro de un iframe (errores 400 / vista previa no disponible).
-    // En esos casos abrimos el visor público de Drive como página completa.
-    if(isIOS() || isStandalone()){
-      const url=driveView(doc.driveId);
-      const opened=window.open(url,'_blank','noopener');
-      if(!opened) location.href=url;
-      return;
-    }
-
-    $('#previewTitle').textContent=tx(doc.title);
-    $('#previewFrame').src=drivePreview(doc.driveId);
-    $('#previewOpen').href=driveView(doc.driveId);
-    $('#previewDownload').href=driveDownload(doc.driveId);
-    $('#previewDialog').showModal();
+    const url=driveView(doc.driveId);
+    const opened=window.open(url,'_blank','noopener');
+    if(!opened) location.href=url;
   }
 
   function contactBody(){
@@ -1207,7 +1211,8 @@
     window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();state.installPrompt=e;});
     window.addEventListener('appinstalled',()=>{
       state.installPrompt=null;
-      if(state.pushConfig.enabled && (!('Notification' in window) || Notification.permission==='default')){
+      localStorage.removeItem('ccoo-csapg-notification-onboarding');
+      if('Notification' in window && Notification.permission==='default'){
         window.setTimeout(()=>openNotificationDialog(),700);
       }
     });
@@ -1218,6 +1223,16 @@
     await loadPushConfig();
     await loadPublishedManifest();
     if(!location.hash) location.hash='#/inicio'; else render();
+
+    if(
+      isStandalone() &&
+      supportsWebPush() &&
+      Notification.permission==='default' &&
+      localStorage.getItem('ccoo-csapg-notification-onboarding')!=='1'
+    ){
+      localStorage.setItem('ccoo-csapg-notification-onboarding','1');
+      window.setTimeout(()=>openNotificationDialog(),900);
+    }
   }
 
   init();
