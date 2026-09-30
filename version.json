@@ -1,5 +1,5 @@
 {
-  "version": "0.13.0",
-  "build": "2026-09-30T22:05:00+02:00",
-  "message": "Simplified Consulta/Novetats UX and notification test"
+  "version": "0.13.1",
+  "build": "2026-09-30T22:18:00+02:00",
+  "message": "Simplified Consulta/Novetats UX, notification test, event fix"
 }
