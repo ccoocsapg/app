@@ -1,5 +1,5 @@
 {
-  "version": "0.12.1",
-  "build": "2026-09-30T21:32:00+02:00",
-  "message": "Event binding fix after v0.12 rollout"
+  "version": "0.12.2",
+  "build": "2026-09-30T21:36:00+02:00",
+  "message": "Fix Conveni meeting filter"
 }
