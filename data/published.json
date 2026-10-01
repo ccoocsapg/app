@@ -1,5 +1,5 @@
 {
-  "version": "2026-09-30.5",
+  "version": "2026-10-01.1",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
@@ -29,27 +29,6 @@
       ]
     },
     {
-      "id": "drive-pacte-homogeneitzacio-ii",
-      "category": "pactes",
-      "date": "2023-12-15",
-      "status": "official",
-      "driveId": "1yj3dOcfI_l7Ud5SS6u9FRtf_qgrrvVxJ",
-      "title": {
-        "ca": "II Pacte d’homogeneïtzació CSAPG",
-        "es": "II Pacto de homogeneización CSAPG"
-      },
-      "desc": {
-        "ca": "Pacte signat del CSAPG.",
-        "es": "Pacto firmado del CSAPG."
-      },
-      "tags": [
-        "pacte",
-        "homogeneitzacio",
-        "csapg",
-        "condicions laborals"
-      ]
-    },
-    {
       "id": "drive-procediment-6455",
       "category": "convocatories",
       "date": "2025-12-10",
@@ -74,7 +53,7 @@
     },
     {
       "id": "drive-pacte-calendaris-2025",
-      "category": "pactes",
+      "category": "jornada",
       "date": "2024-10-09",
       "status": "official",
       "driveId": "10cYSgBiVk1XnBl_JGgEI84fJihBFvOy8",
@@ -97,7 +76,7 @@
     },
     {
       "id": "drive-pacte-vacances-2024",
-      "category": "pactes",
+      "category": "jornada",
       "date": "2024-10-09",
       "status": "official",
       "driveId": "1O2HiIj--lCVJsjjTwlA1VL72Wkly833q",

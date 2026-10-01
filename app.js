@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.15.2',
+    version: '0.15.3',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/',
@@ -527,24 +527,18 @@
   }
 
   const DOCUMENT_INDEX_MANIFEST = './search/manifest.json';
-  const LEGACY_DOCUMENT_INDEX_FILES = [
-    './search/conveni.json',
-    './search/procediment-6455.json',
-    './search/siscat-updates.json',
-    './search/convocatories-2026.json'
-  ];
   let documentIndexPromise = null;
   let documentSearchSeq = 0;
 
   async function loadDocumentIndex(){
     if(documentIndexPromise) return documentIndexPromise;
     documentIndexPromise=(async()=>{
-      let files=LEGACY_DOCUMENT_INDEX_FILES.slice();
+      let files=[];
       try{
         const manifestResponse=await fetch(DOCUMENT_INDEX_MANIFEST+'?_='+Date.now(),{cache:'no-store'});
         if(manifestResponse.ok){
           const manifest=await manifestResponse.json();
-          if(Array.isArray(manifest.files) && manifest.files.length){
+          if(Array.isArray(manifest.files)){
             files=[...new Set(manifest.files.map(x=>String(x||'').trim()).filter(Boolean))];
           }
         }
@@ -558,7 +552,6 @@
     })();
     return documentIndexPromise;
   }
-
 
   // Índice semántico local. No envía la consulta a ningún servicio externo.
   // Combina coincidencia literal, sinónimos ES/CAT, conceptos laborales y tolerancia a pequeñas variaciones.

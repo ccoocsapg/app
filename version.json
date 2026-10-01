@@ -1,5 +1,5 @@
 {
-  "version": "0.15.2",
-  "build": "2026-09-30T23:47:00+02:00",
-  "message": "Canonical category mapping and robust topic filters"
+  "version": "0.15.3",
+  "build": "2026-10-01T02:53:31+02:00",
+  "message": "Manifest-only search loader and Drive publication reconciliation"
 }
