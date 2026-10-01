@@ -1025,3 +1025,14 @@ html,body{max-width:100%;overflow-x:hidden}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
 }
+
+
+/* NAVIGATION INTEGRITY 0.16 */
+.filter-chip{display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+.filter-chip:visited{color:inherit}
+.meeting-card[id],#consultaResults{scroll-margin-top:110px}
+@media(max-width:800px){
+  .meeting-card[id],#consultaResults{scroll-margin-top:86px}
+  .filter-row{gap:7px}
+  .filter-chip{min-height:44px;padding:10px 12px}
+}

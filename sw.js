@@ -1,4 +1,4 @@
-const VERSION = '0.15.2';
+const VERSION = '0.16.0';
 const CACHE = 'ccoo-csapg-app-' + VERSION;
 const CACHE_PREFIX = 'ccoo-csapg-app-';
 
@@ -9,7 +9,7 @@ const SHELL = [
   './search.css?v=' + VERSION,
   './app.js?v=' + VERSION,
   './manifest.webmanifest',
-  './icon.svg',
+  './icon.svg?v=' + VERSION,
   './version.json'
 ];
 

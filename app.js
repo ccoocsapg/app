@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.15.2',
+    version: '0.16.0',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/',
@@ -317,7 +317,8 @@
     search: '',
     topicKey: '',
     installPrompt: null,
-    pushConfig: {enabled:false,apiBase:'',vapidPublicKey:''}
+    pushConfig: {enabled:false,apiBase:'',vapidPublicKey:''},
+    meetingItem: ''
   };
 
   const $ = (s, root = document) => root.querySelector(s);
@@ -554,7 +555,7 @@
           .then(r=>r.ok?r.json():{chunks:[]})
           .catch(()=>({chunks:[]})))
       );
-      return parts.flatMap(p=>Array.isArray(p.chunks)?p.chunks:[]);
+      return parts.reduce((all,p)=>all.concat(Array.isArray(p.chunks)?p.chunks:[]),[]);
     })();
     return documentIndexPromise;
   }
@@ -879,7 +880,8 @@
   }
 
   function latestCard(item){
-    return '<article class="card"><div class="card-head"><div><div class="meta">'+sourceBadge(item.source)+'<span class="badge badge-neutral">'+esc(categoryLabel(item.category))+'</span></div><h3>'+esc(tx(item.title))+'</h3></div><span class="badge badge-neutral">'+esc(formatDate(item.date))+'</span></div><p>'+esc(tx(item.intro))+'</p><div class="card-actions"><a class="btn btn-outline btn-small" href="#/reunions">'+esc(tr('readSummary'))+' →</a></div></article>';
+    const href='#/reunions?item='+encodeURIComponent(item.id||'');
+    return '<article class="card"><div class="card-head"><div><div class="meta">'+sourceBadge(item.source)+'<span class="badge badge-neutral">'+esc(categoryLabel(item.category))+'</span></div><h3>'+esc(tx(item.title))+'</h3></div><span class="badge badge-neutral">'+esc(formatDate(item.date))+'</span></div><p>'+esc(tx(item.intro))+'</p><div class="card-actions"><a class="btn btn-outline btn-small" href="'+href+'">'+esc(tr('readSummary'))+' →</a></div></article>';
   }
 
   function consultationTopics(){
@@ -916,16 +918,35 @@
   }
 
   function syncStateFromRoute(){
-    if(route()!=='documents') return;
-    const key=routeParams().get('topic')||'';
-    const topic=consultationTopics().find(x=>x.key===key);
-    if(topic){
-      state.topicKey=topic.key;
-      state.search=topic.query;
-      state.docFilter='all';
-    }else if(key){
+    const current=route();
+    const params=routeParams();
+
+    if(current==='documents'){
       state.topicKey='';
+      state.docFilter='all';
+      const key=params.get('topic')||'';
+      const q=params.get('q')||'';
+      const topic=consultationTopics().find(x=>x.key===key);
+      if(topic){
+        state.topicKey=topic.key;
+        state.search=topic.query;
+      }else{
+        state.search=q;
+      }
+      return;
     }
+
+    if(current==='reunions'){
+      const valid=['all','comunicatshrsc','negociadora','paritaria','conveni','convocatories','conciliacio','organitzacio','formacio'];
+      const cat=params.get('cat')||'all';
+      state.meetingFilter=valid.includes(cat)?cat:'all';
+      state.meetingItem=params.get('item')||'';
+      state.search=params.get('q')||'';
+      return;
+    }
+
+    state.topicKey='';
+    state.meetingItem='';
   }
 
   function renderConsultInfo(query){
@@ -1031,7 +1052,8 @@
 
   function meetingChip(cat){
     const label=cat==='all'?tr('all'):categoryLabel(cat);
-    return '<button class="filter-chip'+(state.meetingFilter===cat?' is-active':'')+'" data-meeting-filter="'+cat+'">'+esc(label)+'</button>';
+    const href=cat==='all'?'#/reunions':'#/reunions?cat='+encodeURIComponent(cat);
+    return '<a class="filter-chip'+(state.meetingFilter===cat?' is-active':'')+'" href="'+href+'" data-meeting-filter="'+cat+'">'+esc(label)+'</a>';
   }
 
   function renderMeetings(){
@@ -1056,6 +1078,18 @@
 
     if(!items.length) return '<div class="empty-state">'+esc(tr('noResults'))+'</div>';
     return items.map(meetingCard).join('');
+  }
+
+  function safeActionUrl(value){
+    const raw=String(value||'').trim();
+    if(!raw) return '';
+    if(/^mailto:/i.test(raw)) return raw;
+    try{
+      const u=new URL(raw,location.href);
+      return u.protocol==='https:'?u.href:'';
+    }catch(e){
+      return '';
+    }
   }
 
   function meetingExtraHtml(item){
@@ -1086,9 +1120,13 @@
       ).join('')+'</div>';
     }
     if(Array.isArray(item.actions) && item.actions.length){
-      html+='<div class="card-actions update-actions">'+item.actions.map(action=>
-        '<a class="btn '+(action.style==='primary'?'btn-primary':'btn-outline')+' btn-small" href="'+esc(action.url||'#')+'" target="'+((action.url||'').startsWith('mailto:')?'_self':'_blank')+'" rel="noopener">'+esc(tx(action.label))+'</a>'
-      ).join('')+'</div>';
+      const links=item.actions.map(action=>{
+        const href=safeActionUrl(action.url);
+        if(!href) return '';
+        const mail=/^mailto:/i.test(href);
+        return '<a class="btn '+(action.style==='primary'?'btn-primary':'btn-outline')+' btn-small" href="'+esc(href)+'" target="'+(mail?'_self':'_blank')+'" rel="noopener noreferrer">'+esc(tx(action.label))+'</a>';
+      }).filter(Boolean).join('');
+      if(links) html+='<div class="card-actions update-actions">'+links+'</div>';
     }
     if(item.contact){
       html+='<div class="source-box"><strong>'+esc(tr('email'))+':</strong> <a href="mailto:'+esc(item.contact)+'">'+esc(item.contact)+'</a></div>';
@@ -1098,10 +1136,12 @@
 
   function meetingCard(item){
     const itemBullets=item.bullets||{};
+    const itemId='item-'+String(item.id||'').replace(/[^a-zA-Z0-9_-]/g,'-');
+    const deepOpen=state.meetingItem===item.id;
     const bullets=itemBullets[state.lang] || itemBullets.ca || itemBullets.es || [];
 
     if(item.category==='convocatories' && Array.isArray(item.actions) && item.actions.length){
-      return '<article class="meeting-card meeting-card--featured">'+
+      return '<article id="'+esc(itemId)+'" class="meeting-card meeting-card--featured">'+
         '<div class="meeting-top">'+
           '<div class="date-box"><strong>'+day(item.date)+'</strong><span>'+esc(monthShort(item.date))+'</span></div>'+
           '<div class="meeting-title"><div class="meta">'+sourceBadge(item.source)+'<span class="badge badge-neutral">'+esc(categoryLabel(item.category))+'</span></div><h3>'+esc(tx(item.title))+'</h3><p>'+esc(tx(item.intro))+'</p></div>'+
@@ -1114,7 +1154,7 @@
       '</article>';
     }
 
-    return '<details class="meeting-card"><summary><div class="meeting-top">'+
+    return '<details id="'+esc(itemId)+'" class="meeting-card"'+(deepOpen?' open':'')+'><summary><div class="meeting-top">'+
       '<div class="date-box"><strong>'+day(item.date)+'</strong><span>'+esc(monthShort(item.date))+'</span></div>'+
       '<div class="meeting-title"><div class="meta">'+sourceBadge(item.source)+'<span class="badge badge-neutral">'+esc(categoryLabel(item.category))+'</span></div><h3>'+esc(tx(item.title))+'</h3><p>'+esc(tx(item.intro))+'</p></div>'+
       '<span class="chev">›</span></div></summary>'+
@@ -1212,8 +1252,8 @@
     const docs=smartRank(DOCS,q).slice(0,3);
     const meets=smartRank(MEETINGS,q).slice(0,3);
     const html=[];
-    docs.forEach(x=>html.push('<a class="card" href="#/documents"><div class="meta">'+sourceBadge(x.status)+'</div><h3>'+esc(tx(x.title))+'</h3><p>'+esc(tx(x.desc))+'</p></a>'));
-    meets.forEach(x=>html.push('<a class="card" href="#/reunions"><div class="meta">'+sourceBadge(x.source)+'</div><h3>'+esc(tx(x.title))+'</h3><p>'+esc(tx(x.intro))+'</p></a>'));
+    docs.forEach(x=>html.push('<a class="card" href="#/documents?q='+encodeURIComponent(tx(x.title))+'"><div class="meta">'+sourceBadge(x.status)+'</div><h3>'+esc(tx(x.title))+'</h3><p>'+esc(tx(x.desc))+'</p></a>'));
+    meets.forEach(x=>html.push('<a class="card" href="#/reunions?item='+encodeURIComponent(x.id||'')+'"><div class="meta">'+sourceBadge(x.source)+'</div><h3>'+esc(tx(x.title))+'</h3><p>'+esc(tx(x.intro))+'</p></a>'));
     box.innerHTML=(html.length?'<div class="search-subhead"><strong>'+esc(tr('webResults'))+'</strong></div><div class="card-grid">'+html.join('')+'</div>':'<div class="search-doc-status">'+esc(tr('noResults'))+'</div>')+
       '<div id="homeDocumentResults" class="section"></div>';
     await renderDocumentSearchInto('#homeDocumentResults',q,6);
@@ -1294,19 +1334,10 @@
       renderConsultaResults();
     });
 
-    $('[data-topic-query]').forEach(btn=>btn.addEventListener('click',e=>{
-      const key=btn.dataset.topicKey||'';
-      const targetHash='#/documents?topic='+encodeURIComponent(key);
-      if(location.hash===targetHash){
-        e.preventDefault();
-        syncStateFromRoute();
-        render();
-      }
-    }));
-
     const meetingSearch=$('#meetingSearch');
     if(meetingSearch) meetingSearch.addEventListener('input',e=>{
       state.search=e.target.value;
+      state.meetingItem='';
       if(state.search.trim()){
         state.meetingFilter='all';
         $$('[data-meeting-filter]').forEach(btn=>btn.classList.toggle('is-active',btn.dataset.meetingFilter==='all'));
@@ -1315,19 +1346,14 @@
       if(list) list.innerHTML=renderMeetings();
     });
 
-    $$('[data-meeting-filter]').forEach(btn=>btn.addEventListener('click',()=>{
-      state.search='';
-      state.meetingFilter=btn.dataset.meetingFilter;
-      render();
-    }));
-
     bindDocActions();
 
     $$('[data-install]').forEach(btn=>btn.addEventListener('click',requestInstall));
     $$('[data-notification-manage]').forEach(btn=>btn.addEventListener('click',()=>openNotificationDialog()));
     $$('[data-notification-dismiss]').forEach(btn=>btn.addEventListener('click',()=>{
       localStorage.setItem('ccoo-csapg-push-dismissed','1');
-      const nudge=btn.closest ? btn.closest('.notification-nudge') : null; if(nudge && nudge.parentNode) nudge.parentNode.removeChild(nudge);
+      const nudge=btn.closest?btn.closest('.notification-nudge'):null;
+      if(nudge&&nudge.parentNode)nudge.parentNode.removeChild(nudge);
     }));
 
     if(current==='documents' && state.search) renderConsultaResults();
@@ -1356,7 +1382,16 @@
     $('#view').innerHTML=html;
     bindView();
     if(current==='avisos') renderNotificationsPageStatus();
-    window.scrollTo({top:0,behavior:'auto'});
+
+    if(current==='documents' && state.topicKey){
+      const target=$('#consultaResults');
+      window.setTimeout(()=>{if(target)target.scrollIntoView({behavior:'smooth',block:'start'});},30);
+    }else if(current==='reunions' && state.meetingItem){
+      const target=document.getElementById('item-'+String(state.meetingItem).replace(/[^a-zA-Z0-9_-]/g,'-'));
+      window.setTimeout(()=>{if(target)target.scrollIntoView({behavior:'smooth',block:'start'});},30);
+    }else{
+      window.scrollTo({top:0,behavior:'auto'});
+    }
   }
 
   let updateReloading=false;
@@ -1448,7 +1483,7 @@
     const notificationButton=$('#notificationButton'); if(notificationButton) notificationButton.addEventListener('click',()=>openNotificationDialog());
     $$('[data-close-dialog]').forEach(btn=>btn.addEventListener('click',()=>btn.closest('dialog').close()));
     $('#previewDialog').addEventListener('close',()=>{$('#previewFrame').src='about:blank';});
-    window.addEventListener('hashchange',()=>{state.search='';state.topicKey='';syncStateFromRoute();render();});
+    window.addEventListener('hashchange',()=>{state.search='';state.topicKey='';state.meetingItem='';syncStateFromRoute();render();});
     document.addEventListener('focusin',e=>{
       if(e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) document.body.classList.add('is-typing');
     });
