@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.16.0',
+    version: '0.16.1',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/',
@@ -528,7 +528,7 @@
   }
 
   const DOCUMENT_INDEX_MANIFEST = './search/manifest.json';
-  const LEGACY_DOCUMENT_INDEX_FILES = [
+  const LEGACY_SEARCH_FILES = [
     './search/conveni.json',
     './search/procediment-6455.json',
     './search/siscat-updates.json',
@@ -540,7 +540,7 @@
   async function loadDocumentIndex(){
     if(documentIndexPromise) return documentIndexPromise;
     documentIndexPromise=(async()=>{
-      let files=LEGACY_DOCUMENT_INDEX_FILES.slice();
+      let files=LEGACY_SEARCH_FILES.slice();
       try{
         const manifestResponse=await fetch(DOCUMENT_INDEX_MANIFEST+'?_='+Date.now(),{cache:'no-store'});
         if(manifestResponse.ok){

@@ -1,5 +1,5 @@
 {
-  "version": "0.16.0",
-  "build": "2026-10-01T07:32:00+02:00",
-  "message": "Atomic navigation integrity release: native category links, deep links, safe external actions and version sync"
+  "version": "0.16.1",
+  "build": "2026-10-01T07:44:00+02:00",
+  "message": "Navigation CI guard: runtime selector checks, route integrity and action URL validation"
 }

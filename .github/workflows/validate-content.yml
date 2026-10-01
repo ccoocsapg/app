@@ -7,14 +7,24 @@ on:
       - "app.js"
       - "data/**"
       - "search/**"
+      - "index.html"
+      - "manifest.webmanifest"
+      - "sw.js"
+      - "version.json"
       - "scripts/validate_content.py"
+      - "scripts/validate_navigation.py"
       - ".github/workflows/validate-content.yml"
   pull_request:
     paths:
       - "app.js"
       - "data/**"
       - "search/**"
+      - "index.html"
+      - "manifest.webmanifest"
+      - "sw.js"
+      - "version.json"
       - "scripts/validate_content.py"
+      - "scripts/validate_navigation.py"
       - ".github/workflows/validate-content.yml"
   workflow_dispatch:
 
@@ -31,9 +41,11 @@ jobs:
           python-version: "3.12"
       - name: Validate publication graph
         run: python scripts/validate_content.py
+      - name: Validate navigation and links
+        run: python scripts/validate_navigation.py
       - name: Reject hardcoded search indexes in app.js
         run: |
-          if grep -q "DOCUMENT_INDEX_FILES = \[" app.js; then
+          if grep -Eq "^[[:space:]]*const DOCUMENT_INDEX_FILES[[:space:]]*=" app.js; then
             echo "Hardcoded search index list detected in app.js"
             exit 1
           fi

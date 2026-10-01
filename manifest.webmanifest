@@ -3,7 +3,7 @@
   "short_name": "CCOO CSAPG",
   "description": "Documents, resums, eines i contacte sindical per a les persones treballadores del CSAPG.",
   "lang": "ca",
-  "start_url": "./?_appv=0.16.0#/inicio",
+  "start_url": "./?_appv=0.16.1#/inicio",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
@@ -15,7 +15,7 @@
   ],
   "icons": [
     {
-      "src": "./icon.svg?v=0.16.0",
+      "src": "./icon.svg?v=0.16.1",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"

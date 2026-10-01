@@ -1,4 +1,4 @@
-const VERSION = '0.16.0';
+const VERSION = '0.16.1';
 const CACHE = 'ccoo-csapg-app-' + VERSION;
 const CACHE_PREFIX = 'ccoo-csapg-app-';
 
