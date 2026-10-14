@@ -1,5 +1,5 @@
 {
-  "version": "2026-09-30.5",
+  "version": "2026-10-14.1",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
@@ -1619,6 +1619,82 @@
         "tancament economic",
         "desconnexio digital",
         "2025"
+      ]
+    },
+    {
+      "id": "negociadora-2026-10-13",
+      "driveId": "1BlabyojUYL6AfG3QIETNwiRqe33giYnG",
+      "contentType": "meeting",
+      "date": "2026-10-14",
+      "category": "negociadora",
+      "source": "ccoo",
+      "title": {
+        "ca": "Negociadora IV Conveni SISCAT · reunió 13/10/2026",
+        "es": "Negociadora IV Convenio SISCAT · reunión 13/10/2026"
+      },
+      "intro": {
+        "ca": "CCOO informa de la negociació dels articles 43 al 52, centrats en excedències, conciliació, lactància, reduccions de jornada i altres drets, i de la resposta patronal pendent sobre permisos retribuïts de l’article 42.",
+        "es": "CCOO informa de la negociación de los artículos 43 al 52, centrados en excedencias, conciliación, lactancia, reducciones de jornada y otros derechos, y de la respuesta patronal pendiente sobre permisos retribuidos del artículo 42."
+      },
+      "bullets": {
+        "ca": [
+          "Art. 43: acord per incorporar la redacció de la Comissió Paritària sobre excedència voluntària.",
+          "Art. 43 bis: CCOO proposa incorporar la possibilitat de pròrrogues a l’excedència per conciliació de la vida familiar i laboral.",
+          "Arts. 44 a 47: actualització normativa de les excedències, incorporació de l’acord parcial LGTBIQ+ i propostes de revisió de redactat.",
+          "Art. 48: CCOO demana que, amb acord previ amb l’empresa, es pugui adaptar la compactació del període de lactància a les necessitats de la persona treballadora.",
+          "Art. 49: la patronal revisarà l’article per incorporar els canvis normatius que entren en vigor el 23 d’octubre.",
+          "Art. 52: es proposa actualitzar la terminologia i adaptar a la normativa les mesures de suport a persones treballadores responsables de persones amb discapacitat.",
+          "Art. 42: la patronal planteja que, en cas de mort programada per eutanàsia, el permís pugui iniciar-se la nit anterior, i preveu un dia addicional de permís no retribuït per mort que es podria gaudir fins a dos mesos després."
+        ],
+        "es": [
+          "Art. 43: acuerdo para incorporar la redacción de la Comisión Paritaria sobre excedencia voluntaria.",
+          "Art. 43 bis: CCOO propone incorporar la posibilidad de prórrogas en la excedencia por conciliación de la vida familiar y laboral.",
+          "Arts. 44 a 47: actualización normativa de las excedencias, incorporación del acuerdo parcial LGTBIQ+ y propuestas de revisión de redacción.",
+          "Art. 48: CCOO pide que, con acuerdo previo con la empresa, pueda adaptarse la compactación del periodo de lactancia a las necesidades de la persona trabajadora.",
+          "Art. 49: la patronal revisará el artículo para incorporar los cambios normativos que entran en vigor el 23 de octubre.",
+          "Art. 52: se propone actualizar la terminología y adaptar a la normativa las medidas de apoyo a personas trabajadoras responsables de personas con discapacidad.",
+          "Art. 42: la patronal plantea que, en caso de muerte programada por eutanasia, el permiso pueda iniciarse la noche anterior, y prevé un día adicional de permiso no retribuido por fallecimiento que podría disfrutarse hasta dos meses después."
+        ]
+      },
+      "sourceNote": {
+        "ca": "Informatiu «SISCAT al dia» de la Federació de Sanitat de CCOO de Catalunya, publicat el 14/10/2026 sobre la reunió negociadora del 13/10/2026. Les propostes negociades no s’han de confondre amb el text definitiu del futur conveni.",
+        "es": "Informativo «SISCAT al día» de la Federación de Sanidad de CCOO de Catalunya, publicado el 14/10/2026 sobre la reunión negociadora del 13/10/2026. Las propuestas negociadas no deben confundirse con el texto definitivo del futuro convenio."
+      },
+      "actions": [
+        {
+          "label": {
+            "ca": "Obrir informatiu",
+            "es": "Abrir informativo"
+          },
+          "url": "https://drive.google.com/file/d/1BlabyojUYL6AfG3QIETNwiRqe33giYnG/view?usp=drivesdk",
+          "style": "outline"
+        }
+      ],
+      "tags": [
+        "negociadora",
+        "iv conveni",
+        "siscat",
+        "13 octubre 2026",
+        "14 octubre 2026",
+        "excedencia",
+        "excedència",
+        "conciliacio",
+        "conciliación",
+        "lactancia",
+        "lactància",
+        "reduccio jornada",
+        "reducción jornada",
+        "discapacitat",
+        "discapacidad",
+        "permisos",
+        "article 42",
+        "article 43",
+        "article 48",
+        "article 49",
+        "article 52",
+        "eutanasia",
+        "defuncio",
+        "fallecimiento"
       ]
     }
   ]
