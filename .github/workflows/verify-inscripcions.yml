@@ -1,0 +1,47 @@
+name: Verify CCOO inscriptions service
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/verify-inscripcions.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify public Google Apps Script and synthetic registration
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, urllib.request, urllib.parse
+          config = json.load(open('inscripcions-config.json', encoding='utf-8'))
+          assert config['enabled'] and config['endpoint'].startswith('https://script.google.com/macros/s/')
+          endpoint = config['endpoint']
+          request = urllib.request.Request(endpoint, headers={'User-Agent':'CCOO-CSAPG-Test/1.0'})
+          with urllib.request.urlopen(request, timeout=35) as response:
+              html = response.read(300000).decode('utf-8', 'replace')
+              print('GET response HTTP', response.status)
+          assert 'Enllaç de registre' in html or 'Utilitza el formulari' in html, 'GET does not return expected Apps Script service'
+
+          # Synthetic data only, not a real member; one session, deduplicated server-side.
+          body = urllib.parse.urlencode({
+              'fullName':'PROVA TECNICA CCOO 20261017',
+              'sessions':'2026-11-12-INF-HCAP',
+              'website':''
+          }).encode('utf-8')
+          req = urllib.request.Request(endpoint, data=body, method='POST',
+                      headers={'Content-Type':'application/x-www-form-urlencoded',
+                               'User-Agent':'CCOO-CSAPG-Test/1.0'})
+          with urllib.request.urlopen(req, timeout=35) as response:
+              html = response.read(300000).decode('utf-8','replace')
+              print('POST response HTTP', response.status)
+          assert 'Inscripció registrada' in html and ('Hem rebut' in html or 'figuraven registrades' in html), 'POST did not confirm database write'
+          print('PASS: registered synthetic session in Google Sheets')
+          PY
