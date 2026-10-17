@@ -20,14 +20,20 @@ jobs:
         shell: bash
         run: |
           python3 - <<'PY'
-          import json, urllib.request, urllib.parse
+          import json, urllib.request, urllib.parse, urllib.error
           config = json.load(open('inscripcions-config.json', encoding='utf-8'))
           assert config['enabled'] and config['endpoint'].startswith('https://script.google.com/macros/s/')
           endpoint = config['endpoint']
           request = urllib.request.Request(endpoint, headers={'User-Agent':'CCOO-CSAPG-Test/1.0'})
-          with urllib.request.urlopen(request, timeout=35) as response:
-              html = response.read(300000).decode('utf-8', 'replace')
-              print('GET response HTTP', response.status)
+          try:
+              with urllib.request.urlopen(request, timeout=35) as response:
+                  html = response.read(300000).decode('utf-8', 'replace')
+                  print('GET response HTTP', response.status)
+          except urllib.error.HTTPError as e:
+              print('GET permission/status error:', e.code)
+              print('Content-Type:', e.headers.get('Content-Type', '?'))
+              print('Body excerpt:', e.read(1200).decode('utf-8', 'replace'))
+              raise
           assert 'Enllaç de registre' in html or 'Utilitza el formulari' in html, 'GET does not return expected Apps Script service'
 
           # Synthetic data only, not a real member; one session, deduplicated server-side.
