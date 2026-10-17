@@ -73,8 +73,8 @@ h2{font-size:17px;margin:19px 0 5px}
 <div class="count" id="count" aria-live="polite">Cap sessió seleccionada</div>
 <div class="alert">Recorda: no pots participar en l'avaluació d'una convocatòria a la qual t'hagis presentat. La sessió de l'11/11 està anul·lada.</div>
 <div class="trap" aria-hidden="true"><label>Deixa aquest camp buit <input name="website" tabindex="-1" autocomplete="off"></label></div>
-<button type="submit" class="btn" id="send">Enviar</button>
-<p class="small" id="sendHint">Si s'obre el correu electrònic, confirma l'enviament del missatge per completar la sol·licitud.</p>
+<button type="submit" class="btn" id="send" disabled>Enviar</button>
+<p class="small" id="sendHint" role="status">El registre automàtic encara no està activat. No es poden enviar sol·licituds fins que estigui connectat al full de càlcul.</p>
 <p class="small">Les candidatures es revisaran abans de designar representants. Les dades només s'utilitzen per coordinar aquestes sessions. <a href="./#/privacitat" target="_blank" rel="noopener">Privacitat</a>.</p>
 <div role="status" aria-live="polite" id="response" hidden></div>
 </form>
@@ -82,7 +82,6 @@ h2{font-size:17px;margin:19px 0 5px}
 <script>
 (function(){
   "use strict";
-  const FORM_EMAIL="ccoohrsc@csapg.cat";
   let destination="";
   const form=document.getElementById("inscripcio");
   const submit=document.getElementById("send");
@@ -107,7 +106,10 @@ h2{font-size:17px;margin:19px 0 5px}
     .then(c=>{
       if(c&&c.enabled&&/^https:\/\/script\.google\.com\/macros\/s\/[^/?#]+\/exec$/.test(c.endpoint||"")){
         destination=c.endpoint;
-        document.getElementById("sendHint").textContent="La sol·licitud quedarà registrada i pendent de designació.";
+        form.action=destination;
+        form.method="post";
+        submit.disabled=false;
+        document.getElementById("sendHint").textContent="La sol·licitud es registrarà directament al full privat de Google Sheets.";
       }
     }).catch(()=>{});
 
@@ -119,28 +121,20 @@ h2{font-size:17px;margin:19px 0 5px}
       count.scrollIntoView({behavior:"smooth",block:"center"});
       return;
     }
-    if(destination){
-      submit.disabled=true;
-      submit.textContent="Enviant…";
-      // Enviament POST de formulari tradicional: no requereix CORS i mostra
-      // la confirmació del servidor només després d'escriure a Google Sheets.
-      form.action=destination;
-      form.method="post";
-      form.submit();
+    if(!destination){
+      status.textContent="El registre encara no està connectat. La sol·licitud no s'ha enviat ni desat.";
+      status.hidden=false;
       return;
     }
-    const fullName=document.getElementById("fullName").value.trim();
-    const selections=checked().map(c=>{
-      const item=c.closest("label");
-      return "• "+item.querySelector(".date").textContent+" | "+item.querySelector(".role").textContent+" | "+item.querySelector(".room").textContent+" ["+c.value+"]";
-    });
-    const body="SOL·LICITUD · COMISSIONS MIXTES NOVEMBRE 2026\n\nNom i cognoms: "+fullName+
-      "\n\nSessions:\n"+selections.join("\n")+
-      "\n\nPendent de designació. No m'he presentat a les convocatòries seleccionades.";
-    const href="mailto:"+FORM_EMAIL+"?subject="+encodeURIComponent("Inscripció · Comissions mixtes novembre 2026")+"&body="+encodeURIComponent(body);
-    status.textContent="S'ha preparat el correu. Cal enviar-lo per completar la inscripció.";
-    status.hidden=false;
-    window.location.href=href;
+    submit.disabled=true;
+    submit.textContent="Enviant…";
+    // POST amb resposta d'Apps Script; les dades només apareixen al Sheets després de la confirmació.
+    form.action=destination;
+    form.method="post";
+    form.submit();
+  });
+  window.addEventListener("pageshow",function(){
+    if(destination){submit.disabled=false;submit.textContent="Enviar";}
   });
 })();
 </script>
