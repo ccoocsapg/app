@@ -1,5 +1,5 @@
 {
-  "enabled": true,
+  "enabled": false,
   "endpoint": "https://script.google.com/macros/s/AKfycbzwXcLSrufEC-7-T6qD2Fn04-DkI0ZfcUUUiOxFgmYN1Lu1jKLLj3pTc-d_56mihhI/exec",
-  "note": "Inscripcions del comitè enviades directament a Google Apps Script per registrar a la pestanya Inscripcions del full privat de CCOO CSAPG."
+  "note": "El desplegament retorna 'Script function not found: doGet'. Activacio temporalment pausada fins que es publiqui una nova versio d'Apps Script i es verifiqui l'escriptura."
 }
