@@ -1,0 +1,5 @@
+{
+  "enabled": false,
+  "endpoint": "",
+  "note": "Activa enabled i enganxa l'URL /exec d'Apps Script, quan s'hagi desplegat. No afegeixis cap clau privada."
+}
