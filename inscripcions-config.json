@@ -1,5 +1,5 @@
 {
-  "enabled": false,
-  "endpoint": "",
-  "note": "Activa enabled i enganxa l'URL /exec d'Apps Script, quan s'hagi desplegat. No afegeixis cap clau privada."
+  "enabled": true,
+  "endpoint": "https://script.google.com/macros/s/AKfycbzwXcLSrufEC-7-T6qD2Fn04-DkI0ZfcUUUiOxFgmYN1Lu1jKLLj3pTc-d_56mihhI/exec",
+  "note": "Inscripcions del comitè enviades directament a Google Apps Script per registrar a la pestanya Inscripcions del full privat de CCOO CSAPG."
 }
