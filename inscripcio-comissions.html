@@ -249,7 +249,7 @@ footer{max-width:1130px;margin:0 auto;padding:10px 24px 32px;color:#505050;font-
     if(!valid())return;
     var link="https://wa.me/"+contactWhatsApp+"?text="+encodeURIComponent(message());
     $("confirmation").textContent=tr("ready");$("confirmation").hidden=false;
-    var w=window.open(link,"_blank","noopener,noreferrer");if(!w)window.location.href=link;
+    var w=window.open(link,"_blank");if(w){try{w.opener=null;}catch(err){}}else{window.location.href=link;}
   });
   $("sendEmail").addEventListener("click",function(){
     if(!valid())return;
