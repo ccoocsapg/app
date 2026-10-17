@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.16.1',
+    version: '0.16.2',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/',
@@ -861,6 +861,7 @@
         '<div class="hero-side"><div class="trust-chip"><strong>'+esc(tr('responsibleTitle'))+'</strong><span>'+esc(tr('responsibleText'))+'</span></div>'+
         '<div class="trust-chip"><strong>CCOO Sanitat · CSAPG</strong><span>'+esc(tr('sourceFirstText'))+'</span></div></div>'+
       '</section>'+
+      '<section class="section"><div class="info-banner"><span>✍</span><div><strong>'+(state.lang==='ca'?'Comissions mixtes de novembre · Inscripcions obertes':'Comisiones mixtas de noviembre · Inscripciones abiertas')+'</strong><p>'+(state.lang==='ca'?'Si vols representar la part social, escull les sessions i envia la teva disponibilitat per WhatsApp.':'Si quieres representar a la parte social, elige las sesiones y envía tu disponibilidad por WhatsApp.')+'</p><a class="btn btn-primary btn-small" href="./inscripcio-comissions.html">'+(state.lang==='ca'?'Apunta-t’hi':'Inscribirme')+' →</a></div></div></section>'+
       '<section class="section"><div class="search-box"><input id="globalSearch" type="search" autocomplete="off" placeholder="'+esc(tr('searchPlaceholder'))+'"><span class="search-icon">⌕</span></div><div class="search-hint">✦ '+esc(tr('smartSearchHint'))+'</div><div id="homeSearchResults"></div></section>'+
       '<section class="section"><div class="quick-grid">'+
         quickCard('#/documents','▤','quickDocs','quickDocsSub')+
@@ -1166,6 +1167,7 @@
   function toolsView(){
     return '<div class="view">'+pageHeading(tr('toolsTitle'),tr('toolsSub'))+
       '<div class="tool-list">'+
+        toolCard('✍',state.lang==='ca'?'Comissions mixtes · Inscripció':'Comisiones mixtas · Inscripción',state.lang==='ca'?'Sol·licita representar la part social a les sessions d’avaluació de novembre de 2026.':'Solicita representar a la parte social en las sesiones de evaluación de noviembre de 2026.','./inscripcio-comissions.html',{badge:'NOV 2026',external:true})+
         toolCard('▦',tr('calculatorTitle'),tr('calculatorText'),CONFIG.calculatorUrl,{badge:'ID 6455',external:true})+
         toolCard('✚',tr('permitsTool'),state.lang==='ca'?'Consulta permisos, hospitalització, força major i conciliació amb els documents relacionats.':'Consulta permisos, hospitalización, fuerza mayor y conciliación con los documentos relacionados.','#/documents?topic=permisos',{badge:categoryLabel('permisos')})+
         toolCard('↗',tr('careerTool'),state.lang==='ca'?'Consulta SIPDP, nivells, requisits i documentació relacionada amb la carrera professional.':'Consulta SIPDP, niveles, requisitos y documentación relacionada con la carrera profesional.','#/documents?topic=carrera',{badge:'SIPDP'})+
