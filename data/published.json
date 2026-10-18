@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-14.1",
+  "version": "2026-10-18.1",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
@@ -1695,6 +1695,81 @@
         "eutanasia",
         "defuncio",
         "fallecimiento"
+      ]
+    },
+    {
+      "id": "hrsc-info-2026-10-14",
+      "driveId": "1x72aeMDCmwUvfOaPQbVpsDSZI_snomsb",
+      "contentType": "communication",
+      "date": "2026-10-14",
+      "category": "comunicatshrsc",
+      "source": "ccoo",
+      "title": {
+        "ca": "CCOO HRSC · Resum reunió Comitè d’Empresa i Direcció",
+        "es": "CCOO HRSC · Resumen reunión Comité de Empresa y Dirección"
+      },
+      "intro": {
+        "ca": "Resum de la Secció Sindical CCOO HRSC sobre els principals temes tractats amb la direcció del CSAPG: seguretat, Urgències, permisos, planilles, DPO, alertes meteorològiques, convocatòries i organització assistencial.",
+        "es": "Resumen de la Sección Sindical CCOO HRSC sobre los principales temas tratados con la dirección del CSAPG: seguridad, Urgencias, permisos, planillas, DPO, alertas meteorológicas, convocatorias y organización asistencial."
+      },
+      "bullets": {
+        "ca": [
+          "Seguretat: es reclama un segon vigilant a Sant Camil i millores en control d’accessos, protocols i sistemes d’alarma.",
+          "Nou circuit d’Urgències: la direcció indica que encara no està implantat i que haurà d’existir un protocol escrit amb funcions, responsabilitats i cobertura legal.",
+          "Organització assistencial: es revisa el model d’infermera lliscant i s’ha proposat crear un equip específic de venopunció i accessos vasculars.",
+          "Permisos: es denuncien peticions de justificants de permisos concedits mesos enrere i possibles saldos negatius en planilles; la direcció es compromet a revisar les incidències.",
+          "Denario: es torna a reclamar traçabilitat i notificacions dels canvis de calendari laboral.",
+          "DPO i nòmines: es reclama actualitzar correctament els imports i aclarir el càlcul en jubilació parcial; la qüestió continua en seguiment.",
+          "Alertes meteorològiques: es reclama un protocol clar; la direcció informa que s’incorporarà al Pla d’Autoprotecció.",
+          "Convocatòries i plantilla: es reclamen compromisos pendents sobre neteja, cuina i manteniment i més transparència del directori professional.",
+          "Altres qüestions: hospitalització a domicili, incidències de sistemes informàtics i aparcament."
+        ],
+        "es": [
+          "Seguridad: se reclama un segundo vigilante en Sant Camil y mejoras en control de accesos, protocolos y sistemas de alarma.",
+          "Nuevo circuito de Urgencias: la dirección indica que todavía no está implantado y que deberá existir un protocolo escrito con funciones, responsabilidades y cobertura legal.",
+          "Organización asistencial: se revisa el modelo de enfermera deslizante y se ha propuesto crear un equipo específico de venopunción y accesos vasculares.",
+          "Permisos: se denuncian peticiones de justificantes de permisos concedidos meses atrás y posibles saldos negativos en planillas; la dirección se compromete a revisar las incidencias.",
+          "Denario: se vuelve a reclamar trazabilidad y notificaciones de los cambios de calendario laboral.",
+          "DPO y nóminas: se reclama actualizar correctamente los importes y aclarar el cálculo en jubilación parcial; la cuestión sigue en seguimiento.",
+          "Alertas meteorológicas: se reclama un protocolo claro; la dirección informa de que se incorporará al Plan de Autoprotección.",
+          "Convocatorias y plantilla: se reclaman compromisos pendientes sobre limpieza, cocina y mantenimiento y mayor transparencia del directorio profesional.",
+          "Otras cuestiones: hospitalización a domicilio, incidencias de sistemas informáticos y aparcamiento."
+        ]
+      },
+      "sourceNote": {
+        "ca": "Comunicat propi de la Secció Sindical CCOO de l’HRSC. Resumeix la reunió entre el Comitè d’Empresa i la direcció del CSAPG. Les actuacions anunciades per la direcció s’han mantingut com a previsions o compromisos quan el document no les dona per executades.",
+        "es": "Comunicado propio de la Sección Sindical CCOO del HRSC. Resume la reunión entre el Comité de Empresa y la dirección del CSAPG. Las actuaciones anunciadas por la dirección se mantienen como previsiones o compromisos cuando el documento no las da por ejecutadas."
+      },
+      "actions": [
+        {
+          "label": {
+            "ca": "Obrir comunicat",
+            "es": "Abrir comunicado"
+          },
+          "url": "https://drive.google.com/file/d/1x72aeMDCmwUvfOaPQbVpsDSZI_snomsb/view?usp=drivesdk",
+          "style": "outline"
+        }
+      ],
+      "tags": [
+        "comunicat",
+        "hrsc",
+        "comite empresa",
+        "direccio",
+        "seguretat",
+        "agressions",
+        "urgencies",
+        "infermera lliscant",
+        "venopuncio",
+        "permisos",
+        "justificants",
+        "denario",
+        "dpo",
+        "nomines",
+        "alertes meteorologiques",
+        "convocatories",
+        "plantilla",
+        "jubilacio parcial",
+        "hospitalitzacio domicili"
       ]
     }
   ]

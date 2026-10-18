@@ -1,10 +1,11 @@
 {
-  "version": "2026-10-14.1",
+  "version": "2026-10-18.1",
   "files": [
     "./search/conveni.json",
     "./search/procediment-6455.json",
     "./search/siscat-updates.json",
     "./search/convocatories-2026.json",
-    "./search/negociadora-2026-10-13.json"
+    "./search/negociadora-2026-10-13.json",
+    "./search/hrsc-2026-10-14.json"
   ]
 }
