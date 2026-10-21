@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-18.1",
+  "version": "2026-10-21.1",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
@@ -891,6 +891,104 @@
     }
   ],
   "meetings": [
+    {
+      "id": "hrsc-agressions-osvasc-2026-10-21",
+      "driveId": "1SpxOrynxJIZL50ABKvSb4u5JN_O2J1N9",
+      "contentType": "communication",
+      "date": "2026-10-21",
+      "category": "comunicatshrsc",
+      "source": "ccoo",
+      "title": {
+        "ca": "CCOO INFORMA · Notificació d’agressions al personal de Sant Camil",
+        "es": "CCOO INFORMA · Notificación de agresiones al personal de Sant Camil"
+      },
+      "intro": {
+        "ca": "Davant els darrers incidents a l’Hospital Sant Camil, recordem que les agressions físiques i verbals es poden notificar a l’OSVASC, el registre oficial de la Generalitat, directament des del mòbil.",
+        "es": "Ante los últimos incidentes en el Hospital Sant Camil, recordamos que las agresiones físicas y verbales pueden notificarse al OSVASC, el registro oficial de la Generalitat, directamente desde el móvil."
+      },
+      "sections": [
+        {
+          "title": {
+            "ca": "Què es pot notificar?",
+            "es": "¿Qué situaciones se pueden comunicar?"
+          },
+          "bullets": {
+            "ca": [
+              "Insults, crits, amenaces i intimidacions.",
+              "Agressions físiques, empentes o intents d’agressió.",
+              "Altres conductes violentes de pacients o acompanyants."
+            ],
+            "es": [
+              "Insultos, gritos, amenazas e intimidaciones.",
+              "Agresiones físicas, empujones o intentos de agresión.",
+              "Otras conductas violentas de pacientes o acompañantes."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Per què és important comunicar-ho?",
+            "es": "¿Por qué es importante notificar?"
+          },
+          "bullets": {
+            "ca": [
+              "Les notificacions ajuden a conèixer la magnitud real del problema, analitzar incidents i impulsar mesures de prevenció i protecció.",
+              "Les agressions verbals també compten: no cal haver patit una agressió física.",
+              "Registrar fins i tot els incidents que semblen menors facilita reclamar més seguretat."
+            ],
+            "es": [
+              "Las notificaciones ayudan a conocer la magnitud real del problema, analizar incidentes y promover medidas de prevención y protección.",
+              "Las agresiones verbales también cuentan: no hace falta sufrir una agresión física.",
+              "Registrar incluso los incidentes que parecen menores facilita reclamar más seguridad."
+            ]
+          }
+        }
+      ],
+      "warning": {
+        "ca": "La notificació complementa els protocols interns del centre i no substitueix la petició d’ajuda immediata quan sigui necessària. Les agressions no formen part de la nostra feina.",
+        "es": "La notificación complementa los protocolos internos del centro y no sustituye la solicitud de ayuda inmediata cuando sea necesaria. Las agresiones no forman parte de nuestro trabajo."
+      },
+      "sourceNote": {
+        "ca": "Comunicat de la Secció Sindical CCOO HRSC, 21/10/2026. Enllaç al formulari oficial de l’OSVASC de la Generalitat de Catalunya.",
+        "es": "Comunicado de la Sección Sindical CCOO HRSC, 21/10/2026. Enlace al formulario oficial del OSVASC de la Generalitat de Catalunya."
+      },
+      "actions": [
+        {
+          "label": {
+            "ca": "Notificar una agressió",
+            "es": "Notificar una agresión"
+          },
+          "url": "https://osvasc.salut.gencat.cat/cs-penedes-garraf-sant-camil/notificar",
+          "style": "primary"
+        },
+        {
+          "label": {
+            "ca": "Llegir el comunicat",
+            "es": "Leer el comunicado"
+          },
+          "url": "https://drive.google.com/file/d/1SpxOrynxJIZL50ABKvSb4u5JN_O2J1N9/view?usp=drivesdk",
+          "style": "outline"
+        }
+      ],
+      "tags": [
+        "ccoo",
+        "hrsc",
+        "sant camil",
+        "agressions",
+        "agresiones",
+        "violencia sanitaria",
+        "violència sanitària",
+        "agressions verbals",
+        "insults",
+        "amenaces",
+        "seguretat",
+        "seguridad",
+        "osvasc",
+        "salut laboral",
+        "riesgos laborales",
+        "2026"
+      ]
+    },
     {
       "id": "formacio-bac-estiu-2026",
       "contentType": "training",
