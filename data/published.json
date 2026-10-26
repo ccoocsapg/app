@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-21.1",
+  "version": "2026-10-26.1",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
@@ -888,9 +888,416 @@
         "especialitats",
         "jubilacio"
       ]
+    },
+    {
+      "id": "fisioterapia-hcap-dom-tm-01-2026",
+      "category": "convocatories",
+      "date": "2026-10-21",
+      "status": "official",
+      "driveId": "1jEFA_1OAUXX9a-ib5syRdd24HhObNGUV",
+      "title": {
+        "ca": "HCAP · Atenció domiciliària · 1 plaça matí · FISIO_HCAP_DOM_TM_01_2026",
+        "es": "HCAP · Atención domiciliaria · 1 plaza mañana · FISIO_HCAP_DOM_TM_01_2026"
+      },
+      "desc": {
+        "ca": "De dilluns a divendres, de 08.00 a 15.20 h. Increment de jornada o canvi de categoria. Data límit: 04/11/2026.",
+        "es": "De lunes a viernes, de 08:00 a 15:20. Ampliación de jornada o cambio de categoría. Fecha límite: 04/11/2026."
+      },
+      "tags": [
+        "fisioterapia",
+        "fisioterapeuta",
+        "fisioterapeutes",
+        "2026",
+        "04/11/2026",
+        "convocatories",
+        "convocatorias",
+        "fisio_hcap_dom_tm_01_2026",
+        "increment jornada",
+        "canvi categoria"
+      ]
+    },
+    {
+      "id": "fisioterapia-hcap-tt-03-2026",
+      "category": "convocatories",
+      "date": "2026-10-21",
+      "status": "official",
+      "driveId": "1I8F4U-ymlMbD9yCERmYyXVbf1aFpEhSX",
+      "title": {
+        "ca": "HCAP · 1 plaça tarda · FISIO_HCAP_TT_03_2026",
+        "es": "HCAP · 1 plaza tarde · FISIO_HCAP_TT_03_2026"
+      },
+      "desc": {
+        "ca": "De dilluns a divendres, de 13.40 a 21.00 h. Increment de jornada o canvi de categoria. Data límit: 04/11/2026.",
+        "es": "De lunes a viernes, de 13:40 a 21:00. Ampliación de jornada o cambio de categoría. Fecha límite: 04/11/2026."
+      },
+      "tags": [
+        "fisioterapia",
+        "fisioterapeuta",
+        "fisioterapeutes",
+        "2026",
+        "04/11/2026",
+        "convocatories",
+        "convocatorias",
+        "fisio_hcap_tt_03_2026",
+        "increment jornada",
+        "canvi categoria"
+      ]
+    },
+    {
+      "id": "fisioterapia-hrsc-tm-04-2026",
+      "category": "convocatories",
+      "date": "2026-10-21",
+      "status": "official",
+      "driveId": "1m2KqRgSbavLAHr_ldN9kuvYo6tDKhGeU",
+      "title": {
+        "ca": "HRSC · UCI i fisioteràpia respiratòria · 1 plaça matí · FISIO_HRSC_TM_04_2026",
+        "es": "HRSC · UCI y fisioterapia respiratoria · 1 plaza mañana · FISIO_HRSC_TM_04_2026"
+      },
+      "desc": {
+        "ca": "De dilluns a divendres, de 08.00 a 15.20 h. Àrees especials: barem específic ID 6455. Data límit: 04/11/2026.",
+        "es": "De lunes a viernes, de 08:00 a 15:20. Áreas especiales: baremo específico ID 6455. Fecha límite: 04/11/2026."
+      },
+      "tags": [
+        "fisioterapia",
+        "fisioterapeuta",
+        "fisioterapeutes",
+        "2026",
+        "04/11/2026",
+        "convocatories",
+        "convocatorias",
+        "fisio_hrsc_tm_04_2026",
+        "increment jornada",
+        "canvi categoria"
+      ]
+    },
+    {
+      "id": "fisioterapia-crhb-tt-06-2026",
+      "category": "convocatories",
+      "date": "2026-10-21",
+      "status": "official",
+      "driveId": "1FGZG0xmGnm4IsEUMxdcaN03RGGzeXGVg",
+      "title": {
+        "ca": "Centre de Rehabilitació · 3 places tarda · FISIO_CRHB_TT_06_2026",
+        "es": "Centro de Rehabilitación · 3 plazas tarde · FISIO_CRHB_TT_06_2026"
+      },
+      "desc": {
+        "ca": "De dilluns a divendres, de 12.40 a 20.00 h. Increment de jornada o canvi de categoria. Data límit: 04/11/2026.",
+        "es": "De lunes a viernes, de 12:40 a 20:00. Ampliación de jornada o cambio de categoría. Fecha límite: 04/11/2026."
+      },
+      "tags": [
+        "fisioterapia",
+        "fisioterapeuta",
+        "fisioterapeutes",
+        "2026",
+        "04/11/2026",
+        "convocatories",
+        "convocatorias",
+        "fisio_crhb_tt_06_2026",
+        "increment jornada",
+        "canvi categoria"
+      ]
+    },
+    {
+      "id": "fisioterapia-hrsc-tmtt-07-2026",
+      "category": "convocatories",
+      "date": "2026-10-21",
+      "status": "official",
+      "driveId": "1SgE9mLcBF7mw4p_vmuMEyOcXemG-cUuw",
+      "title": {
+        "ca": "HRSC · 2a ronda · 1 plaça matí/tarda · FISIO_HRSC_TM/TT_07_2026",
+        "es": "HRSC · 2.ª ronda · 1 plaza mañana/tarde · FISIO_HRSC_TM/TT_07_2026"
+      },
+      "desc": {
+        "ca": "Canvi de torn/servei, exclusiu per a plantilla base fixa al 100%. De 09.00 a 13.40 h i de 14.20 a 17.00 h. Data límit: 04/11/2026.",
+        "es": "Cambio de turno/servicio, exclusivo para plantilla base fija al 100 %. De 09:00 a 13:40 y de 14:20 a 17:00. Fecha límite: 04/11/2026."
+      },
+      "tags": [
+        "fisioterapia",
+        "fisioterapeuta",
+        "fisioterapeutes",
+        "2026",
+        "04/11/2026",
+        "convocatories",
+        "convocatorias",
+        "fisio_hrsc_tm/tt_07_2026",
+        "segona ronda",
+        "plantilla base",
+        "canvi torn servei"
+      ]
+    },
+    {
+      "id": "fisioterapia-hrsc-tt-08-2026",
+      "category": "convocatories",
+      "date": "2026-10-21",
+      "status": "official",
+      "driveId": "12W83Llcd27NCdWxD6yg12n_7Su3kpbe9",
+      "title": {
+        "ca": "HRSC · 2a ronda · 1 plaça tarda · FISIO_HRSC_TT_08_2026",
+        "es": "HRSC · 2.ª ronda · 1 plaza tarde · FISIO_HRSC_TT_08_2026"
+      },
+      "desc": {
+        "ca": "Canvi de torn/servei, exclusiu per a plantilla base fixa al 100%. De 12.40 a 20.00 h. Data límit: 04/11/2026.",
+        "es": "Cambio de turno/servicio, exclusivo para plantilla base fija al 100 %. De 12:40 a 20:00. Fecha límite: 04/11/2026."
+      },
+      "tags": [
+        "fisioterapia",
+        "fisioterapeuta",
+        "fisioterapeutes",
+        "2026",
+        "04/11/2026",
+        "convocatories",
+        "convocatorias",
+        "fisio_hrsc_tt_08_2026",
+        "segona ronda",
+        "plantilla base",
+        "canvi torn servei"
+      ]
+    },
+    {
+      "id": "fisioterapia-sollicitud-pc-2026",
+      "category": "convocatories",
+      "date": "2026-10-26",
+      "status": "official",
+      "driveId": "1IPvK1fomfhZwQJBk-a21Qzx33V83lNlW",
+      "title": {
+        "ca": "Formulari de sol·licitud · Increment de jornada o canvi de categoria (Word) · SOL_FISIO_PC",
+        "es": "Formulario de solicitud · Ampliación de jornada o cambio de categoría (Word) · SOL_FISIO_PC"
+      },
+      "desc": {
+        "ca": "Document Word oficial editable per a les quatre convocatòries d’increment de jornada o canvi de categoria. Data límit: 04/11/2026.",
+        "es": "Documento Word oficial editable para las cuatro convocatorias de ampliación de jornada o cambio de categoría. Fecha límite: 04/11/2026."
+      },
+      "tags": [
+        "fisioterapia",
+        "fisioterapeuta",
+        "fisioterapeutes",
+        "2026",
+        "04/11/2026",
+        "convocatories",
+        "convocatorias",
+        "sol_fisio_pc",
+        "segona ronda",
+        "plantilla base",
+        "canvi torn servei"
+      ]
+    },
+    {
+      "id": "fisioterapia-sollicitud-segona-ronda-2026",
+      "category": "convocatories",
+      "date": "2026-10-26",
+      "status": "official",
+      "driveId": "1ZbfkREoB_260iu79NajymI8J5T2G2pW4",
+      "title": {
+        "ca": "Formulari de sol·licitud · 2a ronda canvi de torn o servei (Word) · SOL_FISIO_2ARONDA",
+        "es": "Formulario de solicitud · 2.ª ronda cambio de turno o servicio (Word) · SOL_FISIO_2ARONDA"
+      },
+      "desc": {
+        "ca": "Document Word oficial editable per a les dues convocatòries de segona ronda de Sant Camil. Data límit: 04/11/2026.",
+        "es": "Documento Word oficial editable para las dos convocatorias de segunda ronda de Sant Camil. Fecha límite: 04/11/2026."
+      },
+      "tags": [
+        "fisioterapia",
+        "fisioterapeuta",
+        "fisioterapeutes",
+        "2026",
+        "04/11/2026",
+        "convocatories",
+        "convocatorias",
+        "sol_fisio_2aronda",
+        "segona ronda",
+        "plantilla base",
+        "canvi torn servei"
+      ]
     }
   ],
   "meetings": [
+    {
+      "id": "fisioterapia-2026-10-26",
+      "contentType": "update",
+      "date": "2026-10-26",
+      "category": "convocatories",
+      "source": "ccoo",
+      "title": {
+        "ca": "Noves convocatòries definitives de fisioteràpia · 8 places al CSAPG",
+        "es": "Nuevas convocatorias definitivas de fisioterapia · 8 plazas en el CSAPG"
+      },
+      "intro": {
+        "ca": "Ja es poden consultar les 6 convocatòries de fisioteràpia (8 places en total) i els 2 formularis de sol·licitud. Termini fins al 4 de novembre de 2026.",
+        "es": "Ya se pueden consultar las 6 convocatorias de fisioterapia (8 plazas en total) y los 2 formularios de solicitud. Plazo hasta el 4 de noviembre de 2026."
+      },
+      "deadline": {
+        "ca": "Presentació de candidatures: fins al 04/11/2026",
+        "es": "Presentación de candidaturas: hasta el 04/11/2026"
+      },
+      "sections": [
+        {
+          "title": {
+            "ca": "Increment de jornada o canvi de categoria · 6 places",
+            "es": "Ampliación de jornada o cambio de categoría · 6 plazas"
+          },
+          "bullets": {
+            "ca": [
+              "HCAP · Atenció domiciliària · 1 plaça de matí (08.00–15.20 h) · FISIO_HCAP_DOM_TM_01_2026.",
+              "HCAP · 1 plaça de tarda (13.40–21.00 h) · FISIO_HCAP_TT_03_2026.",
+              "HRSC · UCI / respiratòria · 1 plaça de matí (08.00–15.20 h) · FISIO_HRSC_TM_04_2026.",
+              "Centre de Rehabilitació · 3 places de tarda (12.40–20.00 h) · FISIO_CRHB_TT_06_2026."
+            ],
+            "es": [
+              "HCAP · Atención domiciliaria · 1 plaza de mañana (08:00–15:20) · FISIO_HCAP_DOM_TM_01_2026.",
+              "HCAP · 1 plaza de tarde (13:40–21:00) · FISIO_HCAP_TT_03_2026.",
+              "HRSC · UCI / respiratoria · 1 plaza de mañana (08:00–15:20) · FISIO_HRSC_TM_04_2026.",
+              "Centro de Rehabilitación · 3 plazas de tarde (12:40–20:00) · FISIO_CRHB_TT_06_2026."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "2a ronda · Canvi de torn o servei · 2 places",
+            "es": "2.ª ronda · Cambio de turno o servicio · 2 plazas"
+          },
+          "bullets": {
+            "ca": [
+              "HRSC · 1 plaça matí/tarda (09.00–13.40 h i 14.20–17.00 h) · FISIO_HRSC_TM/TT_07_2026.",
+              "HRSC · 1 plaça de tarda (12.40–20.00 h) · FISIO_HRSC_TT_08_2026.",
+              "Només per a personal fix de plantilla base (PB) al 100%, en actiu i de la mateixa categoria professional."
+            ],
+            "es": [
+              "HRSC · 1 plaza mañana/tarde (09:00–13:40 y 14:20–17:00) · FISIO_HRSC_TM/TT_07_2026.",
+              "HRSC · 1 plaza de tarde (12:40–20:00) · FISIO_HRSC_TT_08_2026.",
+              "Solo para personal fijo de plantilla base (PB) al 100 %, en activo y de la misma categoría profesional."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Com participar-hi",
+            "es": "Cómo participar"
+          },
+          "bullets": {
+            "ca": [
+              "Escull el formulari d’accés que correspongui a la convocatòria. Tots dos estan disponibles a la carpeta de Drive i a la Intranet corporativa.",
+              "Emplena el formulari i envia’l a convocatories@csapg.cat, amb la titulació i documentació acreditativa que demana cada caràtula.",
+              "Consulta els requisits de cada plaça: les quatre primeres admeten els supòsits de PC/PB que figuren en les bases; la 2a ronda té requisits més restrictius.",
+              "Data límit: dimecres 4 de novembre de 2026. Si necessites ajuda, contacta amb CCOO per privat."
+            ],
+            "es": [
+              "Escoge el formulario de acceso correspondiente a tu convocatoria. Ambos están en la carpeta de Drive y en la Intranet corporativa.",
+              "Rellena el formulario y envíalo a convocatories@csapg.cat, junto con la titulación y documentación acreditativa exigida en cada convocatoria.",
+              "Comprueba los requisitos de cada plaza: las cuatro primeras admiten los supuestos de PC/PB previstos en las bases; la 2.ª ronda tiene requisitos más restrictivos.",
+              "Fecha límite: miércoles 4 de noviembre de 2026. Si necesitas ayuda, contacta con CCOO por privado."
+            ]
+          }
+        }
+      ],
+      "warning": {
+        "ca": "Atenció: la caràtula FISIO_HRSC_TT_08_2026 identifica el lloc com a torn de tarda (12.40–20.00 h), però a l’apartat de dedicació hi apareix també «torn matí/tarda». Davant el dubte, demaneu confirmació a Gestió del Talent. Les caràtules oficials prevalen sobre aquest resum.",
+        "es": "Atención: la convocatoria FISIO_HRSC_TT_08_2026 identifica la plaza como turno de tarde (12:40–20:00), pero en el apartado de dedicación también figura «turno mañana/tarde». Ante la duda, solicitad confirmación a Gestión del Talento. Los documentos oficiales prevalecen sobre este resumen."
+      },
+      "actions": [
+        {
+          "label": {
+            "ca": "Obrir la carpeta completa (8 documents)",
+            "es": "Abrir carpeta completa (8 documentos)"
+          },
+          "url": "https://drive.google.com/drive/folders/1mwTEP4rbu9Tu4mXl4b5Oky7sHUsrwp-c",
+          "style": "primary"
+        },
+        {
+          "label": {
+            "ca": "Sol·licitud: increment de jornada / categoria",
+            "es": "Solicitud: ampliación de jornada / categoría"
+          },
+          "url": "https://docs.google.com/document/d/1IPvK1fomfhZwQJBk-a21Qzx33V83lNlW/edit",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "Sol·licitud: 2a ronda torn / servei",
+            "es": "Solicitud: 2.ª ronda turno / servicio"
+          },
+          "url": "https://docs.google.com/document/d/1ZbfkREoB_260iu79NajymI8J5T2G2pW4/edit",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "PDF · HCAP domicili · matí",
+            "es": "PDF · HCAP domicilio · mañana"
+          },
+          "url": "https://drive.google.com/file/d/1jEFA_1OAUXX9a-ib5syRdd24HhObNGUV/view",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "PDF · HCAP · tarda",
+            "es": "PDF · HCAP · tarde"
+          },
+          "url": "https://drive.google.com/file/d/1I8F4U-ymlMbD9yCERmYyXVbf1aFpEhSX/view",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "PDF · HRSC UCI · matí",
+            "es": "PDF · HRSC UCI · mañana"
+          },
+          "url": "https://drive.google.com/file/d/1m2KqRgSbavLAHr_ldN9kuvYo6tDKhGeU/view",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "PDF · Rehabilitació · 3 tardes",
+            "es": "PDF · Rehabilitación · 3 tardes"
+          },
+          "url": "https://drive.google.com/file/d/1FGZG0xmGnm4IsEUMxdcaN03RGGzeXGVg/view",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "PDF · HRSC · matí/tarda (2a ronda)",
+            "es": "PDF · HRSC · mañana/tarde (2.ª ronda)"
+          },
+          "url": "https://drive.google.com/file/d/1SgE9mLcBF7mw4p_vmuMEyOcXemG-cUuw/view",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "PDF · HRSC · tarda (2a ronda)",
+            "es": "PDF · HRSC · tarde (2.ª ronda)"
+          },
+          "url": "https://drive.google.com/file/d/12W83Llcd27NCdWxD6yg12n_7Su3kpbe9/view",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "Consultes a Gestió del Talent",
+            "es": "Consultas a Gestión del Talento"
+          },
+          "url": "mailto:convocatories@csapg.cat",
+          "style": "outline"
+        }
+      ],
+      "sourceNote": {
+        "ca": "Informació elaborada per CCOO a partir de les 6 caràtules oficials del CSAPG de 21/10/2026 i els 2 formularis de sol·licitud. Publicació informativa de 26/10/2026.",
+        "es": "Información elaborada por CCOO a partir de las 6 convocatorias oficiales del CSAPG del 21/10/2026 y los 2 formularios de solicitud. Publicación informativa del 26/10/2026."
+      },
+      "tags": [
+        "convocatories",
+        "fisioterapia",
+        "fisioterapeutes",
+        "fisioterapeutas",
+        "csapg",
+        "hrsc",
+        "hcap",
+        "centre rehabilitacio",
+        "8 places",
+        "6 convocatories",
+        "novembre 2026",
+        "04/11/2026",
+        "segona ronda",
+        "canvi de torn",
+        "canvi de categoria",
+        "increment jornada"
+      ]
+    },
     {
       "id": "hrsc-agressions-osvasc-2026-10-21",
       "driveId": "1SpxOrynxJIZL50ABKvSb4u5JN_O2J1N9",
