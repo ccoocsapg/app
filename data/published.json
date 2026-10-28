@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-26.1",
+  "version": "2026-10-28.1",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
@@ -2275,6 +2275,55 @@
         "plantilla",
         "jubilacio parcial",
         "hospitalitzacio domicili"
+      ]
+    },
+    {
+      "id": "negociadora-2026-10-27",
+      "driveId": "1e-mXjvsVUuozzQ8IOi7FivAVKzF57XK1",
+      "contentType": "meeting",
+      "date": "2026-10-28",
+      "category": "negociadora",
+      "source": "ccoo",
+      "title": {
+        "ca": "Negociadora IV Conveni SISCAT · reunió 27/10/2026",
+        "es": "Negociadora IV Convenio SISCAT · reunión 27/10/2026"
+      },
+      "intro": {
+        "ca": "CCOO informa de la reunió de la mesa negociadora del IV Conveni SISCAT del 27 d’octubre. S’hi han tractat les propostes sobre hores extraordinàries i el complement de productivitat per especial dedicació voluntària, així com la revisió dels permisos per hospitalització i cirurgia major ambulatòria. Les propostes continuen en negociació.",
+        "es": "CCOO informa de la reunión de la mesa negociadora del IV Convenio SISCAT del 27 de octubre. Se han tratado las propuestas sobre horas extraordinarias y el complemento de productividad por especial dedicación voluntaria, así como la revisión de los permisos por hospitalización y cirugía mayor ambulatoria. Las propuestas siguen en negociación."
+      },
+      "sourceNote": {
+        "ca": "Nota informativa «SISCAT al dia» de la Federació de Sanitat de CCOO de Catalunya, publicada el 28/10/2026 sobre la reunió del 27/10/2026. El document original es publica íntegre i sense modificacions. Les propostes plantejades encara no són acords definitius.",
+        "es": "Nota informativa «SISCAT al dia» de la Federación de Sanidad de CCOO de Catalunya, publicada el 28/10/2026 sobre la reunión del 27/10/2026. El documento original se publica íntegro y sin modificaciones. Las propuestas planteadas todavía no son acuerdos definitivos."
+      },
+      "actions": [
+        {
+          "label": {
+            "ca": "Obrir informatiu (PDF)",
+            "es": "Abrir informativo (PDF)"
+          },
+          "url": "https://drive.google.com/file/d/1e-mXjvsVUuozzQ8IOi7FivAVKzF57XK1/view?usp=drivesdk",
+          "style": "outline"
+        }
+      ],
+      "tags": [
+        "negociadora",
+        "iv conveni",
+        "siscat",
+        "27 octubre 2026",
+        "28 octubre 2026",
+        "hores extraordinaries",
+        "horas extraordinarias",
+        "productivitat",
+        "productividad",
+        "especial dedicacio",
+        "dedicacion voluntaria",
+        "permisos",
+        "hospitalitzacio",
+        "hospitalizacion",
+        "cirurgia major ambulatòria",
+        "cirugia mayor ambulatoria",
+        "cma"
       ]
     }
   ]
