@@ -1036,3 +1036,13 @@ html,body{max-width:100%;overflow-x:hidden}
   .filter-row{gap:7px}
   .filter-chip{min-height:44px;padding:10px 12px}
 }
+
+/* Imatge i cos de les comunicacions amb il·lustració */
+.meeting-cover{margin:14px 0 0 66px;max-width:720px}
+.meeting-cover img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--line)}
+.news-paragraphs{max-width:770px;font-size:.91rem;line-height:1.65}
+.news-paragraphs p{margin:0 0 13px}
+.news-paragraphs p:first-child{font-size:.81rem;color:var(--muted);font-style:italic}
+.news-paragraphs p:nth-last-child(2){margin-top:20px;font-weight:700}
+.news-paragraphs p:last-child{font-size:.8rem;color:var(--muted)}
+@media(max-width:640px){.meeting-cover{margin-left:0}}

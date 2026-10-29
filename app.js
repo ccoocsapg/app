@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.16.3',
+    version: '0.16.4',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/',
@@ -1043,7 +1043,7 @@
   }
 
   function meetingsView(){
-    const cats=['all','comunicatshrsc','negociadora','paritaria','conveni','convocatories','conciliacio','organitzacio','formacio'];
+    const cats=['all','comunicatshrsc','ccoo','negociadora','paritaria','conveni','convocatories','conciliacio','organitzacio','formacio'];
     return '<div class="view">'+pageHeading(tr('meetingsTitle'),tr('meetingsSub'))+
       '<div class="toolbar"><div style="flex:1 1 320px"><div class="search-box"><input id="meetingSearch" type="search" placeholder="'+esc(tr('searchPlaceholder'))+'" value="'+esc(state.search)+'"><span class="search-icon">⌕</span></div><div class="search-hint">✦ '+esc(tr('smartSearchHint'))+'</div></div></div>'+
       '<div class="filter-row">'+cats.map(meetingChip).join('')+'</div>'+
@@ -1092,8 +1092,19 @@
     }
   }
 
+  function meetingCoverHtml(item){
+    const src=String(item.image||'').trim();
+    if(!/^https:\/\/drive\.google\.com\/thumbnail\?id=[A-Za-z0-9_-]+(?:&sz=w\d{2,4})?$/.test(src)) return '';
+    return '<figure class="meeting-cover"><img src="'+esc(src)+'" alt="'+esc(tx(item.imageAlt)||tx(item.title))+'" loading="lazy" decoding="async"></figure>';
+  }
+
   function meetingExtraHtml(item){
     let html='';
+    const paragraphs=item.paragraphs||{};
+    const lines=paragraphs[state.lang]||paragraphs.ca||paragraphs.es||[];
+    if(Array.isArray(lines) && lines.length){
+      html+='<div class="news-paragraphs">'+lines.map(line=>'<p>'+esc(line)+'</p>').join('')+'</div>';
+    }
     if(item.deadline){
       html+='<div class="deadline-banner"><span>⏱</span><strong>'+esc(tx(item.deadline))+'</strong></div>';
     }
@@ -1157,7 +1168,7 @@
     return '<details id="'+esc(itemId)+'" class="meeting-card"'+(deepOpen?' open':'')+'><summary><div class="meeting-top">'+
       '<div class="date-box"><strong>'+day(item.date)+'</strong><span>'+esc(monthShort(item.date))+'</span></div>'+
       '<div class="meeting-title"><div class="meta">'+sourceBadge(item.source)+'<span class="badge badge-neutral">'+esc(categoryLabel(item.category))+'</span></div><h3>'+esc(tx(item.title))+'</h3><p>'+esc(tx(item.intro))+'</p></div>'+
-      '<span class="chev">›</span></div></summary>'+
+      '<span class="chev">›</span></div>'+meetingCoverHtml(item)+'</summary>'+
       '<div class="meeting-body">'+(bullets.length?'<ul>'+bullets.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'')+
       meetingExtraHtml(item)+
       '<div class="source-box"><strong>'+esc(tr('sourceLabel'))+':</strong> '+esc(tx(item.sourceNote))+'</div></div></details>';

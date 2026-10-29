@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-28.1",
+  "version": "2026-10-29.1",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
@@ -1111,6 +1111,82 @@
     }
   ],
   "meetings": [
+    {
+      "id": "minut-silenci-toledo-2026-10-29",
+      "contentType": "communication",
+      "date": "2026-10-29",
+      "category": "ccoo",
+      "source": "ccoo",
+      "title": {
+        "ca": "Minut de silenci en memòria de les víctimes de l’accident ferroviari a Toledo",
+        "es": "Minuto de silencio en memoria de las víctimas del accidente ferroviario en Toledo"
+      },
+      "intro": {
+        "ca": "CCOO de Catalunya ha convocat per a aquest dijous 29 d’octubre, a les 13 h, un minut de silenci davant la seu de Via Laietana, 16, a Barcelona, en record de les víctimes de l’accident ferroviari a Toledo.",
+        "es": "CCOO de Catalunya ha convocado para este jueves 29 de octubre, a las 13 h, un minuto de silencio ante la sede de Via Laietana, 16, en Barcelona, en recuerdo de las víctimas del accidente ferroviario en Toledo."
+      },
+      "image": "https://drive.google.com/thumbnail?id=1Nv1bcCw1nPM_4wjlU3bm2Qn_Nz4xL3WD&sz=w1200",
+      "imageAlt": {
+        "ca": "Imatge de dol amb un llaç negre i el logotip de CCOO sobre una fotografia de l’accident ferroviari",
+        "es": "Imagen de duelo con un lazo negro y el logotipo de CCOO sobre una fotografía del accidente ferroviario"
+      },
+      "paragraphs": {
+        "ca": [
+          "A/ personal laboral i sindicalista de CCOO de Catalunya i entitats vinculades",
+          "Benvolguts, benvolgudes,",
+          "Avui dijous, a les 13 h, convocarem un minut de silenci davant de la seu de CCOO de Catalunya, a Via Laietana, 16, en memòria de les víctimes de l’accident ferroviari a Toledo i com a mostra de condol i solidaritat amb les persones afectades i les seves famílies.",
+          "CCOO de Catalunya i el Comitè de Grup",
+          "Barcelona, 29 d’octubre de 2026"
+        ],
+        "es": [
+          "Al personal laboral y sindicalista de CCOO de Catalunya y entidades vinculadas",
+          "Estimados y estimadas,",
+          "Hoy jueves, a las 13 h, convocaremos un minuto de silencio ante la sede de CCOO de Catalunya, en Via Laietana, 16, en memoria de las víctimas del accidente ferroviario en Toledo y como muestra de condolencia y solidaridad con las personas afectadas y sus familias.",
+          "CCOO de Catalunya y el Comité de Grupo",
+          "Barcelona, 29 de octubre de 2026"
+        ]
+      },
+      "sourceNote": {
+        "ca": "Comunicat original de CCOO de Catalunya i el Comitè de Grup, datat a Barcelona el 29/10/2026. La convocatòria era per a les 13 h d’aquest dia.",
+        "es": "Comunicado original de CCOO de Catalunya y el Comité de Grupo, fechado en Barcelona el 29/10/2026. La convocatoria era para las 13 h de ese día."
+      },
+      "actions": [
+        {
+          "label": {
+            "ca": "Veure la ubicació · Via Laietana, 16",
+            "es": "Ver ubicación · Via Laietana, 16"
+          },
+          "url": "https://www.google.com/maps/search/Via+Laietana,+16?entry=gmail&source=g",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "Obrir la imatge original",
+            "es": "Abrir la imagen original"
+          },
+          "url": "https://drive.google.com/file/d/1Nv1bcCw1nPM_4wjlU3bm2Qn_Nz4xL3WD/view?usp=drivesdk",
+          "style": "outline"
+        }
+      ],
+      "tags": [
+        "ccoo",
+        "ccoo catalunya",
+        "minut de silenci",
+        "minuto de silencio",
+        "accident ferroviari",
+        "accidente ferroviario",
+        "toledo",
+        "urda",
+        "29 octubre 2026",
+        "via laietana 16",
+        "condol",
+        "duelo",
+        "solidaritat",
+        "solidaridad",
+        "victimes",
+        "víctimas"
+      ]
+    },
     {
       "id": "fisioterapia-2026-10-26",
       "contentType": "update",
