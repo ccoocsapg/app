@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#cc2d17">
+<meta name="description" content="CCOO CSAPG busca persones que hagin patit descomptes o desajustos d'hores després d'una IT o d'un permís per naixement. Revisa els calendaris 2025 i 2026.">
+<meta property="og:title" content="Has estat de baixa? Revisem les teves hores · CCOO CSAPG">
+<meta property="og:description" content="Busquem persones amb desajustos de jornada després d'una IT o un permís per naixement. Ajuda'ns a documentar casos reals.">
+<meta property="og:type" content="website">
+<title>Has estat de baixa? Revisem les teves hores · CCOO CSAPG</title>
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<style>
+:root{--red:#c92e1a;--ink:#181818;--paper:#f7f5f1;--muted:#5c5b57;--line:#dedbd4;--white:#fff;--yellow:#f5d753}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif}
+a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid #1567ba;outline-offset:3px}
+.wrap{max-width:1120px;margin:auto;padding:0 26px}
+.top{background:#fff;border-top:8px solid var(--red);border-bottom:1px solid var(--line)}
+.top .wrap{min-height:83px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{display:inline-flex;align-items:center;gap:14px;text-decoration:none}
+.brand-mark{background:var(--red);color:white;font-size:22px;font-weight:950;letter-spacing:-.065em;padding:6px 12px}
+.brand-copy{display:flex;flex-direction:column;line-height:1.2}
+.brand-copy b{font-size:16px;letter-spacing:-.02em}
+.brand-copy small{font-size:12px;color:#6a6865;letter-spacing:.02em}
+.lang{display:flex;gap:3px;border:1px solid var(--line);padding:4px;background:#f7f7f7}
+.lang button{border:0;background:transparent;cursor:pointer;padding:9px 12px;font:750 12px/1 Arial,sans-serif}
+.lang button.active{background:var(--ink);color:#fff}
+.hero{position:relative;overflow:hidden;background:var(--ink);color:#fff;padding:74px 0 72px;border-bottom:10px solid var(--red)}
+.hero:before{content:"";position:absolute;width:340px;height:340px;background:var(--red);right:-135px;top:-175px;transform:rotate(15deg)}
+.hero:after{content:"";position:absolute;width:140px;height:140px;background:var(--yellow);right:3%;bottom:-115px;transform:rotate(-22deg)}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--yellow)}
+h1{font-size:clamp(42px,6.2vw,82px);line-height:.99;letter-spacing:-.055em;font-weight:920;margin:17px 0 22px;max-width:990px}
+h1 strong{display:block;color:var(--yellow);font-weight:inherit}
+.hero p{font-size:clamp(18px,2vw,23px);line-height:1.45;max-width:740px;margin:0 0 30px;color:#f0efeb}
+.actions{display:flex;align-items:center;flex-wrap:wrap;gap:11px}
+.cta{display:inline-flex;justify-content:center;align-items:center;text-align:center;gap:7px;background:var(--red);border:2px solid var(--red);text-decoration:none;color:white;font-size:15px;font-weight:800;padding:15px 22px;min-height:54px}
+.cta:hover{background:#a92516;border-color:#a92516}
+.cta-light{background:#fff;color:#111;border-color:#fff}
+.cta-light:hover{background:var(--yellow);border-color:var(--yellow)}
+.text-link{font-weight:750;color:inherit;text-underline-offset:4px}
+.hero-note{font-size:13px!important;color:#d9d7d0!important;margin:18px 0 0!important}
+.stamp{background:var(--yellow);font-size:14px;letter-spacing:.02em;font-weight:900;padding:14px 20px;color:#121212}
+.stamp-wrap{transform:translateY(-1px);background:var(--yellow)}
+.stamp .wrap{display:flex;align-items:center;gap:14px;justify-content:space-between}
+.section{padding:70px 0}
+.section.alt{background:#fff}
+.section-kicker{font-size:13px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin:0 0 14px}
+h2{font-size:clamp(30px,3.8vw,48px);line-height:1.09;letter-spacing:-.045em;margin:0 0 18px;max-width:790px}
+.lead{font-size:20px;max-width:810px;line-height:1.5;color:#353431}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:30px}
+.card{border:1px solid var(--line);background:#fff;padding:26px;min-height:230px}
+.alt .card{background:var(--paper)}
+.card .num{font-size:12px;color:var(--red);font-weight:950;letter-spacing:.1em}
+.card h3{font-size:23px;line-height:1.12;letter-spacing:-.03em;margin:19px 0 10px}
+.card p{font-size:15px;color:#4b4844;margin:0}
+.fact{border-left:7px solid var(--red);padding:25px 26px 25px 30px;background:var(--paper);margin:28px 0 0;max-width:920px}
+.fact strong{font-size:19px}
+.fact p{margin:10px 0 0;line-height:1.58}
+.steps{counter-reset:steps;max-width:890px;border-top:1px solid #ccc}
+.step{counter-increment:steps;display:grid;grid-template-columns:56px 1fr;gap:14px;border-bottom:1px solid #d4d0c9;padding:27px 0}
+.step:before{content:counter(steps,decimal-leading-zero);font-size:19px;color:var(--red);font-weight:950}
+.step h3{font-size:22px;line-height:1.15;letter-spacing:-.025em;margin:0 0 6px}
+.step p{margin:0;color:#45423e}
+.intake{background:#191919;color:white;padding:68px 0;border-top:8px solid var(--red)}
+.intake .section-kicker{color:var(--yellow)}
+.intake-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.75fr);gap:36px;align-items:start}
+.intake h2{max-width:680px}
+.intake p{color:#e0ddd8}
+.docs{background:#2b2b2b;padding:24px;border:1px solid #454545}
+.docs h3{margin:0 0 14px;font-size:20px}
+.docs ul{padding-left:20px;margin:0}
+.docs li{margin:0 0 12px;color:#f2f2f2}
+.docs small{color:#c8c8c8}
+.enclosure{padding:16px 0 0;font-size:14px}
+.faq{max-width:910px;margin-top:23px}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{cursor:pointer;font-weight:800;font-size:18px}
+details p{color:#494641;max-width:780px}
+.legal{font-size:14px;color:#514c46;line-height:1.55;max-width:950px}
+.footer{background:#161616;color:#eee;padding:30px 0;font-size:13px}
+.footer .wrap{display:flex;gap:20px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.footer a{color:#eee}
+@media(max-width:760px){
+ .wrap{padding:0 19px}
+ .brand-copy small{display:none}
+ .brand-mark{font-size:18px}
+ .top .wrap{min-height:71px}
+ .hero{padding:56px 0 52px}
+ h1{font-size:clamp(41px,11.2vw,65px)}
+ .section{padding:48px 0}
+ .cards{grid-template-columns:1fr}
+ .card{min-height:auto;padding:24px}
+ .stamp .wrap{display:block}
+ .stamp b{display:block;margin-bottom:3px}
+ .intake{padding:50px 0}
+ .intake-grid{grid-template-columns:1fr}
+ .docs{padding:20px}
+ .step{grid-template-columns:40px 1fr}
+ .cta{width:100%}
+ .actions{align-items:stretch}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./#/inicio" aria-label="CCOO Sanitat CSAPG">
+      <span class="brand-mark">ccoo.</span>
+      <span class="brand-copy"><b>Sanitat · CSAPG</b><small data-i18n="brandSub">Informació i defensa dels drets laborals</small></span>
+    </a>
+    <div class="lang" role="group" aria-label="Idioma / Lengua"><button id="cat" class="active" type="button" aria-pressed="true">CAT</button><button id="esp" type="button" aria-pressed="false">ES</button></div>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="heroKicker">CCOO CSAPG · Busquem persones afectades · 2025–2026</span>
+    <h1><span data-i18n="hero1">HAS ESTAT DE BAIXA?</span><strong data-i18n="hero2">REVISA LES TEVES HORES.</strong></h1>
+    <p data-i18n="heroLead">Si has passat per una incapacitat temporal (IT) o un permís per naixement, volem saber si t'han descomptat hores, t'han aparegut dies a deure o t'han fet recuperar jornades. Ens calen casos reals per poder reclamar.</p>
+    <div class="actions">
+      <a class="cta" href="#participa" data-i18n="heroCTA">VULL QUE REVISEU EL MEU CAS</a>
+      <a class="cta cta-light" href="#que-passa" data-i18n="heroCTA2">QUÈ HA PASSAT?</a>
+    </div>
+    <p class="hero-note" data-i18n="heroNote">Encara que no tinguis clar si hi ha un error, ens pots explicar què t'ha passat.</p>
+  </div>
+</section>
+<div class="stamp-wrap"><div class="stamp"><div class="wrap"><b data-i18n="stamp1">No deixem perdre cap cas.</b><span data-i18n="stamp2">El que ara sembla un desquadrament al calendari podria tenir conseqüències en la teva jornada.</span></div></div></div>
+
+<section class="section" id="que-passa">
+  <div class="wrap">
+    <p class="section-kicker" data-i18n="whatKicker">El problema</p>
+    <h2 data-i18n="whatTitle">No busquem només calendaris amb números estranys. Busquem què ha passat després.</h2>
+    <p class="lead" data-i18n="whatLead">Des de CCOO portem temps qüestionant la manera com el CSAPG calcula la jornada durant determinades baixes. Volem identificar les persones a qui aquest sistema podria haver perjudicat de debò.</p>
+    <div class="cards">
+      <article class="card"><span class="num">01 · IT</span><h3 data-i18n="card1T">Has estat de baixa mèdica?</h3><p data-i18n="card1P">Sobretot si la baixa ha durat 15 dies o més i has detectat hores negatives, canvis de saldo o una jornada pendent de recuperar.</p></article>
+      <article class="card"><span class="num">02 · NAIXEMENT</span><h3 data-i18n="card2T">Has gaudit d'un permís per naixement?</h3><p data-i18n="card2P">També volem revisar els calendaris de les persones que han estat de permís per naixement i cura del menor, per comprovar si hi ha desajustos.</p></article>
+      <article class="card"><span class="num">03 · JORNADA</span><h3 data-i18n="card3T">Has hagut de recuperar hores o dies?</h3><p data-i18n="card3P">Si has treballat més hores, t'han descomptat dies o ha aparegut un deute d'hores després del permís o de la baixa, explica'ns-ho.</p></article>
+    </div>
+  </div>
+</section>
+<section class="section alt" id="reclamem">
+  <div class="wrap">
+    <p class="section-kicker" data-i18n="claimKicker">Què volem aconseguir</p>
+    <h2 data-i18n="claimTitle">Que cap hora o dia indegudament descomptat quedi sense resposta.</h2>
+    <p class="lead" data-i18n="claimLead">La nostra finalitat és contrastar els calendaris, documentar els perjudicis reals i reclamar, quan correspongui, la regularització de la jornada, la devolució de dies o hores i les compensacions que siguin legalment procedents.</p>
+    <div class="fact"><strong data-i18n="factTitle">Què va dir Inspecció de Treball?</strong><p data-i18n="factP">En la resposta a la denúncia de CCOO, Inspecció va constatar que, a partir del dia 15 d'IT, el càlcul de jornada passa a ser diferent. No va poder acreditar casos concrets en què s'haguessin obligat a recuperar dies. Per això estem buscant precisament aquestes situacions: calendaris i conseqüències reals que es puguin demostrar.</p><p data-i18n="factP2">La direcció sosté que la IT és neutra i que els saldos del calendari no comporten necessàriament recuperar hores. Volem contrastar-ho amb els casos de les persones treballadores. Els permisos per naixement formen part d'aquesta revisió, però no eren l'objecte específic de les conclusions esmentades d'Inspecció.</p></div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <p class="section-kicker" data-i18n="stepKicker">Molt senzill</p>
+    <h2 data-i18n="stepTitle">Tres passos per ajudar-nos a demostrar-ho.</h2>
+    <div class="steps">
+      <div class="step"><div><h3 data-i18n="step1T">Descarrega els calendaris anuals de 2025 i 2026</h3><p data-i18n="step1P">Entra al Portal de l'Empleat i descarrega la planilla/calendari anual en PDF. Necessitem el document complet, no una captura de pantalla. Si tens versions anteriors i posteriors a la baixa, encara millor.</p></div></div>
+      <div class="step"><div><h3 data-i18n="step2T">Explica'ns quan vas estar de baixa o de permís</h3><p data-i18n="step2P">Indica aproximadament les dates, el centre i què has notat: hores negatives, dies de menys, canvi del calendari o jornades que t'han fet recuperar. No necessitem cap diagnòstic.</p></div></div>
+      <div class="step"><div><h3 data-i18n="step3T">Revisarem els casos i impulsarem les reclamacions que corresponguin</h3><p data-i18n="step3P">Compararem els calendaris i la incidència real per aportar proves a les actuacions sindicals i jurídiques, inclosa la via del conflicte col·lectiu que estem impulsant.</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="intake" id="participa">
+  <div class="wrap intake-grid">
+    <div>
+      <p class="section-kicker" data-i18n="intakeKicker">Participa. Et busquem a tu.</p>
+      <h2 data-i18n="intakeTitle">Si t'ha passat, necessitem que ens ho expliquis.</h2>
+      <p data-i18n="intakeLead">No cal que facis càlculs. Envia'ns el que tinguis i una explicació breu. Si només tens el calendari d'un any o no saps si hi ha un descompte, escriu-nos igualment.</p>
+      <div class="actions"><a id="mailCTA" class="cta" href="mailto:ccoohrsc@csapg.cat" data-i18n="intakeCTA">EXPLICAR EL MEU CAS I ENVIAR PDF</a></div>
+      <p class="enclosure" data-i18n="intakeHint">S'obrirà el teu programa de correu. Adjunta-hi els PDF manualment abans d'enviar-lo. La documentació s'ha de lliurar de forma privada, mai a una carpeta pública.</p>
+      <p class="enclosure" data-i18n="intakeAddress">Contacte sindical: ccoohrsc@csapg.cat</p>
+      <div id="privateUpload" hidden><div class="actions"><a class="cta cta-light" id="uploadCTA" rel="noopener noreferrer" target="_blank" href="#" data-i18n="uploadCTA">PUJAR ELS CALENDARIS DE FORMA PRIVADA</a></div></div>
+    </div>
+    <aside class="docs">
+      <h3 data-i18n="docsTitle">Què ens has de fer arribar?</h3>
+      <ul>
+        <li data-i18n="doc1">PDF complet del calendari anual 2025</li>
+        <li data-i18n="doc2">PDF complet del calendari anual 2026</li>
+        <li data-i18n="doc3">Nom i cognoms, centre i correu de contacte</li>
+        <li data-i18n="doc4">Dates aproximades de la IT o del permís per naixement i què ha passat amb les hores</li>
+      </ul>
+      <small data-i18n="docsNote">No enviïs informes mèdics, diagnòstics ni dades de salut que no siguin necessàries. Pots participar encara que et falti algun document.</small>
+    </aside>
+  </div>
+</section>
+<section class="section alt">
+  <div class="wrap">
+    <p class="section-kicker" data-i18n="faqKicker">Dubtes habituals</p>
+    <h2 data-i18n="faqTitle">El més important abans d'enviar-nos-ho</h2>
+    <div class="faq">
+      <details><summary data-i18n="faq1Q">I si no sé si em deuen hores?</summary><p data-i18n="faq1A">Precisament volem revisar els calendaris. No has d'identificar tot sol l'error. Explica'ns que has estat de baixa o de permís i, si pots, envia els PDF.</p></details>
+      <details><summary data-i18n="faq2Q">Això vol dir que segur que recuperaré hores o diners?</summary><p data-i18n="faq2A">No. Cada cas necessita verificació. La finalitat és reclamar els perjudicis que es puguin acreditar i que legalment corresponguin, sense prometre resultats per avançat.</p></details>
+      <details><summary data-i18n="faq3Q">La informació serà visible per altres companys?</summary><p data-i18n="faq3A">No publicarem les planilles. La carpeta de treball és privada i l'enviament habilitat ara és per correu sindical. No compartirem un enllaç de Drive amb accés o edició oberta.</p></details>
+      <details><summary data-i18n="faq4Q">Enviar els calendaris ja interromp els terminis de reclamació?</summary><p data-i18n="faq4A">No. Fer-nos arribar documentació no equival a formular una reclamació administrativa o judicial. Alguns drets estan sotmesos a terminis; consulta'ns de seguida si ja t'han exigit recuperar hores o dies.</p></details>
+    </div>
+    <p class="legal" data-i18n="legalText">CCOO CSAPG utilitzarà les dades facilitades per estudiar possibles incidències del còmput de jornada, contactar amb la persona remitent i valorar accions sindicals o jurídiques. No enviïs informació clínica. El tractament s'ha de limitar a la informació necessària i amb accés restringit. Pots exercir els drets de protecció de dades a través del contacte sindical.</p>
+    <p class="legal"><a href="./#/privacitat" data-i18n="privacy">Consulta la informació de privacitat</a> · <a href="https://www.boe.es/eli/es/rdlg/2015/10/23/2/con" target="_blank" rel="noopener" data-i18n="legal">Estatut dels Treballadors (BOE)</a></p>
+  </div>
+</section>
+</main>
+<footer class="footer"><div class="wrap"><strong>CCOO Sanitat · CSAPG</strong><a href="./#/inicio" data-i18n="back">Tornar a la web sindical</a></div></footer>
+<script>
+(function(){
+'use strict';
+const D={
+es:{
+brandSub:"Información y defensa de los derechos laborales",
+heroKicker:"CCOO CSAPG · Buscamos personas afectadas · 2025–2026",
+hero1:"¿HAS ESTADO DE BAJA?",hero2:"REVISA TUS HORAS.",
+heroLead:"Si has pasado por una incapacidad temporal (IT) o un permiso por nacimiento, queremos saber si te han descontado horas, te han aparecido días a deber o te han obligado a recuperar jornadas. Necesitamos casos reales para poder reclamar.",
+heroCTA:"QUIERO QUE REVISÉIS MI CASO",heroCTA2:"¿QUÉ HA PASADO?",
+heroNote:"Aunque no tengas claro si hay un error, puedes explicarnos qué te ha ocurrido.",
+stamp1:"No dejemos perder ningún caso.",stamp2:"Lo que ahora parece un descuadre en el calendario podría tener consecuencias en tu jornada.",
+whatKicker:"El problema",whatTitle:"No buscamos solo calendarios con números extraños. Buscamos qué ha ocurrido después.",
+whatLead:"Desde CCOO llevamos tiempo cuestionando cómo calcula el CSAPG la jornada durante determinadas bajas. Queremos identificar a quienes este sistema podría haber perjudicado realmente.",
+card1T:"¿Has estado de baja médica?",card1P:"Sobre todo si la baja ha durado 15 días o más y has detectado horas negativas, cambios de saldo o una jornada pendiente de recuperar.",
+card2T:"¿Has disfrutado un permiso por nacimiento?",card2P:"También queremos revisar los calendarios de quienes han disfrutado del permiso por nacimiento y cuidado del menor, para comprobar si existen descuadres.",
+card3T:"¿Has tenido que recuperar horas o días?",card3P:"Si has trabajado más horas, te han descontado días o ha aparecido una deuda de horas después del permiso o de la baja, cuéntanoslo.",
+claimKicker:"Qué queremos conseguir",claimTitle:"Que ninguna hora o día descontado indebidamente quede sin respuesta.",
+claimLead:"Nuestro objetivo es contrastar los calendarios, documentar los perjuicios reales y reclamar, cuando corresponda, la regularización de la jornada, la devolución de días u horas y las compensaciones legalmente procedentes.",
+factTitle:"¿Qué dijo Inspección de Trabajo?",
+factP:"En respuesta a la denuncia de CCOO, Inspección constató que a partir del día 15 de IT se aplica un cómputo de jornada diferente. No pudo acreditar casos concretos en los que se hubiera obligado a recuperar días. Por eso buscamos precisamente esas situaciones: calendarios y consecuencias reales que puedan demostrarse.",
+factP2:"La dirección sostiene que la IT es neutra y que los saldos del calendario no implican necesariamente recuperar horas. Queremos contrastarlo con los casos de los trabajadores. Los permisos por nacimiento están incluidos en nuestra revisión, pero no fueron objeto específico de esas conclusiones de Inspección.",
+stepKicker:"Muy sencillo",stepTitle:"Tres pasos para ayudarnos a demostrarlo.",
+step1T:"Descarga los calendarios anuales de 2025 y 2026",step1P:"Accede al Portal del Empleado y descarga la planilla/calendario anual en PDF. Necesitamos el documento completo, no una captura de pantalla. Si tienes versiones anteriores y posteriores a la baja, mejor.",
+step2T:"Explícanos cuándo estuviste de baja o de permiso",step2P:"Indica aproximadamente las fechas, el centro y qué has notado: horas negativas, días de menos, cambio de calendario o jornadas que te han hecho recuperar. No necesitamos ningún diagnóstico.",
+step3T:"Revisaremos los casos e impulsaremos las reclamaciones oportunas",step3P:"Compararemos calendarios e incidencias reales para aportar pruebas a las actuaciones sindicales y jurídicas, incluida la vía del conflicto colectivo que estamos impulsando.",
+intakeKicker:"Participa. Te estamos buscando.",intakeTitle:"Si te ha ocurrido, necesitamos que nos lo cuentes.",
+intakeLead:"No hace falta que hagas cálculos. Envíanos lo que tengas y una explicación breve. Si solo tienes el calendario de un año o no sabes si hay un descuento, escríbenos igualmente.",
+intakeCTA:"EXPLICAR MI CASO Y ENVIAR PDF",intakeHint:"Se abrirá tu programa de correo. Adjunta manualmente los PDF antes de enviarlo. La documentación debe entregarse en privado, nunca en una carpeta pública.",intakeAddress:"Contacto sindical: ccoohrsc@csapg.cat",
+uploadCTA:"SUBIR LOS CALENDARIOS EN PRIVADO",docsTitle:"¿Qué necesitamos que nos envíes?",
+doc1:"PDF completo del calendario anual 2025",doc2:"PDF completo del calendario anual 2026",doc3:"Nombre y apellidos, centro y correo de contacto",doc4:"Fechas aproximadas de la IT o permiso por nacimiento y qué ha ocurrido con las horas",
+docsNote:"No envíes informes médicos, diagnósticos ni datos de salud innecesarios. Puedes participar aunque te falte algún documento.",
+faqKicker:"Dudas habituales",faqTitle:"Lo importante antes de enviarnos nada",
+faq1Q:"¿Y si no sé si me deben horas?",faq1A:"Precisamente queremos revisar los calendarios. No tienes que identificar por tu cuenta el error. Cuéntanos que has estado de baja o de permiso y, si puedes, envía los PDF.",
+faq2Q:"¿Significa esto que recuperaré seguro horas o dinero?",faq2A:"No. Cada caso necesita revisión. Buscamos reclamar los perjuicios que se puedan acreditar y que legalmente correspondan, sin prometer resultados.",
+faq3Q:"¿Verán otros compañeros mi información?",faq3A:"No publicaremos las planillas. La carpeta de trabajo es privada y la vía habilitada ahora es el correo sindical. No compartimos un enlace abierto de Drive con permisos de edición.",
+faq4Q:"¿Enviar los calendarios interrumpe los plazos de reclamación?",faq4A:"No. Enviar documentación no equivale a presentar una reclamación administrativa o judicial. Algunos derechos tienen plazos; consúltanos cuanto antes si ya te han exigido recuperar horas o días.",
+legalText:"CCOO CSAPG utilizará los datos facilitados para estudiar posibles incidencias en el cómputo de jornada, contactar con la persona remitente y valorar acciones sindicales o jurídicas. No envíes información clínica. El tratamiento debe limitarse a lo necesario y con acceso restringido. Puedes ejercer los derechos de protección de datos a través del contacto sindical.",
+privacy:"Consulta la información de privacidad",legal:"Estatuto de los Trabajadores (BOE)",back:"Volver a la web sindical"
+}
+};
+const root=document.documentElement;
+const nodes=[...document.querySelectorAll('[data-i18n]')];nodes.forEach(n=>n.dataset.cat=n.textContent);
+function setLang(lang){
+ const es=lang==='es';root.lang=es?'es':'ca';
+ nodes.forEach(n=>{n.textContent=es?(D.es[n.dataset.i18n]||n.dataset.cat):n.dataset.cat});
+ document.getElementById('cat').classList.toggle('active',!es);
+ document.getElementById('esp').classList.toggle('active',es);
+ document.getElementById('cat').setAttribute('aria-pressed',String(!es));
+ document.getElementById('esp').setAttribute('aria-pressed',String(es));
+ const subject=es?'CCOO CSAPG - Revisión de horas IT o permiso por nacimiento':'CCOO CSAPG - Revisió d’hores IT o permís per naixement';
+ const body=es?'Nombre y apellidos:\\nCentro / servicio:\\nAño y fechas aproximadas de la IT o del permiso:\\n¿Qué ha ocurrido con las horas o los días?:\\n\\nAdjunto mis calendarios anuales en PDF (2025 y/o 2026).':'Nom i cognoms:\\nCentre / servei:\\nAny i dates aproximades de la IT o del permís:\\nQuè ha passat amb les hores o els dies?:\\n\\nAdjunto els calendaris anuals en PDF (2025 i/o 2026).';
+ document.getElementById('mailCTA').href='mailto:ccoohrsc@csapg.cat?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+}
+document.getElementById('cat').addEventListener('click',()=>setLang('ca'));
+document.getElementById('esp').addEventListener('click',()=>setLang('es'));
+setLang(new URLSearchParams(location.search).get('lang')==='es'?'es':'ca');
+// Un formulari de càrrega només s'activa amb un enllaç privat i validat.
+// No s'obre l'accés d'escriptura públic a la carpeta de Drive.
+fetch('./reclamacio-hores-upload-config.json',{cache:'no-store'})
+.then(r=>r.ok?r.json():null)
+.then(c=>{if(!c||c.enabled!==true)return;
+  let url;try{url=new URL(c.formUrl)}catch(e){return}
+  if(url.protocol!=='https:'||!['docs.google.com','forms.gle'].includes(url.hostname))return;
+  document.getElementById('uploadCTA').href=url.href;
+  document.getElementById('privateUpload').hidden=false;
+}).catch(()=>{});
+})();
+</script>
+</body></html>
