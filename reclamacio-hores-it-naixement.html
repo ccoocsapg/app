@@ -251,7 +251,7 @@ function setLang(lang){
  document.getElementById('cat').setAttribute('aria-pressed',String(!es));
  document.getElementById('esp').setAttribute('aria-pressed',String(es));
  const subject=es?'CCOO CSAPG - Revisión de horas IT o permiso por nacimiento':'CCOO CSAPG - Revisió d’hores IT o permís per naixement';
- const body=es?'Nombre y apellidos:\\nCentro / servicio:\\nAño y fechas aproximadas de la IT o del permiso:\\n¿Qué ha ocurrido con las horas o los días?:\\n\\nAdjunto mis calendarios anuales en PDF (2025 y/o 2026).':'Nom i cognoms:\\nCentre / servei:\\nAny i dates aproximades de la IT o del permís:\\nQuè ha passat amb les hores o els dies?:\\n\\nAdjunto els calendaris anuals en PDF (2025 i/o 2026).';
+ const body=es?'Nombre y apellidos:\nCentro / servicio:\nAño y fechas aproximadas de la IT o del permiso:\n¿Qué ha ocurrido con las horas o los días?:\n\nAdjunto mis calendarios anuales en PDF (2025 y/o 2026).':'Nom i cognoms:\nCentre / servei:\nAny i dates aproximades de la IT o del permís:\nQuè ha passat amb les hores o els dies?:\n\nAdjunto els calendaris anuals en PDF (2025 i/o 2026).';
  document.getElementById('mailCTA').href='mailto:ccoohrsc@csapg.cat?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
 }
 document.getElementById('cat').addEventListener('click',()=>setLang('ca'));
