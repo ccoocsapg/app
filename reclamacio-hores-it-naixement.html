@@ -228,6 +228,7 @@ details p{color:#494641;max-width:780px}
           <span class="helper" data-i18n="formEmailHelp">Només és necessari si tries «Enviar per correu». Per WhatsApp no cal.</span>
         </label>
         <label class="case-consent"><input id="emailConsent" type="checkbox"><span data-i18n="formConsent">Per enviar el cas per correu, accepto que les dades siguin trameses a CCOO a través del servei FormSubmit. No hi inclouré diagnòstics ni informes mèdics.</span></label>
+        <a class="text-link case-small" href="#privacitat-campanya" data-i18n="readPrivacy">Consulta com s'envien i es tracten les dades</a>
         <div class="case-actions">
           <button type="button" id="caseWhatsApp"' data-i18n="sendWhatsApp">ENVIAR PER WHATSAPP</button>
           <button class="secondary" type="button" id="caseEmail" data-i18n="sendEmail">ENVIAR PER CORREU</button>
@@ -260,7 +261,7 @@ details p{color:#494641;max-width:780px}
       <details><summary data-i18n="faq3Q">La informació serà visible per altres companys?</summary><p data-i18n="faq3A">No demanem planilles ni arxius. El formulari prepara un missatge per al contacte sindical, que només s'envia quan tu el confirmes a WhatsApp o al correu.</p></details>
       <details><summary data-i18n="faq4Q">Explicar el meu cas interromp els terminis de reclamació?</summary><p data-i18n="faq4A">No. Informar CCOO no equival a formular una reclamació administrativa o judicial. Alguns drets estan sotmesos a terminis; contacta'ns de seguida si ja t'han exigit recuperar hores o dies.</p></details>
     </div>
-    <p class="legal" data-i18n="legalText">CCOO CSAPG tractarà la informació que ens enviïs per analitzar possibles incidències en el còmput de jornada, contactar amb tu i valorar les accions que corresponguin. L'enviament directe per correu es gestiona mitjançant FormSubmit, un proveïdor extern que processa el contingut per remetre'l a ccoohrsc@csapg.cat i que declara conservar els enviaments durant 30 dies. No incloguis dades clíniques, diagnòstics ni informes mèdics. Les dades no es desen en aquesta pàgina web.</p>
+    <p class="legal" id="privacitat-campanya" data-i18n="legalText">CCOO CSAPG tractarà la informació que ens enviïs per analitzar possibles incidències en el còmput de jornada, contactar amb tu i valorar les accions que corresponguin. L'enviament directe per correu es gestiona mitjançant FormSubmit, un proveïdor extern que processa el contingut per remetre'l a ccoohrsc@csapg.cat i que declara conservar els enviaments durant 30 dies. No incloguis dades clíniques, diagnòstics ni informes mèdics. Les dades no es desen en aquesta pàgina web.</p>
     <p class="legal"><a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener" data-i18n="providerPrivacy">Privacitat del servei d'enviament de formularis</a></p>
     <p class="legal"><a href="./#/privacitat" data-i18n="privacy">Consulta la informació de privacitat</a> · <a href="https://www.boe.es/eli/es/rdlg/2015/10/23/2/con" target="_blank" rel="noopener" data-i18n="legal">Estatut dels Treballadors (BOE)</a></p>
   </div>
@@ -273,6 +274,7 @@ details p{color:#494641;max-width:780px}
 const D={
 es:{
 formDisclaimer:"WhatsApp abre la conversación habitual. Con «Enviar por correo», el formulario tramita los datos directamente al correo sindical, sin abrir ninguna aplicación de correo.",
+readPrivacy:"Consulta cómo se envían y se tratan los datos",
 formEmail:"Correo electrónico de contacto (para el envío por correo)",
 formEmailHelp:"Solo es necesario si eliges «Enviar por correo». Para WhatsApp no hace falta.",
 formConsent:"Para enviar el caso por correo, acepto que mis datos sean transmitidos a CCOO a través de FormSubmit. No incluiré diagnósticos ni informes médicos.",
@@ -352,7 +354,13 @@ setLang(new URLSearchParams(location.search).get('lang')==='es'?'es':'ca');
 
 function caseMessage(){
   const f=document.getElementById('caseForm');
-  if(!f.reportValidity())return null;
+  // El correu opcional no ha d'impedir mai l'ús de WhatsApp.
+  const contactField=document.getElementById('replyEmail');
+  const wasDisabled=contactField.disabled;
+  contactField.disabled=true;
+  const valid=f.reportValidity();
+  contactField.disabled=wasDisabled;
+  if(!valid)return null;
   const es=root.lang==='es';
   const labels={
     it:es?'Incapacidad temporal (IT)':'Incapacitat temporal (IT)',
