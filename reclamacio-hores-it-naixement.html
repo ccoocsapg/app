@@ -225,13 +225,13 @@ details p{color:#494641;max-width:780px}
         </div>
         <div id="emailFields" hidden>
           <label class="case-field case-email"><span data-i18n="formEmail">Correu electrònic de contacte</span><input id="replyEmail" name="email" type="email" maxlength="180" autocomplete="email" placeholder="exemple@correu.cat"></label>
-          <label class="case-consent"><input id="emailConsent" type="checkbox"><span data-i18n="formConsent">Accepto comunicar el meu cas a CCOO mitjançant un servei de correu autoritzat. No inclouré informació clínica.</span></label>
+          <label class="case-consent"><input id="emailConsent" type="checkbox"><span data-i18n="formConsent">Accepto que el meu cas es trameti al correu sindical de CCOO mitjançant Google Apps Script. No inclouré informació clínica.</span></label>
         </div>
         <div class="case-actions">
           <button type="button" id="caseWhatsApp" data-i18n="sendWhatsApp">ENVIAR PER WHATSAPP</button>
           <button class="secondary" type="button" id="caseEmail" data-i18n="sendEmailPending" disabled>CORREU PENDENT D'ACTIVACIÓ</button>
         </div>
-        <p class="case-small" data-i18n="formDisclaimer">Pots comunicar el cas per WhatsApp. La recepció directa per correu s'habilitarà quan estigui comprovada.</p>
+        <p class="case-small" data-i18n="formDisclaimer">WhatsApp prepara el missatge. Si utilitzes el correu, s'enviarà directament a CCOO mitjançant Google Apps Script; el resultat es mostrarà en una pestanya nova.</p>
         <p class="case-status" id="emailInfo" data-i18n="mailUnavailable">Enviament per correu temporalment no disponible. Utilitza WhatsApp.</p>
         <p id="emailStatus" class="case-status" role="status" aria-live="polite" hidden></p>
         <input type="text" name="_honey" id="trap" tabindex="-1" aria-hidden="true" autocomplete="off" style="position:absolute;left:-10000px;width:1px;height:1px;opacity:0">
@@ -260,7 +260,7 @@ details p{color:#494641;max-width:780px}
       <details><summary data-i18n="faq3Q">La informació serà visible per altres companys?</summary><p data-i18n="faq3A">No demanem planilles ni arxius. El formulari prepara un missatge per al contacte sindical, que només s'envia quan tu el confirmes a WhatsApp o al correu.</p></details>
       <details><summary data-i18n="faq4Q">Explicar el meu cas interromp els terminis de reclamació?</summary><p data-i18n="faq4A">No. Informar CCOO no equival a formular una reclamació administrativa o judicial. Alguns drets estan sotmesos a terminis; contacta'ns de seguida si ja t'han exigit recuperar hores o dies.</p></details>
     </div>
-    <p class="legal" id="privacitat-campanya" data-i18n="legalText">CCOO CSAPG utilitzarà les dades aportades per estudiar possibles desajustos de jornada i contactar amb la persona interessada. Aquesta pàgina no desa respostes. WhatsApp prepara un missatge que tu decideixes enviar. La recepció automàtica per correu està desactivada fins que el servei sigui validat. No comuniquis diagnòstics ni informes mèdics.</p>
+    <p class="legal" id="privacitat-campanya" data-i18n="legalText">CCOO CSAPG utilitzarà les dades aportades per estudiar possibles desajustos de jornada i contactar amb la persona interessada. Aquesta pàgina no desa respostes. WhatsApp prepara un missatge que tu decideixes enviar. Quan s'utilitza el correu, les dades es trameten mitjançant Google Apps Script al correu sindical, i l'aplicació de Google mostra el resultat de l'enviament. No comuniquis diagnòstics ni informes mèdics.</p>
     <p class="legal"><a href="./#/privacitat" data-i18n="privacy">Consulta la informació de privacitat</a> · <a href="https://www.boe.es/eli/es/rdlg/2015/10/23/2/con" target="_blank" rel="noopener" data-i18n="legal">Estatut dels Treballadors (BOE)</a></p>
   </div>
 </section>
@@ -275,9 +275,9 @@ mailUnavailable:"Envío por correo temporalmente no disponible. Utiliza WhatsApp
 
 sendEmailPending:"CORREO PENDIENTE DE ACTIVACIÓN",
 
-formDisclaimer:"Puedes comunicar tu caso por WhatsApp. La recepción directa por correo se habilitará cuando esté comprobada.",
+formDisclaimer:"WhatsApp prepara el mensaje. Si utilizas el correo, se enviará directamente a CCOO mediante Google Apps Script; el resultado aparecerá en una pestaña nueva.",
 formEmail:"Correo electrónico de contacto",
-formConsent:"Acepto comunicar mi caso a CCOO mediante un servicio de correo autorizado. No incluiré información clínica.",
+formConsent:"Acepto que mi caso se envíe al correo sindical de CCOO mediante Google Apps Script. No incluiré información clínica.",
 sendEmail:"ENVIAR POR CORREO",
 sendWhatsApp:"ENVIAR POR WHATSAPP",
 formMore:"¿Quieres añadir algún detalle? (opcional)",
@@ -328,7 +328,7 @@ faq1Q:"¿Y si no sé si me deben horas?",faq1A:"No hace falta que sepas si exist
 faq2Q:"¿Significa esto que recuperaré seguro horas o dinero?",faq2A:"No. Cada caso necesita revisión. Buscamos reclamar los perjuicios que se puedan acreditar y que legalmente correspondan, sin prometer resultados.",
 faq3Q:"¿Verán otros compañeros mi información?",faq3A:"No pedimos planillas ni archivos. El formulario prepara un mensaje para el contacto sindical, que solo se envía cuando lo confirmas en WhatsApp o en tu correo.",
 faq4Q:"¿Explicar mi caso interrumpe los plazos de reclamación?",faq4A:"No. Informar a CCOO no equivale a presentar una reclamación administrativa o judicial. Algunos derechos tienen plazos; contáctanos cuanto antes si ya te han exigido recuperar horas o días.",
-legalText:"CCOO CSAPG utilizará los datos aportados para estudiar posibles descuadres de jornada y contactar con la persona interesada. Esta página no almacena respuestas. WhatsApp prepara un mensaje que tú decides enviar. La recepción automática por correo está desactivada hasta que el servicio sea validado. No comuniques diagnósticos ni informes médicos.",
+legalText:"CCOO CSAPG utilizará los datos aportados para estudiar posibles descuadres de jornada y contactar con la persona interesada. Esta página no almacena respuestas. WhatsApp prepara un mensaje que tú decides enviar. Cuando se utiliza el correo, los datos se transmiten mediante Google Apps Script al buzón sindical, y la aplicación de Google muestra el resultado del envío. No comuniques diagnósticos ni informes médicos.",
 privacy:"Consulta la información de privacidad",legal:"Estatuto de los Trabajadores (BOE)",back:"Volver a la web sindical"
 }
 };
