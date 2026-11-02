@@ -223,17 +223,16 @@ details p{color:#494641;max-width:780px}
           <label class="case-field"><span data-i18n="formCentre">Centre o servei (opcional)</span><input name="centre" type="text" maxlength="100" placeholder="HRSC, HCAP, HSAA..."></label>
           <label class="case-field"><span data-i18n="formMore">Vols afegir algun detall? (opcional)</span><input name="more" type="text" maxlength="250" placeholder="P. ex. em van dir que devia 2 dies"></label>
         </div>
-        <label class="case-field case-email"><span data-i18n="formEmail">Correu electrònic de contacte (per a l'enviament per correu)</span>
-          <input id="replyEmail" name="email" type="email" autocomplete="email" maxlength="180" placeholder="exemple@correu.cat">
-          <span class="helper" data-i18n="formEmailHelp">Només és necessari si tries «Enviar per correu». Per WhatsApp no cal.</span>
-        </label>
-        <label class="case-consent"><input id="emailConsent" type="checkbox"><span data-i18n="formConsent">Per enviar el cas per correu, accepto que les dades siguin trameses a CCOO a través del servei FormSubmit. No hi inclouré diagnòstics ni informes mèdics.</span></label>
-        <a class="text-link case-small" href="#privacitat-campanya" data-i18n="readPrivacy">Consulta com s'envien i es tracten les dades</a>
-        <div class="case-actions">
-          <button type="button" id="caseWhatsApp"' data-i18n="sendWhatsApp">ENVIAR PER WHATSAPP</button>
-          <button class="secondary" type="button" id="caseEmail" data-i18n="sendEmail">ENVIAR PER CORREU</button>
+        <div id="emailFields" hidden>
+          <label class="case-field case-email"><span data-i18n="formEmail">Correu electrònic de contacte</span><input id="replyEmail" name="email" type="email" maxlength="180" autocomplete="email" placeholder="exemple@correu.cat"></label>
+          <label class="case-consent"><input id="emailConsent" type="checkbox"><span data-i18n="formConsent">Accepto comunicar el meu cas a CCOO mitjançant un servei de correu autoritzat. No inclouré informació clínica.</span></label>
         </div>
-        <p class="case-small" data-i18n="formDisclaimer">WhatsApp obre la conversa habitual. Amb «Enviar per correu», el formulari tramita les dades directament al contacte sindical, sense obrir cap programa de correu.</p>
+        <div class="case-actions">
+          <button type="button" id="caseWhatsApp" data-i18n="sendWhatsApp">ENVIAR PER WHATSAPP</button>
+          <button class="secondary" type="button" id="caseEmail" data-i18n="sendEmailPending" disabled>CORREU PENDENT D'ACTIVACIÓ</button>
+        </div>
+        <p class="case-small" data-i18n="formDisclaimer">Pots comunicar el cas per WhatsApp. La recepció directa per correu s'habilitarà quan estigui comprovada.</p>
+        <p class="case-status" id="emailInfo" data-i18n="mailUnavailable">Enviament per correu temporalment no disponible. Utilitza WhatsApp.</p>
         <p id="emailStatus" class="case-status" role="status" aria-live="polite" hidden></p>
         <input type="text" name="_honey" id="trap" tabindex="-1" aria-hidden="true" autocomplete="off" style="position:absolute;left:-10000px;width:1px;height:1px;opacity:0">
       </form>
@@ -261,8 +260,7 @@ details p{color:#494641;max-width:780px}
       <details><summary data-i18n="faq3Q">La informació serà visible per altres companys?</summary><p data-i18n="faq3A">No demanem planilles ni arxius. El formulari prepara un missatge per al contacte sindical, que només s'envia quan tu el confirmes a WhatsApp o al correu.</p></details>
       <details><summary data-i18n="faq4Q">Explicar el meu cas interromp els terminis de reclamació?</summary><p data-i18n="faq4A">No. Informar CCOO no equival a formular una reclamació administrativa o judicial. Alguns drets estan sotmesos a terminis; contacta'ns de seguida si ja t'han exigit recuperar hores o dies.</p></details>
     </div>
-    <p class="legal" id="privacitat-campanya" data-i18n="legalText">CCOO CSAPG tractarà la informació que ens enviïs per analitzar possibles incidències en el còmput de jornada, contactar amb tu i valorar les accions que corresponguin. L'enviament directe per correu es gestiona mitjançant FormSubmit, un proveïdor extern que processa el contingut per remetre'l a ccoohrsc@csapg.cat i que declara conservar els enviaments durant 30 dies. No incloguis dades clíniques, diagnòstics ni informes mèdics. Les dades no es desen en aquesta pàgina web.</p>
-    <p class="legal"><a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener" data-i18n="providerPrivacy">Privacitat del servei d'enviament de formularis</a></p>
+    <p class="legal" id="privacitat-campanya" data-i18n="legalText">CCOO CSAPG utilitzarà les dades aportades per estudiar possibles desajustos de jornada i contactar amb la persona interessada. Aquesta pàgina no desa respostes. WhatsApp prepara un missatge que tu decideixes enviar. La recepció automàtica per correu està desactivada fins que el servei sigui validat. No comuniquis diagnòstics ni informes mèdics.</p>
     <p class="legal"><a href="./#/privacitat" data-i18n="privacy">Consulta la informació de privacitat</a> · <a href="https://www.boe.es/eli/es/rdlg/2015/10/23/2/con" target="_blank" rel="noopener" data-i18n="legal">Estatut dels Treballadors (BOE)</a></p>
   </div>
 </section>
@@ -273,12 +271,13 @@ details p{color:#494641;max-width:780px}
 'use strict';
 const D={
 es:{
-formDisclaimer:"WhatsApp abre la conversación habitual. Con «Enviar por correo», el formulario tramita los datos directamente al correo sindical, sin abrir ninguna aplicación de correo.",
-readPrivacy:"Consulta cómo se envían y se tratan los datos",
-formEmail:"Correo electrónico de contacto (para el envío por correo)",
-formEmailHelp:"Solo es necesario si eliges «Enviar por correo». Para WhatsApp no hace falta.",
-formConsent:"Para enviar el caso por correo, acepto que mis datos sean transmitidos a CCOO a través de FormSubmit. No incluiré diagnósticos ni informes médicos.",
-providerPrivacy:"Privacidad del servicio de envío de formularios",
+mailUnavailable:"Envío por correo temporalmente no disponible. Utiliza WhatsApp.",
+
+sendEmailPending:"CORREO PENDIENTE DE ACTIVACIÓN",
+
+formDisclaimer:"Puedes comunicar tu caso por WhatsApp. La recepción directa por correo se habilitará cuando esté comprobada.",
+formEmail:"Correo electrónico de contacto",
+formConsent:"Acepto comunicar mi caso a CCOO mediante un servicio de correo autorizado. No incluiré información clínica.",
 sendEmail:"ENVIAR POR CORREO",
 sendWhatsApp:"ENVIAR POR WHATSAPP",
 formMore:"¿Quieres añadir algún detalle? (opcional)",
@@ -329,15 +328,16 @@ faq1Q:"¿Y si no sé si me deben horas?",faq1A:"No hace falta que sepas si exist
 faq2Q:"¿Significa esto que recuperaré seguro horas o dinero?",faq2A:"No. Cada caso necesita revisión. Buscamos reclamar los perjuicios que se puedan acreditar y que legalmente correspondan, sin prometer resultados.",
 faq3Q:"¿Verán otros compañeros mi información?",faq3A:"No pedimos planillas ni archivos. El formulario prepara un mensaje para el contacto sindical, que solo se envía cuando lo confirmas en WhatsApp o en tu correo.",
 faq4Q:"¿Explicar mi caso interrumpe los plazos de reclamación?",faq4A:"No. Informar a CCOO no equivale a presentar una reclamación administrativa o judicial. Algunos derechos tienen plazos; contáctanos cuanto antes si ya te han exigido recuperar horas o días.",
-legalText:"CCOO CSAPG tratará la información que nos envíes para analizar posibles incidencias en el cómputo de jornada, contactar contigo y valorar las acciones que correspondan. El envío directo por correo se gestiona mediante FormSubmit, un proveedor externo que procesa el contenido para remitirlo a ccoohrsc@csapg.cat y que declara conservar los envíos durante 30 días. No incluyas datos clínicos, diagnósticos ni informes médicos. Los datos no se guardan en esta página web.",
+legalText:"CCOO CSAPG utilizará los datos aportados para estudiar posibles descuadres de jornada y contactar con la persona interesada. Esta página no almacena respuestas. WhatsApp prepara un mensaje que tú decides enviar. La recepción automática por correo está desactivada hasta que el servicio sea validado. No comuniques diagnósticos ni informes médicos.",
 privacy:"Consulta la información de privacidad",legal:"Estatuto de los Trabajadores (BOE)",back:"Volver a la web sindical"
 }
 };
 const root=document.documentElement;
 const nodes=[...document.querySelectorAll('[data-i18n]')];nodes.forEach(n=>n.dataset.cat=n.textContent);
+const CA_LABELS={sendEmail:'ENVIAR PER CORREU',sendEmailPending:"CORREU PENDENT D'ACTIVACIÓ"};
 function setLang(lang){
  const es=lang==='es';root.lang=es?'es':'ca';
- nodes.forEach(n=>{n.textContent=es?(D.es[n.dataset.i18n]||n.dataset.cat):n.dataset.cat});
+ nodes.forEach(n=>{n.textContent=es?(D.es[n.dataset.i18n]||n.dataset.cat):(CA_LABELS[n.dataset.i18n]||n.dataset.cat)});
  document.getElementById('cat').classList.toggle('active',!es);
  document.getElementById('esp').classList.toggle('active',es);
  document.getElementById('cat').setAttribute('aria-pressed',String(!es));
@@ -390,100 +390,49 @@ document.getElementById('caseWhatsApp').addEventListener('click',()=>{
  const msg=caseMessage();if(!msg)return;
  location.href='https://wa.me/34620446488?text='+encodeURIComponent(msg);
 });
+
 const emailButton=document.getElementById('caseEmail');
 const emailStatus=document.getElementById('emailStatus');
+const emailInfo=document.getElementById('emailInfo');
+const emailFields=document.getElementById('emailFields');
 const replyEmail=document.getElementById('replyEmail');
 const emailConsent=document.getElementById('emailConsent');
-let sending=false;
-
-function setEmailStatus(kind,cat,es){
+let verifiedEndpoint='';
+function notice(kind,ca,es){
  emailStatus.dataset.kind=kind;
+ emailStatus.textContent=root.lang==='es'?es:ca;
  emailStatus.hidden=false;
- emailStatus.textContent=root.lang==='es'?es:cat;
 }
-emailButton.addEventListener('click',async()=>{
- if(sending)return;
- const summary=caseMessage();
- if(!summary)return;
- const email=replyEmail.value.trim();
- if(!email){
-   setEmailStatus('warning',"Introdueix un correu electrònic perquè et puguem respondre.","Introduce un correo electrónico para que podamos responderte.");
-   replyEmail.focus();return;
- }
- if(!replyEmail.checkValidity()){
-   replyEmail.reportValidity();return;
- }
- if(!emailConsent.checked){
-   setEmailStatus('warning',"Per continuar, confirma que acceptes l'enviament mitjançant FormSubmit.","Para continuar, confirma que aceptas el envío mediante FormSubmit.");
-   emailConsent.focus();return;
- }
- // Tramesa directa per HTTPS. No s'emmagatzemen dades en el navegador.
+fetch('./reclamacio-hores-mail-config.json?_='+Date.now(),{cache:'no-store'})
+ .then(r=>r.ok?r.json():null)
+ .then(c=>{
+  if(!c||c.enabled!==true||c.provider!=='google-apps-script')return;
+  const url=String(c.endpoint||'').trim();
+  if(!/^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(url))return;
+  verifiedEndpoint=url;
+  emailButton.disabled=false;
+  emailButton.dataset.i18n='sendEmail';
+  emailButton.textContent=root.lang==='es'?'ENVIAR POR CORREO':'ENVIAR PER CORREU';
+  emailFields.hidden=false;
+  emailInfo.hidden=true;
+ }).catch(()=>{});
+emailButton.addEventListener('click',()=>{
+ if(!verifiedEndpoint)return;
+ if(!caseMessage())return;
  const f=document.getElementById('caseForm');
- const v=n=>f.elements[n].value.trim();
- const es=root.lang==='es';
- const labels={
-   it:es?'Incapacidad temporal (IT)':'Incapacitat temporal (IT)',
-   birth:es?'Permiso por nacimiento':'Permís per naixement',
-   both:es?'Ambas situaciones':'Totes dues situacions',
-   negative:es?'Horas negativas':'Hores negatives',
-   recover:es?'Horas o días recuperados/exigidos':'Hores o dies recuperats/exigits',
-   changes:es?'Cambios en el calendario':'Canvis al calendari',
-   other:es?'Otra incidencia':'Una altra incidència',
-   unsure:es?'No sé si hay un error':'No sé si hi ha un error'
- };
- const data={
-   _subject:'CCOO CSAPG | Comunicació hores IT i naixement | '+v('year'),
-   _template:'table',
-   _honey:f.elements['_honey'].value,
-   _replyto:email,
-   _url:'https://ccoocsapg.github.io/app/reclamacio-hores-it-naixement.html',
-   'Nom i cognoms':v('person'),
-   'Correu electrònic':email,
-   'Situació':labels[v('leave')],
-   'Any':v('year'),
-   'Incidència':labels[v('issue')],
-   'Centre o servei':v('centre')||'No indicat',
-   'Detall':v('more')||'Sense més detalls'
- };
- sending=true;
- emailButton.disabled=true;
- emailButton.textContent=es?'ENVIANDO...':'ENVIANT...';
- setEmailStatus('warning','Estem trametent el formulari...','Estamos enviando el formulario...');
- try{
-   const response=await fetch('https://formsubmit.co/ajax/ccoohrsc@csapg.cat',{
-     method:'POST',
-     headers:{'Content-Type':'application/json','Accept':'application/json'},
-     body:JSON.stringify(data)
-   });
-   const result=await response.json();
-   // FormSubmit també pot retornar HTTP 200 en errors i "false" com a text.
-   if(!response.ok || (result.success!==true && result.success!=='true')){
-     const reason=String(result.message||'');
-     if(/activat|activaci|activat|activation|activate|confirm/i.test(reason)){
-       setEmailStatus('warning',
-         'El servei de correu està pendent d’activació a la bústia sindical. No podem confirmar-ne el lliurament encara. Mentrestant pots utilitzar WhatsApp.',
-         'El servicio de correo está pendiente de activación en el buzón sindical. Todavía no podemos confirmar la entrega. Mientras tanto puedes usar WhatsApp.');
-     }else{
-       setEmailStatus('error',
-         'El servei no ha confirmat l’enviament. Si us plau, torna-ho a provar o comunica el cas per WhatsApp.',
-         'El servicio no ha confirmado el envío. Por favor, inténtalo de nuevo o comunica el caso por WhatsApp.');
-     }
-     return;
-   }
-   setEmailStatus('success',
-      'El formulari s’ha tramès al servei de correu correctament. CCOO es posarà en contacte amb tu si necessita més informació.',
-      'El formulario se ha enviado correctamente al servicio de correo. CCOO contactará contigo si necesita más información.');
- }catch(error){
-   setEmailStatus('error',
-      'No hem pogut confirmar l’enviament. Revisa la connexió o prova-ho per WhatsApp.',
-      'No hemos podido confirmar el envío. Revisa la conexión o prueba por WhatsApp.');
- }finally{
-   sending=false;
-   emailButton.disabled=false;
-   emailButton.textContent=root.lang==='es'?'ENVIAR POR CORREO':'ENVIAR PER CORREU';
- }
+ const email=replyEmail.value.trim();
+ if(!email){notice('warning',"Indica el correu electrònic de contacte.","Indica el correo electrónico de contacto.");replyEmail.focus();return;}
+ if(!replyEmail.checkValidity()){replyEmail.reportValidity();return;}
+ if(!emailConsent.checked){notice('warning',"Accepta l'enviament al servei de correu autoritzat.","Acepta el envío al servicio de correo autorizado.");emailConsent.focus();return;}
+ const data={person:f.elements.person.value.trim(),email,leave:f.elements.leave.value,year:f.elements.year.value,issue:f.elements.issue.value,centre:f.elements.centre.value.trim(),more:f.elements.more.value.trim(),accepted:'yes',website:''};
+ const postForm=document.createElement('form');
+ postForm.method='POST';postForm.action=verifiedEndpoint;postForm.target='_blank';postForm.style.display='none';
+ for(const [k,v] of Object.entries(data)){const i=document.createElement('input');i.type='hidden';i.name=k;i.value=v;postForm.appendChild(i);}
+ document.body.appendChild(postForm);
+ postForm.submit();
+ postForm.remove();
+ notice('warning',"Comprova el resultat a la pestanya nova: només la confirmació del servidor acredita l'enviament.","Comprueba el resultado en la pestaña nueva: solo la confirmación del servidor acredita el envío.");
 });
-
 
 })();
 </script>
