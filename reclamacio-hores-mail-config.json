@@ -1,7 +1,7 @@
 {
-  "enabled": false,
+  "enabled": true,
   "provider": "google-apps-script",
   "endpoint": "https://script.google.com/macros/s/AKfycbzMYvYV5o9h7lkC1SkihosFnyqGpi2qIfHuhLpKHC2PVErP6f4E7bncTIa9tLFY4lA/exec",
-  "status": "Endpoint configurat; pendent de validar un enviament de prova real des de l'aplicació web i confirmar que arriba al correu sindical",
-  "lastVerifiedAt": null
+  "status": "Prova amb dades fictícies: GET 200, POST 200 i pàgina 'Comunicació enviada'; bústia sindical comprovada prèviament via MailApp, pendent confirmació específica del correu rebut per aquesta prova",
+  "lastVerifiedAt": "2026-11-02T21:05:03Z"
 }
