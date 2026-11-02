@@ -1,7 +1,7 @@
 {
   "enabled": false,
   "provider": "google-apps-script",
-  "endpoint": "",
-  "status": "Pendent de desplegar Apps Script i verificar enviament real a ccoohrsc@csapg.cat",
+  "endpoint": "https://script.google.com/macros/s/AKfycbzMYvYV5o9h7lkC1SkihosFnyqGpi2qIfHuhLpKHC2PVErP6f4E7bncTIa9tLFY4lA/exec",
+  "status": "Endpoint configurat; pendent de validar un enviament de prova real des de l'aplicació web i confirmar que arriba al correu sindical",
   "lastVerifiedAt": null
 }
