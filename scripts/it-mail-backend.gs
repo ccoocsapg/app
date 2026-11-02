@@ -7,6 +7,21 @@
 var CCOO_CASE_DESTINATION = 'ccoohrsc@csapg.cat';
 var CCOO_CASE_PAGE = 'https://ccoocsapg.github.io/app/reclamacio-hores-it-naixement.html';
 
+/**
+ * Prova inicial: executar manualment des de l'editor d'Apps Script,
+ * amb el compte sindical que autoritzarà el servei.
+ * Només envia un correu de prova, sense dades personals.
+ */
+function CCOO_provaEnviament() {
+  MailApp.sendEmail({
+    to: CCOO_CASE_DESTINATION,
+    subject: 'CCOO CSAPG · PROVA DE RECEPCIÓ DEL FORMULARI',
+    body: 'Aquest és un missatge de prova enviat des del compte Google autoritzat de CCOO. Si arriba a la bústia ccoohrsc@csapg.cat, la recepció funciona. No conté cap dada de cap treballador.',
+    name: 'CCOO Sanitat · CSAPG'
+  });
+  return 'Sol·licitud d’enviament efectuada. Comprova l’entrada a la bústia sindical.';
+}
+
 function doGet() {
   return CCOO_renderResult_(false, 'Aquest servei només accepta enviaments des del formulari.');
 }
