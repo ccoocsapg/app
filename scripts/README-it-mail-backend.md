@@ -6,10 +6,10 @@
 
 1. Entra a https://script.google.com amb un compte Google autoritzat per a la gestió sindical (preferiblement el compte corporatiu de CCOO). Cal que aquest compte pugui fer enviaments amb MailApp.
 2. Crea un projecte nou, anomena'l `CCOO CSAPG - Formulari IT` i substitueix el contingut de `Code.gs` amb el codi de `scripts/it-mail-backend.gs`.
-3. Prem **Desplegar > Desplegament nou > Aplicació web**. Executar com a **Jo**; accés **Qualsevol persona**. Si l'administrador del compte ho impedeix, no es podrà desplegar amb aquell compte.
-4. Autoritza el permís d'enviament de correu que Google et sol·liciti. Copia l'URL completa que acaba en `/exec` (no pas l'URL `/dev`).
-5. Desplega el formulari **només en mode de prova** actualitzant `reclamacio-hores-mail-config.json` amb aquesta URL. Mantén `enabled:false` fins que s'hagi comprovat que el missatge de prova arriba a **ccoohrsc@csapg.cat**.
-6. Després d'una prova real confirmada, posa `enabled:true` i publica. El formulari enviarà dades amb un POST estàndard al web app i Google mostrarà una pàgina amb la confirmació o l'error.
+3. A l'editor d'Apps Script, selecciona la funció **`CCOO_provaEnviament`** al menú de funcions i prem **Executar**. Autoritza l'enviament de correu amb el compte sindical quan Google ho demani. **Revisa que aquest correu de prova hagi arribat realment a `ccoohrsc@csapg.cat`**, també a spam i quarantena si cal. Fins llavors, no publiquis el servei.
+4. Prem **Desplegar > Desplegament nou > Aplicació web**. Executar com a **Jo**; accés **Qualsevol persona**. Si l'administrador del compte ho impedeix, no es podrà desplegar amb aquell compte. Copia l'URL completa que acaba en `/exec` (no `/dev`).
+5. Posa l'URL dins `reclamacio-hores-mail-config.json`, a `endpoint`. Mantén `enabled:false` fins que estigui confirmada la recepció de la prova de l'editor.
+6. Un cop confirmada la recepció i verificat que el desplegament funciona, canvia `enabled:true`. L'opció de correu s'activarà a la web; mostrarà el resultat real de Google en una pestanya nova. Fes una prova del formulari amb **dades fictícies** abans d'utilitzar-lo amb persones treballadores.
 
 ## Privacitat i seguretat
 
