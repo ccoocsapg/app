@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-03.2",
+  "version": "2026-11-03.3",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
@@ -1107,6 +1107,41 @@
         "segona ronda",
         "plantilla base",
         "canvi torn servei"
+      ]
+    },
+    {
+      "id": "acta-paritaria-44-2026",
+      "category": "paritaria",
+      "date": "2026-10-29",
+      "status": "official",
+      "driveId": "1eSaJhYnh5iTJToPdi5IDJPnREQBu4KFP",
+      "title": {
+        "ca": "Acta 44 · Comissió Paritària III Conveni SISCAT",
+        "es": "Acta 44 · Comisión Paritaria III Convenio SISCAT"
+      },
+      "desc": {
+        "ca": "Acta íntegra del 29/10/2026: premi de fidelització, especial dedicació voluntària de llevadores, vacances, reducció de jornada, formació QualityRights i festius coincidents amb descansos.",
+        "es": "Acta íntegra del 29/10/2026: premios de fidelización, especial dedicación voluntaria de matronas, vacaciones, reducción de jornada, formación QualityRights y festivos coincidentes con descansos."
+      },
+      "tags": [
+        "acta 44",
+        "comissio paritaria",
+        "comision paritaria",
+        "29/10/2026",
+        "iii conveni",
+        "siscat",
+        "llevadores",
+        "matronas",
+        "150 hores",
+        "vacances",
+        "vacaciones",
+        "incapacitat temporal",
+        "it",
+        "festius",
+        "reduccio jornada",
+        "formacio",
+        "fidelitzacio",
+        "csapg"
       ]
     }
   ],
@@ -2541,6 +2576,78 @@
         "cirurgia major ambulatòria",
         "cirugia mayor ambulatoria",
         "cma"
+      ]
+    },
+    {
+      "id": "paritaria-44-2026-10-29",
+      "contentType": "meeting",
+      "date": "2026-10-29",
+      "category": "paritaria",
+      "source": "official",
+      "title": {
+        "ca": "Comissió Paritària · Acta 44 · 29/10/2026",
+        "es": "Comisión Paritaria · Acta 44 · 29/10/2026"
+      },
+      "intro": {
+        "ca": "Respostes a les consultes CP 123 a CP 129 i aprovació de premis de fidelització. Dos criteris resolts, tres consultes sense acord i una d'ajornada.",
+        "es": "Respuestas a las consultas CP 123 a CP 129 y aprobación de premios de fidelización. Dos criterios resueltos, tres consultas sin acuerdo y una aplazada."
+      },
+      "bullets": {
+        "ca": [
+          "Premis de fidelització: s'aproven els comunicats de diverses entitats, inclosos quatre del Consorci Sanitari de l'Alt Penedès i Garraf.",
+          "CP 123 · Carrera professional d'una treballadora del CSAPG: la Comissió no resol la reclamació perquè és individual i queda fora de les seves funcions.",
+          "CP 124 · Llevadores del grup 2.2: poden acollir-se voluntàriament al règim d'especial dedicació de l'article 36.4, amb un màxim de 150 hores anuals. Es ratifica la interpretació sobre hores extraordinàries de l'Acta 17.",
+          "CP 125 · Reducció de jornada per conciliació i tractament dels complements retributius: sense acord.",
+          "CP 126 · Formació QualityRights i possible imputació al crèdit individual de 20 hores anuals: sense acord.",
+          "CP 127 · Vacances pendents després d'una incapacitat temporal: consulta ajornada.",
+          "CP 128 · Compensació de festius oficials coincidents amb dies de descans setmanal: sense acord.",
+          "CP 129 · Vacances per necessitats del servei fora del període preferent: quan corresponguin 34 dies naturals, els quatre dies addicionals són vacances i no s'han de retornar ni recuperar. Si només una part es fa fora del període preferent, els dies addicionals es calculen proporcionalment."
+        ],
+        "es": [
+          "Premios de fidelización: se aprueban los comunicados de varias entidades, incluidos cuatro del Consorci Sanitari de l'Alt Penedès i Garraf.",
+          "CP 123 · Carrera profesional de una trabajadora del CSAPG: la Comisión no resuelve la reclamación porque es individual y queda fuera de sus funciones.",
+          "CP 124 · Matronas del grupo 2.2: pueden acogerse voluntariamente al régimen de especial dedicación del artículo 36.4, con un máximo de 150 horas anuales. Se ratifica la interpretación sobre horas extraordinarias del Acta 17.",
+          "CP 125 · Reducción de jornada por conciliación y tratamiento de los complementos retributivos: sin acuerdo.",
+          "CP 126 · Formación QualityRights y posible imputación al crédito individual de 20 horas anuales: sin acuerdo.",
+          "CP 127 · Vacaciones pendientes tras una incapacidad temporal: consulta aplazada.",
+          "CP 128 · Compensación de festivos oficiales coincidentes con días de descanso semanal: sin acuerdo.",
+          "CP 129 · Vacaciones fuera del periodo preferente por necesidades del servicio: cuando correspondan 34 días naturales, los cuatro días adicionales son vacaciones y no deben devolverse ni recuperarse. Si solo una parte se disfruta fuera del periodo preferente, los días adicionales se calculan proporcionalmente."
+        ]
+      },
+      "sourceNote": {
+        "ca": "Informació extreta de l'Acta 44 de la Comissió Paritària del III Conveni SISCAT, reunida el 29/10/2026. Resum informatiu; el text íntegre i les respostes literals consten al PDF original, que es publica sense modificacions.",
+        "es": "Información extraída del Acta 44 de la Comisión Paritaria del III Convenio SISCAT, reunida el 29/10/2026. Resumen informativo; el texto íntegro y las respuestas literales constan en el PDF original, publicado sin modificaciones."
+      },
+      "actions": [
+        {
+          "label": {
+            "ca": "Llegir l'acta original (PDF)",
+            "es": "Leer el acta original (PDF)"
+          },
+          "url": "https://drive.google.com/file/d/1eSaJhYnh5iTJToPdi5IDJPnREQBu4KFP/view?usp=drivesdk",
+          "style": "outline"
+        }
+      ],
+      "tags": [
+        "paritaria",
+        "acta 44",
+        "29 octubre 2026",
+        "siscat",
+        "comissio paritaria",
+        "comision paritaria",
+        "llevadores",
+        "matronas",
+        "150 hores",
+        "vacances",
+        "vacaciones",
+        "redució de jornada",
+        "reducción de jornada",
+        "qualitiyrights",
+        "festius",
+        "festivos",
+        "it",
+        "premis fidelitzacio",
+        "csapg"
       ]
     }
   ]
