@@ -39,7 +39,29 @@
 .estima-example dt.total,.estima-example dd.total{padding-top:10px;border-top:1px solid #e8c9cf;font-weight:850;color:#941422}
 .estima-caution{background:#f3f4f6;border:1px solid #d9dde3;border-radius:12px;padding:17px 19px;margin:18px 0}
 .estima-caution strong{display:block;margin-bottom:6px}
-@media(max-width:740px){.estima-kpis{grid-template-columns:1fr}.estima-table{min-width:580px}.estima-table th,.estima-table td{padding:9px 10px}.estima-example{padding:15px}}
+/* A pantalles petites, cada fila de la taula es mostra com una fitxa completa. */
+@media (max-width:740px) {
+ .estima-kpis{grid-template-columns:1fr}
+ .estima-example{padding:15px}
+ .estima-table-wrap{border:0;background:transparent;overflow:visible;margin:16px 0 13px;max-width:100%}
+ .estima-table{display:block;width:100%;min-width:0;max-width:100%;font-size:.93rem;border-collapse:separate}
+ .estima-table thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+ .estima-table tbody{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;width:100%}
+ .estima-table tbody tr{display:grid;grid-template-columns:minmax(0,1fr);min-width:0;width:100%;overflow:hidden;border:1px solid #e0e4ea;border-radius:12px;background:#fff;box-shadow:0 2px 8px rgba(20,25,30,.04)}
+ .estima-table tbody tr td{display:block;min-width:0;border-bottom:0;max-width:100%;padding:11px 14px;overflow-wrap:anywhere}
+ .estima-table tbody tr td:first-child{font-weight:800;line-height:1.35;border-bottom:1px solid #e9edf2;padding:14px;background:#fff}
+ .estima-table tbody tr:nth-child(even) td:not(:last-child){background:#fff}
+ .estima-table tbody tr td.money{display:flex;align-items:baseline;justify-content:space-between;gap:10px;white-space:normal;text-align:right;font-size:.93rem;line-height:1.4}
+ .estima-table tbody tr td.money::before{content:attr(data-label);flex:1 1 auto;min-width:0;white-space:normal;text-align:left;font-size:.82rem;line-height:1.35;color:#5d6874;font-weight:650}
+ .estima-table tbody tr td.money .estima-value{flex:0 0 auto;white-space:nowrap;font-variant-numeric:tabular-nums}
+ .estima-table tbody tr td.money-strong{border-top:1px solid #f1dce0;padding:13px 14px;background:#fff4f5;font-size:1.17rem;font-weight:850;color:#a01123}
+ .estima-table tbody tr td.money-strong::before{font-size:.82rem}
+}
+@media(max-width:370px){
+ .estima-table tbody tr td.money{gap:6px;padding-left:10px;padding-right:10px}
+ .estima-table tbody tr td.money::before{font-size:.77rem}
+ .estima-table tbody tr td.money-strong{font-size:1.07rem}
+}
 
 </style>
 </head>
@@ -85,33 +107,33 @@
 <table class="estima-table">
 <thead><tr><th scope="col">Categoria professional</th><th scope="col">Salari base brut/any</th><th scope="col">Estimació de descompte</th></tr></thead>
 <tbody>
-<tr><td><span class="gcode">G1</span> Personal facultatiu · plantilla nivell III</td><td class="money">51.440,83 €</td><td class="money money-strong">200,05 €</td></tr>
-<tr><td><span class="gcode">G1</span> Personal facultatiu · plantilla nivell II</td><td class="money">44.519,37 €</td><td class="money money-strong">173,13 €</td></tr>
-<tr><td><span class="gcode">G1</span> Personal facultatiu · plantilla nivell I</td><td class="money">34.362,21 €</td><td class="money money-strong">133,63 €</td></tr>
-<tr><td><span class="gcode">G1</span> Personal en formació · nivell V</td><td class="money">28.619,14 €</td><td class="money money-strong">111,30 €</td></tr>
-<tr><td><span class="gcode">G1</span> Personal en formació · nivell IV</td><td class="money">26.552,08 €</td><td class="money money-strong">103,26 €</td></tr>
-<tr><td><span class="gcode">G1</span> Personal en formació · nivell III</td><td class="money">24.599,69 €</td><td class="money money-strong">95,67 €</td></tr>
-<tr><td><span class="gcode">G1</span> Personal en formació · nivell II</td><td class="money">22.648,59 €</td><td class="money money-strong">88,08 €</td></tr>
-<tr><td><span class="gcode">G1</span> Personal en formació · nivell I</td><td class="money">21.051,56 €</td><td class="money money-strong">81,87 €</td></tr>
-<tr><td><span class="gcode">G2</span> Llevadora / llevador</td><td class="money">40.081,56 €</td><td class="money money-strong">155,87 €</td></tr>
-<tr><td><span class="gcode">G2</span> Infermera / infermer</td><td class="money">38.731,12 €</td><td class="money money-strong">150,62 €</td></tr>
-<tr><td><span class="gcode">G2</span> Personal en formació · nivell II</td><td class="money">20.483,61 €</td><td class="money money-strong">79,66 €</td></tr>
-<tr><td><span class="gcode">G2</span> Personal en formació · nivell I</td><td class="money">18.940,12 €</td><td class="money money-strong">73,66 €</td></tr>
-<tr><td><span class="gcode">G3</span> Tècnic/a superior · nivell II</td><td class="money">26.032,46 €</td><td class="money money-strong">101,24 €</td></tr>
-<tr><td><span class="gcode">G3</span> TCAI · nivell I</td><td class="money">22.805,13 €</td><td class="money money-strong">88,69 €</td></tr>
-<tr><td><span class="gcode">G3</span> Auxiliar TES · nivell I</td><td class="money">22.081,71 €</td><td class="money money-strong">85,87 €</td></tr>
-<tr><td><span class="gcode">G4</span> Gestió i serveis · grup 4</td><td class="money">38.731,12 €</td><td class="money money-strong">150,62 €</td></tr>
-<tr><td><span class="gcode">G5</span> Gestió i serveis · grup 5</td><td class="money">31.294,30 €</td><td class="money money-strong">121,70 €</td></tr>
-<tr><td><span class="gcode">G6</span> Funció administrativa · nivell II</td><td class="money">26.017,56 €</td><td class="money money-strong">101,18 €</td></tr>
-<tr><td><span class="gcode">G6</span> Funció administrativa · nivell I</td><td class="money">22.803,12 €</td><td class="money money-strong">88,68 €</td></tr>
-<tr><td><span class="gcode">G6</span> Oficis i serveis diversos · nivell II</td><td class="money">26.014,03 €</td><td class="money money-strong">101,17 €</td></tr>
-<tr><td><span class="gcode">G6</span> Oficis i serveis diversos · nivell I</td><td class="money">22.788,93 €</td><td class="money money-strong">88,62 €</td></tr>
-<tr><td><span class="gcode">G7</span> Subportalliteres</td><td class="money">20.897,91 €</td><td class="money money-strong">81,27 €</td></tr>
-<tr><td><span class="gcode">G7</span> Subaltern</td><td class="money">19.381,39 €</td><td class="money money-strong">75,37 €</td></tr>
+<tr><td><span class="gcode">G1</span> Personal facultatiu · plantilla nivell III</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">51.440,83 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">200,05 €</span></td></tr>
+<tr><td><span class="gcode">G1</span> Personal facultatiu · plantilla nivell II</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">44.519,37 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">173,13 €</span></td></tr>
+<tr><td><span class="gcode">G1</span> Personal facultatiu · plantilla nivell I</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">34.362,21 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">133,63 €</span></td></tr>
+<tr><td><span class="gcode">G1</span> Personal en formació · nivell V</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">28.619,14 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">111,30 €</span></td></tr>
+<tr><td><span class="gcode">G1</span> Personal en formació · nivell IV</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">26.552,08 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">103,26 €</span></td></tr>
+<tr><td><span class="gcode">G1</span> Personal en formació · nivell III</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">24.599,69 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">95,67 €</span></td></tr>
+<tr><td><span class="gcode">G1</span> Personal en formació · nivell II</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">22.648,59 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">88,08 €</span></td></tr>
+<tr><td><span class="gcode">G1</span> Personal en formació · nivell I</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">21.051,56 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">81,87 €</span></td></tr>
+<tr><td><span class="gcode">G2</span> Llevadora / llevador</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">40.081,56 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">155,87 €</span></td></tr>
+<tr><td><span class="gcode">G2</span> Infermera / infermer</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">38.731,12 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">150,62 €</span></td></tr>
+<tr><td><span class="gcode">G2</span> Personal en formació · nivell II</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">20.483,61 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">79,66 €</span></td></tr>
+<tr><td><span class="gcode">G2</span> Personal en formació · nivell I</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">18.940,12 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">73,66 €</span></td></tr>
+<tr><td><span class="gcode">G3</span> Tècnic/a superior · nivell II</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">26.032,46 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">101,24 €</span></td></tr>
+<tr><td><span class="gcode">G3</span> TCAI · nivell I</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">22.805,13 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">88,69 €</span></td></tr>
+<tr><td><span class="gcode">G3</span> Auxiliar TES · nivell I</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">22.081,71 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">85,87 €</span></td></tr>
+<tr><td><span class="gcode">G4</span> Gestió i serveis · grup 4</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">38.731,12 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">150,62 €</span></td></tr>
+<tr><td><span class="gcode">G5</span> Gestió i serveis · grup 5</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">31.294,30 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">121,70 €</span></td></tr>
+<tr><td><span class="gcode">G6</span> Funció administrativa · nivell II</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">26.017,56 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">101,18 €</span></td></tr>
+<tr><td><span class="gcode">G6</span> Funció administrativa · nivell I</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">22.803,12 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">88,68 €</span></td></tr>
+<tr><td><span class="gcode">G6</span> Oficis i serveis diversos · nivell II</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">26.014,03 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">101,17 €</span></td></tr>
+<tr><td><span class="gcode">G6</span> Oficis i serveis diversos · nivell I</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">22.788,93 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">88,62 €</span></td></tr>
+<tr><td><span class="gcode">G7</span> Subportalliteres</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">20.897,91 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">81,27 €</span></td></tr>
+<tr><td><span class="gcode">G7</span> Subaltern</td><td class="money" data-label="Salari base brut/any"><span class="estima-value">19.381,39 €</span></td><td class="money money-strong" data-label="Descompte estimat"><span class="estima-value">75,37 €</span></td></tr>
 </tbody>
 </table>
 </div>
-<p class="small">Si ho mires al mòbil, desplaça la taula horitzontalment. <a href="https://drive.google.com/file/d/1BdRk_YBOiyv95o26z_Qf0rYwPk9Cbcwi/view" target="_blank" rel="noopener noreferrer">Consulta les taules salarials SISCAT 2026 (PDF)</a>.</p>
+<p class="small">Al mòbil, cada categoria es mostra en una fitxa amb els dos imports, sense desplaçament horitzontal. <a href="https://drive.google.com/file/d/1BdRk_YBOiyv95o26z_Qf0rYwPk9Cbcwi/view" target="_blank" rel="noopener noreferrer">Consulta les taules salarials SISCAT 2026 (PDF)</a>.</p>
 <div class="estima-example">
 <h3>Exemple explicat: una infermera a jornada completa</h3>
 <p>Salari base anual de la taula SISCAT 2026: <strong>38.731,12 € bruts</strong>, distribuïts en 14 pagues.</p>
