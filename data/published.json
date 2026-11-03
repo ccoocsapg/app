@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-03.1",
+  "version": "2026-11-03.2",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
@@ -1131,14 +1131,16 @@
           "L'adhesió individual a la web de CCOO és voluntària i no obliga a fer vaga.",
           "Per exercir el dret de vaga no cal avisar abans a l'empresa ni presentar cap formulari; hi ha el descompte salarial legal corresponent.",
           "Si reps una designació nominal de serveis mínims i vols fer vaga, comunica-ho de seguida a CCOO perquè revisem la designació. Una ordre vàlida s'ha de complir.",
-          "Els models de crèdit horari individual i de secció sindical són per a representants sindicals, no per a tota la plantilla."
+          "Els models de crèdit horari individual i de secció sindical són per a representants sindicals, no per a tota la plantilla.",
+          "Publicada una taula d'estimacions brutes de descompte per a totes les categories SISCAT 2026 a jornada completa, basada només en el salari base. La xifra real depèn de torns i complements."
         ],
         "es": [
           "El 11 de noviembre hay convocada una huelga general de 24 horas para reclamar salarios dignos, vivienda asequible y servicios públicos dotados de recursos.",
           "La adhesión individual en la web de CCOO es voluntaria y no obliga a hacer huelga.",
           "Para ejercer el derecho de huelga no hay que avisar antes a la empresa ni presentar ningún formulario; se aplica el descuento salarial legal correspondiente.",
           "Si recibes una designación nominal de servicios mínimos y quieres hacer huelga, comunícalo enseguida a CCOO para revisar la designación. Una orden válida debe cumplirse.",
-          "Los modelos de crédito horario individual y de sección sindical son para representantes sindicales, no para toda la plantilla."
+          "Los modelos de crédito horario individual y de sección sindical son para representantes sindicales, no para toda la plantilla.",
+          "Publicada una tabla de estimaciones brutas de descuento para todas las categorías SISCAT 2026 a jornada completa, basada solo en el salario base. La cifra real depende de turnos y complementos."
         ]
       },
       "sections": [
@@ -1188,11 +1190,19 @@
       "actions": [
         {
           "label": {
-            "ca": "Guia completa del 11N",
-            "es": "Guía completa del 11N"
+            "ca": "Guia completa i estimació del descompte",
+            "es": "Guía completa y estimación del descuento"
           },
           "url": "https://ccoocsapg.github.io/app/11n-vaga-general-2026.html",
           "style": "primary"
+        },
+        {
+          "label": {
+            "ca": "Estimació del descompte per categoria",
+            "es": "Estimación del descuento por categoría"
+          },
+          "url": "https://ccoocsapg.github.io/app/11n-vaga-general-2026.html#descompte",
+          "style": "outline"
         },
         {
           "label": {
