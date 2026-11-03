@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-29.1",
+  "version": "2026-11-03.1",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
@@ -1111,6 +1111,137 @@
     }
   ],
   "meetings": [
+    {
+      "id": "vaga-general-11n-2026",
+      "contentType": "communication",
+      "date": "2026-11-03",
+      "category": "organitzacio",
+      "source": "ccoo",
+      "title": {
+        "ca": "Vaga general 11N · Adhesions, drets i serveis mínims al CSAPG",
+        "es": "Huelga general 11N · Adhesiones, derechos y servicios mínimos en el CSAPG"
+      },
+      "intro": {
+        "ca": "Guia pràctica per a la plantilla: per què fem vaga, què cal comunicar, models de crèdit sindical i què fer si reps una designació de serveis mínims.",
+        "es": "Guía práctica para la plantilla: por qué hacemos huelga, qué hay que comunicar, modelos de crédito sindical y qué hacer si recibes una designación de servicios mínimos."
+      },
+      "bullets": {
+        "ca": [
+          "El 11 de novembre està convocada una vaga general de 24 hores per reclamar salaris dignes, habitatge assequible i serveis públics amb recursos.",
+          "L'adhesió individual a la web de CCOO és voluntària i no obliga a fer vaga.",
+          "Per exercir el dret de vaga no cal avisar abans a l'empresa ni presentar cap formulari; hi ha el descompte salarial legal corresponent.",
+          "Si reps una designació nominal de serveis mínims i vols fer vaga, comunica-ho de seguida a CCOO perquè revisem la designació. Una ordre vàlida s'ha de complir.",
+          "Els models de crèdit horari individual i de secció sindical són per a representants sindicals, no per a tota la plantilla."
+        ],
+        "es": [
+          "El 11 de noviembre hay convocada una huelga general de 24 horas para reclamar salarios dignos, vivienda asequible y servicios públicos dotados de recursos.",
+          "La adhesión individual en la web de CCOO es voluntaria y no obliga a hacer huelga.",
+          "Para ejercer el derecho de huelga no hay que avisar antes a la empresa ni presentar ningún formulario; se aplica el descuento salarial legal correspondiente.",
+          "Si recibes una designación nominal de servicios mínimos y quieres hacer huelga, comunícalo enseguida a CCOO para revisar la designación. Una orden válida debe cumplirse.",
+          "Los modelos de crédito horario individual y de sección sindical son para representantes sindicales, no para toda la plantilla."
+        ]
+      },
+      "sections": [
+        {
+          "title": {
+            "ca": "Per què l'11N?",
+            "es": "¿Por qué el 11N?"
+          },
+          "bullets": {
+            "ca": [
+              "Si els sous pugen menys que els lloguers, els aliments i les despeses essencials, perdem poder adquisitiu.",
+              "Al sector sanitari reclamem millores salarials, plantilles suficients i menys sobrecàrrega.",
+              "L'habitatge i els salaris són dues cares del mateix problema: treballar ha de permetre viure."
+            ],
+            "es": [
+              "Si los sueldos suben menos que alquileres, alimentos y gastos esenciales, perdemos poder adquisitivo.",
+              "En sanidad reclamamos mejoras salariales, plantillas suficientes y menos sobrecarga.",
+              "Vivienda y salarios son dos caras del mismo problema: trabajar debe permitir vivir."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Quins documents cal presentar?",
+            "es": "¿Qué documentos hay que presentar?"
+          },
+          "bullets": {
+            "ca": [
+              "Personal en general: cap formulari obligatori per fer vaga. L'adhesió individual es fa a la pàgina de CCOO, si es vol.",
+              "Representació sindical: models específics de crèdit horari individual o de secció sindical per presentar a direcció o Recursos Humans."
+            ],
+            "es": [
+              "Plantilla en general: ningún formulario obligatorio para hacer huelga. La adhesión individual se hace en la página de CCOO, si se desea.",
+              "Representación sindical: modelos específicos de crédito horario individual o de sección sindical para presentar a Dirección o Recursos Humanos."
+            ]
+          }
+        }
+      ],
+      "warning": {
+        "ca": "Una designació de serveis mínims només és exigible si s'ajusta a la resolució aplicable. Si és vàlida, cal complir-la encara que es vulgui fer vaga; avisar CCOO no la deixa sense efecte.",
+        "es": "Una designación de servicios mínimos solo es exigible si se ajusta a la resolución aplicable. Si es válida, debe cumplirse aunque se quiera hacer huelga; avisar a CCOO no la deja sin efecto."
+      },
+      "sourceNote": {
+        "ca": "Informació de CCOO Sanitat CSAPG basada en 11N.cat, el manifest de CCOO Sanitat i les normes generals sobre vaga i serveis mínims. Els models de crèdit horari provenen dels enllaços oficials de CCOO Catalunya. Revisat el 03/11/2026.",
+        "es": "Información de CCOO Sanitat CSAPG basada en 11N.cat, el manifiesto de CCOO Sanitat y las reglas generales sobre huelga y servicios mínimos. Los modelos de crédito horario proceden de los enlaces oficiales de CCOO Catalunya. Revisado el 03/11/2026."
+      },
+      "actions": [
+        {
+          "label": {
+            "ca": "Guia completa del 11N",
+            "es": "Guía completa del 11N"
+          },
+          "url": "https://ccoocsapg.github.io/app/11n-vaga-general-2026.html",
+          "style": "primary"
+        },
+        {
+          "label": {
+            "ca": "Adhesió individual",
+            "es": "Adhesión individual"
+          },
+          "url": "https://www.ccoo.cat/adhesions-individuals-vaga-general-11n/",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "Models de crèdit horari",
+            "es": "Modelos de crédito horario"
+          },
+          "url": "https://www.ccoo.cat/wp-content/uploads/2026/10/model-credit-horari-individual-vaga-general-11n.pdf",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "Model per a seccions sindicals",
+            "es": "Modelo para secciones sindicales"
+          },
+          "url": "https://www.ccoo.cat/wp-content/uploads/2026/10/model-credit-horari-seccio-sindical-vaga-general-11n.pdf",
+          "style": "outline"
+        }
+      ],
+      "contact": "ccoohrsc@csapg.cat",
+      "tags": [
+        "vaga",
+        "huelga",
+        "11n",
+        "11 novembre",
+        "11 noviembre",
+        "serveis minims",
+        "servicios mínimos",
+        "adscripcio",
+        "adhesions",
+        "adhesiones",
+        "credit horari",
+        "credito horario",
+        "salari",
+        "salaris",
+        "poder adquisitiu",
+        "CCOO",
+        "sanitat",
+        "CSAPG",
+        "Sant Camil"
+      ]
+    },
     {
       "id": "minut-silenci-toledo-2026-10-29",
       "contentType": "communication",
