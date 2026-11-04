@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-03.3",
+  "version": "2026-11-04.1",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
@@ -1146,6 +1146,109 @@
     }
   ],
   "meetings": [
+    {
+      "id": "minoracio-caps-setmana-majors-50-2026",
+      "contentType": "communication",
+      "date": "2026-11-04",
+      "category": "comunicatshrsc",
+      "source": "summary",
+      "title": {
+        "ca": "Minoració de caps de setmana per a majors de 50 anys · Sol·licituds obertes",
+        "es": "Reducción de fines de semana para mayores de 50 años · Solicitudes abiertas"
+      },
+      "intro": {
+        "ca": "El CSAPG ha obert fins al 30 de novembre de 2026 el termini per sol·licitar la minoració de caps de setmana per a persones treballadores de més de 50 anys amb més de 25 anys d’antiguitat.",
+        "es": "El CSAPG ha abierto hasta el 30 de noviembre de 2026 el plazo para solicitar la reducción de fines de semana para personas trabajadoras de más de 50 años con más de 25 años de antigüedad."
+      },
+      "deadline": {
+        "ca": "Termini de sol·licitud: fins al 30 de novembre de 2026",
+        "es": "Plazo de solicitud: hasta el 30 de noviembre de 2026"
+      },
+      "sections": [
+        {
+          "title": {
+            "ca": "Qui pot presentar la sol·licitud?",
+            "es": "¿Quién puede presentar la solicitud?"
+          },
+          "bullets": {
+            "ca": [
+              "Persones treballadores de més de 50 anys.",
+              "Cal acreditar més de 25 anys d’antiguitat al CSAPG."
+            ],
+            "es": [
+              "Personas trabajadoras de más de 50 años.",
+              "Es necesario acreditar más de 25 años de antigüedad en el CSAPG."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Com es presenta?",
+            "es": "¿Cómo se presenta?"
+          },
+          "bullets": {
+            "ca": [
+              "Envieu un correu a rh@csapg.cat indicant el vostre interès a acollir-vos a aquesta mesura.",
+              "El termini finalitza el 30 de novembre de 2026."
+            ],
+            "es": [
+              "Enviad un correo a rh@csapg.cat indicando vuestro interés en acogeros a esta medida.",
+              "El plazo finaliza el 30 de noviembre de 2026."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Què passa després?",
+            "es": "¿Qué ocurre después?"
+          },
+          "bullets": {
+            "ca": [
+              "La Direcció valorarà les sol·licituds rebudes.",
+              "Posteriorment, es tractaran amb la Comissió dels 50 anys."
+            ],
+            "es": [
+              "La Dirección valorará las solicitudes recibidas.",
+              "Posteriormente, se tratarán con la Comisión de los 50 años."
+            ]
+          }
+        }
+      ],
+      "sourceNote": {
+        "ca": "Resum informatiu de CCOO a partir del comunicat intern del CSAPG de 4 de novembre de 2026. La presentació d’una sol·licitud no implica una concessió automàtica. No s’hi especifiquen el nombre de caps de setmana ni altres criteris de concessió.",
+        "es": "Resumen informativo de CCOO basado en el comunicado interno del CSAPG del 4 de noviembre de 2026. Presentar una solicitud no implica su aprobación automática. El comunicado no especifica el número de fines de semana ni otros criterios de concesión."
+      },
+      "actions": [
+        {
+          "label": {
+            "ca": "Sol·licitar-ho per correu a RH",
+            "es": "Solicitarlo por correo a RR. HH."
+          },
+          "url": "mailto:rh@csapg.cat?subject=Sol%C2%B7licitud%20minoraci%C3%B3%20de%20caps%20de%20setmana",
+          "style": "primary"
+        }
+      ],
+      "contact": "rh@csapg.cat",
+      "tags": [
+        "minoració caps de setmana",
+        "minoracio",
+        "reducció caps setmana",
+        "reduccion fines de semana",
+        "50 anys",
+        "mayores de 50 años",
+        "majors de 50",
+        "25 anys antiguitat",
+        "25 años antigüedad",
+        "CSAPG",
+        "comissió dels 50 anys",
+        "comisión de los 50 años",
+        "termini 30 novembre 2026",
+        "plazo 30 noviembre 2026",
+        "rh@csapg.cat",
+        "sol·licitud",
+        "solicitud"
+      ]
+    },
     {
       "id": "vaga-general-11n-2026",
       "contentType": "communication",
