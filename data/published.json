@@ -1,10 +1,40 @@
 {
-  "version": "2026-11-04.1",
+  "version": "2026-11-06.1",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
   },
   "documents": [
+    {
+      "id": "pacte-vacances-festius-hrsc-2027",
+      "category": "pactes",
+      "date": "2026-11-04",
+      "status": "official",
+      "driveId": "1ypE2z9s7cur2u-Gj3QIQgZFN5i9xwgmW",
+      "title": {
+        "ca": "Pacte de vacances, calendaris i festius 2027 · Hospital Residència Sant Camil (signat)",
+        "es": "Pacto de vacaciones, calendarios y festivos 2027 · Hospital Residència Sant Camil (firmado)"
+      },
+      "desc": {
+        "ca": "Pacte signat entre la Direcció del CSAPG i el Comitè d'Empresa de Sant Camil: criteris de vacances, calendari laboral, excés de jornada, festius locals i oficials, Setmana Santa i Nadal de 2027. Document íntegre de quatre pàgines.",
+        "es": "Pacto firmado entre la Dirección del CSAPG y el Comité de Empresa de Sant Camil: criterios de vacaciones, calendario laboral, exceso de jornada, festivos locales y oficiales, Semana Santa y Navidad de 2027. Documento íntegro de cuatro páginas."
+      },
+      "tags": [
+        "pacte vacances 2027",
+        "pacte festius 2027",
+        "vacances",
+        "calendari laboral 2027",
+        "hospital residència sant camil",
+        "hrsc",
+        "csapg",
+        "festius",
+        "dies de Nadal",
+        "setmana santa",
+        "excés de jornada",
+        "conveni",
+        "pactes"
+      ]
+    },
     {
       "id": "drive-conveni-siscat-iii",
       "category": "conveni",
@@ -1146,6 +1176,116 @@
     }
   ],
   "meetings": [
+    {
+      "id": "pacte-vacances-festius-hrsc-2027-noticia",
+      "contentType": "communication",
+      "date": "2026-11-06",
+      "category": "comunicatshrsc",
+      "source": "ccoo",
+      "title": {
+        "ca": "Sant Camil · Ja disponible el pacte de vacances i festius del 2027",
+        "es": "Sant Camil · Ya disponible el pacto de vacaciones y festivos de 2027"
+      },
+      "intro": {
+        "ca": "Ja podeu consultar el pacte signat de l’Hospital Residència Sant Camil, que regula els criteris per elaborar els calendaris laborals, organitzar les vacances i distribuir els festius de 2027.",
+        "es": "Ya podéis consultar el pacto firmado del Hospital Residència Sant Camil, que regula los criterios para elaborar los calendarios laborales, organizar las vacaciones y distribuir los festivos de 2027."
+      },
+      "deadline": {
+        "ca": "Termini per demanar les vacances: fins a l’1 de febrer de 2027.",
+        "es": "Plazo para solicitar las vacaciones: hasta el 1 de febrero de 2027."
+      },
+      "sections": [
+        {
+          "title": {
+            "ca": "Dates importants",
+            "es": "Fechas importantes"
+          },
+          "bullets": {
+            "ca": [
+              "31/12/2026: data límit perquè la Direcció faci arribar la planificació anual provisional de 2027.",
+              "01/02/2027: últim dia per presentar la petició de vacances i els dies de Setmana Santa, Nadal i excés de jornada.",
+              "01/03/2027: data prevista al pacte per comunicar el calendari definitiu amb vacances, dies de Nadal/Setmana Santa i excessos de jornada."
+            ],
+            "es": [
+              "31/12/2026: fecha límite para que la Dirección entregue la planificación anual provisional de 2027.",
+              "01/02/2027: último día para presentar la petición de vacaciones y los días de Semana Santa, Navidad y exceso de jornada.",
+              "01/03/2027: fecha prevista en el pacto para comunicar el calendario definitivo con vacaciones, días de Navidad/Semana Santa y excesos de jornada."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Què regula el pacte?",
+            "es": "¿Qué regula el pacto?"
+          },
+          "bullets": {
+            "ca": [
+              "Les vacances es poden sol·licitar al llarg de tot l’any; el pacte fixa els criteris d’assignació quan coincideixen diverses peticions.",
+              "Es tenen en compte els períodes de vacances d’anys anteriors i, en cas d’empat segons les regles pactades, l’antiguitat.",
+              "En els dies d’excés de jornada, el professional pot escollir el 50% dels dies que li corresponguin, d’acord amb les condicions del pacte.",
+              "La regulació inclou les coincidències de vacances dins d’un mateix servei, les parelles que treballen al centre i la planificació de la plantilla complementària d’infermeria."
+            ],
+            "es": [
+              "Las vacaciones pueden solicitarse durante todo el año; el pacto fija los criterios de asignación cuando coinciden varias peticiones.",
+              "Se tienen en cuenta los periodos de vacaciones de años anteriores y, en caso de empate según las reglas pactadas, la antigüedad.",
+              "En los días de exceso de jornada, el profesional puede escoger el 50% de los días que le correspondan, de acuerdo con las condiciones del pacto.",
+              "La regulación incluye las coincidencias de vacaciones dentro de un mismo servicio, las parejas que trabajan en el centro y la planificación de la plantilla complementaria de enfermería."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Festius, Setmana Santa i Nadal",
+            "es": "Festivos, Semana Santa y Navidad"
+          },
+          "bullets": {
+            "ca": [
+              "S’hi inclou la relació de festius oficials i els festius locals de 2027 (25 de gener i 29 de juny), així com la distribució dels grups de festius d’infermeria.",
+              "Els dies de Setmana Santa i Nadal es poden gaudir dins dels 15 dies anteriors o posteriors, segons les condicions del pacte.",
+              "El pacte és vigent de l’1 de gener al 31 de desembre de 2027 i s’aplica als professionals de l’HRSC, amb l’excepció del grup professional 1."
+            ],
+            "es": [
+              "Incluye la relación de festivos oficiales y los festivos locales de 2027 (25 de enero y 29 de junio), así como la distribución de los grupos de festivos de enfermería.",
+              "Los días de Semana Santa y Navidad pueden disfrutarse dentro de los 15 días anteriores o posteriores, según las condiciones del pacto.",
+              "El pacto está vigente del 1 de enero al 31 de diciembre de 2027 y se aplica a los profesionales del HRSC, con la excepción del grupo profesional 1."
+            ]
+          }
+        }
+      ],
+      "sourceNote": {
+        "ca": "Resum informatiu de CCOO del pacte de vacances i festius 2027 de l’HRSC, signat el 4/11/2026 per la Direcció del CSAPG i representants del Comitè d’Empresa. El document original de quatre pàgines es publica íntegre i sense modificacions; en cas de dubte preval el text signat.",
+        "es": "Resumen informativo de CCOO del pacto de vacaciones y festivos 2027 del HRSC, firmado el 4/11/2026 por la Dirección del CSAPG y representantes del Comité de Empresa. El documento original de cuatro páginas se publica íntegro y sin modificaciones; en caso de duda prevalece el texto firmado."
+      },
+      "actions": [
+        {
+          "label": {
+            "ca": "Consultar el pacte signat (PDF)",
+            "es": "Consultar el pacto firmado (PDF)"
+          },
+          "url": "https://drive.google.com/file/d/1ypE2z9s7cur2u-Gj3QIQgZFN5i9xwgmW/view?usp=drivesdk",
+          "style": "primary"
+        }
+      ],
+      "tags": [
+        "sant camil",
+        "hrsc",
+        "pacte 2027",
+        "vacances 2027",
+        "pacto vacaciones 2027",
+        "calendari laboral",
+        "calendario laboral",
+        "festius",
+        "festivos",
+        "nadal",
+        "navidad",
+        "setmana santa",
+        "semana santa",
+        "01/02/2027",
+        "01/03/2027",
+        "31/12/2026",
+        "ccoo"
+      ]
+    },
     {
       "id": "minoracio-caps-setmana-majors-50-2026",
       "contentType": "communication",
