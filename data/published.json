@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-10.1",
+  "version": "2026-11-10.2",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
@@ -1183,84 +1183,122 @@
       "category": "comunicatshrsc",
       "source": "ccoo",
       "title": {
-        "ca": "Sant Camil · Serveis mínims concretats per a la vaga de l'11N",
-        "es": "Sant Camil · Servicios mínimos concretados para la huelga del 11N"
+        "ca": "Sant Camil · Acord i aclariments dels serveis mínims de la vaga 11N",
+        "es": "Sant Camil · Acuerdo y aclaraciones sobre los servicios mínimos de la huelga del 11N"
       },
       "intro": {
-        "ca": "Després de la reunió del 10 de novembre entre el Comitè de Vaga de l’HRSC i la Direcció, s’ha concretat el dispositiu de serveis mínims. La RLT informa que, en la majoria de serveis, s’ha ajustat la designació al 66% de la dotació habitual, en lloc de les presències proposades inicialment per Direcció, amb les excepcions assistencials corresponents.",
-        "es": "Tras la reunión del 10 de noviembre entre el Comité de Huelga del HRSC y la Dirección, se ha concretado el dispositivo de servicios mínimos. La RLT informa de que, en la mayoría de servicios, la designación se ha ajustado al 66% de la dotación habitual, en lugar de las presencias propuestas inicialmente por Dirección, con las excepciones asistenciales correspondientes."
+        "ca": "Després de la reunió del Comitè de Vaga del 10 de novembre, la representació dels treballadors ha aconseguit revisar les presències inicialment previstes per la Direcció. Segons la RLT, en la majoria dels serveis objecte de revisió s'ha aplicat un criteri del 66%, amb les excepcions assistencials exigibles. La transcripció de la reunió confirma expressament l'acord del 66% per a neteja als torns de matí i tarda.",
+        "es": "Tras la reunión del Comité de Huelga del 10 de noviembre, la representación de los trabajadores ha conseguido revisar las presencias previstas inicialmente por la Dirección. Según la RLT, en la mayoría de los servicios objeto de revisión se ha aplicado un criterio del 66%, con las excepciones asistenciales exigibles. La transcripción confirma expresamente el acuerdo del 66% para limpieza en los turnos de mañana y tarde."
       },
       "sections": [
         {
           "title": {
-            "ca": "Què s'ha concretat?",
-            "es": "¿Qué se ha concretado?"
+            "ca": "Neteja: reducció pactada al 66%",
+            "es": "Limpieza: reducción pactada al 66%"
           },
           "bullets": {
             "ca": [
-              "Les designacions inicialment plantejades per la Direcció s'han revisat. Segons la concreció comunicada per la RLT, en la majoria de serveis la dotació final és del 66% de la plantilla habitual.",
-              "Aquesta xifra no és uniforme per a totes les unitats. Les àrees que, d'acord amb l'Ordre EMT/220/2026 i l'acord de centre, han de mantenir cobertura íntegra o superior es regeixen per les seves condicions específiques.",
-              "La vaga abasta des del torn de nit del 10 de novembre fins al torn de nit de l'11 de novembre de 2026."
+              "La representació dels treballadors va qüestionar que la proposta inicial inclogués pràcticament tota la dotació del servei de neteja.",
+              "Durant la negociació es va acordar aplicar el 66% als torns de matí i tarda, en lloc de mantenir totes les presències inicialment proposades.",
+              "Aquest percentatge no es pot extrapolar automàticament a tots els serveis: les cobertures obligatòries de les àrees essencials es regeixen per l'Ordre EMT/220/2026 i l'acord de centre."
             ],
             "es": [
-              "Se han revisado las designaciones inicialmente planteadas por la Dirección. Según la concreción comunicada por la RLT, en la mayoría de servicios la dotación final es del 66% de la plantilla habitual.",
-              "Esta cifra no es uniforme para todas las unidades. Las áreas que, de acuerdo con la Orden EMT/220/2026 y el acuerdo de centro, deban mantener cobertura íntegra o superior se rigen por sus condiciones específicas.",
-              "La huelga abarca desde el turno de noche del 10 de noviembre hasta el turno de noche del 11 de noviembre de 2026."
+              "La representación de los trabajadores cuestionó que la propuesta inicial incluyera prácticamente toda la dotación del servicio de limpieza.",
+              "Durante la negociación se acordó aplicar el 66% a los turnos de mañana y tarde, en lugar de mantener todas las presencias inicialmente propuestas.",
+              "Este porcentaje no puede extrapolarse automáticamente a todos los servicios: las coberturas obligatorias de las áreas esenciales se rigen por la Orden EMT/220/2026 y el acuerdo de centro."
             ]
           }
         },
         {
           "title": {
-            "ca": "Personal facultatiu: possibles excepcions",
-            "es": "Personal facultativo: posibles excepciones"
+            "ca": "Revisió d'altres dotacions",
+            "es": "Revisión de otras dotaciones"
           },
           "bullets": {
             "ca": [
-              "El llistat de facultatius pot requerir ajustos puntuals. Per exemple, si una persona que hi figura és sortint de guàrdia.",
-              "Aquestes incidències organitzatives les ha de resoldre el cap responsable del servei corresponent, garantint la cobertura exigible."
+              "Es van examinar les presències de farmàcia, cuina, quiròfan, portalliteres i magatzem, entre altres àmbits, per valorar quines eren realment imprescindibles.",
+              "A farmàcia es va discutir reduir personal auxiliar, tenint present la necessitat de mantenir les preparacions i els tractaments oncològics.",
+              "La transcripció automàtica no permet fixar amb rigor totes les xifres finals d'aquests serveis. Les dotacions i designacions aplicables són les que resultin de l'acord i de les comunicacions individuals actualitzades."
             ],
             "es": [
-              "El listado de facultativos puede requerir ajustes puntuales. Por ejemplo, si una persona incluida en él sale de guardia.",
-              "Estas incidencias organizativas debe resolverlas el jefe responsable del servicio correspondiente, garantizando la cobertura exigible."
+              "Se examinaron las presencias de farmacia, cocina, quirófano, camilleros y almacén, entre otras áreas, para valorar cuáles eran realmente imprescindibles.",
+              "En farmacia se discutió reducir personal auxiliar, teniendo presente la necesidad de mantener las preparaciones y tratamientos oncológicos.",
+              "La transcripción automática no permite fijar con rigor todas las cifras finales de estos servicios. Las dotaciones y designaciones aplicables son las que resulten del acuerdo y de las comunicaciones individuales actualizadas."
             ]
           }
         },
         {
           "title": {
-            "ca": "Designacions, intercanvis i dret de vaga",
-            "es": "Designaciones, intercambios y derecho de huelga"
+            "ca": "Intercanvis per facilitar el dret de vaga",
+            "es": "Intercambios para facilitar el derecho de huelga"
           },
           "bullets": {
             "ca": [
-              "Cada responsable d'unitat ha de comunicar la designació individual al professional afectat i al torn corresponent.",
-              "L'acord preveu facilitar intercanvis de professionals assignats a serveis mínims dins del mateix servei i especialitat.",
-              "La designació vàlida s'ha de complir. Les persones que no hagin estat designades poden exercir el dret de vaga. Si hi ha errors o discrepàncies, cal comunicar-los a la representació laboral."
+              "La Direcció va manifestar que facilitaria els intercanvis entre professionals adscrits als serveis mínims dins de la mateixa especialitat i servei.",
+              "Si un professional inicialment designat vol fer vaga i un company o companya el pot substituir voluntàriament, es pot plantejar el canvi al responsable de la unitat, sense reduir la cobertura exigida.",
+              "La substitució requereix la validació i comunicació corresponents; no anul·la automàticament una designació ja notificada. En unitats amb dotació del 100% s'ha de mantenir aquesta cobertura."
             ],
             "es": [
-              "Cada responsable de unidad debe comunicar la designación individual al profesional afectado y al turno correspondiente.",
-              "El acuerdo prevé facilitar intercambios de profesionales asignados a servicios mínimos dentro del mismo servicio y especialidad.",
-              "La designación válida debe cumplirse. Las personas que no hayan sido designadas pueden ejercer el derecho de huelga. Si hay errores o discrepancias, deben comunicarse a la representación laboral."
+              "La Dirección manifestó que facilitaría los intercambios entre profesionales adscritos a los servicios mínimos dentro de la misma especialidad y servicio.",
+              "Si un profesional inicialmente designado quiere hacer huelga y otro compañero puede sustituirle voluntariamente, puede plantearse el cambio al responsable de la unidad, sin reducir la cobertura exigida.",
+              "La sustitución requiere la correspondiente validación y comunicación; no anula automáticamente una designación ya notificada. En unidades con dotación del 100% debe mantenerse esa cobertura."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Personal facultatiu: llistat subjecte a revisió",
+            "es": "Personal facultativo: listado sujeto a revisión"
+          },
+          "bullets": {
+            "ca": [
+              "Durant la reunió es va advertir que els canvis de guàrdia i els quadrants no actualitzats podien fer que alguns noms del llistat mèdic fossin incorrectes, per exemple en el cas d'un facultatiu sortint de guàrdia.",
+              "Es va plantejar evitar difondre un llistat nominal de facultatius sense revisió prèvia, per no generar confusió, i resoldre les incidències amb els responsables del servei o la Direcció Mèdica.",
+              "La cobertura dels facultatius d'atenció continuada continua subjecta als serveis mínims aplicables, amb independència que un llistat informatiu contingui errors."
+            ],
+            "es": [
+              "Durante la reunión se advirtió que los cambios de guardia y los cuadrantes no actualizados podían hacer que algunos nombres del listado médico fueran incorrectos, por ejemplo un facultativo saliente de guardia.",
+              "Se planteó evitar difundir un listado nominal de facultativos sin revisión previa, para no generar confusión, y resolver las incidencias con los responsables del servicio o la Dirección Médica.",
+              "La cobertura de los facultativos de atención continuada sigue sujeta a los servicios mínimos aplicables, aunque un listado informativo contenga errores."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Comunicació de designacions i garanties",
+            "es": "Comunicación de designaciones y garantías"
+          },
+          "bullets": {
+            "ca": [
+              "Cada responsable d'unitat ha de designar i comunicar al professional afectat els serveis mínims del torn corresponent.",
+              "L'Ordre EMT/220/2026 i l'acord de centre mantenen la cobertura exigida per a urgències, unitats especials i altres activitats assistencials imprescindibles. L'acord escrit inclou unitats amb dotació del 100%.",
+              "Les persones no designades poden exercir el dret de vaga. Davant de qualsevol errada, canvi de guàrdia o discrepància, cal comunicar-ho al responsable i a la RLT. Una designació vàlida s'ha de complir mentre no es modifiqui formalment."
+            ],
+            "es": [
+              "Cada responsable de unidad debe designar y comunicar al profesional afectado los servicios mínimos del turno correspondiente.",
+              "La Orden EMT/220/2026 y el acuerdo de centro mantienen la cobertura exigida para urgencias, unidades especiales y otras actividades asistenciales imprescindibles. El acuerdo escrito incluye unidades con dotación del 100%.",
+              "Las personas no designadas pueden ejercer el derecho de huelga. Ante cualquier error, cambio de guardia o discrepancia, debe comunicarse al responsable y a la RLT. Una designación válida debe cumplirse mientras no se modifique formalmente."
             ]
           }
         }
       ],
       "sourceNote": {
-        "ca": "Comunicació de CCOO Sant Camil del 10/11/2026. La dada del 66% reflecteix la concreció de presències traslladada per la representació laboral; l'acord de centre i l'Ordre EMT/220/2026 estableixen les excepcions i els serveis que requereixen altres dotacions. El llistat nominal no es publica a la web per protegir les dades personals del personal.",
-        "es": "Comunicación de CCOO Sant Camil del 10/11/2026. El dato del 66% refleja la concreción de presencias trasladada por la representación laboral; el acuerdo de centro y la Orden EMT/220/2026 establecen las excepciones y los servicios que requieren otras dotaciones. El listado nominal no se publica en la web para proteger los datos personales de la plantilla."
+        "ca": "Comunicació sindical basada en l'acord de serveis mínims de l'HRSC del 10/11/2026, l'Ordre EMT/220/2026 i el resum de la reunió del Comitè de Vaga. El 66% general en els serveis revisats és la valoració comunicada per la RLT; a la transcripció consta de manera expressa l'aplicació del 66% a neteja, però l'acord escrit estableix cobertures específiques del 100% per a diverses unitats. La transcripció automàtica conté errors, per això no es publiquen xifres dubtoses ni llistats nominals de treballadors.",
+        "es": "Comunicación sindical basada en el acuerdo de servicios mínimos del HRSC del 10/11/2026, la Orden EMT/220/2026 y el resumen de la reunión del Comité de Huelga. El 66% general en los servicios revisados es la valoración comunicada por la RLT; la transcripción recoge expresamente la aplicación del 66% a limpieza, pero el acuerdo escrito establece coberturas específicas del 100% para varias unidades. La transcripción automática contiene errores, por lo que no se publican cifras dudosas ni listados nominales de trabajadores."
       },
       "actions": [
         {
           "label": {
-            "ca": "Consultar els serveis mínims de la Generalitat",
-            "es": "Consultar los servicios mínimos de la Generalitat"
+            "ca": "Ordre oficial de serveis mínims (Generalitat)",
+            "es": "Orden oficial de servicios mínimos (Generalitat)"
           },
           "url": "https://web.gencat.cat/ca/inici/actualitat/vaga-general-11-novembre-serveis-minims",
           "style": "primary"
         },
         {
           "label": {
-            "ca": "Guia pràctica de la vaga 11N",
-            "es": "Guía práctica de la huelga 11N"
+            "ca": "Guia de la vaga 11N de CCOO CSAPG",
+            "es": "Guía de la huelga 11N de CCOO CSAPG"
           },
           "url": "https://ccoocsapg.github.io/app/11n-vaga-general-2026.html",
           "style": "outline"
@@ -1282,7 +1320,18 @@
         "hrsc",
         "csapg",
         "ccoo",
-        "ordre EMT/220/2026"
+        "ordre EMT/220/2026",
+        "neteja",
+        "limpieza",
+        "farmàcia",
+        "farmacia",
+        "intercanvis",
+        "sustituciones",
+        "canvi de guardia",
+        "atenció continuada",
+        "dret de vaga",
+        "reunio comite de vaga",
+        "acord 10 novembre 2026"
       ]
     },
     {
