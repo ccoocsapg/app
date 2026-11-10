@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-06.1",
+  "version": "2026-11-10.1",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
@@ -1176,6 +1176,115 @@
     }
   ],
   "meetings": [
+    {
+      "id": "serveis-minims-hrsc-11n-2026",
+      "contentType": "communication",
+      "date": "2026-11-10",
+      "category": "comunicatshrsc",
+      "source": "ccoo",
+      "title": {
+        "ca": "Sant Camil · Serveis mínims concretats per a la vaga de l'11N",
+        "es": "Sant Camil · Servicios mínimos concretados para la huelga del 11N"
+      },
+      "intro": {
+        "ca": "Després de la reunió del 10 de novembre entre el Comitè de Vaga de l’HRSC i la Direcció, s’ha concretat el dispositiu de serveis mínims. La RLT informa que, en la majoria de serveis, s’ha ajustat la designació al 66% de la dotació habitual, en lloc de les presències proposades inicialment per Direcció, amb les excepcions assistencials corresponents.",
+        "es": "Tras la reunión del 10 de noviembre entre el Comité de Huelga del HRSC y la Dirección, se ha concretado el dispositivo de servicios mínimos. La RLT informa de que, en la mayoría de servicios, la designación se ha ajustado al 66% de la dotación habitual, en lugar de las presencias propuestas inicialmente por Dirección, con las excepciones asistenciales correspondientes."
+      },
+      "sections": [
+        {
+          "title": {
+            "ca": "Què s'ha concretat?",
+            "es": "¿Qué se ha concretado?"
+          },
+          "bullets": {
+            "ca": [
+              "Les designacions inicialment plantejades per la Direcció s'han revisat. Segons la concreció comunicada per la RLT, en la majoria de serveis la dotació final és del 66% de la plantilla habitual.",
+              "Aquesta xifra no és uniforme per a totes les unitats. Les àrees que, d'acord amb l'Ordre EMT/220/2026 i l'acord de centre, han de mantenir cobertura íntegra o superior es regeixen per les seves condicions específiques.",
+              "La vaga abasta des del torn de nit del 10 de novembre fins al torn de nit de l'11 de novembre de 2026."
+            ],
+            "es": [
+              "Se han revisado las designaciones inicialmente planteadas por la Dirección. Según la concreción comunicada por la RLT, en la mayoría de servicios la dotación final es del 66% de la plantilla habitual.",
+              "Esta cifra no es uniforme para todas las unidades. Las áreas que, de acuerdo con la Orden EMT/220/2026 y el acuerdo de centro, deban mantener cobertura íntegra o superior se rigen por sus condiciones específicas.",
+              "La huelga abarca desde el turno de noche del 10 de noviembre hasta el turno de noche del 11 de noviembre de 2026."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Personal facultatiu: possibles excepcions",
+            "es": "Personal facultativo: posibles excepciones"
+          },
+          "bullets": {
+            "ca": [
+              "El llistat de facultatius pot requerir ajustos puntuals. Per exemple, si una persona que hi figura és sortint de guàrdia.",
+              "Aquestes incidències organitzatives les ha de resoldre el cap responsable del servei corresponent, garantint la cobertura exigible."
+            ],
+            "es": [
+              "El listado de facultativos puede requerir ajustes puntuales. Por ejemplo, si una persona incluida en él sale de guardia.",
+              "Estas incidencias organizativas debe resolverlas el jefe responsable del servicio correspondiente, garantizando la cobertura exigible."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Designacions, intercanvis i dret de vaga",
+            "es": "Designaciones, intercambios y derecho de huelga"
+          },
+          "bullets": {
+            "ca": [
+              "Cada responsable d'unitat ha de comunicar la designació individual al professional afectat i al torn corresponent.",
+              "L'acord preveu facilitar intercanvis de professionals assignats a serveis mínims dins del mateix servei i especialitat.",
+              "La designació vàlida s'ha de complir. Les persones que no hagin estat designades poden exercir el dret de vaga. Si hi ha errors o discrepàncies, cal comunicar-los a la representació laboral."
+            ],
+            "es": [
+              "Cada responsable de unidad debe comunicar la designación individual al profesional afectado y al turno correspondiente.",
+              "El acuerdo prevé facilitar intercambios de profesionales asignados a servicios mínimos dentro del mismo servicio y especialidad.",
+              "La designación válida debe cumplirse. Las personas que no hayan sido designadas pueden ejercer el derecho de huelga. Si hay errores o discrepancias, deben comunicarse a la representación laboral."
+            ]
+          }
+        }
+      ],
+      "sourceNote": {
+        "ca": "Comunicació de CCOO Sant Camil del 10/11/2026. La dada del 66% reflecteix la concreció de presències traslladada per la representació laboral; l'acord de centre i l'Ordre EMT/220/2026 estableixen les excepcions i els serveis que requereixen altres dotacions. El llistat nominal no es publica a la web per protegir les dades personals del personal.",
+        "es": "Comunicación de CCOO Sant Camil del 10/11/2026. El dato del 66% refleja la concreción de presencias trasladada por la representación laboral; el acuerdo de centro y la Orden EMT/220/2026 establecen las excepciones y los servicios que requieren otras dotaciones. El listado nominal no se publica en la web para proteger los datos personales de la plantilla."
+      },
+      "actions": [
+        {
+          "label": {
+            "ca": "Consultar els serveis mínims de la Generalitat",
+            "es": "Consultar los servicios mínimos de la Generalitat"
+          },
+          "url": "https://web.gencat.cat/ca/inici/actualitat/vaga-general-11-novembre-serveis-minims",
+          "style": "primary"
+        },
+        {
+          "label": {
+            "ca": "Guia pràctica de la vaga 11N",
+            "es": "Guía práctica de la huelga 11N"
+          },
+          "url": "https://ccoocsapg.github.io/app/11n-vaga-general-2026.html",
+          "style": "outline"
+        }
+      ],
+      "contact": "ccoohrsc@csapg.cat",
+      "tags": [
+        "11n",
+        "11 novembre 2026",
+        "vaga general",
+        "serveis minims",
+        "servicios minimos",
+        "66%",
+        "dotacio",
+        "designacio",
+        "facultatius",
+        "guardia",
+        "sant camil",
+        "hrsc",
+        "csapg",
+        "ccoo",
+        "ordre EMT/220/2026"
+      ]
+    },
     {
       "id": "pacte-vacances-festius-hrsc-2027-noticia",
       "contentType": "communication",
