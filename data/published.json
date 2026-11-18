@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-10.2",
+  "version": "2026-11-18.1",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
@@ -1176,6 +1176,256 @@
     }
   ],
   "meetings": [
+    {
+      "id": "permisos-votacio-eleccions-generals-29n-2026-csapg",
+      "contentType": "communication",
+      "date": "2026-11-18",
+      "category": "comunicatshrsc",
+      "source": "ccoo",
+      "title": {
+        "ca": "Eleccions generals del 29N: permisos per votar i previsió del circuit a la intranet",
+        "es": "Elecciones generales del 29N: permisos para votar y previsión del circuito en la intranet"
+      },
+      "intro": {
+        "ca": "El diumenge 29 de novembre de 2026 se celebren les eleccions generals. Les persones que treballin aquell dia poden tenir dret a permisos retribuïts i no recuperables per votar o participar en una mesa electoral. Està previst que el CSAPG publiqui demà, 19 de novembre, el circuit intern de sol·licitud a la intranet.",
+        "es": "El domingo 29 de noviembre de 2026 se celebran las elecciones generales. Quienes trabajen ese día pueden tener derecho a permisos retribuidos y no recuperables para votar o participar en una mesa electoral. Está previsto que el CSAPG publique mañana, 19 de noviembre, el circuito interno de solicitud en la intranet."
+      },
+      "sections": [
+        {
+          "title": {
+            "ca": "Permís per anar a votar si treballes el 29 de novembre",
+            "es": "Permiso para votar si trabajas el 29 de noviembre"
+          },
+          "bullets": {
+            "ca": [
+              "L’horari dels col·legis electorals és de 9.00 a 20.00 h. El permís és retribuït i no recuperable, segons la coincidència entre l’horari de treball i el de votació.",
+              "Si coincideixen 2 hores o menys: no correspon permís. Si coincideixen més de 2 i menys de 4 hores: 2 hores. Si coincideixen 4 hores o més: 4 hores.",
+              "En jornada parcial, el permís es calcula proporcionalment. L’empresa determina la franja per exercir el vot, garantint el dret de sufragi.",
+              "Cal demanar el justificant a la mesa electoral el mateix dia, quan es vagi a votar, per acreditar l’ús del permís."
+            ],
+            "es": [
+              "El horario de los colegios electorales es de 9:00 a 20:00. El permiso es retribuido y no recuperable, según la coincidencia del horario laboral con el de votación.",
+              "Si coinciden 2 horas o menos: no corresponde permiso. Si coinciden más de 2 y menos de 4 horas: 2 horas. Si coinciden 4 horas o más: 4 horas.",
+              "En jornada parcial, el permiso se calcula proporcionalmente. La empresa determina la franja para ejercer el voto, garantizando el derecho de sufragio.",
+              "Se debe solicitar el justificante en la mesa electoral el mismo día de la votación para acreditar el uso del permiso."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Membres de mesa electoral, interventors i apoderats",
+            "es": "Miembros de mesa electoral, interventores y apoderados"
+          },
+          "bullets": {
+            "ca": [
+              "Si ets president o presidenta, vocal o interventor/a i treballes diumenge 29, tens dret a un permís retribuït de jornada completa aquell dia.",
+              "A més, els membres de mesa i els interventors tenen dret a un permís retribuït de les cinc primeres hores de la jornada del dilluns 30 de novembre, encara que el diumenge fos dia de descans.",
+              "Els apoderats i apoderades que treballin el dia de la votació tenen dret a permís retribuït de la jornada completa, però no al permís addicional de cinc hores del dia següent.",
+              "Si has de treballar la nit prèvia a la votació i formes part de la mesa, ets interventor/a o apoderat/ada, pots sol·licitar el canvi de torn. Cal acreditar la designació o la participació."
+            ],
+            "es": [
+              "Si eres presidente o presidenta, vocal o interventor/a y trabajas el domingo 29, tienes derecho a un permiso retribuido de jornada completa ese día.",
+              "Además, los miembros de mesa y los interventores tienen derecho a un permiso retribuido de las cinco primeras horas de la jornada del lunes 30 de noviembre, incluso si el domingo era día de descanso.",
+              "Los apoderados y apoderadas que trabajen el día de la votación tienen derecho a permiso retribuido de jornada completa, pero no al permiso adicional de cinco horas del día siguiente.",
+              "Si debes trabajar la noche anterior a la votación y eres miembro de mesa, interventor/a o apoderado/a, puedes solicitar el cambio de turno. Es necesario acreditar la designación o la participación."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Quan i com s’ha de demanar al CSAPG?",
+            "es": "¿Cuándo y cómo debe solicitarse en el CSAPG?"
+          },
+          "bullets": {
+            "ca": [
+              "Segons la informació rebuda, està previst que dijous 19 de novembre el CSAPG publiqui a la intranet el circuit intern de sol·licitud i justificació dels permisos electorals.",
+              "La publicació encara no s’ha produït a data d’aquesta notícia: els formularis, terminis i passos concrets per al 29N estan pendents de confirmació.",
+              "Si tens torn aquell dia o has estat designat membre de mesa, comunica-ho al teu comandament amb antelació i consulta el circuit quan es publiqui.",
+              "La tramitació administrativa no elimina el dret legal al permís retribuït que correspongui."
+            ],
+            "es": [
+              "Según la información recibida, está previsto que el jueves 19 de noviembre el CSAPG publique en la intranet el circuito interno de solicitud y justificación de los permisos electorales.",
+              "La publicación todavía no se ha producido en la fecha de esta noticia: los formularios, plazos y pasos concretos para el 29N están pendientes de confirmación.",
+              "Si tienes turno ese día o has sido designado miembro de mesa, comunícalo a tu responsable con antelación y consulta el circuito cuando se publique.",
+              "La tramitación administrativa no elimina el derecho legal al permiso retribuido que corresponda."
+            ]
+          }
+        }
+      ],
+      "warning": {
+        "ca": "La previsió de publicació del circuit el 19/11 és informativa, no una confirmació de publicació. No feu servir terminis o formularis d’eleccions anteriors sense comprovar les instruccions actualitzades.",
+        "es": "La previsión de publicación del circuito el 19/11 es informativa, no una confirmación de publicación. No utilicéis plazos ni formularios de elecciones anteriores sin comprobar las instrucciones actualizadas."
+      },
+      "sourceNote": {
+        "ca": "Informació sindical de CCOO Sant Camil (18/11/2026). Drets laborals contrastats amb la informació de CCOO Catalunya sobre el 29N, la Generalitat i la convocatòria del BOE (Reial decret 806/2026). La previsió de publicació del circuit és una comunicació sobre la intranet del CSAPG que encara no es pot verificar com a publicada.",
+        "es": "Información sindical de CCOO Sant Camil (18/11/2026). Derechos laborales contrastados con la información de CCOO Cataluña sobre el 29N, la Generalitat y la convocatoria del BOE (Real Decreto 806/2026). La previsión de publicación del circuito es una comunicación sobre la intranet del CSAPG que aún no puede verificarse como publicada."
+      },
+      "actions": [
+        {
+          "label": {
+            "ca": "Permisos laborals del 29N (CCOO Catalunya)",
+            "es": "Permisos laborales del 29N (CCOO Cataluña)"
+          },
+          "url": "https://www.ccoo.cat/noticies/els-teus-drets-laborals-el-29n/",
+          "style": "primary"
+        },
+        {
+          "label": {
+            "ca": "Informació oficial per votar (Generalitat)",
+            "es": "Información oficial para votar (Generalitat)"
+          },
+          "url": "https://eleccions.gencat.cat/ca/eleccions-generals-29n/vot-presencial-",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "Convocatòria de les eleccions al BOE",
+            "es": "Convocatoria de las elecciones en el BOE"
+          },
+          "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20742",
+          "style": "outline"
+        }
+      ],
+      "tags": [
+        "29n",
+        "eleccions generals",
+        "elecciones generales",
+        "29 novembre 2026",
+        "29 noviembre 2026",
+        "votacio",
+        "votación",
+        "permisos",
+        "permis retribuit",
+        "permiso retribuido",
+        "jornada electoral",
+        "mesa electoral",
+        "interventor",
+        "apoderat",
+        "justificant",
+        "intranet",
+        "circuit permisos",
+        "csapg",
+        "sant camil",
+        "hrsc",
+        "ccoo"
+      ]
+    },
+    {
+      "id": "increment-retributiu-2027-siscat-csapg",
+      "contentType": "communication",
+      "date": "2026-11-18",
+      "category": "negociadora",
+      "source": "ccoo",
+      "title": {
+        "ca": "Increment retributiu del 4,5% per al 2027: què implica per al personal del CSAPG?",
+        "es": "Incremento retributivo del 4,5% para 2027: ¿qué implica para el personal del CSAPG?"
+      },
+      "intro": {
+        "ca": "El BOE ha publicat el Reial decret llei 37/2026, que preveu un increment retributiu global màxim del 4,5% per al sector públic, amb efectes de l’1 de gener de 2027. Al CSAPG, la seva aplicació s’haurà de concretar en la negociació del conveni SISCAT, de manera que no serà immediata.",
+        "es": "El BOE ha publicado el Real Decreto-ley 37/2026, que prevé un incremento retributivo global máximo del 4,5% para el sector público, con efectos desde el 1 de enero de 2027. En el CSAPG, su aplicación deberá concretarse en la negociación del convenio SISCAT, por lo que no será inmediata."
+      },
+      "sections": [
+        {
+          "title": {
+            "ca": "Què s’ha aprovat?",
+            "es": "¿Qué se ha aprobado?"
+          },
+          "bullets": {
+            "ca": [
+              "El 18 de novembre de 2026 s’ha publicat al BOE el Reial decret llei 37/2026, de 17 de novembre.",
+              "La norma estableix per al 2027 un increment retributiu global màxim del 4,5% respecte de les retribucions vigents a 31 de desembre de 2026, amb efectes econòmics de l’1 de gener de 2027.",
+              "Es tracta d’una disposició bàsica per al sector públic estatal, autonòmic i local. Forma part de l’Acord marc 2025–2028, signat també per CCOO."
+            ],
+            "es": [
+              "El 18 de noviembre de 2026 se ha publicado en el BOE el Real Decreto-ley 37/2026, de 17 de noviembre.",
+              "La norma establece para 2027 un incremento retributivo global máximo del 4,5% respecto a las retribuciones vigentes a 31 de diciembre de 2026, con efectos económicos desde el 1 de enero de 2027.",
+              "Se trata de una disposición básica para el sector público estatal, autonómico y local. Forma parte del Acuerdo marco 2025–2028, firmado también por CCOO."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "I al CSAPG i al SISCAT, quan es cobrarà?",
+            "es": "¿Y en el CSAPG y el SISCAT, cuándo se cobrará?"
+          },
+          "bullets": {
+            "ca": [
+              "Al nostre àmbit no hem de confondre l’aprovació del reial decret amb l’actualització immediata de les nòmines del conveni SISCAT. Caldrà acordar-ne i concretar-ne l’aplicació a la mesa negociadora corresponent, com ja es va fer amb els increments de 2025 i 2026.",
+              "Això pot comportar que la pujada no es reflecteixi en les primeres nòmines de 2027. Encara no hi ha una data d’abonament confirmada per al CSAPG.",
+              "CCOO defensarà que l’aplicació es faci amb efectes retroactius des de l’1 de gener de 2027 i que s’abonin tots els endarreriments que corresponguin, com s’ha fet en ocasions anteriors."
+            ],
+            "es": [
+              "En nuestro ámbito no hay que confundir la aprobación del real decreto con una actualización inmediata de las nóminas del convenio SISCAT. Será necesario acordar y concretar su aplicación en la mesa negociadora correspondiente, como se hizo con los incrementos de 2025 y 2026.",
+              "Esto puede hacer que la subida no se refleje en las primeras nóminas de 2027. Todavía no hay una fecha de pago confirmada para el CSAPG.",
+              "CCOO defenderá que se aplique con efectos retroactivos desde el 1 de enero de 2027 y que se abonen todos los atrasos correspondientes, como en ocasiones anteriores."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Què passa amb el 0,5% addicional del 2026?",
+            "es": "¿Qué ocurre con el 0,5% adicional de 2026?"
+          },
+          "bullets": {
+            "ca": [
+              "L’increment addicional i consolidable del 0,5% del 2026 depèn que la variació de l’IPC de tot el 2026 sigui igual o superior a l’1,5%. Encara no es pot donar per activat.",
+              "Si es compleix la condició, la norma estatal preveu abonar-lo durant el primer trimestre de 2027, amb efectes des de l’1 de gener de 2026, i incorporar-lo a la base de càlcul del 2027.",
+              "L’acord parcial SISCAT signat al gener de 2026 ja preveu aquest 0,5% condicionat a l’IPC. La seva materialització i els imports concrets s’hauran de confirmar."
+            ],
+            "es": [
+              "El incremento adicional y consolidable del 0,5% de 2026 depende de que la variación del IPC de todo 2026 sea igual o superior al 1,5%. Todavía no puede darse por activado.",
+              "Si se cumple la condición, la norma estatal prevé abonarlo durante el primer trimestre de 2027, con efectos desde el 1 de enero de 2026, e incorporarlo a la base de cálculo de 2027.",
+              "El acuerdo parcial SISCAT firmado en enero de 2026 ya contempla este 0,5% condicionado al IPC. Su aplicación y los importes concretos deberán confirmarse."
+            ]
+          }
+        }
+      ],
+      "sourceNote": {
+        "ca": "Informació sindical de CCOO Sant Camil amb base en el Reial decret llei 37/2026 (BOE de 18/11/2026), el Reial decret llei 14/2025 i l’acord parcial d’increments 2025–2026 del SISCAT (gener de 2026). El 4,5% estatal és un increment global màxim: l’aplicació concreta al conveni SISCAT està pendent de negociació i no s’ha anunciat cap data de nòmina.",
+        "es": "Información sindical de CCOO Sant Camil basada en el Real Decreto-ley 37/2026 (BOE de 18/11/2026), el Real Decreto-ley 14/2025 y el acuerdo parcial de incrementos 2025–2026 del SISCAT (enero de 2026). El 4,5% estatal es un incremento global máximo: la aplicación concreta al convenio SISCAT está pendiente de negociación y no se ha anunciado fecha de nómina."
+      },
+      "actions": [
+        {
+          "label": {
+            "ca": "Consultar el reial decret llei al BOE",
+            "es": "Consultar el real decreto-ley en el BOE"
+          },
+          "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-24119",
+          "style": "primary"
+        },
+        {
+          "label": {
+            "ca": "Acord parcial SISCAT 2025–2026 (CCOO)",
+            "es": "Acuerdo parcial SISCAT 2025–2026 (CCOO)"
+          },
+          "url": "https://www.ccoo.cat/sanitat/noticies/acord-parcial-sobre-els-increments-retributius-dels-anys-2025-i-2026-del-conveni-siscat/",
+          "style": "outline"
+        }
+      ],
+      "tags": [
+        "increment salarial",
+        "increment retributiu",
+        "4,5%",
+        "2027",
+        "0,5%",
+        "2026",
+        "reial decret llei 37/2026",
+        "BOE-A-2026-24119",
+        "IPC",
+        "endarreriments",
+        "atrasos",
+        "efectes retroactius",
+        "siscat",
+        "conveni siscat",
+        "negociadora",
+        "ccoo",
+        "csapg",
+        "sant camil",
+        "nòmina",
+        "nómina",
+        "sector públic"
+      ]
+    },
     {
       "id": "serveis-minims-hrsc-11n-2026",
       "contentType": "communication",
