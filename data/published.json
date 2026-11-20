@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-20.1",
+  "version": "2026-11-20.2",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
@@ -3615,20 +3615,20 @@
         "es": "Publicadas las listas provisionales de las convocatorias internas del CSAPG"
       },
       "intro": {
-        "ca": "Ja es poden consultar les relacions provisionals de persones admeses i excloses, les puntuacions i els motius d’exclusió de cinc categories professionals. CCOO ha organitzat els 9 PDF oficials i un índex de 69 convocatòries per facilitar-ne la consulta.",
-        "es": "Ya pueden consultarse las relaciones provisionales de personas admitidas y excluidas, las puntuaciones y los motivos de exclusión de cinco categorías profesionales. CCOO ha organizado los 9 PDF oficiales y un índice de 69 convocatorias para facilitar su consulta."
+        "ca": "Ja es poden consultar les relacions provisionals d'admissió, exclusió i puntuació de cinc categories professionals. Tens dos accessos diferenciats: el cercador de 69 convocatòries i els enllaços directes a les carpetes de Google Drive, sense passos intermedis.",
+        "es": "Ya pueden consultarse las listas provisionales de admisión, exclusión y puntuación de cinco categorías profesionales. Tienes dos accesos diferenciados: el buscador de 69 convocatorias y los enlaces directos a las carpetas de Google Drive, sin pasos intermedios."
       },
       "bullets": {
         "ca": [
           "Categories incloses: infermeria, auxiliar d’infermeria, diagnòstic per la imatge, portalliteres i teràpia ocupacional.",
           "Les llistes corresponen a augment de jornada/canvi de categoria i a segona ronda de canvi de torn/servei, segons cada convocatòria.",
-          "Consulta el codi de la plaça per obrir la caràtula original i el PDF amb la puntuació; l’índex indica la pàgina on comença cada convocatòria.",
+          "Dues vies de consulta: cerca pel codi de la plaça o obre directament a Google Drive la carpeta de la teva categoria (amb els resultats de 2a ronda i augment de jornada separats).",
           "Comprova si constes com a admès/a o exclòs/a, la puntuació atorgada i el codi d’exclusió abans de presentar una esmena o al·legació."
         ],
         "es": [
           "Categorías incluidas: enfermería, auxiliar de enfermería, diagnóstico por la imagen, celadores/as y terapia ocupacional.",
           "Las listas corresponden a ampliación de jornada/cambio de categoría y a segunda ronda de cambio de turno/servicio, según cada convocatoria.",
-          "Busca el código de plaza para abrir la carátula original y el PDF con la puntuación; el índice señala la página en la que comienza cada convocatoria.",
+          "Dos accesos independientes: busca por el código de plaza o abre directamente en Google Drive la carpeta de tu categoría (con los resultados de segunda ronda y ampliación de jornada separados).",
           "Comprueba la admisión o exclusión, la puntuación asignada y el código de exclusión antes de presentar una subsanación o alegación."
         ]
       },
@@ -3719,24 +3719,64 @@
       "actions": [
         {
           "label": {
-            "ca": "Consultar per codi (69 convocatòries)",
-            "es": "Consultar por código (69 convocatorias)"
+            "ca": "🔎 Cercar per codi",
+            "es": "🔎 Buscar por código"
           },
-          "url": "https://ccoocsapg.github.io/app/resultats-convocatories-2026.html",
+          "url": "https://ccoocsapg.github.io/app/resultats-convocatories-2026.html#buscador",
           "style": "primary"
         },
         {
           "label": {
-            "ca": "Veure els documents a Drive",
-            "es": "Ver los documentos en Drive"
+            "ca": "📁 Drive · Infermeria",
+            "es": "📁 Drive · Enfermería"
           },
-          "url": "https://drive.google.com/drive/folders/1yVHiaTXm1X-0YL1uGPrURqRRcySK-0Cq",
+          "url": "https://drive.google.com/drive/folders/1Ttpa_AKnb3iQfmjbQ1Q7ckeNKPRwiITn",
           "style": "outline"
         },
         {
           "label": {
-            "ca": "Presentar al·legació",
-            "es": "Presentar alegación"
+            "ca": "📁 Drive · Auxiliar d’infermeria",
+            "es": "📁 Drive · Auxiliar de enfermería"
+          },
+          "url": "https://drive.google.com/drive/folders/1BS8HHk7io2o8x_B8c-DdqEvY3bPn4HN0",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "📁 Drive · Diagnòstic per la imatge",
+            "es": "📁 Drive · Diagnóstico por la imagen"
+          },
+          "url": "https://drive.google.com/drive/folders/1C4k-Oh1L2BnvdnX0TqQsp3uRe1rrubWy",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "📁 Drive · Portalliteres",
+            "es": "📁 Drive · Celadores/as"
+          },
+          "url": "https://drive.google.com/drive/folders/1lV4dTynt3zTsiD53ss59pe08kUpMU02T",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "📁 Drive · Teràpia ocupacional",
+            "es": "📁 Drive · Terapia ocupacional"
+          },
+          "url": "https://drive.google.com/drive/folders/1QsPw6lstQT2yHTJhzZDCsgTh7n7xLdWa",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "📂 Totes les carpetes",
+            "es": "📂 Todas las carpetas"
+          },
+          "url": "https://ccoocsapg.github.io/app/resultats-convocatories-2026.html#carpetes",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "✉️ Presentar al·legació",
+            "es": "✉️ Presentar alegación"
           },
           "url": "mailto:convocatories@csapg.cat",
           "style": "outline"
