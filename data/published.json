@@ -1,10 +1,313 @@
 {
-  "version": "2026-11-18.2",
+  "version": "2026-11-20.1",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
   },
   "documents": [
+    {
+      "id": "csapg-resultats-provisionals-2026-inf-pc",
+      "category": "convocatories",
+      "date": "2026-11-19",
+      "status": "official",
+      "driveId": "11cH7VZE_ZEe19CKQphhfoxNzzRe_AAwv",
+      "title": {
+        "ca": "Llista provisional · Infermeria · Augment de jornada / canvi de categoria · 19/11/2026",
+        "es": "Lista provisional · Enfermería · Ampliación de jornada / cambio de categoría · 19/11/2026"
+      },
+      "desc": {
+        "ca": "Document oficial del CSAPG amb les persones admeses i excloses, puntuacions i motius d’exclusió per a 17 convocatòries. Termini d’al·legacions: 10 dies hàbils des de l’endemà de la publicació.",
+        "es": "Documento oficial del CSAPG con personas admitidas y excluidas, puntuaciones y motivos de exclusión para 17 convocatorias. Plazo de alegaciones: 10 días hábiles desde el día siguiente a la publicación."
+      },
+      "tags": [
+        "resultats provisionals 2026",
+        "llista provisional 19 novembre",
+        "convocatories internes",
+        "puntuacio",
+        "admesos",
+        "exclosos",
+        "alegacions",
+        "augment jornada canvi categoria",
+        "infermeria",
+        "INF_SDI_HRSC_TT_10_2026",
+        "INF_HSAA_HOSP_TT_29_2026",
+        "INF_HRSC_URG_TT_17_2026",
+        "INF_HRSC_URG_TN_18_2026",
+        "INF_HRSC_SOCIO_TT_20_2026",
+        "INF_HRSC_SOCIO_TN_21_2026",
+        "INF_HRSC_SOCIO_GER_TT_22_2026",
+        "INF_HRSC_REA_TT_25_2026",
+        "INF_HRSC_HOSP_TT_13_2026",
+        "INF_HRSC_HOSP_TT-TN_14_2026",
+        "INF_HRSC_HOSP_TN_15_2026",
+        "INF_HRSC_HOSP_TM_11_2026",
+        "INF_HRSC_HOSP_TM-TT_12_2026",
+        "INF_HCAP_URG_TT_05_2026",
+        "INF_HCAP_URG_TN_06_2026",
+        "INF_HCAP_HOSP_TN_03_2026",
+        "INF_HCAP_BQ_TT_08_2026"
+      ]
+    },
+    {
+      "id": "csapg-resultats-provisionals-2026-inf-2a",
+      "category": "convocatories",
+      "date": "2026-11-19",
+      "status": "official",
+      "driveId": "1RnR740F5c9Wb-vXlfC3R237hR2-qWkrR",
+      "title": {
+        "ca": "Llista provisional · Infermeria · 2a ronda de canvi de torn/servei · 19/11/2026",
+        "es": "Lista provisional · Enfermería · 2.ª ronda de cambio de turno/servicio · 19/11/2026"
+      },
+      "desc": {
+        "ca": "Document oficial del CSAPG amb les persones admeses i excloses, puntuacions i motius d’exclusió per a 13 convocatòries. Termini d’al·legacions: 10 dies hàbils des de l’endemà de la publicació.",
+        "es": "Documento oficial del CSAPG con personas admitidas y excluidas, puntuaciones y motivos de exclusión para 13 convocatorias. Plazo de alegaciones: 10 días hábiles desde el día siguiente a la publicación."
+      },
+      "tags": [
+        "resultats provisionals 2026",
+        "llista provisional 19 novembre",
+        "convocatories internes",
+        "puntuacio",
+        "admesos",
+        "exclosos",
+        "alegacions",
+        "segona ronda canvi torn servei",
+        "infermeria",
+        "INF_HSAA_URG_TT_41_2026",
+        "INF_HSAA_URG_TT-TN_46_2026",
+        "INF_HSAA_SOCIO_TN_43_2026",
+        "INF_HSAA_HOSP_TM_42_2026",
+        "INF_HSAA_DIALISI_TM-TT_44_2026",
+        "INF_HSAA_BQ_TT_40_2026",
+        "INF_HSAA_BQ_TM_39_2026",
+        "INF_HRSC_UCI_TT_37_2026",
+        "INF_HRSC_UCI_TN_38_2026",
+        "INF_HRSC_BQ_TT_45_2026",
+        "INF_HRSC_BQ_TT_36_2026",
+        "INF_HCAP_REA_TT_35_2026",
+        "INF_HCAP_HOSP_TT_34_2026"
+      ]
+    },
+    {
+      "id": "csapg-resultats-provisionals-2026-aux-pc",
+      "category": "convocatories",
+      "date": "2026-11-19",
+      "status": "official",
+      "driveId": "1CTaL40rWs1oeZ733B7cpIGDwbdzDt0tk",
+      "title": {
+        "ca": "Llista provisional · Auxiliar d’infermeria (TCAI) · Augment de jornada / canvi de categoria · 19/11/2026",
+        "es": "Lista provisional · Auxiliar de enfermería (TCAE) · Ampliación de jornada / cambio de categoría · 19/11/2026"
+      },
+      "desc": {
+        "ca": "Document oficial del CSAPG amb les persones admeses i excloses, puntuacions i motius d’exclusió per a 23 convocatòries. Termini d’al·legacions: 10 dies hàbils des de l’endemà de la publicació.",
+        "es": "Documento oficial del CSAPG con personas admitidas y excluidas, puntuaciones y motivos de exclusión para 23 convocatorias. Plazo de alegaciones: 10 días hábiles desde el día siguiente a la publicación."
+      },
+      "tags": [
+        "resultats provisionals 2026",
+        "llista provisional 19 novembre",
+        "convocatories internes",
+        "puntuacio",
+        "admesos",
+        "exclosos",
+        "alegacions",
+        "augment jornada canvi categoria",
+        "auxiliar d’infermeria (tcai)",
+        "AUXINF_HSAA_HOSP_TT_27_2026",
+        "AUXINF_HSAA_HOSP_TN_28_2026",
+        "AUXINF_HRSC_URG_TT_141_2026",
+        "AUXINF_HRSC_URG_TN_151_2026",
+        "AUXINF_HRSC_URG_TM_131_2026",
+        "AUXINF_HRSC_UCI_TM_13_2026",
+        "AUXINF_HRSC_SOCIO_TT_19_2026",
+        "AUXINF_HRSC_SOCIO_TN_20_2026",
+        "AUXINF_HRSC_SOCIO_TM_16_2026",
+        "AUXINF_HRSC_SOCIO_TM-TT_18_2026",
+        "AUXINF_HRSC_SOCIO_TM-TT_17_2026",
+        "AUXINF_HRSC_HOSP_TT_11_2026",
+        "AUXINF_HRSC_HOSP_TN_12_2026",
+        "AUXINF_HRSC_HOSP_TM_10_2026",
+        "AUXINF_HRSC_AQ_TT_22_2026",
+        "AUXINF_HCAP_URG_TT_06_2026",
+        "AUXINF_HCAP_URG_TM_05_2026",
+        "AUXINF_HCAP_HOSP_TT_03_2026",
+        "AUXINF_HCAP_HOSP_TN_04_2026",
+        "AUXINF_HCAP_HOSP_TM_02_2026",
+        "AUXINF_HCAP_AQ_TT_29_2026",
+        "AUXINF_HCAP_AQ_TN_30_2026",
+        "AUXINF_HCAP_AQ_TM-TT_09_2026"
+      ]
+    },
+    {
+      "id": "csapg-resultats-provisionals-2026-aux-2a",
+      "category": "convocatories",
+      "date": "2026-11-19",
+      "status": "official",
+      "driveId": "1iwRbm1SOZKgq_EhqFnNo81LMYsZ3xJHD",
+      "title": {
+        "ca": "Llista provisional · Auxiliar d’infermeria (TCAI) · 2a ronda de canvi de torn/servei · 19/11/2026",
+        "es": "Lista provisional · Auxiliar de enfermería (TCAE) · 2.ª ronda de cambio de turno/servicio · 19/11/2026"
+      },
+      "desc": {
+        "ca": "Document oficial del CSAPG amb les persones admeses i excloses, puntuacions i motius d’exclusió per a 3 convocatòries. Termini d’al·legacions: 10 dies hàbils des de l’endemà de la publicació.",
+        "es": "Documento oficial del CSAPG con personas admitidas y excluidas, puntuaciones y motivos de exclusión para 3 convocatorias. Plazo de alegaciones: 10 días hábiles desde el día siguiente a la publicación."
+      },
+      "tags": [
+        "resultats provisionals 2026",
+        "llista provisional 19 novembre",
+        "convocatories internes",
+        "puntuacio",
+        "admesos",
+        "exclosos",
+        "alegacions",
+        "segona ronda canvi torn servei",
+        "auxiliar d’infermeria (tcai)",
+        "AUXINF_HSAA_AQ_TT_33_2026",
+        "AUXINF_HRSC_PARTS_TT_32_2026",
+        "AUXINF_HCAP_URG_TN_31_2026"
+      ]
+    },
+    {
+      "id": "csapg-resultats-provisionals-2026-sdi-pc",
+      "category": "convocatories",
+      "date": "2026-11-19",
+      "status": "official",
+      "driveId": "1yak19xQ5v7FUjYiyomtD3fpQNTK3QflC",
+      "title": {
+        "ca": "Llista provisional · Imatge per al diagnòstic i medicina nuclear (SDI) · Augment de jornada / canvi de categoria · 19/11/2026",
+        "es": "Lista provisional · Imagen para el diagnóstico y medicina nuclear (SDI) · Ampliación de jornada / cambio de categoría · 19/11/2026"
+      },
+      "desc": {
+        "ca": "Document oficial del CSAPG amb les persones admeses i excloses, puntuacions i motius d’exclusió per a 4 convocatòries. Termini d’al·legacions: 10 dies hàbils des de l’endemà de la publicació.",
+        "es": "Documento oficial del CSAPG con personas admitidas y excluidas, puntuaciones y motivos de exclusión para 4 convocatorias. Plazo de alegaciones: 10 días hábiles desde el día siguiente a la publicación."
+      },
+      "tags": [
+        "resultats provisionals 2026",
+        "llista provisional 19 novembre",
+        "convocatories internes",
+        "puntuacio",
+        "admesos",
+        "exclosos",
+        "alegacions",
+        "augment jornada canvi categoria",
+        "imatge per al diagnòstic i medicina nuclear (sdi)",
+        "TS_SDI_HRSC_TT_05_2026",
+        "TS_SDI_HRSC_TN_06_2026",
+        "TS_SDI_HCAP_TT_02_2026",
+        "TS_SDI_HCAP_TN_03_2026"
+      ]
+    },
+    {
+      "id": "csapg-resultats-provisionals-2026-sdi-2a",
+      "category": "convocatories",
+      "date": "2026-11-19",
+      "status": "official",
+      "driveId": "1MLdHlLfv9Ms3XEj4I-_AX706_WBew_FE",
+      "title": {
+        "ca": "Llista provisional · Imatge per al diagnòstic i medicina nuclear (SDI) · 2a ronda de canvi de torn/servei · 19/11/2026",
+        "es": "Lista provisional · Imagen para el diagnóstico y medicina nuclear (SDI) · 2.ª ronda de cambio de turno/servicio · 19/11/2026"
+      },
+      "desc": {
+        "ca": "Document oficial del CSAPG amb les persones admeses i excloses, puntuacions i motius d’exclusió per a 3 convocatòries. Termini d’al·legacions: 10 dies hàbils des de l’endemà de la publicació.",
+        "es": "Documento oficial del CSAPG con personas admitidas y excluidas, puntuaciones y motivos de exclusión para 3 convocatorias. Plazo de alegaciones: 10 días hábiles desde el día siguiente a la publicación."
+      },
+      "tags": [
+        "resultats provisionals 2026",
+        "llista provisional 19 novembre",
+        "convocatories internes",
+        "puntuacio",
+        "admesos",
+        "exclosos",
+        "alegacions",
+        "segona ronda canvi torn servei",
+        "imatge per al diagnòstic i medicina nuclear (sdi)",
+        "TS_SDI_HRSC_TT_12_2026",
+        "TS_SDI_HRSC_TM_13_2026",
+        "TS_SDI_HCAP_TT_11_2026"
+      ]
+    },
+    {
+      "id": "csapg-resultats-provisionals-2026-port-pc",
+      "category": "convocatories",
+      "date": "2026-11-19",
+      "status": "official",
+      "driveId": "1KpytWAI-g1d5AuDUhmMlxngp6Yp6PEx_",
+      "title": {
+        "ca": "Llista provisional · Portalliteres · Augment de jornada / canvi de categoria · 19/11/2026",
+        "es": "Lista provisional · Celadores/as · Ampliación de jornada / cambio de categoría · 19/11/2026"
+      },
+      "desc": {
+        "ca": "Document oficial del CSAPG amb les persones admeses i excloses, puntuacions i motius d’exclusió per a 3 convocatòries. Termini d’al·legacions: 10 dies hàbils des de l’endemà de la publicació.",
+        "es": "Documento oficial del CSAPG con personas admitidas y excluidas, puntuaciones y motivos de exclusión para 3 convocatorias. Plazo de alegaciones: 10 días hábiles desde el día siguiente a la publicación."
+      },
+      "tags": [
+        "resultats provisionals 2026",
+        "llista provisional 19 novembre",
+        "convocatories internes",
+        "puntuacio",
+        "admesos",
+        "exclosos",
+        "alegacions",
+        "augment jornada canvi categoria",
+        "portalliteres",
+        "PORT_HRSC_TT_04_2026",
+        "PORT_HRSC_TT-TN_05_2026",
+        "PORT_HRSC_TM-TT_03_2026"
+      ]
+    },
+    {
+      "id": "csapg-resultats-provisionals-2026-port-2a",
+      "category": "convocatories",
+      "date": "2026-11-19",
+      "status": "official",
+      "driveId": "1pKjINsdHIG8F-XXIEYT34mrHlVoPgbIU",
+      "title": {
+        "ca": "Llista provisional · Portalliteres · 2a ronda de canvi de torn/servei · 19/11/2026",
+        "es": "Lista provisional · Celadores/as · 2.ª ronda de cambio de turno/servicio · 19/11/2026"
+      },
+      "desc": {
+        "ca": "Document oficial del CSAPG amb les persones admeses i excloses, puntuacions i motius d’exclusió per a 1 convocatòries. Termini d’al·legacions: 10 dies hàbils des de l’endemà de la publicació.",
+        "es": "Documento oficial del CSAPG con personas admitidas y excluidas, puntuaciones y motivos de exclusión para 1 convocatorias. Plazo de alegaciones: 10 días hábiles desde el día siguiente a la publicación."
+      },
+      "tags": [
+        "resultats provisionals 2026",
+        "llista provisional 19 novembre",
+        "convocatories internes",
+        "puntuacio",
+        "admesos",
+        "exclosos",
+        "alegacions",
+        "segona ronda canvi torn servei",
+        "portalliteres",
+        "PORT_HCAP_TT_06_2026"
+      ]
+    },
+    {
+      "id": "csapg-resultats-provisionals-2026-to-pc",
+      "category": "convocatories",
+      "date": "2026-11-19",
+      "status": "official",
+      "driveId": "17hG4qmn1TOUSqfumgvprPMgPGkuF7mgq",
+      "title": {
+        "ca": "Llista provisional · Teràpia ocupacional · Augment de jornada / canvi de categoria · 19/11/2026",
+        "es": "Lista provisional · Terapia ocupacional · Ampliación de jornada / cambio de categoría · 19/11/2026"
+      },
+      "desc": {
+        "ca": "Document oficial del CSAPG amb les persones admeses i excloses, puntuacions i motius d’exclusió per a 2 convocatòries. Termini d’al·legacions: 10 dies hàbils des de l’endemà de la publicació.",
+        "es": "Documento oficial del CSAPG con personas admitidas y excluidas, puntuaciones y motivos de exclusión para 2 convocatorias. Plazo de alegaciones: 10 días hábiles desde el día siguiente a la publicación."
+      },
+      "tags": [
+        "resultats provisionals 2026",
+        "llista provisional 19 novembre",
+        "convocatories internes",
+        "puntuacio",
+        "admesos",
+        "exclosos",
+        "alegacions",
+        "augment jornada canvi categoria",
+        "teràpia ocupacional",
+        "TO_HSAA_TM_02_2026",
+        "TO_HRSC_TM_01_2026"
+      ]
+    },
     {
       "id": "pacte-vacances-festius-hrsc-2027",
       "category": "pactes",
@@ -3299,6 +3602,168 @@
         "it",
         "premis fidelitzacio",
         "csapg"
+      ]
+    },
+    {
+      "id": "csapg-llistes-provisionals-2026-11-20",
+      "contentType": "communication",
+      "date": "2026-11-20",
+      "category": "convocatories",
+      "source": "summary",
+      "title": {
+        "ca": "Publicades les llistes provisionals de les convocatòries internes CSAPG",
+        "es": "Publicadas las listas provisionales de las convocatorias internas del CSAPG"
+      },
+      "intro": {
+        "ca": "Ja es poden consultar les relacions provisionals de persones admeses i excloses, les puntuacions i els motius d’exclusió de cinc categories professionals. CCOO ha organitzat els 9 PDF oficials i un índex de 69 convocatòries per facilitar-ne la consulta.",
+        "es": "Ya pueden consultarse las relaciones provisionales de personas admitidas y excluidas, las puntuaciones y los motivos de exclusión de cinco categorías profesionales. CCOO ha organizado los 9 PDF oficiales y un índice de 69 convocatorias para facilitar su consulta."
+      },
+      "bullets": {
+        "ca": [
+          "Categories incloses: infermeria, auxiliar d’infermeria, diagnòstic per la imatge, portalliteres i teràpia ocupacional.",
+          "Les llistes corresponen a augment de jornada/canvi de categoria i a segona ronda de canvi de torn/servei, segons cada convocatòria.",
+          "Consulta el codi de la plaça per obrir la caràtula original i el PDF amb la puntuació; l’índex indica la pàgina on comença cada convocatòria.",
+          "Comprova si constes com a admès/a o exclòs/a, la puntuació atorgada i el codi d’exclusió abans de presentar una esmena o al·legació."
+        ],
+        "es": [
+          "Categorías incluidas: enfermería, auxiliar de enfermería, diagnóstico por la imagen, celadores/as y terapia ocupacional.",
+          "Las listas corresponden a ampliación de jornada/cambio de categoría y a segunda ronda de cambio de turno/servicio, según cada convocatoria.",
+          "Busca el código de plaza para abrir la carátula original y el PDF con la puntuación; el índice señala la página en la que comienza cada convocatoria.",
+          "Comprueba la admisión o exclusión, la puntuación asignada y el código de exclusión antes de presentar una subsanación o alegación."
+        ]
+      },
+      "sections": [
+        {
+          "title": {
+            "ca": "Infermeria · 30 convocatòries",
+            "es": "Enfermería · 30 convocatorias"
+          },
+          "bullets": {
+            "ca": [
+              "17 d’augment de jornada/canvi de categoria i 13 de segona ronda."
+            ],
+            "es": [
+              "17 de ampliación de jornada/cambio de categoría y 13 de segunda ronda."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Auxiliar d’infermeria · 26 convocatòries",
+            "es": "Auxiliar de enfermería · 26 convocatorias"
+          },
+          "bullets": {
+            "ca": [
+              "23 d’augment de jornada/canvi de categoria i 3 de segona ronda."
+            ],
+            "es": [
+              "23 de ampliación de jornada/cambio de categoría y 3 de segunda ronda."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Diagnòstic per la imatge · 7 convocatòries",
+            "es": "Diagnóstico por la imagen · 7 convocatorias"
+          },
+          "bullets": {
+            "ca": [
+              "4 d’augment de jornada/canvi de categoria i 3 de segona ronda."
+            ],
+            "es": [
+              "4 de ampliación de jornada/cambio de categoría y 3 de segunda ronda."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Portalliteres · 4 convocatòries",
+            "es": "Celadores/as · 4 convocatorias"
+          },
+          "bullets": {
+            "ca": [
+              "3 d’augment de jornada/canvi de categoria i 1 de segona ronda."
+            ],
+            "es": [
+              "3 de ampliación de jornada/cambio de categoría y 1 de segunda ronda."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Teràpia ocupacional · 2 convocatòries",
+            "es": "Terapia ocupacional · 2 convocatorias"
+          },
+          "bullets": {
+            "ca": [
+              "2 convocatòries d’augment de jornada/canvi de categoria."
+            ],
+            "es": [
+              "2 convocatorias de ampliación de jornada/cambio de categoría."
+            ]
+          }
+        }
+      ],
+      "deadline": {
+        "ca": "Al·legacions: 10 dies hàbils a comptar de l’endemà de la publicació de la llista corresponent.",
+        "es": "Alegaciones: 10 días hábiles desde el día siguiente a la publicación de la lista correspondiente."
+      },
+      "warning": {
+        "ca": "Les relacions són provisionals i no constitueixen una adjudicació de plaça. La data del document és el 19/11/2026; el còmput exacte del termini depèn de la publicació efectiva.",
+        "es": "Las relaciones son provisionales y no constituyen una adjudicación de plaza. La fecha del documento es el 19/11/2026; el cómputo exacto del plazo depende de su publicación efectiva."
+      },
+      "sourceNote": {
+        "ca": "Documents oficials del CSAPG datats el 19/11/2026. L’índex és una eina informativa de CCOO i no substitueix els PDF íntegres ni el procediment ID 6455.",
+        "es": "Documentos oficiales del CSAPG fechados el 19/11/2026. El índice es una herramienta informativa de CCOO y no sustituye los PDF completos ni el procedimiento ID 6455."
+      },
+      "actions": [
+        {
+          "label": {
+            "ca": "Consultar per codi (69 convocatòries)",
+            "es": "Consultar por código (69 convocatorias)"
+          },
+          "url": "https://ccoocsapg.github.io/app/resultats-convocatories-2026.html",
+          "style": "primary"
+        },
+        {
+          "label": {
+            "ca": "Veure els documents a Drive",
+            "es": "Ver los documentos en Drive"
+          },
+          "url": "https://drive.google.com/drive/folders/1yVHiaTXm1X-0YL1uGPrURqRRcySK-0Cq",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "Presentar al·legació",
+            "es": "Presentar alegación"
+          },
+          "url": "mailto:convocatories@csapg.cat",
+          "style": "outline"
+        }
+      ],
+      "tags": [
+        "convocatories",
+        "llistes provisionals",
+        "listados provisionales",
+        "20 novembre 2026",
+        "19 novembre 2026",
+        "69 convocatories",
+        "admesos",
+        "exclosos",
+        "puntuacions",
+        "puntuaciones",
+        "reclamacions",
+        "allegacions",
+        "procediment 6455",
+        "infermeria",
+        "tcae",
+        "tcai",
+        "sdi",
+        "portalliteres",
+        "terapia ocupacional",
+        "canvi torn",
+        "augment jornada"
       ]
     }
   ]
