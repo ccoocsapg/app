@@ -13,7 +13,23 @@ main{max-width:1120px;margin:0 auto;padding:27px 18px 65px}.eyebrow{color:#bd251
 .controls{background:#fff;padding:16px;border:1px solid #e2e5ea;border-radius:16px;display:grid;grid-template-columns:minmax(180px,1.5fr) repeat(3,minmax(135px,1fr));gap:12px;position:sticky;top:0;z-index:3;box-shadow:0 5px 18px #1111110a}.ctrl label{font-size:12px;font-weight:700;display:block;margin:0 0 6px;color:#4f5c6c}.ctrl input,.ctrl select{width:100%;border:1px solid #d9dfe6;padding:11px;border-radius:9px;font:inherit;color:#233345;background:white;min-width:0}
 .result-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin:22px 0 13px}.result-head h2{font-size:17px;margin:0}.result-head small{color:#627184}
 .list{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:12px}.item{background:#fff;border:1px solid #e0e5eb;border-radius:14px;padding:17px;display:flex;flex-direction:column;gap:9px}.item h3{font-size:15px;line-height:1.45;overflow-wrap:anywhere;margin:0;color:#1d3145}.pillrow{display:flex;flex-wrap:wrap;gap:6px}.pill{background:#f0f3f7;border-radius:7px;font-size:11px;padding:5px 7px;color:#435168}.pill.warn{background:#fff2e9;color:#8a3b12}.area{font-size:13px;color:#4f6070;margin:0}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:8px}.actions a{font-size:13px;text-decoration:none;border-radius:9px;padding:10px 12px;border:1px solid #d7dfe6;font-weight:750;background:white}.actions .primary{background:#d52d1d;color:white;border-color:#d52d1d}.empty{display:none;padding:30px;background:white;border-radius:12px;text-align:center;color:#51616c}.footer-note{font-size:12px;color:#6e7a86;margin-top:26px}.back{margin-top:30px;font-size:14px}.back a{color:#bb261c;font-weight:700}
-@media(max-width:830px){.controls{position:static;grid-template-columns:1fr 1fr}.ctrl.search{grid-column:1/-1}}@media(max-width:480px){main{padding:22px 12px 42px}.controls{grid-template-columns:1fr 1fr;padding:12px;gap:10px}.ctrl.category{grid-column:1/-1}.stat{flex:1 0 110px}.actions a{flex:1;text-align:center}.top{padding:14px 12px}}
+.choice-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:22px 0 18px}
+.choice-link{display:flex;align-items:center;gap:12px;text-decoration:none;padding:17px;border:1px solid #dfe3e9;border-radius:15px;background:#fff;box-shadow:0 2px 7px #00000006}
+.choice-link:hover,.choice-link:focus-visible{border-color:#cd493a;outline-offset:3px}
+.choice-icon{font-size:26px;line-height:1}.choice-link strong{display:block;font-size:16px}.choice-link small{display:block;font-size:12px;line-height:1.5;color:#5b6876;margin-top:3px}
+.drive-section{margin:24px 0 34px;scroll-margin-top:18px}.drive-section h2,.search-section-heading{font-size:21px;letter-spacing:-.02em;line-height:1.2;margin:0 0 7px}
+.drive-section>p{font-size:14px;margin:0 0 16px;max-width:690px}
+.drive-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,325px),1fr));gap:12px}
+.drive-card{border:1px solid #e0e5eb;border-radius:15px;background:#fff;padding:17px;display:flex;flex-direction:column;gap:11px}
+.drive-card-top{display:flex;gap:10px;align-items:flex-start}.drive-card-symbol{font-size:26px}
+.drive-card h3{font-size:16px;line-height:1.25;margin:0 0 5px}.drive-card small{display:block;color:#687585;font-size:12px}
+.drive-card-links{display:grid;gap:7px;margin-top:auto}
+.drive-card-links a{display:block;padding:10px 12px;text-decoration:none;font-size:13px;font-weight:700;border-radius:9px;border:1px solid #dfe4e9;background:#f7f8fa;color:#243648}
+.drive-card-links a:hover,.drive-card-links a:focus-visible{border-color:#d12d1e}
+.drive-card-links .drive-cat{background:#d52d1d;color:#fff;border-color:#d52d1d}
+.drive-master{display:inline-block;margin:15px 0 0;font-size:13px;font-weight:750;color:#b62619}
+.search-section-heading{margin:30px 0 13px;scroll-margin-top:18px}
+@media(max-width:830px){.controls{position:static;grid-template-columns:1fr 1fr}.ctrl.search{grid-column:1/-1}}@media(max-width:480px){.choice-row{grid-template-columns:1fr}.choice-link{padding:14px}.drive-card{padding:14px}main{padding:22px 12px 42px}.controls{grid-template-columns:1fr 1fr;padding:12px;gap:10px}.ctrl.category{grid-column:1/-1}.stat{flex:1 0 110px}.actions a{flex:1;text-align:center}.top{padding:14px 12px}}
 </style>
 </head>
 <body>
@@ -22,8 +38,19 @@ main{max-width:1120px;margin:0 auto;padding:27px 18px 65px}.eyebrow{color:#bd251
 <div class="eyebrow" id="eyebrow">Convocatòries internes · 2026</div>
 <h1 id="title">Resultats provisionals d'admissió, exclusió i puntuació</h1>
 <p class="intro" id="intro">Localitza el teu codi de convocatòria i accedeix tant a la caràtula de la plaça com al llistat oficial. Cada resultat indica a quina pàgina del PDF apareix la convocatòria.</p>
+<nav class="choice-row" aria-label="Opcions de consulta">
+<a class="choice-link" href="#carpetes"><span class="choice-icon" aria-hidden="true">📁</span><span><strong id="quickDriveTitle">Accés directe a Google Drive</strong><small id="quickDriveDesc">Tria una categoria i obre la carpeta corresponent</small></span></a>
+<a class="choice-link" href="#buscador"><span class="choice-icon" aria-hidden="true">🔎</span><span><strong id="quickSearchTitle">Cercador de convocatòries</strong><small id="quickSearchDesc">Localitza el teu codi, servei i pàgina del PDF</small></span></a>
+</nav>
 <div class="meta"><div class="stat"><b>69</b><span id="statPlaces">Convocatòries identificades</span></div><div class="stat"><b>5</b><span id="statCats">Categories professionals</span></div><div class="stat"><b>9</b><span id="statPdf">Llistats oficials complets</span></div></div>
 <div class="notice"><strong id="alertHead">Atenció: són llistes provisionals, no adjudicacions definitives.</strong><div id="alertBody">El CSAPG estableix 10 dies hàbils, a comptar de l'endemà de la publicació de cada llista, per esmenar i presentar al·legacions a <a href="mailto:convocatories@csapg.cat">convocatories@csapg.cat</a>. Comprova la puntuació i el motiu d'exclusió indicat en el PDF original.</div></div>
+<section id="carpetes" class="drive-section" aria-labelledby="driveTitle">
+<h2 id="driveTitle">Carpetes de Google Drive per categoria</h2>
+<p id="driveIntro">Pots entrar directament a la carpeta de la teva categoria o anar al tipus de convocatòria que t'interessi. Els documents originals i les llistes provisionals es conserven junts, al mateix lloc.</p>
+<div id="driveCards" class="drive-grid"></div>
+<a id="driveMaster" class="drive-master" href="https://drive.google.com/drive/folders/1yVHiaTXm1X-0YL1uGPrURqRRcySK-0Cq" target="_blank" rel="noopener noreferrer">Veure totes les carpetes a Google Drive ↗</a>
+</section>
+<h2 id="buscador" class="search-section-heading">O bé, cerca una convocatòria concreta</h2>
 <div class="controls">
 <div class="ctrl search"><label id="searchLabel" for="q">Cercar per codi, centre o servei</label><input id="q" type="search" placeholder="Ex. INF_HRSC_HOSP_TM_11_2026" autocomplete="off"></div>
 <div class="ctrl category"><label id="categoryLabel" for="cat">Categoria</label><select id="cat"></select></div>
@@ -51,6 +78,29 @@ var labels={"Infermeria":{es:"Enfermería"},"Auxiliar d'infermeria":{es:"Auxilia
 function catLabel(v){return lang==="es"&&labels[v]?labels[v].es:v}
 function centerLabel(v){return ({HCAP:"Hospital Comarcal de l'Alt Penedès",HRSC:"Hospital Residència Sant Camil",HSAA:"Hospital Sant Antoni Abat"})[v]||v}
 function areaLabel(v){if(lang!=="es")return v;return ({"Hospitalització":"Hospitalización","Urgències":"Urgencias","Bloc quirúrgic":"Bloque quirúrgico","Atenció intermèdia":"Atención intermedia","Àrea quirúrgica":"Área quirúrgica","Àrea de parts":"Área de partos","Infermeria geriàtrica":"Enfermería geriátrica","Diàlisi":"Diálisis","Diagnòstic per la imatge":"Diagnóstico por la imagen","Teràpia ocupacional":"Terapia ocupacional"})[v]||v}
+var driveT={
+ ca:{quickDriveTitle:"Accés directe a Google Drive",quickDriveDesc:"Tria una categoria i obre la carpeta corresponent",quickSearchTitle:"Cercador de convocatòries",quickSearchDesc:"Localitza el teu codi, servei i pàgina del PDF",driveTitle:"Carpetes de Google Drive per categoria",driveIntro:"Pots entrar directament a la carpeta de la teva categoria o anar al tipus de convocatòria que t'interessi. Els documents originals i les llistes provisionals es conserven junts, al mateix lloc.",driveMaster:"Veure totes les carpetes a Google Drive ↗",buscador:"O bé, cerca una convocatòria concreta",folder:"Obrir carpeta de la categoria ↗",round:"1️⃣ 2a ronda · Canvi de torn / servei ↗",increase:"2️⃣ Augment de jornada / Canvi de categoria ↗",count:"convocatòries"},
+ es:{quickDriveTitle:"Acceso directo a Google Drive",quickDriveDesc:"Elige una categoría y abre su carpeta",quickSearchTitle:"Buscador de convocatorias",quickSearchDesc:"Localiza tu código, servicio y página del PDF",driveTitle:"Carpetas de Google Drive por categoría",driveIntro:"Puedes entrar directamente en la carpeta de tu categoría o ir al tipo de convocatoria que te interese. Los documentos originales y las listas provisionales están juntos, en el mismo sitio.",driveMaster:"Ver todas las carpetas en Google Drive ↗",buscador:"O bien, busca una convocatoria concreta",folder:"Abrir carpeta de la categoría ↗",round:"1️⃣ 2.ª ronda · Cambio de turno / servicio ↗",increase:"2️⃣ Ampliación de jornada / Cambio de categoría ↗",count:"convocatorias"}
+};
+var driveFolders=[
+ {emoji:"🩺",ca:"Infermeria",es:"Enfermería",count:30,folder:"1Ttpa_AKnb3iQfmjbQ1Q7ckeNKPRwiITn",ronda:"1Q6FNOTWPPMVztZk-2lerrTEpkzMFovyJ",pc:"1tGcZACdltoP28uCUNaFydyBjwSMifZqK"},
+ {emoji:"👩‍⚕️",ca:"Auxiliar d’infermeria",es:"Auxiliar de enfermería (TCAE)",count:26,folder:"1BS8HHk7io2o8x_B8c-DdqEvY3bPn4HN0",ronda:"1QvIfRy-mitPuATfuM19PMbbBcxfh199l",pc:"1yd8KRpottsldX-X9tEf7vj_QOsZWGZCK"},
+ {emoji:"📷",ca:"Diagnòstic per la imatge",es:"Diagnóstico por la imagen",count:7,folder:"1C4k-Oh1L2BnvdnX0TqQsp3uRe1rrubWy",ronda:"1cBEaKshdff3GJxTlpk3PyFSjowr9TcK8",pc:"1VGkRQNKk6V3aqDqx7exlUJKUE3QhFT9q"},
+ {emoji:"🛏️",ca:"Portalliteres",es:"Celadores/as",count:4,folder:"1lV4dTynt3zTsiD53ss59pe08kUpMU02T",ronda:"1gOILOLUuIT4X6Ad-UJT-VIN9KSZ4nWSs",pc:"1taCpuLZWQuexqpCqvkt9NdRxGQVncgtc"},
+ {emoji:"🧩",ca:"Teràpia ocupacional",es:"Terapia ocupacional",count:2,folder:"1QsPw6lstQT2yHTJhzZDCsgTh7n7xLdWa",pc:"1rbyTza42AKzHiolTM_XGXFpYkHvDAdUO"}
+];
+function drawDriveFolders(){
+ var d=driveT[lang];
+ var linkId=id=>"https://drive.google.com/drive/folders/"+id;
+ var open=' target="_blank" rel="noopener noreferrer"';
+ E("driveCards").innerHTML=driveFolders.map(function(c){
+  return '<article class="drive-card"><div class="drive-card-top"><span class="drive-card-symbol" aria-hidden="true">'+c.emoji+'</span><div><h3>'+esc(c[lang])+'</h3><small>'+c.count+' '+d.count+'</small></div></div>'
+  +'<div class="drive-card-links"><a class="drive-cat" href="'+linkId(c.folder)+'"'+open+'>'+esc(d.folder)+'</a>'
+  +(c.ronda?'<a href="'+linkId(c.ronda)+'"'+open+'>'+esc(d.round)+'</a>':'')
+  +(c.pc?'<a href="'+linkId(c.pc)+'"'+open+'>'+esc(d.increase)+'</a>':'')
+  +'</div></article>';
+ }).join('');
+}
 function refill(){
  var t=T[lang],cat=E("cat").value,proc=E("proc").value,center=E("center").value;
  E("cat").innerHTML='<option value="">'+t.all+'</option>'+Object.keys(labels).map(v=>'<option value="'+esc(v)+'">'+esc(catLabel(v))+'</option>').join("");
@@ -70,7 +120,7 @@ function translate(){
  ["returnLink","eyebrow","title","intro","statPlaces","statCats","statPdf","alertHead","searchLabel","categoryLabel","processLabel","centerLabel","date","source","docLink"].forEach(x=>E(x).textContent=t[x]);
  E("alertBody").innerHTML=esc(t.alertBody)+'<a href="mailto:convocatories@csapg.cat">convocatories@csapg.cat</a>'+esc(t.alertEnd);
  E("ca").classList.toggle("active",lang==="ca");E("es").classList.toggle("active",lang==="es");
- document.documentElement.lang=lang;refill();render();
+ document.documentElement.lang=lang;Object.keys(driveT[lang]).forEach(function(key){var el=E(key);if(el)el.textContent=driveT[lang][key]});refill();drawDriveFolders();render();
 }
 ["q","cat","proc","center"].forEach(x=>E(x).addEventListener(x==="q"?"input":"change",render));
 ["ca","es"].forEach(x=>E(x).addEventListener("click",function(){lang=x;localStorage.setItem("ccoo-csapg-lang",lang);translate()}));
