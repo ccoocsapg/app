@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-20.2",
+  "version": "2026-11-24.1",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
@@ -1479,6 +1479,153 @@
     }
   ],
   "meetings": [
+    {
+      "id": "ampliacio-permisos-dol-naixement-cures-2026-11-24",
+      "contentType": "communication",
+      "date": "2026-11-24",
+      "category": "ccoo",
+      "source": "ccoo",
+      "title": {
+        "ca": "Nous permisos laborals: dol, naixement i cures familiars",
+        "es": "Nuevos permisos laborales: duelo, nacimiento y cuidados familiares"
+      },
+      "intro": {
+        "ca": "El Consell de Ministres ha aprovat el 24 de novembre de 2026 un reial decret llei que amplia els permisos laborals i incorpora nous drets de conciliació. La norma està pendent de publicació al BOE.",
+        "es": "El Consejo de Ministros ha aprobado el 24 de noviembre de 2026 un real decreto-ley que amplía los permisos laborales e incorpora nuevos derechos de conciliación. La norma está pendiente de publicación en el BOE."
+      },
+      "image": "https://images.pexels.com/photos/29372724/pexels-photo-29372724.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "imageAlt": {
+        "ca": "Mans d’una persona cuidadora i una persona gran a casa",
+        "es": "Manos de una persona cuidadora y una persona mayor en casa"
+      },
+      "sections": [
+        {
+          "title": {
+            "ca": "Permís per dol",
+            "es": "Permiso por duelo"
+          },
+          "bullets": {
+            "ca": [
+              "10 dies laborables per defunció del cònjuge, parella de fet o familiars de primer grau de consanguinitat (pares i fills), dins les quatre setmanes posteriors a la defunció.",
+              "3 dies laborables per familiars de primer grau d’afinitat o segon grau de consanguinitat o afinitat; 5 si cal desplaçament."
+            ],
+            "es": [
+              "10 días laborables por fallecimiento del cónyuge, pareja de hecho o familiares de primer grado de consanguinidad (padres e hijos), dentro de las cuatro semanas posteriores.",
+              "3 días laborables por familiares de primer grado de afinidad o segundo grado de consanguinidad o afinidad; 5 si hay desplazamiento."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Naixement i cura del menor",
+            "es": "Nacimiento y cuidado del menor"
+          },
+          "bullets": {
+            "ca": [
+              "De 19 a 20 setmanes per persona progenitora, adoptant, guardadora o acollidora; de 32 a 34 en famílies monoparentals.",
+              "El període flexible fins als 8 anys del menor passa a 3 setmanes, o 6 en famílies monoparentals."
+            ],
+            "es": [
+              "De 19 a 20 semanas por persona progenitora, adoptante, guardadora o acogedora; de 32 a 34 en familias monoparentales.",
+              "El periodo flexible hasta los 8 años del menor pasa a 3 semanas, o 6 en familias monoparentales."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Cures i acompanyament",
+            "es": "Cuidados y acompañamiento"
+          },
+          "bullets": {
+            "ca": [
+              "Adaptació o reducció de jornada per atendre familiars en cures pal·liatives, en els supòsits previstos per la norma. Segons el Govern, la reducció no comportarà una disminució de les cotitzacions en els supòsits anunciats per a l’Estatut dels Treballadors.",
+              "Nou permís d’un dia per a la persona treballadora designada per acompanyar una persona que rep la prestació d’ajuda a morir.",
+              "També s’han anunciat millores en el sector públic per a la cura de menors amb càncer o altres malalties greus."
+            ],
+            "es": [
+              "Adaptación o reducción de jornada para atender a familiares en cuidados paliativos, en los supuestos previstos por la norma. Según el Gobierno, la reducción no comportará una disminución de las cotizaciones en los supuestos anunciados para el Estatuto de los Trabajadores.",
+              "Nuevo permiso de un día para la persona trabajadora designada para acompañar a quien recibe la prestación de ayuda para morir.",
+              "También se han anunciado mejoras en el sector público para el cuidado de menores con cáncer u otras enfermedades graves."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Què implica per al CSAPG?",
+            "es": "¿Qué implica para el CSAPG?"
+          },
+          "bullets": {
+            "ca": [
+              "Caldrà contrastar el text definitiu amb el conveni SISCAT i el règim jurídic aplicable a cada persona treballadora, respectant les condicions més favorables que corresponguin.",
+              "A data de 24 de novembre encara no es poden confirmar l’entrada en vigor, el règim transitori ni el circuit intern de sol·licitud."
+            ],
+            "es": [
+              "Habrá que contrastar el texto definitivo con el convenio SISCAT y el régimen jurídico aplicable a cada persona trabajadora, respetando las condiciones más favorables que correspondan.",
+              "A fecha de 24 de noviembre todavía no se pueden confirmar la entrada en vigor, el régimen transitorio ni el circuito interno de solicitud."
+            ]
+          }
+        }
+      ],
+      "warning": {
+        "ca": "PENDENT DE PUBLICACIÓ AL BOE. L’aprovació pel Consell de Ministres no equival a l’entrada en vigor. No donem per aplicables els nous permisos fins que es publiqui el text i se’n comprovin les disposicions. El decret llei també està subjecte a convalidació parlamentària.",
+        "es": "PENDIENTE DE PUBLICACIÓN EN EL BOE. La aprobación por el Consejo de Ministros no equivale a la entrada en vigor. No damos por aplicables los nuevos permisos hasta que se publique el texto y se comprueben sus disposiciones. El decreto-ley también está sujeto a convalidación parlamentaria."
+      },
+      "sourceNote": {
+        "ca": "Informació de CCOO CSAPG basada en la referència oficial del Consell de Ministres i la nota de Funció Pública del 24/11/2026. Fotografia il·lustrativa: Jsme MILA / Pexels.",
+        "es": "Información de CCOO CSAPG basada en la referencia oficial del Consejo de Ministros y la nota de Función Pública del 24/11/2026. Fotografía ilustrativa: Jsme MILA / Pexels."
+      },
+      "actions": [
+        {
+          "label": {
+            "ca": "Referència oficial del Consell de Ministres",
+            "es": "Referencia oficial del Consejo de Ministros"
+          },
+          "url": "https://www.lamoncloa.gob.es/consejodeministros/referencias/paginas/2026/20261124-referencia-rueda-de-consejo-ministros.aspx",
+          "style": "primary"
+        },
+        {
+          "label": {
+            "ca": "Informació de Funció Pública",
+            "es": "Información de Función Pública"
+          },
+          "url": "https://digital.gob.es/comunicacion/notas-prensa/mtdfp/2026/11/el-gobierno-mejora-y-amplia-los-permisos-de-los-empleados-public",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "Consultar el BOE",
+            "es": "Consultar el BOE"
+          },
+          "url": "https://www.boe.es/",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "Crèdit de la fotografia",
+            "es": "Crédito de la fotografía"
+          },
+          "url": "https://www.pexels.com/photo/elderly-care-at-home-compassionate-support-29372724/",
+          "style": "outline"
+        }
+      ],
+      "tags": [
+        "permisos",
+        "dol",
+        "defuncio",
+        "fallecimiento",
+        "naixement",
+        "nacimiento",
+        "cures",
+        "cuidados",
+        "palliatius",
+        "pal·liatius",
+        "conciliacio",
+        "boe",
+        "siscat",
+        "csapg",
+        "ccoo"
+      ]
+    },
     {
       "id": "permisos-votacio-eleccions-generals-29n-2026-csapg",
       "contentType": "communication",
