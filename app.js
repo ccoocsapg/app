@@ -2,7 +2,7 @@
   'use strict';
 
   const CONFIG = {
-    version: '0.16.4',
+    version: '0.16.5',
     contactEmail: 'ccoohrsc@csapg.cat',
     calculatorUrl: 'https://ccoocsapg.github.io/calculadora-csapg/',
     ccooSanitatUrl: 'https://www.ccoo.cat/sanitat/',
@@ -937,7 +937,7 @@
     }
 
     if(current==='reunions'){
-      const valid=['all','comunicatshrsc','negociadora','paritaria','conveni','convocatories','conciliacio','organitzacio','formacio'];
+      const valid=['all','comunicatshrsc','ccoo','negociadora','paritaria','conveni','convocatories','conciliacio','organitzacio','formacio'];
       const cat=params.get('cat')||'all';
       state.meetingFilter=valid.includes(cat)?cat:'all';
       state.meetingItem=params.get('item')||'';
@@ -1094,7 +1094,9 @@
 
   function meetingCoverHtml(item){
     const src=String(item.image||'').trim();
-    if(!/^https:\/\/drive\.google\.com\/thumbnail\?id=[A-Za-z0-9_-]+(?:&sz=w\d{2,4})?$/.test(src)) return '';
+    const drive=/^https:\/\/drive\.google\.com\/thumbnail\?id=[A-Za-z0-9_-]+(?:&sz=w\d{2,4})?$/.test(src);
+    const pexels=/^https:\/\/images\.pexels\.com\/photos\/\d+\/pexels-photo-\d+\.jpe?g(?:\?[A-Za-z0-9_=&%-]+)?$/.test(src);
+    if(!drive && !pexels) return '';
     return '<figure class="meeting-cover"><img src="'+esc(src)+'" alt="'+esc(tx(item.imageAlt)||tx(item.title))+'" loading="lazy" decoding="async"></figure>';
   }
 
@@ -1151,25 +1153,11 @@
     const deepOpen=state.meetingItem===item.id;
     const bullets=itemBullets[state.lang] || itemBullets.ca || itemBullets.es || [];
 
-    if(item.category==='convocatories' && Array.isArray(item.actions) && item.actions.length){
-      return '<article id="'+esc(itemId)+'" class="meeting-card meeting-card--featured">'+
-        '<div class="meeting-top">'+
-          '<div class="date-box"><strong>'+day(item.date)+'</strong><span>'+esc(monthShort(item.date))+'</span></div>'+
-          '<div class="meeting-title"><div class="meta">'+sourceBadge(item.source)+'<span class="badge badge-neutral">'+esc(categoryLabel(item.category))+'</span></div><h3>'+esc(tx(item.title))+'</h3><p>'+esc(tx(item.intro))+'</p></div>'+
-        '</div>'+
-        '<div class="meeting-body meeting-body--always">'+
-          (bullets.length?'<ul>'+bullets.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'')+
-          meetingExtraHtml(item)+
-          '<div class="source-box"><strong>'+esc(tr('sourceLabel'))+':</strong> '+esc(tx(item.sourceNote))+'</div>'+
-        '</div>'+
-      '</article>';
-    }
-
     return '<details id="'+esc(itemId)+'" class="meeting-card"'+(deepOpen?' open':'')+'><summary><div class="meeting-top">'+
       '<div class="date-box"><strong>'+day(item.date)+'</strong><span>'+esc(monthShort(item.date))+'</span></div>'+
       '<div class="meeting-title"><div class="meta">'+sourceBadge(item.source)+'<span class="badge badge-neutral">'+esc(categoryLabel(item.category))+'</span></div><h3>'+esc(tx(item.title))+'</h3><p>'+esc(tx(item.intro))+'</p></div>'+
-      '<span class="chev">›</span></div>'+meetingCoverHtml(item)+'</summary>'+
-      '<div class="meeting-body">'+(bullets.length?'<ul>'+bullets.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'')+
+      '<span class="chev">›</span></div></summary>'+
+      '<div class="meeting-body">'+meetingCoverHtml(item)+(bullets.length?'<ul>'+bullets.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'')+
       meetingExtraHtml(item)+
       '<div class="source-box"><strong>'+esc(tr('sourceLabel'))+':</strong> '+esc(tx(item.sourceNote))+'</div></div></details>';
   }

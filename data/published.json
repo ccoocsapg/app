@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-24.1",
+  "version": "2026-11-26.1",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
@@ -1482,7 +1482,7 @@
     {
       "id": "ampliacio-permisos-dol-naixement-cures-2026-11-24",
       "contentType": "communication",
-      "date": "2026-11-24",
+      "date": "2026-11-26",
       "category": "ccoo",
       "source": "ccoo",
       "title": {
@@ -1490,8 +1490,8 @@
         "es": "Nuevos permisos laborales: duelo, nacimiento y cuidados familiares"
       },
       "intro": {
-        "ca": "El Consell de Ministres ha aprovat el 24 de novembre de 2026 un reial decret llei que amplia els permisos laborals i incorpora nous drets de conciliació. La norma està pendent de publicació al BOE.",
-        "es": "El Consejo de Ministros ha aprobado el 24 de noviembre de 2026 un real decreto-ley que amplía los permisos laborales e incorpora nuevos derechos de conciliación. La norma está pendiente de publicación en el BOE."
+        "ca": "EN VIGOR DES DEL 26/11/2026. El Reial decret llei 42/2026, publicat al BOE el 25 de novembre, amplia els permisos per dol, naixement i cura del menor i incorpora drets d’acompanyament i cures pal·liatives. Informació actualitzada el 26 de novembre.",
+        "es": "EN VIGOR DESDE EL 26/11/2026. El Real Decreto-ley 42/2026, publicado en el BOE el 25 de noviembre, amplía los permisos por duelo, nacimiento y cuidado del menor e incorpora derechos de acompañamiento y cuidados paliativos. Información actualizada el 26 de noviembre."
       },
       "image": "https://images.pexels.com/photos/29372724/pexels-photo-29372724.jpeg?auto=compress&cs=tinysrgb&w=1200",
       "imageAlt": {
@@ -1501,87 +1501,101 @@
       "sections": [
         {
           "title": {
-            "ca": "Permís per dol",
-            "es": "Permiso por duelo"
+            "ca": "Permís retribuït per dol · art. 37.3.b bis ET",
+            "es": "Permiso retribuido por duelo · art. 37.3.b bis ET"
           },
           "bullets": {
             "ca": [
-              "10 dies laborables per defunció del cònjuge, parella de fet o familiars de primer grau de consanguinitat (pares i fills), dins les quatre setmanes posteriors a la defunció.",
-              "3 dies laborables per familiars de primer grau d’afinitat o segon grau de consanguinitat o afinitat; 5 si cal desplaçament."
+              "10 dies laborables per defunció del cònjuge, parella de fet, pares o fills (primer grau de consanguinitat).",
+              "3 dies laborables per familiars de primer grau d’afinitat o segon grau de consanguinitat o afinitat; 5 si cal desplaçament.",
+              "Es pot iniciar, a elecció de la persona treballadora, dins les quatre setmanes posteriors a la defunció. El gaudi en dies discontinus ha d’estar previst en la negociació col·lectiva. Cal preavís i justificació."
             ],
             "es": [
-              "10 días laborables por fallecimiento del cónyuge, pareja de hecho o familiares de primer grado de consanguinidad (padres e hijos), dentro de las cuatro semanas posteriores.",
-              "3 días laborables por familiares de primer grado de afinidad o segundo grado de consanguinidad o afinidad; 5 si hay desplazamiento."
+              "10 días laborables por fallecimiento del cónyuge, pareja de hecho, padres o hijos (primer grado de consanguinidad).",
+              "3 días laborables por familiares de primer grado de afinidad o segundo grado de consanguinidad o afinidad; 5 si es necesario desplazarse.",
+              "Puede iniciarse, a elección de la persona trabajadora, dentro de las cuatro semanas posteriores al fallecimiento. El disfrute discontinuo debe estar previsto en la negociación colectiva. Se requiere aviso previo y justificación."
             ]
           }
         },
         {
           "title": {
-            "ca": "Naixement i cura del menor",
-            "es": "Nacimiento y cuidado del menor"
+            "ca": "Naixement, adopció, guarda i acolliment · art. 48 ET",
+            "es": "Nacimiento, adopción, guarda y acogimiento · art. 48 ET"
           },
           "bullets": {
             "ca": [
-              "De 19 a 20 setmanes per persona progenitora, adoptant, guardadora o acollidora; de 32 a 34 en famílies monoparentals.",
-              "El període flexible fins als 8 anys del menor passa a 3 setmanes, o 6 en famílies monoparentals."
+              "20 setmanes per persona progenitora, adoptant, guardadora o acollidora: 6 obligatòries, 11 fins als 12 mesos i 3 fins als 8 anys.",
+              "34 setmanes en famílies monoparentals: 6 obligatòries, 22 fins als 12 mesos i 6 fins als 8 anys.",
+              "La setmana addicional (dues en monoparentalitat) s’aplica als fets causants a partir del 26/11/2026 i es podrà sol·licitar a partir de l’01/03/2027, inclosa la prestació corresponent."
             ],
             "es": [
-              "De 19 a 20 semanas por persona progenitora, adoptante, guardadora o acogedora; de 32 a 34 en familias monoparentales.",
-              "El periodo flexible hasta los 8 años del menor pasa a 3 semanas, o 6 en familias monoparentales."
+              "20 semanas por persona progenitora, adoptante, guardadora o acogedora: 6 obligatorias, 11 hasta los 12 meses y 3 hasta los 8 años.",
+              "34 semanas en familias monoparentales: 6 obligatorias, 22 hasta los 12 meses y 6 hasta los 8 años.",
+              "La semana adicional (dos en monoparentalidad) se aplica a hechos causantes desde el 26/11/2026 y se podrá solicitar desde el 01/03/2027, incluida la prestación correspondiente."
             ]
           }
         },
         {
           "title": {
-            "ca": "Cures i acompanyament",
-            "es": "Cuidados y acompañamiento"
+            "ca": "Cures pal·liatives i acompanyament · arts. 34.8 i 37 ET",
+            "es": "Cuidados paliativos y acompañamiento · arts. 34.8 y 37 ET"
           },
           "bullets": {
             "ca": [
-              "Adaptació o reducció de jornada per atendre familiars en cures pal·liatives, en els supòsits previstos per la norma. Segons el Govern, la reducció no comportarà una disminució de les cotitzacions en els supòsits anunciats per a l’Estatut dels Treballadors.",
-              "Nou permís d’un dia per a la persona treballadora designada per acompanyar una persona que rep la prestació d’ajuda a morir.",
-              "També s’han anunciat millores en el sector públic per a la cura de menors amb càncer o altres malalties greus."
+              "Dret a sol·licitar l’adaptació de jornada per cures pal·liatives dels familiars i altres persones dependents convivents en els supòsits de l’art. 34.8 ET.",
+              "Dret a reduir la jornada diària entre 1/8 i 1/2, amb reducció proporcional del salari, per a la cura directa del cònjuge, parella de fet o familiars fins al segon grau de consanguinitat o afinitat, inclòs el familiar consanguini de la parella de fet, en els supòsits legals.",
+              "Un dia retribuït el dia de la prestació d’ajuda a morir, si la persona que la rep t’ha designat per acompanyar-la."
             ],
             "es": [
-              "Adaptación o reducción de jornada para atender a familiares en cuidados paliativos, en los supuestos previstos por la norma. Según el Gobierno, la reducción no comportará una disminución de las cotizaciones en los supuestos anunciados para el Estatuto de los Trabajadores.",
-              "Nuevo permiso de un día para la persona trabajadora designada para acompañar a quien recibe la prestación de ayuda para morir.",
-              "También se han anunciado mejoras en el sector público para el cuidado de menores con cáncer u otras enfermedades graves."
+              "Derecho a solicitar adaptación de jornada por cuidados paliativos de familiares y otras personas dependientes convivientes en los supuestos del art. 34.8 ET.",
+              "Derecho a reducir la jornada diaria entre 1/8 y 1/2, con reducción proporcional del salario, para el cuidado directo del cónyuge, pareja de hecho o familiares hasta segundo grado de consanguinidad o afinidad, incluido el familiar consanguíneo de la pareja de hecho, en los supuestos legales.",
+              "Un día retribuido el día de la prestación de ayuda para morir, si la persona que la recibe te ha designado para acompañarla."
             ]
           }
         },
         {
           "title": {
-            "ca": "Què implica per al CSAPG?",
-            "es": "¿Qué implica para el CSAPG?"
+            "ca": "Aplicació al CSAPG i al personal del SISCAT",
+            "es": "Aplicación al CSAPG y al personal del SISCAT"
           },
           "bullets": {
             "ca": [
-              "Caldrà contrastar el text definitiu amb el conveni SISCAT i el règim jurídic aplicable a cada persona treballadora, respectant les condicions més favorables que corresponguin.",
-              "A data de 24 de novembre encara no es poden confirmar l’entrada en vigor, el règim transitori ni el circuit intern de sol·licitud."
+              "Els nous mínims legals són aplicables al personal laboral subjecte a l’Estatut dels Treballadors des del 26/11/2026, amb la particularitat temporal de les setmanes addicionals de naixement.",
+              "Cal preservar les condicions convencionals més favorables que siguin aplicables. Caldrà revisar el règim de permisos del conveni SISCAT i els circuits interns del CSAPG, inclòs el gaudi discontinu.",
+              "El decret també modifica el règim de l’EBEP, inclosos aspectes de la cura de menors amb càncer o malaltia greu, i l’art. 61.2 de l’Estatut marc del personal estatutari. Cal distingir aquest règim del personal laboral."
             ],
             "es": [
-              "Habrá que contrastar el texto definitivo con el convenio SISCAT y el régimen jurídico aplicable a cada persona trabajadora, respetando las condiciones más favorables que correspondan.",
-              "A fecha de 24 de noviembre todavía no se pueden confirmar la entrada en vigor, el régimen transitorio ni el circuito interno de solicitud."
+              "Los nuevos mínimos legales se aplican al personal laboral sujeto al Estatuto de los Trabajadores desde el 26/11/2026, con la particularidad temporal de las semanas adicionales de nacimiento.",
+              "Deben preservarse las condiciones convencionales más favorables que sean aplicables. Habrá que revisar el régimen de permisos del convenio SISCAT y los circuitos internos del CSAPG, incluido el disfrute discontinuo.",
+              "El decreto también modifica el régimen del EBEP, incluidos aspectos del cuidado de menores con cáncer o enfermedad grave, y el art. 61.2 del Estatuto Marco del personal estatutario. Debe distinguirse este régimen del personal laboral."
             ]
           }
         }
       ],
       "warning": {
-        "ca": "PENDENT DE PUBLICACIÓ AL BOE. L’aprovació pel Consell de Ministres no equival a l’entrada en vigor. No donem per aplicables els nous permisos fins que es publiqui el text i se’n comprovin les disposicions. El decret llei també està subjecte a convalidació parlamentària.",
-        "es": "PENDIENTE DE PUBLICACIÓN EN EL BOE. La aprobación por el Consejo de Ministros no equivale a la entrada en vigor. No damos por aplicables los nuevos permisos hasta que se publique el texto y se comprueben sus disposiciones. El decreto-ley también está sujeto a convalidación parlamentaria."
+        "ca": "PUBLICAT AL BOE EL 25/11/2026 · EN VIGOR DES DEL 26/11/2026. Pendent de convalidació parlamentària. La setmana addicional de naixement (dues en monoparentalitat) només es podrà sol·licitar a partir de l’01/03/2027. Consulteu el règim aplicable a cada cas.",
+        "es": "PUBLICADO EN EL BOE EL 25/11/2026 · EN VIGOR DESDE EL 26/11/2026. Pendiente de convalidación parlamentaria. La semana adicional de nacimiento (dos en monoparentalidad) solo podrá solicitarse desde el 01/03/2027. Consultad el régimen aplicable a cada caso."
       },
       "sourceNote": {
-        "ca": "Informació de CCOO CSAPG basada en la referència oficial del Consell de Ministres i la nota de Funció Pública del 24/11/2026. Fotografia il·lustrativa: Jsme MILA / Pexels.",
-        "es": "Información de CCOO CSAPG basada en la referencia oficial del Consejo de Ministros y la nota de Función Pública del 24/11/2026. Fotografía ilustrativa: Jsme MILA / Pexels."
+        "ca": "CCOO CSAPG · Actualització del 26/11/2026. Reial decret llei 42/2026, de 24 de novembre (BOE núm. 293, de 25/11/2026; BOE-A-2026-24700), article primer, article segon, disposició transitòria única i disposicions finals primera i cinquena. Fotografia il·lustrativa: Pexels.",
+        "es": "CCOO CSAPG · Actualización del 26/11/2026. Real Decreto-ley 42/2026, de 24 de noviembre (BOE núm. 293, de 25/11/2026; BOE-A-2026-24700), artículo primero, artículo segundo, disposición transitoria única y disposiciones finales primera y quinta. Fotografía ilustrativa: Pexels."
       },
       "actions": [
         {
           "label": {
-            "ca": "Referència oficial del Consell de Ministres",
-            "es": "Referencia oficial del Consejo de Ministros"
+            "ca": "Consultar el Reial decret llei al BOE",
+            "es": "Consultar el Real Decreto-ley en el BOE"
           },
-          "url": "https://www.lamoncloa.gob.es/consejodeministros/referencias/paginas/2026/20261124-referencia-rueda-de-consejo-ministros.aspx",
+          "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-24700",
           "style": "primary"
+        },
+        {
+          "label": {
+            "ca": "Referència del Consell de Ministres",
+            "es": "Referencia del Consejo de Ministros"
+          },
+          "url": "https://www.lamoncloa.gob.es/consejodeministros/referencias/Paginas/2026/20261124-referencia-rueda-de-consejo-ministros.aspx",
+          "style": "outline"
         },
         {
           "label": {
@@ -1589,14 +1603,6 @@
             "es": "Información de Función Pública"
           },
           "url": "https://digital.gob.es/comunicacion/notas-prensa/mtdfp/2026/11/el-gobierno-mejora-y-amplia-los-permisos-de-los-empleados-public",
-          "style": "outline"
-        },
-        {
-          "label": {
-            "ca": "Consultar el BOE",
-            "es": "Consultar el BOE"
-          },
-          "url": "https://www.boe.es/",
           "style": "outline"
         },
         {
