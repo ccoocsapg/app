@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-26.1",
+  "version": "2026-11-26.2",
   "sourceRoot": {
     "id": "1jhlNnz7VUSE-o4pvU0gtmoR8okMD2Xsb",
     "name": "WEB APP · CCOO CSAPG"
@@ -1486,12 +1486,12 @@
       "category": "ccoo",
       "source": "ccoo",
       "title": {
-        "ca": "Nous permisos laborals: dol, naixement i cures familiars",
-        "es": "Nuevos permisos laborales: duelo, nacimiento y cuidados familiares"
+        "ca": "Ja en vigor: nous permisos laborals per dol, naixement i cures familiars",
+        "es": "Ya en vigor: nuevos permisos laborales por duelo, nacimiento y cuidados familiares"
       },
       "intro": {
-        "ca": "EN VIGOR DES DEL 26/11/2026. El Reial decret llei 42/2026, publicat al BOE el 25 de novembre, amplia els permisos per dol, naixement i cura del menor i incorpora drets d’acompanyament i cures pal·liatives. Informació actualitzada el 26 de novembre.",
-        "es": "EN VIGOR DESDE EL 26/11/2026. El Real Decreto-ley 42/2026, publicado en el BOE el 25 de noviembre, amplía los permisos por duelo, nacimiento y cuidado del menor e incorpora derechos de acompañamiento y cuidados paliativos. Información actualizada el 26 de noviembre."
+        "ca": "Des d’avui, 26 de novembre de 2026, està en vigor el Reial decret llei 42/2026, publicat al BOE el 25 de novembre. Consulta els nous permisos retribuïts per dol i acompanyament, l’ampliació del permís per naixement i els drets de conciliació per cures pal·liatives.",
+        "es": "Desde hoy, 26 de noviembre de 2026, está en vigor el Real Decreto-ley 42/2026, publicado en el BOE el 25 de noviembre. Consulta los nuevos permisos retribuidos por duelo y acompañamiento, la ampliación del permiso por nacimiento y los derechos de conciliación por cuidados paliativos."
       },
       "image": "https://images.pexels.com/photos/29372724/pexels-photo-29372724.jpeg?auto=compress&cs=tinysrgb&w=1200",
       "imageAlt": {
@@ -1542,12 +1542,12 @@
           },
           "bullets": {
             "ca": [
-              "Dret a sol·licitar l’adaptació de jornada per cures pal·liatives dels familiars i altres persones dependents convivents en els supòsits de l’art. 34.8 ET.",
+              "Dret a sol·licitar l’adaptació de la jornada per atendre el cònjuge, parella de fet, familiars per consanguinitat fins al segon grau o altres persones dependents convivents que requereixin cures pal·liatives, en els termes de l’article 34.8 ET.",
               "Dret a reduir la jornada diària entre 1/8 i 1/2, amb reducció proporcional del salari, per a la cura directa del cònjuge, parella de fet o familiars fins al segon grau de consanguinitat o afinitat, inclòs el familiar consanguini de la parella de fet, en els supòsits legals.",
               "Un dia retribuït el dia de la prestació d’ajuda a morir, si la persona que la rep t’ha designat per acompanyar-la."
             ],
             "es": [
-              "Derecho a solicitar adaptación de jornada por cuidados paliativos de familiares y otras personas dependientes convivientes en los supuestos del art. 34.8 ET.",
+              "Derecho a solicitar la adaptación de jornada para atender al cónyuge, pareja de hecho, familiares por consanguinidad hasta segundo grado u otras personas dependientes convivientes que requieran cuidados paliativos, en los términos del artículo 34.8 ET.",
               "Derecho a reducir la jornada diaria entre 1/8 y 1/2, con reducción proporcional del salario, para el cuidado directo del cónyuge, pareja de hecho o familiares hasta segundo grado de consanguinidad o afinidad, incluido el familiar consanguíneo de la pareja de hecho, en los supuestos legales.",
               "Un día retribuido el día de la prestación de ayuda para morir, si la persona que la recibe te ha designado para acompañarla."
             ]
@@ -1560,12 +1560,12 @@
           },
           "bullets": {
             "ca": [
-              "Els nous mínims legals són aplicables al personal laboral subjecte a l’Estatut dels Treballadors des del 26/11/2026, amb la particularitat temporal de les setmanes addicionals de naixement.",
+              "Els nous mínims legals són aplicables al personal laboral subjecte a l’Estatut dels Treballadors des del 26/11/2026, sense haver d’esperar l’aprovació del IV Conveni SISCAT, amb la particularitat temporal de les setmanes addicionals de naixement.",
               "Cal preservar les condicions convencionals més favorables que siguin aplicables. Caldrà revisar el règim de permisos del conveni SISCAT i els circuits interns del CSAPG, inclòs el gaudi discontinu.",
               "El decret també modifica el règim de l’EBEP, inclosos aspectes de la cura de menors amb càncer o malaltia greu, i l’art. 61.2 de l’Estatut marc del personal estatutari. Cal distingir aquest règim del personal laboral."
             ],
             "es": [
-              "Los nuevos mínimos legales se aplican al personal laboral sujeto al Estatuto de los Trabajadores desde el 26/11/2026, con la particularidad temporal de las semanas adicionales de nacimiento.",
+              "Los nuevos mínimos legales se aplican al personal laboral sujeto al Estatuto de los Trabajadores desde el 26/11/2026, sin esperar a la aprobación del IV Convenio SISCAT, con la particularidad temporal de las semanas adicionales de nacimiento.",
               "Deben preservarse las condiciones convencionales más favorables que sean aplicables. Habrá que revisar el régimen de permisos del convenio SISCAT y los circuitos internos del CSAPG, incluido el disfrute discontinuo.",
               "El decreto también modifica el régimen del EBEP, incluidos aspectos del cuidado de menores con cáncer o enfermedad grave, y el art. 61.2 del Estatuto Marco del personal estatutario. Debe distinguirse este régimen del personal laboral."
             ]
@@ -1573,8 +1573,8 @@
         }
       ],
       "warning": {
-        "ca": "PUBLICAT AL BOE EL 25/11/2026 · EN VIGOR DES DEL 26/11/2026. Pendent de convalidació parlamentària. La setmana addicional de naixement (dues en monoparentalitat) només es podrà sol·licitar a partir de l’01/03/2027. Consulteu el règim aplicable a cada cas.",
-        "es": "PUBLICADO EN EL BOE EL 25/11/2026 · EN VIGOR DESDE EL 26/11/2026. Pendiente de convalidación parlamentaria. La semana adicional de nacimiento (dos en monoparentalidad) solo podrá solicitarse desde el 01/03/2027. Consultad el régimen aplicable a cada caso."
+        "ca": "JA EN VIGOR DES DEL 26/11/2026. La convalidació parlamentària està pendent, però això no impedeix l’entrada en vigor. La setmana addicional de naixement (dues en monoparentalitat) correspon als fets causants des del 26/11/2026 i es podrà sol·licitar a partir de l’01/03/2027.",
+        "es": "YA EN VIGOR DESDE EL 26/11/2026. La convalidación parlamentaria está pendiente, pero ello no impide la entrada en vigor. La semana adicional de nacimiento (dos en monoparentalidad) corresponde a hechos causantes desde el 26/11/2026 y podrá solicitarse a partir del 01/03/2027."
       },
       "sourceNote": {
         "ca": "CCOO CSAPG · Actualització del 26/11/2026. Reial decret llei 42/2026, de 24 de novembre (BOE núm. 293, de 25/11/2026; BOE-A-2026-24700), article primer, article segon, disposició transitòria única i disposicions finals primera i cinquena. Fotografia il·lustrativa: Pexels.",
@@ -1588,14 +1588,6 @@
           },
           "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-24700",
           "style": "primary"
-        },
-        {
-          "label": {
-            "ca": "Referència del Consell de Ministres",
-            "es": "Referencia del Consejo de Ministros"
-          },
-          "url": "https://www.lamoncloa.gob.es/consejodeministros/referencias/Paginas/2026/20261124-referencia-rueda-de-consejo-ministros.aspx",
-          "style": "outline"
         },
         {
           "label": {
@@ -1630,6 +1622,141 @@
         "siscat",
         "csapg",
         "ccoo"
+      ]
+    },
+    {
+      "id": "negociadora-2026-11-24",
+      "contentType": "meeting",
+      "date": "2026-11-25",
+      "category": "negociadora",
+      "source": "ccoo",
+      "title": {
+        "ca": "IV Conveni SISCAT: especial dedicació voluntària, excedències i lactància · reunió del 24/11/2026",
+        "es": "IV Convenio SISCAT: especial dedicación voluntaria, excedencias y lactancia · reunión del 24/11/2026"
+      },
+      "intro": {
+        "ca": "La Federació de Sanitat de CCOO de Catalunya informa de la reunió de la mesa negociadora del IV Conveni SISCAT del 24 de novembre. CCOO reclama que l’especial dedicació voluntària s’estengui a totes les categories professionals i que es millorin les excedències i els drets de conciliació. La patronal ha acceptat la proposta sobre el reconeixement del SIP i del SIPDP durant l’excedència especial, pendent de concreció.",
+        "es": "La Federación de Sanidad de CCOO de Catalunya informa de la reunión de la mesa negociadora del IV Convenio SISCAT del 24 de noviembre. CCOO reclama extender la especial dedicación voluntaria a todas las categorías profesionales y mejorar las excedencias y los derechos de conciliación. La patronal ha aceptado la propuesta sobre el reconocimiento del SIP y del SIPDP durante la excedencia especial, pendiente de concreción."
+      },
+      "sections": [
+        {
+          "title": {
+            "ca": "Art. 36.4 · Especial dedicació voluntària i complement de productivitat",
+            "es": "Art. 36.4 · Especial dedicación voluntaria y complemento de productividad"
+          },
+          "bullets": {
+            "ca": [
+              "CCOO proposa que totes les categories professionals puguin accedir al règim d’especial dedicació voluntària i al complement de productivitat associat, que actualment s’aplica al personal d’infermeria.",
+              "Primeres 75 hores: increment del percentatge addicional del 30% al 50% (del 130% al 150% del valor de l’hora ordinària).",
+              "Hores 76 a 150: increment del percentatge addicional del 50% al 75% (del 150% al 175% del valor de l’hora ordinària).",
+              "Segons la nota de CCOO, les patronals no van presentar una proposta concreta i van al·legar dificultats econòmiques. CCOO reclama propostes concretes i que totes les categories puguin accedir al complement en les mateixes condicions. Article pendent d’acord."
+            ],
+            "es": [
+              "CCOO propone que todas las categorías profesionales puedan acceder al régimen de especial dedicación voluntaria y al complemento de productividad asociado, que actualmente se aplica al personal de enfermería.",
+              "Primeras 75 horas: incremento del porcentaje adicional del 30% al 50% (del 130% al 150% del valor de la hora ordinaria).",
+              "Horas 76 a 150: incremento del porcentaje adicional del 50% al 75% (del 150% al 175% del valor de la hora ordinaria).",
+              "Según la nota de CCOO, las patronales no presentaron una propuesta concreta y alegaron dificultades económicas. CCOO reclama propuestas concretas y que todas las categorías puedan acceder al complemento en las mismas condiciones. Artículo pendiente de acuerdo."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Arts. 43 i 43 bis · Excedència voluntària i per conciliació",
+            "es": "Arts. 43 y 43 bis · Excedencia voluntaria y por conciliación"
+          },
+          "bullets": {
+            "ca": [
+              "CCOO defensa millorar els períodes de gaudi i les pròrrogues de les excedències, així com les garanties de reincorporació.",
+              "En l’excedència per conciliació, CCOO proposa reduir de 30 a 15 dies el preavís per sol·licitar-ne la pròrroga. Propostes en negociació."
+            ],
+            "es": [
+              "CCOO defiende mejorar los periodos de disfrute y las prórrogas de las excedencias, así como las garantías de reincorporación.",
+              "En la excedencia por conciliación, CCOO propone reducir de 30 a 15 días el preaviso para solicitar su prórroga. Propuestas en negociación."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Art. 44 · Excedència especial per naixement, adopció o cura de familiars",
+            "es": "Art. 44 · Excedencia especial por nacimiento, adopción o cuidado de familiares"
+          },
+          "bullets": {
+            "ca": [
+              "CCOO planteja que durant l’excedència es pugui sol·licitar i obtenir el reconeixement, amb la data d’efectes corresponent, del complement d’adscripció al SIP i al SIPDP i de qualsevol nivell d’aquests sistemes.",
+              "Els efectes econòmics començarien en el moment de la reincorporació.",
+              "La part patronal ha acceptat aquesta proposta, que es concretarà quan es negociï l’article 75. També s’ha aclarit que l’excedència computa com a temps de serveis efectius als efectes dels articles 29 i 75."
+            ],
+            "es": [
+              "CCOO plantea que durante la excedencia se pueda solicitar y obtener el reconocimiento, con la fecha de efectos correspondiente, del complemento de adscripción al SIP y al SIPDP y de cualquier nivel de estos sistemas.",
+              "Los efectos económicos comenzarían en el momento de la reincorporación.",
+              "La parte patronal ha aceptado esta propuesta, que se concretará cuando se negocie el artículo 75. También se ha aclarado que la excedencia computa como tiempo de servicios efectivos a efectos de los artículos 29 y 75."
+            ]
+          }
+        },
+        {
+          "title": {
+            "ca": "Art. 48 · Permís per cura del lactant",
+            "es": "Art. 48 · Permiso por cuidado del lactante"
+          },
+          "bullets": {
+            "ca": [
+              "CCOO demana que el conveni reculli expressament el dret de la persona treballadora a escollir entre l’absència diària, la reducció de jornada o l’acumulació en jornades completes, d’acord amb l’article 37.4 de l’Estatut dels Treballadors."
+            ],
+            "es": [
+              "CCOO pide que el convenio recoja expresamente el derecho de la persona trabajadora a elegir entre la ausencia diaria, la reducción de jornada o la acumulación en jornadas completas, de acuerdo con el artículo 37.4 del Estatuto de los Trabajadores."
+            ]
+          }
+        }
+      ],
+      "warning": {
+        "ca": "NEGOCIACIÓ EN CURS. Les propostes de CCOO no són encara nous drets aprovats pel IV Conveni SISCAT. L’acceptació de la proposta relativa al SIP i al SIPDP requereix concretar-ne la redacció a l’article 75. No hi ha un acord definitiu del conveni en aquesta reunió.",
+        "es": "NEGOCIACIÓN EN CURSO. Las propuestas de CCOO todavía no son nuevos derechos aprobados por el IV Convenio SISCAT. La aceptación de la propuesta relativa al SIP y al SIPDP requiere concretar su redacción en el artículo 75. No hay un acuerdo definitivo del convenio en esta reunión."
+      },
+      "sourceNote": {
+        "ca": "Resum de la nota informativa «SISCAT AL DIA», de la Federació de Sanitat de CCOO de Catalunya, datada el 25/11/2026 (2 pàgines), sobre la reunió de la mesa negociadora del 24/11/2026. Informació facilitada per la secció sindical de CCOO HRSC.",
+        "es": "Resumen de la nota informativa «SISCAT AL DIA», de la Federación de Sanidad de CCOO de Catalunya, fechada el 25/11/2026 (2 páginas), sobre la reunión de la mesa negociadora del 24/11/2026. Información facilitada por la sección sindical de CCOO HRSC."
+      },
+      "actions": [
+        {
+          "label": {
+            "ca": "CCOO Sanitat Catalunya",
+            "es": "CCOO Sanitat Catalunya"
+          },
+          "url": "https://www.ccoo.cat/sanitat/",
+          "style": "outline"
+        },
+        {
+          "label": {
+            "ca": "Consultar l’Estatut dels Treballadors",
+            "es": "Consultar el Estatuto de los Trabajadores"
+          },
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430",
+          "style": "outline"
+        }
+      ],
+      "tags": [
+        "negociadora",
+        "iv conveni",
+        "siscat",
+        "24 novembre 2026",
+        "25 novembre 2026",
+        "especial dedicacio voluntaria",
+        "edv",
+        "productivitat",
+        "productividad",
+        "totes les categories",
+        "infermeria",
+        "excedencia",
+        "excedencies",
+        "conciliacio",
+        "sip",
+        "sipdp",
+        "article 75",
+        "lactancia",
+        "lactant",
+        "ccoo",
+        "hrsc",
+        "csapg"
       ]
     },
     {
